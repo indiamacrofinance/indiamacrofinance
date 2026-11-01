@@ -1,49 +1,49 @@
 {
   "air_freight_total": {
-    "last_attempt": "2026-10-31T07:57:20+00:00",
-    "last_success": "2026-10-31T07:57:20+00:00",
+    "last_attempt": "2026-11-01T14:28:47+00:00",
+    "last_success": "2026-11-01T14:28:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "air_passengers_domestic": {
-    "last_attempt": "2026-10-31T07:57:20+00:00",
-    "last_success": "2026-10-31T07:57:20+00:00",
+    "last_attempt": "2026-11-01T14:28:47+00:00",
+    "last_success": "2026-11-01T14:28:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "air_passengers_international": {
-    "last_attempt": "2026-10-31T07:57:20+00:00",
-    "last_success": "2026-10-31T07:57:20+00:00",
+    "last_attempt": "2026-11-01T14:28:47+00:00",
+    "last_success": "2026-11-01T14:28:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "atf_consumption": {
-    "last_attempt": "2026-10-30T19:01:33+00:00",
-    "last_success": "2026-10-30T19:01:33+00:00",
+    "last_attempt": "2026-11-01T14:27:17+00:00",
+    "last_success": "2026-11-01T14:27:17+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "auto_2w_sales": {
-    "last_attempt": "2026-10-30T19:01:39+00:00",
-    "last_success": "2026-10-30T19:01:39+00:00",
+    "last_attempt": "2026-11-01T14:27:23+00:00",
+    "last_success": "2026-11-01T14:27:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "auto_3w_sales": {
-    "last_attempt": "2026-10-30T19:01:39+00:00",
-    "last_success": "2026-10-30T19:01:39+00:00",
+    "last_attempt": "2026-11-01T14:27:23+00:00",
+    "last_success": "2026-11-01T14:27:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "auto_pv_sales": {
-    "last_attempt": "2026-10-30T19:01:39+00:00",
-    "last_success": "2026-10-30T19:01:39+00:00",
+    "last_attempt": "2026-11-01T14:27:23+00:00",
+    "last_success": "2026-11-01T14:27:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -133,43 +133,43 @@
     "last_period": "2026-10-30"
   },
   "budget_actuals": {
-    "last_attempt": "2026-10-30T19:05:25+00:00",
-    "last_success": "2026-10-30T19:05:25+00:00",
+    "last_attempt": "2026-11-01T14:28:50+00:00",
+    "last_success": "2026-11-01T14:28:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "budget_be": {
-    "last_attempt": "2026-10-30T19:05:25+00:00",
-    "last_success": "2026-10-30T19:05:25+00:00",
+    "last_attempt": "2026-11-01T14:28:50+00:00",
+    "last_success": "2026-11-01T14:28:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "budget_demand_actuals": {
-    "last_attempt": "2026-10-30T19:05:28+00:00",
-    "last_success": "2026-10-30T19:05:28+00:00",
+    "last_attempt": "2026-11-01T14:28:54+00:00",
+    "last_success": "2026-11-01T14:28:54+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "budget_demand_be": {
-    "last_attempt": "2026-10-30T19:05:28+00:00",
-    "last_success": "2026-10-30T19:05:28+00:00",
+    "last_attempt": "2026-11-01T14:28:54+00:00",
+    "last_success": "2026-11-01T14:28:54+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "budget_demand_re": {
-    "last_attempt": "2026-10-30T19:05:28+00:00",
-    "last_success": "2026-10-30T19:05:28+00:00",
+    "last_attempt": "2026-11-01T14:28:54+00:00",
+    "last_success": "2026-11-01T14:28:54+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
   },
   "budget_re": {
-    "last_attempt": "2026-10-30T19:05:25+00:00",
-    "last_success": "2026-10-30T19:05:25+00:00",
+    "last_attempt": "2026-11-01T14:28:50+00:00",
+    "last_success": "2026-11-01T14:28:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
@@ -203,337 +203,337 @@
     "last_period": "2025-04-01"
   },
   "cga_capex_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_capex_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_capex_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_corporate_tax_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "last_period": "2026-09-01"
   },
   "cga_customs_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_direct_tax_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_excise_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_gross_tax_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_income_tax_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_interest_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_nondebt_capital_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_nontax_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_nontax_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_nontax_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_primary_deficit_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_deficit_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_stt_fytd": {
-    "last_attempt": "2026-10-30T19:01:20+00:00",
-    "last_success": "2026-10-30T19:01:20+00:00",
+    "last_attempt": "2026-11-01T14:27:05+00:00",
+    "last_success": "2026-11-01T14:27:05+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_fytd": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_pct_be": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_pct_be_prev": {
-    "last_attempt": "2026-10-30T19:01:12+00:00",
-    "last_success": "2026-10-30T19:01:12+00:00",
+    "last_attempt": "2026-11-01T14:26:53+00:00",
+    "last_success": "2026-11-01T14:26:53+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_cement_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_coal_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_crude_oil_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_electricity_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_fertilizers_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_iron_ore_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_natural_gas_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_overall_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_refinery_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "core_steel_index": {
-    "last_attempt": "2026-10-30T19:01:30+00:00",
-    "last_success": "2026-10-30T19:01:30+00:00",
+    "last_attempt": "2026-11-01T14:27:15+00:00",
+    "last_success": "2026-11-01T14:27:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -812,8 +812,8 @@
     "last_period": "2026-10-15"
   },
   "diesel_consumption": {
-    "last_attempt": "2026-10-30T19:01:33+00:00",
-    "last_success": "2026-10-30T19:01:33+00:00",
+    "last_attempt": "2026-11-01T14:27:17+00:00",
+    "last_success": "2026-11-01T14:27:17+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -833,18 +833,18 @@
     "last_period": "2025-07-01"
   },
   "ewaybills_count": {
-    "last_attempt": "2026-10-30T19:02:07+00:00",
+    "last_attempt": "2026-11-01T14:27:58+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:02:07+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:27:58+00:00",
+    "last_period": "2026-09-01"
   },
   "ewaybills_value": {
-    "last_attempt": "2026-10-30T19:02:07+00:00",
-    "last_success": "2026-10-30T19:02:07+00:00",
+    "last_attempt": "2026-11-01T14:27:58+00:00",
+    "last_success": "2026-11-01T14:27:58+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-08-01"
+    "last_period": "2026-09-01"
   },
   "exports_real_level": {
     "last_attempt": "2026-10-30T19:40:21+00:00",
@@ -889,10 +889,10 @@
     "last_period": "2026-10-01"
   },
   "fuel_consumption_total": {
-    "last_attempt": "2026-10-30T19:01:33+00:00",
+    "last_attempt": "2026-11-01T14:27:17+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:01:33+00:00",
+    "last_success": "2026-11-01T14:27:17+00:00",
     "last_period": "2026-09-01"
   },
   "fx_reserves_fca": {
@@ -1043,39 +1043,39 @@
     "last_period": "2026-10-23"
   },
   "gst_gross_collections": {
-    "last_attempt": "2026-10-30T19:00:59+00:00",
+    "last_attempt": "2026-11-01T14:26:39+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:59+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:26:39+00:00",
+    "last_period": "2026-09-01"
   },
   "gst_gross_growth": {
-    "last_attempt": "2026-10-30T19:00:59+00:00",
+    "last_attempt": "2026-11-01T14:26:39+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:59+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:26:39+00:00",
+    "last_period": "2026-09-01"
   },
   "gst_net_collections": {
-    "last_attempt": "2026-10-30T19:00:59+00:00",
+    "last_attempt": "2026-11-01T14:26:39+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:59+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:26:39+00:00",
+    "last_period": "2026-09-01"
   },
   "gst_net_growth": {
-    "last_attempt": "2026-10-30T19:00:59+00:00",
+    "last_attempt": "2026-11-01T14:26:39+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:59+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:26:39+00:00",
+    "last_period": "2026-09-01"
   },
   "gst_refunds": {
-    "last_attempt": "2026-10-30T19:00:59+00:00",
+    "last_attempt": "2026-11-01T14:26:39+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:59+00:00",
-    "last_period": "2026-08-01"
+    "last_success": "2026-11-01T14:26:39+00:00",
+    "last_period": "2026-09-01"
   },
   "gva_agri_growth": {
     "last_attempt": "2026-10-30T19:40:21+00:00",
@@ -1274,8 +1274,8 @@
     "last_period": "2026-10-25"
   },
   "lpg_consumption": {
-    "last_attempt": "2026-10-30T19:01:33+00:00",
-    "last_success": "2026-10-30T19:01:33+00:00",
+    "last_attempt": "2026-11-01T14:27:17+00:00",
+    "last_success": "2026-11-01T14:27:17+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1295,50 +1295,50 @@
     "last_period": "2026-10-15"
   },
   "merch_exports": {
-    "last_attempt": "2026-10-30T19:00:58+00:00",
+    "last_attempt": "2026-11-01T14:26:07+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:58+00:00",
+    "last_success": "2026-11-01T14:26:07+00:00",
     "last_period": "2026-09-01"
   },
   "merch_imports": {
-    "last_attempt": "2026-10-30T19:00:58+00:00",
+    "last_attempt": "2026-11-01T14:26:07+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:58+00:00",
+    "last_success": "2026-11-01T14:26:07+00:00",
     "last_period": "2026-09-01"
   },
   "merch_trade_balance": {
-    "last_attempt": "2026-10-30T19:00:58+00:00",
+    "last_attempt": "2026-11-01T14:26:07+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-10-30T19:00:58+00:00",
+    "last_success": "2026-11-01T14:26:07+00:00",
     "last_period": "2026-09-01"
   },
   "mf_aum_total": {
-    "last_attempt": "2026-10-31T07:55:30+00:00",
-    "last_success": "2026-10-31T07:55:30+00:00",
+    "last_attempt": "2026-11-01T14:29:03+00:00",
+    "last_success": "2026-11-01T14:29:03+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "mf_net_inflow_debt": {
-    "last_attempt": "2026-10-31T07:55:30+00:00",
-    "last_success": "2026-10-31T07:55:30+00:00",
+    "last_attempt": "2026-11-01T14:29:03+00:00",
+    "last_success": "2026-11-01T14:29:03+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "mf_net_inflow_equity": {
-    "last_attempt": "2026-10-31T07:55:30+00:00",
-    "last_success": "2026-10-31T07:55:30+00:00",
+    "last_attempt": "2026-11-01T14:29:03+00:00",
+    "last_success": "2026-11-01T14:29:03+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "mf_net_inflow_total": {
-    "last_attempt": "2026-10-31T07:55:30+00:00",
-    "last_success": "2026-10-31T07:55:30+00:00",
+    "last_attempt": "2026-11-01T14:29:03+00:00",
+    "last_success": "2026-11-01T14:29:03+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1372,8 +1372,8 @@
     "last_period": "2026-11-01"
   },
   "neer_bis_broad": {
-    "last_attempt": "2026-10-30T19:05:22+00:00",
-    "last_success": "2026-10-30T19:05:22+00:00",
+    "last_attempt": "2026-11-01T14:28:48+00:00",
+    "last_success": "2026-11-01T14:28:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1386,29 +1386,29 @@
     "last_period": "2026-10-30"
   },
   "peer_cpi_inflation": {
-    "last_attempt": "2026-10-30T19:05:41+00:00",
-    "last_success": "2026-10-30T19:05:41+00:00",
+    "last_attempt": "2026-11-01T14:29:06+00:00",
+    "last_success": "2026-11-01T14:29:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "peer_gdp_growth": {
-    "last_attempt": "2026-10-30T19:05:41+00:00",
-    "last_success": "2026-10-30T19:05:41+00:00",
+    "last_attempt": "2026-11-01T14:29:06+00:00",
+    "last_success": "2026-11-01T14:29:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-01-01"
   },
   "peer_policy_rate": {
-    "last_attempt": "2026-10-30T19:05:41+00:00",
-    "last_success": "2026-10-30T19:05:41+00:00",
+    "last_attempt": "2026-11-01T14:29:06+00:00",
+    "last_success": "2026-11-01T14:29:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "petrol_consumption": {
-    "last_attempt": "2026-10-30T19:01:33+00:00",
-    "last_success": "2026-10-30T19:01:33+00:00",
+    "last_attempt": "2026-11-01T14:27:17+00:00",
+    "last_success": "2026-11-01T14:27:17+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1561,8 +1561,8 @@
     "last_period": "2026-09-01"
   },
   "reer_bis_broad": {
-    "last_attempt": "2026-10-30T19:05:22+00:00",
-    "last_success": "2026-10-30T19:05:22+00:00",
+    "last_attempt": "2026-11-01T14:28:48+00:00",
+    "last_success": "2026-11-01T14:28:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1897,85 +1897,85 @@
     "last_period": "2026-10-30"
   },
   "vehicle_retail_2w": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_2w_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_3w": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_3w_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_cv": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_cv_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_pv": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_pv_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_total": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_total_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_tractor": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "vehicle_retail_tractor_growth": {
-    "last_attempt": "2026-10-30T19:02:05+00:00",
-    "last_success": "2026-10-30T19:02:05+00:00",
+    "last_attempt": "2026-11-01T14:27:50+00:00",
+    "last_success": "2026-11-01T14:27:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1988,36 +1988,36 @@
     "last_period": "2026-10-23"
   },
   "wpi_food_articles_index": {
-    "last_attempt": "2026-10-30T19:01:26+00:00",
-    "last_success": "2026-10-30T19:01:26+00:00",
+    "last_attempt": "2026-11-01T14:27:11+00:00",
+    "last_success": "2026-11-01T14:27:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "wpi_fuel_power_index": {
-    "last_attempt": "2026-10-30T19:01:26+00:00",
-    "last_success": "2026-10-30T19:01:26+00:00",
+    "last_attempt": "2026-11-01T14:27:11+00:00",
+    "last_success": "2026-11-01T14:27:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "wpi_headline_index": {
-    "last_attempt": "2026-10-30T19:01:26+00:00",
-    "last_success": "2026-10-30T19:01:26+00:00",
+    "last_attempt": "2026-11-01T14:27:11+00:00",
+    "last_success": "2026-11-01T14:27:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "wpi_manufactured_index": {
-    "last_attempt": "2026-10-30T19:01:26+00:00",
-    "last_success": "2026-10-30T19:01:26+00:00",
+    "last_attempt": "2026-11-01T14:27:11+00:00",
+    "last_success": "2026-11-01T14:27:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "wpi_primary_index": {
-    "last_attempt": "2026-10-30T19:01:26+00:00",
-    "last_success": "2026-10-30T19:01:26+00:00",
+    "last_attempt": "2026-11-01T14:27:11+00:00",
+    "last_success": "2026-11-01T14:27:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"

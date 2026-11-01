@@ -14,16 +14,16 @@
   "licence": "GODL",
   "downloadable": true,
   "first_period": "2018-07-01",
-  "last_period": "2026-08-01",
-  "last_value": 13.7283,
-  "observations": 98,
-  "updated_at": "2026-10-30T19:02:07+00:00",
+  "last_period": "2026-09-01",
+  "last_value": 13.9685,
+  "observations": 99,
+  "updated_at": "2026-11-01T14:27:58+00:00",
   "fetched_from": [
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/ewb-data-2025-26.xlsx",
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/ewb-data-2026-27.xlsx"
   ],
   "raw_files": [
-    "data/raw/gst_ewaybills/20261030T190206-0071a702c0.xlsx",
-    "data/raw/gst_ewaybills/20261030T190207-e250b58ebc.xlsx"
+    "data/raw/gst_ewaybills/20261101T142754-0071a702c0.xlsx",
+    "data/raw/gst_ewaybills/20261101T142757-722fcc876b.xlsx"
   ]
 }

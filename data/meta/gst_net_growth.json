@@ -14,14 +14,14 @@
   "licence": "GODL",
   "downloadable": true,
   "first_period": "2024-04-01",
-  "last_period": "2026-08-01",
-  "last_value": 8.3,
-  "observations": 28,
-  "updated_at": "2026-10-30T19:00:59+00:00",
+  "last_period": "2026-09-01",
+  "last_value": 18.06,
+  "observations": 29,
+  "updated_at": "2026-11-01T14:26:39+00:00",
   "fetched_from": [
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/Gross_Net_Tax_collection.xlsx"
   ],
   "raw_files": [
-    "data/raw/gst_collections/20261030T190059-9ce073771b.xlsx"
+    "data/raw/gst_collections/20261101T142638-433922cc90.xlsx"
   ]
 }
