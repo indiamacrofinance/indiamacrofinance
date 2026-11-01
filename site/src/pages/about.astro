@@ -18,9 +18,9 @@ const email = config.contact?.feedback_email;
 
   <h2>How it works</h2>
   <p>Automated pipelines ("data bots") download each release, check it against plausible ranges and the previously published values, and only then publish it. If a download fails, the site keeps the last good values and marks the series as stale. Every number on every page is drawn from a stored series; nothing is typed in by hand. Sources, coverage and licences are listed on the <a href="/data/">Data</a> page, and the measures we construct ourselves are explained on the <a href="/methods/">Methods</a> page.</p>
-  <p>Written briefings are drafted automatically from these data. Release notes and the weekly briefing are reviewed by a person before publication; the short daily note and the morning newsletter are generated with automatic checks. Every number in all of them is checked against the stored series before anything goes out.</p>
+  <p>Written briefings are drafted automatically from these data. Release notes and the weekly briefing are reviewed by a person before publication; the short daily note{config.newsletter?.public ? " and the morning newsletter are" : " is"} generated with automatic checks. Every number in all of them is checked against the stored series before anything goes out.</p>
 
-  {config.newsletter?.enabled && <>
+  {config.newsletter?.public && <>
   <h2 id="newsletter">Morning newsletter</h2>
   <p>Each morning, subscribers get a short email on India's economy: what is new in the data since the day before, markets, and the wider picture. It is written with AI from the numbers on this site only{config.newsletter?.writer === "api" ? " (Claude, automatically each morning; if a draft fails the check twice, a fixed template goes out instead)" : ", and approved by the maintainer before it goes out"}. The writer never types a number: it refers to stored values by name, a checker rejects any draft with a number it did not take from the data, and the values are filled in afterwards. Subscriber addresses are held by the newsletter service (Buttondown), not by this site; every email has an unsubscribe link.</p>
   <Signup />

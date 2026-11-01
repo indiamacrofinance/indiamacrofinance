@@ -4,7 +4,7 @@
 // Buttondown's API as "unactivated", so Buttondown sends its usual confirmation email
 // (double opt-in), and passes the reader's IP so Buttondown's spam checks still apply.
 // BUTTONDOWN_API_KEY is a Pages secret set by the maintainer in the Cloudflare dashboard
-// (Workers & Pages -> econvitalsindia -> Settings -> Variables and Secrets).
+// (Workers & Pages -> the site's Pages project -> Settings -> Variables and Secrets).
 // Responses are JSON: {ok: true, status: "created" | "exists"} or {ok: false, error}.
 
 const json = (body, status = 200) =>

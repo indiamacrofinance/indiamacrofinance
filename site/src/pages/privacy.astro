@@ -15,7 +15,7 @@ const email = config.contact?.feedback_email;
 
   <h2 id="privacy">Privacy</h2>
   <p><b>Browsing the site.</b> The site sets no cookies, runs no analytics or advertising trackers, and stores nothing in your browser. It is hosted on Cloudflare Pages; like any web host, Cloudflare handles the technical details of each request (such as your IP address) to deliver the pages and protect them from abuse.</p>
-  <p><b>The newsletter.</b> If you subscribe, your email address is held by our newsletter service, Buttondown, not on this site. Buttondown emails you a confirmation link first, sends the morning email, and handles unsubscribing (every email has a link). When you sign up, your IP address is passed to Buttondown for its spam checks. We use your address only to send the newsletter, and never sell or share it.</p>
+  {config.newsletter?.public && <p><b>The newsletter.</b> If you subscribe, your email address is held by our newsletter service, Buttondown, not on this site. Buttondown emails you a confirmation link first, sends the morning email, and handles unsubscribing (every email has a link). When you sign up, your IP address is passed to Buttondown for its spam checks. We use your address only to send the newsletter, and never sell or share it.</p>}
   <p><b>Writing to us.</b> If you email {email ? <a href={`mailto:${email}`}>{email}</a> : "us"}, we use your message only to reply and to fix what you report.</p>
   <p class="chart-sub">This is a private preview; these terms may be revised before public launch.</p>
 </Base>

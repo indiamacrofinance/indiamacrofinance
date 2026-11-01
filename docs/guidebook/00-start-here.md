@@ -4,7 +4,7 @@
 
 A dashboard of the Indian economy that updates every working day. It covers macro, financial and market indicators from public sources, adds a release calendar and downloadable data, and publishes briefings and a newsletter that AI drafts and a person approves. The audience is **economists and students**, so pages are dense, with methods notes and downloadable data.
 
-The model is econvitals.org (U.S.). We credit it and do some things differently: a states view, an MPC member tracker, a base-year bridge, a monsoon and food watch, and Indian units and financial-year conventions. See `01-architecture.md` → "What makes us different".
+The model is econvitals.org (U.S.). We credit it and do some things differently: a states view, a base-year bridge, a monsoon and food watch, and Indian units and financial-year conventions. See `01-architecture.md` → "What makes us different".
 
 ## Roles
 

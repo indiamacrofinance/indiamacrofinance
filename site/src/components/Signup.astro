@@ -1,5 +1,5 @@
 ---
-// Newsletter signup box. Renders nothing until site.config.yaml newsletter.enabled is true
+// Newsletter signup box. Renders nothing unless site.config.yaml newsletter.public is true
 // and newsletter.buttondown_username is set. The form posts to /api/subscribe (a Cloudflare
 // Pages Function, functions/api/subscribe.js), which adds the reader through Buttondown's
 // API; Buttondown then emails them a confirmation link (double opt-in). The reader stays
@@ -9,8 +9,9 @@ const n = config.newsletter ?? {};
 const id = `nl-${Math.random().toString(36).slice(2, 8)}`;
 const email = config.contact?.feedback_email ?? "";
 const maintainer = (config.team?.maintainer ?? "").split(" ")[0] || "We";
+const show = Boolean(n.public && n.buttondown_username);
 ---
-{n.enabled && n.buttondown_username && (
+{show && (
   <div class="signup-wrap" data-signup={id}>
     <form class="signup" action="/api/subscribe" method="post" novalidate>
       <label for={`${id}-email`}>Every morning: a short email on India's economy, written by AI from the data on this site, with every number checked against the source.</label>
@@ -24,7 +25,7 @@ const maintainer = (config.team?.maintainer ?? "").split(" ")[0] || "We";
     </div>
   </div>
 )}
-<script define:vars={{ email, maintainer }}>
+{show && <script define:vars={{ email, maintainer }}>
   document.querySelectorAll("[data-signup]").forEach((wrap) => {
     if (wrap.dataset.ready) return;
     wrap.dataset.ready = "1";
@@ -59,4 +60,4 @@ const maintainer = (config.team?.maintainer ?? "").split(" ")[0] || "We";
       done.hidden = true; form.hidden = false;
     });
   });
-</script>
+</script>}
