@@ -826,8 +826,8 @@
     "last_period": "2026-08-01"
   },
   "epfo_net_payroll": {
-    "last_attempt": "2026-10-29T09:45:02+00:00",
-    "last_success": "2026-10-29T09:45:02+00:00",
+    "last_attempt": "2026-11-01T13:23:17+00:00",
+    "last_success": "2026-11-01T13:23:17+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-07-01"
@@ -1519,32 +1519,32 @@
     "last_period": "2026-09-01"
   },
   "power_energy_met": {
-    "last_attempt": "2026-10-28T12:28:48+00:00",
-    "last_success": "2026-10-28T12:28:48+00:00",
+    "last_attempt": "2026-11-01T13:23:57+00:00",
+    "last_success": "2026-11-01T13:23:57+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-10-27"
+    "last_period": "2026-10-31"
   },
   "power_peak_demand": {
-    "last_attempt": "2026-10-28T12:28:48+00:00",
-    "last_success": "2026-10-28T12:28:48+00:00",
+    "last_attempt": "2026-11-01T13:23:57+00:00",
+    "last_success": "2026-11-01T13:23:57+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-10-27"
+    "last_period": "2026-10-31"
   },
   "power_solar_gen": {
-    "last_attempt": "2026-10-28T12:28:49+00:00",
-    "last_success": "2026-10-28T12:28:49+00:00",
+    "last_attempt": "2026-11-01T13:23:57+00:00",
+    "last_success": "2026-11-01T13:23:57+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-10-27"
+    "last_period": "2026-10-31"
   },
   "power_wind_gen": {
-    "last_attempt": "2026-10-28T12:28:49+00:00",
-    "last_success": "2026-10-28T12:28:49+00:00",
+    "last_attempt": "2026-11-01T13:23:57+00:00",
+    "last_success": "2026-11-01T13:23:57+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-10-27"
+    "last_period": "2026-10-31"
   },
   "rccs_csi": {
     "last_attempt": "2026-10-30T18:33:01+00:00",
