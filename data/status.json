@@ -1952,6 +1952,20 @@
     "last_error": null,
     "last_period": "2026-10-30"
   },
+  "sensex_pb": {
+    "last_attempt": "2026-11-01T15:09:04+00:00",
+    "last_success": "2026-11-01T15:09:04+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-06-01"
+  },
+  "sensex_pe": {
+    "last_attempt": "2026-11-01T15:09:04+00:00",
+    "last_success": "2026-11-01T15:09:04+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-06-01"
+  },
   "services_exports": {
     "last_attempt": "2026-10-30T18:31:56+00:00",
     "last_success": "2026-10-30T18:31:56+00:00",

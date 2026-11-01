@@ -36,12 +36,13 @@ COLUMNS = {
 FY = re.compile(r"^(\d{4})-\d{2}$")
 
 
-def table_links(page: str) -> dict[int, str]:
+def table_links(page: str, wanted=COLUMNS) -> dict[int, str]:
+    """{table number: XLSX link} for the Handbook tables in `wanted` (numbers)."""
     out = {}
     for title, url in re.findall(r"class='link2' href=PublicationsView\.aspx\?id=\d+>([^<]+)</a>.*?href='(https://rbidocs[^']+\.XLSX)'",
                                  page, re.S | re.I):
         m = re.match(r"\s*Table\s*(\d+)", html.unescape(title), re.I)
-        if m and int(m.group(1)) in COLUMNS:
+        if m and int(m.group(1)) in wanted:
             out.setdefault(int(m.group(1)), url)
     return out
 

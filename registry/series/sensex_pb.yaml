@@ -1,0 +1,37 @@
+id: sensex_pb
+title: 'BSE Sensex: average price/book value ratio, monthly'
+short_title: Sensex price/B
+area: markets
+source:
+  agency: BSE Ltd., via Reserve Bank of India
+  dataset: Handbook of Statistics on the Indian Economy, Table 245
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/handbook_valuation.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: ratio
+base_year: 1978-79=100
+seasonal_adjustment: none
+transforms:
+- level
+- yoy
+release:
+  calendar: none
+  rule: RBI Handbook, updated once a year (September)
+  lag_days: 120
+validation:
+  range:
+  - 0.5
+  - 10
+  revision_alert: 5
+pages:
+- page: markets
+  section: valuation
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Monthly average of daily ratios for the Sensex companies (BSE). Shown with
+  attribution, not offered for download.

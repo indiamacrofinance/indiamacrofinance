@@ -53,6 +53,13 @@ const curve = JSON.parse(fs.readFileSync("src/data/generated/yield_curve.json", 
   </div>
   <p class="chart-sub">Index and futures prices from Yahoo Finance, shown with attribution only. Brent in rupees is a site calculation.</p>
 
+  <h2 id="valuation">How expensive are Indian shares?</h2>
+  <div class="grid2">
+    <LineChart title="Sensex price/earnings ratio" subtitle="Monthly average of the daily P/E of the Sensex companies" lines={[{ id: "sensex_pe", label: "P/E" }]} years={6} />
+    <LineChart title="Sensex price/book ratio" subtitle="Monthly average of the daily price-to-book ratio" lines={[{ id: "sensex_pb", label: "P/B" }]} years={6} />
+  </div>
+  <p class="chart-sub">BSE Ltd., as published in RBI's Handbook of Statistics on the Indian Economy (Tables 244 and 245); shown with attribution, not offered for download. RBI updates the Handbook once a year, so the latest month lags by a few months; each new edition extends the history kept here.</p>
+
   <h2 id="yield-curve">Government bond yield curve</h2>
   {curve.curves.length > 0 && <CurveChart title="Par yield curve" subtitle="% a year (semi-annual), by years to maturity; latest, a month earlier and the end of last financial year"
     curves={curve.curves} source="FBIL (Financial Benchmarks India), daily G-sec par yields" />}

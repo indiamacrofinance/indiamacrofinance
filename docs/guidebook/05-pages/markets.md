@@ -11,7 +11,7 @@
 - [x] "Markets updated" timestamp (IST) (the "As of" column)
 - [x] G-sec yield curve: latest vs 1 month ago vs end of last FY (FBIL par yields, panel `gsec_par_yield`, from Jan 2025; `yield_curve.json`)
 - [x] Chart: 10y G-sec vs repo rate (term spread) (`term_spread_10y_repo`, site calculation)
-- [ ] Chart: Nifty 50 with P/E (if a redistributable source exists; otherwise omit)
+- [x] Valuation: Sensex P/E and P/B, monthly, from RBI's Handbook Tables 244-245 (BSE data, show-only; added 2026-11-01). Nifty P/E has no redistributable source.
 - [x] FPI flows (equity and debt, monthly) from NSDL, from 2015. DII flows still missing: NSE blocks scripts
 - [x] Mutual fund flows (AMFI monthly report, from Apr 2019: total, equity, debt, AUM). SIP inflows still missing: not in the workbook, and the AMFI SIP page returns 404
 - [ ] Corporate bond spreads (AAA 5y over G-sec) if a free source exists
