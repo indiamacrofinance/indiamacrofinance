@@ -35,7 +35,9 @@ When an agency rebases (as in 2026 for GDP, CPI and IIP):
 
 - Run it from India, on a normal residential or office connection.
 - Don't run it more than twice a day (be polite to government servers).
-- Each manual source has a 5-second delay between requests (set in `pipelines/core/http.py`).
+- The shared HTTP helper waits at least one second between calls to the same host
+  (`POLITE_DELAY` in `pipelines/core/http.py`). Transient failures retry with
+  exponential backoff; there is no backoff sleep after the final failed attempt.
 
 ## Monthly
 

@@ -9,6 +9,7 @@
 - [x] PLFS unemployment by state (annual, calendar year, with sample-size caveat)
 - [x] State fiscal deficit, debt, interest (% GSDP) from RBI Handbook tables 164/170/176 over Table 21 GSDP (interest/revenue receipts still to add)
 - [x] State profile page `/states/<state>` with all of the above in one place (`states/[slug].astro`, with ranks)
+- [x] Invalid panel updates preserve the last good observations and mark the series stale (regression tested)
 - [ ] Map uses official boundaries from Survey of India–consistent GeoJSON (check the licence)
 
 ## Must NOT include

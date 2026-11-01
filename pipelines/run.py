@@ -55,6 +55,10 @@ def run_source(src: Source) -> list[dict]:
         raws = src.fetch()
         raw_paths = store.archive_raw(src.name, raws)
         parsed = src.parse(raws)
+        required = {"series_id", "period", "value"} | ({"entity"} if src.panel else set())
+        missing = required - set(parsed.columns)
+        if missing:
+            raise ValueError(f"parser missing columns {sorted(missing)}")
     except Exception as e:  # noqa: BLE001 - any failure must mark the series stale, not crash the run
         err = f"{type(e).__name__}: {e}"
         traceback.print_exc()
@@ -104,17 +108,7 @@ def run_panel(src: Source, parsed, specs: dict) -> list[dict]:
     for sid in src.series_ids:
         spec = specs[sid]
         new = parsed[parsed["series_id"] == sid].drop(columns="series_id")
-        problems = []
-        if new.empty:
-            problems.append(f"{sid}: parser returned no rows")
-        elif new.duplicated(["entity", "period"]).any():
-            problems.append(f"{sid}: duplicate (entity, period) rows")
-        else:
-            lo, hi = spec["validation"]["range"]
-            bad = new[(new["value"] < lo) | (new["value"] > hi)]
-            if len(bad):
-                problems.append(f"{sid}: {len(bad)} values outside [{lo}, {hi}], e.g. "
-                                f"{bad.head(3)[['entity', 'period', 'value']].values.tolist()}")
+        problems = validate(sid, new, spec, panel=True)
         if problems:
             err = "; ".join(problems)
             store.update_status(sid, ok=False, error=err)

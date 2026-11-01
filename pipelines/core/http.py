@@ -111,7 +111,8 @@ def get(url: str, params: dict | None = None, retries: int = 3, timeout: float =
             if isinstance(e, httpx.HTTPStatusError) and e.response.status_code < 500 \
                     and e.response.status_code != 429:
                 break
-            time.sleep(2 ** attempt * 2)
+            if attempt + 1 < retries:
+                time.sleep(2 ** attempt * 2)
     raise RuntimeError(f"GET {url} failed: {last_err}") from last_err
 
 

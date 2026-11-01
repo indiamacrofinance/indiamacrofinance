@@ -44,10 +44,15 @@ State-level data are **panels**: a source with `panel = True` returns an `entity
 
 A source that fails to fetch, parse or validate:
 
-1. leaves `data/series/<id>.csv` untouched,
+1. leaves `data/series/<id>.csv` (or `data/panels/<id>.csv`) untouched,
 2. sets `stale: true` and `last_error` in `data/status.json`,
 3. opens or updates one GitHub issue per series, labelled `scraper-broken`,
 4. shows on the internal Status page.
+
+Both series and panels reject missing or nonnumeric values, missing keys, duplicate
+keys and values outside the registry range before publishing. Panel keys are
+`(entity, period)`, so different entities can share a period. Missing parser columns
+mark every series in that source stale and enter the normal failure report.
 
 Revisions that move a past value by more than the series' `revision_alert` threshold also open an issue, labelled `large-revision`. They do not block publishing.
 

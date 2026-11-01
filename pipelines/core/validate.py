@@ -8,14 +8,23 @@ from __future__ import annotations
 import pandas as pd
 
 
-def validate(series_id: str, new: pd.DataFrame, spec: dict) -> list[str]:
+def validate(series_id: str, new: pd.DataFrame, spec: dict, *, panel: bool = False) -> list[str]:
     """Return a list of problems with the new rows for one series (empty = ok)."""
     problems = []
     if new.empty:
         return [f"{series_id}: parser returned no rows"]
-    if new["period"].duplicated().any():
-        dups = new.loc[new["period"].duplicated(), "period"].astype(str).tolist()[:5]
-        problems.append(f"{series_id}: duplicate periods {dups}")
+    keys = ["entity", "period"] if panel else ["period"]
+    missing = sorted(set(keys + ["value"]) - set(new.columns))
+    if missing:
+        return [f"{series_id}: parser missing columns {missing}"]
+    if new.duplicated(keys).any():
+        dups = new.loc[new.duplicated(keys), keys].astype(str).values.tolist()[:5]
+        problems.append(f"{series_id}: duplicate {'(entity, period) rows' if panel else 'periods'} {dups}")
+    for key in keys:
+        if (new[key].isna() | new[key].astype(str).str.strip().eq("")).any():
+            problems.append(f"{series_id}: missing {key}")
+    if not pd.api.types.is_numeric_dtype(new["value"]):
+        return problems + [f"{series_id}: values must be numeric"]
     if new["value"].isna().any():
         problems.append(f"{series_id}: {int(new['value'].isna().sum())} missing values")
     lo, hi = spec["validation"]["range"]
