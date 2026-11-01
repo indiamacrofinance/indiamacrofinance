@@ -49,6 +49,14 @@ jobs:
           uv sync
           (cd site && npm ci)
           make build
+      - name: Create the Pages project if it doesn't exist (e.g. after a rename)
+        if: steps.gate.outputs.ok == 'true'
+        run: |
+          if npx --yes wrangler@4 pages project list | grep -q "│ $PAGES_PROJECT "; then
+            echo "Pages project $PAGES_PROJECT exists"
+          else
+            npx --yes wrangler@4 pages project create "$PAGES_PROJECT" --production-branch=main
+          fi
       - name: Upload to Cloudflare Pages
         if: steps.gate.outputs.ok == 'true'
         run: npx --yes wrangler@4 pages deploy site/dist --project-name="$PAGES_PROJECT" --branch=main --commit-dirty=true
