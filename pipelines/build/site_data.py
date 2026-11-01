@@ -249,6 +249,39 @@ def transmission() -> dict:
     return {"cycles": rows[::-1]}
 
 
+def quarter_start(label: str) -> pd.Timestamp:
+    """"2026-27 Q3" -> 2026-10-01 (financial year April-March)."""
+    fy, q = label.split(" Q")
+    return pd.Timestamp(int(fy[:4]), 4, 1) + pd.DateOffset(months=3 * (int(q) - 1))
+
+
+def quarterly_projections(n: int = 10) -> dict[str, list[dict]]:
+    """RBI's quarter projections against outturns (MPR Charts III.2, IV.3): for the latest n
+    target quarters, the first and latest projection, and the outturn once published (CPI:
+    average of the three monthly y/y rates as published; GDP: y/y growth as published)."""
+    cpi = load("cpi_headline_inflation").set_index("period")["value"]
+    gdp = load("gdp_real_growth").set_index("period")["value"]
+    out = {}
+    for key, sid in (("cpi", "mpc_cpi_projection_q"), ("gdp", "mpc_gdp_projection_q")):
+        df = store.load_panel(sid)
+        rows = []
+        for q, g in df.groupby("entity"):
+            g = g.sort_values("period")
+            start = quarter_start(q)
+            if key == "cpi":
+                months = [start + pd.DateOffset(months=k) for k in range(3)]
+                actual = round(float(cpi.reindex(months).mean()), 1) if cpi.reindex(months).notna().all() else None
+            else:
+                actual = float(gdp[start]) if start in gdp.index else None
+            first, last = g.iloc[0], g.iloc[-1]
+            rows.append({"quarter": q, "start": start.strftime("%Y-%m-%d"), "projections": len(g),
+                         "first": float(first["value"]), "first_meeting": first["period"],
+                         "latest": float(last["value"]), "latest_meeting": last["period"], "actual": actual,
+                         "error": None if actual is None else round(float(last["value"]) - actual, 1)})
+        out[key] = sorted(rows, key=lambda r: r["start"])[-n:][::-1]
+    return out
+
+
 def cpi_diffusion() -> dict[str, list[dict]]:
     """Diffusion indices as stacked shares: {"headline": rows, "core": rows}, rows like the
     contribution charts (component = inflation bucket, pp = % of the basket)."""
@@ -700,6 +733,7 @@ def main() -> int:
     write_json(OUT / "cpi_contributions.json", cpi_contributions())
     write_json(OUT / "cpi_diffusion.json", cpi_diffusion())
     write_json(OUT / "transmission.json", transmission())
+    write_json(OUT / "quarterly_projections.json", quarterly_projections())
     write_json(OUT / "credit_contributions.json", credit_contribution_charts())
     write_json(OUT / "cpi_division_contributions.json", cpi_division_contributions(specs))
     write_json(OUT / "gdp_contributions.json", gdp_contributions())

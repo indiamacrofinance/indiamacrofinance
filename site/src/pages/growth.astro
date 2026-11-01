@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import LineChart from "../components/LineChart.astro";
 import ProjectionTable from "../components/ProjectionTable.astro";
+import QuarterProjectionTable from "../components/QuarterProjectionTable.astro";
 import PeriodTable from "../components/PeriodTable.astro";
 import StackedBars from "../components/StackedBars.astro";
 import fs from "node:fs";
@@ -22,6 +23,7 @@ const annual = { real: fy("gdp_real_growth_fy"), nominal: fy("gdp_nominal_growth
 const years = Object.keys(annual.real).sort().reverse();
 const fyLabel = (p) => `${p.slice(0, 4)}-${String(Number(p.slice(0, 4)) + 1).slice(2)}`;
 const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json", "utf8"));
+const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projections.json", "utf8"));
 ---
 <Base current="growth" title="Growth">
   <h1>Growth</h1>
@@ -68,6 +70,9 @@ const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json
 
   <h2 id="rbi-projections">RBI's projections and what happened</h2>
   <ProjectionTable rows={proj.gdp} label="growth" source="RBI, MPC resolutions (in the minutes); MoSPI." outturnNote="Projections are whole-year real GDP growth as stated in each MPC resolution (February meetings project the coming year). Outturn: MoSPI’s latest annual estimate and its stage. RBI’s projections up to early 2026 were made on the old 2011-12 base and the outturns are on the new 2022-23 base, so part of any gap reflects the change of base." />
+
+  <h3 id="rbi-quarterly">Quarter by quarter</h3>
+  <QuarterProjectionTable rows={qproj.gdp} label="real GDP growth (y/y)" note="Outturn: MoSPI's quarterly growth as now published. Projections made before 2026 were on the old 2011-12 base and the outturns are on the new 2022-23 base, so part of any gap reflects the change of base." source="RBI, MPC resolutions (in the minutes); MoSPI; site calculations." />
 
   <h2 id="forecasts">Forecasts and sentiment</h2>
   <div class="grid2">

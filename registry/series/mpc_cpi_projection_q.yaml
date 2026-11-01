@@ -1,0 +1,37 @@
+id: mpc_cpi_projection_q
+title: RBI's quarterly projections of CPI inflation, at each MPC meeting
+short_title: 'RBI quarterly projection: CPI inflation'
+area: money
+source:
+  agency: RBI
+  dataset: Minutes of the Monetary Policy Committee Meeting
+  url: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx
+  module: pipelines/sources/rbi/mpc_projections_q.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: Minutes published about two weeks after the meeting
+  lag_days: 14
+validation:
+  range:
+  - -30
+  - 30
+  revision_alert: 50
+pages:
+- page: inflation
+  section: rbi-projections
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: 'Panel: entity = target quarter (financial year and quarter), period = month
+  of the MPC meeting, value = projected y/y %.'
+panel: true

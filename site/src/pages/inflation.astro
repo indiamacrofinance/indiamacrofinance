@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import LineChart from "../components/LineChart.astro";
 import ProjectionTable from "../components/ProjectionTable.astro";
+import QuarterProjectionTable from "../components/QuarterProjectionTable.astro";
 import StackedBars from "../components/StackedBars.astro";
 import RankedBars from "../components/RankedBars.astro";
 import PeriodTable from "../components/PeriodTable.astro";
@@ -37,6 +38,7 @@ const contribTotal = published.data.filter((d) => d[0] >= contrib[0]?.period).ma
 const wpiYoy = latest(series("wpi_headline_index"), "yoy");
 const indent = new Set(["cpi_elec_gas_fuels_index", "cpi_vehicle_fuels_index"]);
 const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json", "utf8"));
+const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projections.json", "utf8"));
 ---
 <Base current="inflation" title="Inflation">
   <h1>Inflation</h1>
@@ -100,6 +102,9 @@ const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json
 
   <h2 id="rbi-projections">RBI's projections and what happened</h2>
   <ProjectionTable rows={proj.cpi} label="inflation" source="RBI, MPC resolutions (in the minutes); MoSPI." outturnNote="Projections are whole-year CPI inflation as stated in each MPC resolution. Outturn: the average of the twelve monthly inflation rates as published, April to March (site calculation); RBI may compute its own annual figure differently." />
+
+  <h3 id="rbi-quarterly">Quarter by quarter</h3>
+  <QuarterProjectionTable rows={qproj.cpi} label="CPI inflation (y/y)" note="Outturn: the average of the quarter's three monthly inflation rates as published at the time (2012 base in 2025, 2024 base from 2026)." source="RBI, MPC resolutions (in the minutes); MoSPI; site calculations." />
 
   <h2 id="momentum">Momentum or base effect?</h2>
   <StackedBars title="Why the inflation rate changed this month" subtitle="Change in 12-month CPI inflation (dots), split into this month's price change and last year's (log points, close to percentage points)"

@@ -1,0 +1,19 @@
+---
+// RBI's quarter-by-quarter projections against outturns (rows from quarterly_projections.json).
+import { num, period } from "../lib/format.js";
+const { rows, label, note, source } = Astro.props;
+const sign = (v) => (v === null || v === undefined ? "–" : `${v > 0 ? "+" : ""}${num(v, 1)}`);
+---
+<div class="scroll"><table class="data">
+  <thead><tr><th>Quarter</th><th>First projected</th><th>Latest projection</th><th>Outturn</th><th>Latest minus outturn</th></tr></thead>
+  <tbody>
+    {rows.map((r) => <tr>
+      <td>{r.quarter.replace(" Q", ", Q")}</td>
+      <td>{num(r.first, 1)}% <span class="muted">({period(r.first_meeting, "M")})</span></td>
+      <td>{num(r.latest, 1)}% <span class="muted">({period(r.latest_meeting, "M")}{r.projections > 2 ? `, ${r.projections} projections` : ""})</span></td>
+      <td>{r.actual === null ? "not yet" : `${num(r.actual, 1)}%`}</td>
+      <td>{sign(r.error)}</td>
+    </tr>)}
+  </tbody>
+</table></div>
+<p class="chart-sub">RBI's {label} projection for each quarter as stated in successive MPC resolutions; the meeting month is in brackets. {note} Source: {source}</p>

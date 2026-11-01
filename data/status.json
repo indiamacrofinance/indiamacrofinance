@@ -1637,9 +1637,23 @@
     "last_error": null,
     "last_period": "2026-10-01"
   },
+  "mpc_cpi_projection_q": {
+    "last_attempt": "2026-11-01T14:53:07+00:00",
+    "last_success": "2026-11-01T14:53:07+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-01"
+  },
   "mpc_gdp_projection": {
     "last_attempt": "2026-10-30T18:33:34+00:00",
     "last_success": "2026-10-30T18:33:34+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-01"
+  },
+  "mpc_gdp_projection_q": {
+    "last_attempt": "2026-11-01T14:53:07+00:00",
+    "last_success": "2026-11-01T14:53:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"

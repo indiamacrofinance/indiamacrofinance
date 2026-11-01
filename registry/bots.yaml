@@ -15,7 +15,7 @@ bots:
     sources: [mospi_cpi, mospi_cpi_food, mospi_iip, mospi_nas, mospi_nas_oldbase, mospi_nas_annual, mospi_nas_annual_sectors, mospi_plfs, mospi_states, labourbureau_cpi_iw, mospi_cpi_items, derived_core_cpi, derived_cpi_underlying]
   rbi:
     when: "Mon-Sat 18:30"
-    sources: [rbi_wss, rbi_payments, rbi_sectoral_credit, rbi_lending_rates, rbi_bop, rbi_external_debt, rbi_ecb, rbi_services_trade, rbi_surveys, rbi_iesh, rbi_mpc_decisions, fbil_refrates, derived_credit_deposit, derived_credit_contributions, rbi_general_government, rbi_state_finances, derived_state_fiscal_ratios]
+    sources: [rbi_wss, rbi_payments, rbi_sectoral_credit, rbi_lending_rates, rbi_bop, rbi_external_debt, rbi_ecb, rbi_services_trade, rbi_surveys, rbi_iesh, rbi_mpc_decisions, rbi_mpc_projections_q, fbil_refrates, derived_credit_deposit, derived_credit_contributions, rbi_general_government, rbi_state_finances, derived_state_fiscal_ratios]
   ministries:
     when: "Mon-Sat 19:30, and daily 13:00"
     sources: [commerce_trade, gst_collections, cga_monthly_accounts, cga_tax_heads, oea_wpi, oea_core_industries, ppac_consumption, siam_sales, fada_retail, gst_ewaybills, aai_traffic, bis_eer, budget_glance, budget_demands, amfi_monthly, intl_peers]
