@@ -298,6 +298,9 @@ def main() -> int:
         print(f"draft passes the checker. Preview: {out}")
         return 0
 
+    if not cfg["newsletter"].get("enabled") and not args.preview:
+        print("newsletter.enabled is false (on hold): nothing drafted or sent")
+        return 0
     sent = json.loads(SENT.read_text()) if SENT.exists() else {}
     if not args.preview and on.isoformat() in sent:
         print(f"morning email for {on} already sent ({sent[on.isoformat()]['id']}); skipping")

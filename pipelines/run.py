@@ -37,6 +37,29 @@ def discover() -> dict[str, Source]:
     return found
 
 
+CATCH_UP_DAYS = 2
+
+
+def catch_up(sources: dict[str, Source]) -> list[Source]:
+    """What a run from India should cover: every manual source; every automatic source with a
+    series that is stale or has not succeeded for CATCH_UP_DAYS (a bot failed or did not run);
+    and every derived source, so measures recompute from the fresh inputs."""
+    from datetime import datetime, timedelta, timezone
+    status = store.load_status()
+    cutoff = datetime.now(timezone.utc) - timedelta(days=CATCH_UP_DAYS)
+
+    def behind(sid: str) -> bool:
+        st = status.get(sid, {})
+        ok = st.get("last_success")
+        return st.get("stale", False) or not ok or datetime.fromisoformat(ok) < cutoff
+
+    out = []
+    for src in sources.values():
+        if src.derived or fetch_mode(src) == "manual" or any(behind(s) for s in src.series_ids):
+            out.append(src)
+    return out
+
+
 def fetch_mode(src: Source) -> str:
     """A source is manual if any of its registered series is fetch: manual."""
     specs = registry.all_series()
@@ -128,6 +151,9 @@ def main() -> int:
     parser.add_argument("targets", nargs="*", help="source names or series ids")
     parser.add_argument("--fetch", choices=["auto", "manual"], help="run all sources of this fetch mode")
     parser.add_argument("--bot", help="run one data bot's sources (registry/bots.yaml)")
+    parser.add_argument("--catch-up", action="store_true",
+                        help="manual sources, automatic sources that are stale or have not succeeded\n"
+                             "for CATCH_UP_DAYS, and all derived sources (make india-update)")
     parser.add_argument("--list", action="store_true", help="list sources and their series")
     args = parser.parse_args()
 
@@ -140,6 +166,9 @@ def main() -> int:
     chosen: list[Source] = []
     if args.fetch:
         chosen = [s for s in sources.values() if fetch_mode(s) == args.fetch]
+    if args.catch_up:
+        chosen = catch_up(sources)
+        print("catch-up: " + ", ".join(s.name for s in chosen if not s.derived) + " (+ derived)")
     targets = list(args.targets)
     if args.bot:
         import yaml

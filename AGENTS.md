@@ -63,7 +63,7 @@ make setup          # uv sync (Python) + npm install (site)
 make check          # registry validation + name check + tests
 make update SOURCE=<series_id>   # fetch → validate → publish one series
 make update-auto    # all `fetch: auto` series
-make india-update   # all `fetch: manual` series (run from a machine in India), then open a PR
+make india-update   # from India: manual sources + stale automatic ones + derived; pushes to main
 make build          # build site JSON + Astro site
 make dev            # local preview
 ```

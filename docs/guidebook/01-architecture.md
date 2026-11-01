@@ -84,7 +84,7 @@ Data is refreshed by **data bots**, modelled on econvitals' data repo: one workf
 GitHub-hosted runners are in the US. NSE, CCIL and some gov.in portals often block them. Every series yaml says `fetch: auto` or `fetch: manual`:
 
 - `auto` runs in Actions.
-- `manual` runs with `make india-update` on any machine in India. It runs all manual sources, validates them, commits on a branch, and opens a PR. Expected cadence is once per working day, about 5 minutes.
+- `manual` runs with `make india-update` on any machine in India: every manual source, plus any automatic source that is stale or has not succeeded for two days, plus all derived sources; it commits and pushes to `main` directly (since 2026-11-02; before that it opened a PR). Expected cadence: daily.
 
 When an `auto` source starts failing with 403s or timeouts from Actions but works from India, flip it to `manual` and note it in `03-data-sources.md`. A later free upgrade is to register an always-on Mac as a **self-hosted runner**, which runs `manual` sources on a schedule.
 
@@ -97,3 +97,14 @@ When an `auto` source starts failing with 403s or timeouts from Actions but work
 5. **Indian conventions**: FY quarters, ₹ lakh crore, crore ↔ billion toggle.
 6. **Citable and downloadable**: every chart has CSV download and a "cite this" line (.dta later).
 7. **Built for more than one language**: no hard-coded UI strings, so a Hindi version is possible later.
+
+## Slow history backfill (RBI weekly supplement)
+
+`rbi_wss` also walks back through RBI's WSS archive to April 2017, a few files per table per
+run (`TRICKLE` in `pipelines/sources/rbi/wss.py`), recording progress in
+`data/backfill/rbi_wss.json`. It stops for the day at the first non-workbook response (RBI's
+server shows a captcha under heavy downloading) and skips files with layouts it cannot parse.
+At the daily rbi-bot run it reaches 2017 in roughly 6-8 weeks (liquidity, which needs every
+file, takes longest). The long M3, CD/CP and liquidity histories it builds are inputs for the
+planned CPI shock decomposition and CD/CP spread models (08-original-measures.md, Planned).
+

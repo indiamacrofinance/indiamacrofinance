@@ -15,10 +15,17 @@ Archive pages list every week's table as XLSX:
 Files are printed tables, so rows are found by their label and dates by their header.
 The first run backfills BACKFILL_WEEKS files per section; later runs take RECENT_WEEKS.
 Overlapping weeks are harmless: publishing upserts by period.
+
+Slow history backfill: each run also takes a few older files per section (TRICKLE: every
+stride-th file, n per run), working back through the archive to April 2017, and records how
+far it got in data/backfill/rbi_wss.json. RBI's file server answered heavy downloading with a
+captcha in October 2026, so this stays small and stops at the first non-workbook response.
+A backfill file that cannot be parsed (older layouts) is skipped and never fails the run.
 """
 from __future__ import annotations
 
 import io
+import json
 import re
 from datetime import date, datetime
 
@@ -26,10 +33,34 @@ import pandas as pd
 
 from pipelines.core import Raw, Source
 from pipelines.core.http import fetch_raw, get
-from pipelines.core.store import load_series
+from pipelines.core.store import ROOT, load_series
 
 ARCHIVE = "https://www.rbi.org.in/Scripts/WSSViewDetail.aspx?TYPE=Section&PARAM1={n}"
 BACKFILL_WEEKS, RECENT_WEEKS = 60, 6
+# section -> (stride, files per run). Fortnightly tables are repeated in the off week, so every
+# second file covers them; the rates table carries six weeks per file; liquidity is daily.
+TRICKLE = {2: (1, 4), 3: (2, 5), 4: (4, 3), 7: (2, 5), 8: (2, 4), 13: (2, 5), 14: (2, 5), 25: (1, 8)}
+LEDGER = ROOT / "data" / "backfill" / "rbi_wss.json"
+LINK = re.compile(r"https://rbidocs\.rbi\.org\.in/rdocs/Wss/DOCs/\d+T_[0-9A-F]+\.XLSX")
+
+
+def link_date(url: str) -> str:
+    """'.../6T_14042017...XLSX' -> '2017-04-14'."""
+    d = re.search(r"T_(\d{2})(\d{2})(\d{4})", url)
+    return f"{d.group(3)}-{d.group(2)}-{d.group(1)}"
+
+
+def trickle_picks(links: list[str], skip: int, oldest_done: str | None, stride: int, n: int) -> list[str]:
+    """The next n backfill files: older than the recent files (links[:skip]) and than the oldest
+    already attempted, every stride-th file by position in the archive (newest first)."""
+    out = []
+    for i, url in enumerate(links):
+        if i < skip or i % stride or (oldest_done and link_date(url) >= oldest_done):
+            continue
+        out.append(url)
+        if len(out) == n:
+            break
+    return out
 SECTION = {2: "fx", 3: "banks", 4: "rates", 7: "money", 8: "reserve_money", 25: "liquidity", 13: "cd", 14: "cp"}
 
 FX_ROWS = {"Total Reserves": "fx_reserves_total", "Foreign Currency Assets": "fx_reserves_fca",
@@ -189,7 +220,11 @@ def parse_liquidity(df: pd.DataFrame) -> list[dict]:
         if day is None:
             continue
         v = r[net_col]
-        v = 0.0 if isinstance(v, str) and v.strip() in {"-", "–"} else float(v)
+        if isinstance(v, str):          # "-" for nil; 2017 files print "–2,470.91" (en dash as minus)
+            v = v.strip().replace("–", "-").replace("−", "-").replace(",", "")
+            v = 0.0 if v == "-" else float(v)
+        else:
+            v = float(v)
         rows.append({"series_id": "liquidity_surplus", "period": day,
                      "value": round(-v / 1e5, 4)})
     return rows
@@ -248,26 +283,63 @@ class RbiWSS(Source):
                   *SECTION_SERIES[25], *SECTION_SERIES[13], *SECTION_SERIES[14])
 
     def fetch(self) -> list[Raw]:
-        raws = []
+        raws, links_by = [], {}
         for n in SECTION:
             page = get(ARCHIVE.format(n=n)).text
-            links = list(dict.fromkeys(re.findall(
-                r'https://rbidocs\.rbi\.org\.in/rdocs/Wss/DOCs/\d+T_[0-9A-F]+\.XLSX', page)))
+            links = list(dict.fromkeys(LINK.findall(page)))
             if not links:
                 raise RuntimeError(f"no WSS XLSX links on section {n} archive page")
             short = any(len(load_series(s)) < MIN_HISTORY for s in SECTION_SERIES[n])
             take = BACKFILL_WEEKS if short else RECENT_WEEKS
+            links_by[n] = (links, take)
             for url in links[:take]:
                 raws.append(fetch_raw(url, suffix=".xlsx"))
+        self.backfill_urls = set()
+        raws += self.trickle(links_by)
+        return raws
+
+    def trickle(self, links_by: dict[int, tuple[list[str], int]]) -> list[Raw]:
+        ledger = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
+        raws = []
+        for n, (stride, per_run) in TRICKLE.items():
+            links, take = links_by[n]
+            if str(n) not in ledger:                     # start below what is already stored
+                firsts = [load_series(sid)["period"].min() for sid in SECTION_SERIES[n]]
+                firsts = [f for f in firsts if isinstance(f, str)]
+                if firsts:
+                    ledger[str(n)] = min(firsts)
+            for url in trickle_picks(links, take, ledger.get(str(n)), stride, per_run):
+                raw = fetch_raw(url, suffix=".xlsx")
+                if not raw.content.startswith(b"PK"):          # captcha or error page: stop for today
+                    print(f"  WSS backfill: section {n} answered with a non-workbook; stopping until the next run")
+                    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+                    LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
+                    return raws
+                raws.append(raw)
+                self.backfill_urls.add(raw.url)
+                ledger[str(n)] = link_date(url)
+        LEDGER.parent.mkdir(parents=True, exist_ok=True)
+        LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
+        if raws:
+            print(f"  WSS backfill: {len(raws)} older files; reached " +
+                  ", ".join(f"s{k} {v}" for k, v in sorted(ledger.items(), key=lambda x: int(x[0]))))
         return raws
 
     def parse(self, raws: list[Raw]) -> pd.DataFrame:
-        rows = []
+        rows, skipped = [], 0
+        backfill = getattr(self, "backfill_urls", set())
         for raw in raws:
-            df = pd.read_excel(io.BytesIO(raw.content), header=None).dropna(how="all").dropna(axis=1, how="all")
-            df = df.reset_index(drop=True)
-            df.columns = range(df.shape[1])
-            rows += PARSERS[section_of(df)](df)
+            try:
+                df = pd.read_excel(io.BytesIO(raw.content), header=None).dropna(how="all").dropna(axis=1, how="all")
+                df = df.reset_index(drop=True)
+                df.columns = range(df.shape[1])
+                rows += PARSERS[section_of(df)](df)
+            except Exception:  # noqa: BLE001 - an old layout must not fail today's data
+                if raw.url not in backfill:
+                    raise
+                skipped += 1
+        if skipped:
+            print(f"  WSS backfill: {skipped} older file(s) could not be parsed (older layout); skipped")
         out = pd.DataFrame(rows)
         # Several files cover the same week (the rates table repeats recent weeks), and RBI
         # revises earlier prints. Raws arrive newest publication first, so keep the first

@@ -55,7 +55,7 @@ newsletter:
   # from the stored series, sent through Buttondown. pipelines/newsletter/morning.py;
   # runbook 06-operations-runbook.md ("Newsletter").
   provider: "buttondown"
-  enabled: true           # sends the morning email to existing subscribers
+  enabled: false          # ON HOLD since 2026-11-02: no email is drafted or sent (true = the 07:30 IST job writes and sends)
   public: false           # sign-up box, About section and privacy note on the site (hidden for now, 2026-11-01)
   buttondown_username: "econvitalsindia"
   writer: "api"           # "api": the 07:30 IST workflow writes and sends it (Anthropic API, paid)

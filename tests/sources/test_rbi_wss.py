@@ -59,3 +59,14 @@ def test_paper_rates():
     rows = {r["series_id"]: r for r in parse_paper(df, "cd")}
     assert rows["cd_outstanding"] == {"series_id": "cd_outstanding", "period": "2026-09-30", "value": 5.7406}
     assert rows["cd_rate_low"]["value"] == 5.77 and rows["cd_rate_high"]["value"] == 7.33
+
+
+def test_trickle_picks():
+    from pipelines.sources.rbi.wss import link_date, trickle_picks
+    base = "https://rbidocs.rbi.org.in/rdocs/Wss/DOCs/6T_{}AB.XLSX"
+    links = [base.format(d) for d in ("30102026", "23102026", "16102026", "09102026", "02102026", "25092026", "18092026")]
+    assert link_date(links[0]) == "2026-10-30"
+    # Skip the 2 recent files; every 2nd file by position; 2 per run.
+    assert [link_date(u) for u in trickle_picks(links, 2, None, 2, 2)] == ["2026-10-16", "2026-10-02"]
+    # Next run resumes below the oldest attempted.
+    assert [link_date(u) for u in trickle_picks(links, 2, "2026-10-02", 2, 2)] == ["2026-09-18"]

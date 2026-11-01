@@ -26,14 +26,13 @@ update-auto:
 
 # Run from a machine in India: fetches every `fetch: manual` series and opens a PR.
 india-update:
-	$(PY) -m pipelines.run --fetch manual; \
-	git add data; \
-	if git diff --cached --quiet; then echo "no changes"; exit 0; fi; \
-	branch=india-update-$$(date +%Y%m%d-%H%M); \
-	git switch -c $$branch && \
-	git commit -m "data: manual (India) update $$(date +%F)" && \
-	git push -u origin $$branch && \
-	gh pr create --fill --label indicator && git switch -
+	git pull -q --rebase origin main
+	-$(PY) -m pipelines.run --catch-up
+	git add data
+	@if git diff --cached --quiet; then echo "india-update: no data changes"; else \
+	  git commit -q -m "data: india-update $$(date +%F)" && \
+	  git pull -q --rebase -X theirs origin main && git push -q origin main && \
+	  echo "india-update: pushed to main; the site redeploys in a few minutes"; fi
 
 build:
 	$(PY) -m pipelines.build.site_data

@@ -71,7 +71,7 @@ def test_no_keys_means_nothing_sent(monkeypatch, capsys, tmp_path):
     monkeypatch.setattr(morning, "SENT", tmp_path / "sent.json")
     monkeypatch.setattr(morning, "send", lambda *a: (_ for _ in ()).throw(AssertionError("sent")))
     cfg = morning.config()
-    cfg["newsletter"]["writer"] = "api"
+    cfg["newsletter"].update(writer="api", enabled=True)
     monkeypatch.setattr(morning, "config", lambda: cfg)
     monkeypatch.setattr("sys.argv", ["morning", "auto", "--date", "2026-10-29"])
     assert morning.main() == 0
@@ -82,13 +82,26 @@ def test_auto_does_nothing_in_manual_mode(monkeypatch, capsys, tmp_path):
     monkeypatch.setattr(morning, "SENT", tmp_path / "sent.json")      # not the real record
     monkeypatch.setattr(morning, "compose", lambda *a, **k: (_ for _ in ()).throw(AssertionError("composed")))
     cfg = morning.config()
-    cfg["newsletter"]["writer"] = "manual"
+    cfg["newsletter"].update(writer="manual", enabled=True)
     monkeypatch.setattr(morning, "config", lambda: cfg)
     monkeypatch.setattr("sys.argv", ["morning", "auto", "--date", "2026-10-29"])
     assert morning.main() == 0 and "written by hand" in capsys.readouterr().out
 
 
+def test_on_hold_drafts_and_sends_nothing(monkeypatch, capsys, tmp_path):
+    monkeypatch.setattr(morning, "SENT", tmp_path / "sent.json")
+    monkeypatch.setattr(morning, "compose", lambda *a, **k: (_ for _ in ()).throw(AssertionError("composed")))
+    cfg = morning.config()
+    cfg["newsletter"].update(writer="api", enabled=False)
+    monkeypatch.setattr(morning, "config", lambda: cfg)
+    monkeypatch.setattr("sys.argv", ["morning", "auto", "--date", "2026-10-29"])
+    assert morning.main() == 0 and "on hold" in capsys.readouterr().out
+
+
 def manual_dirs(monkeypatch, tmp_path):
+    cfg = morning.config()
+    cfg["newsletter"]["enabled"] = True            # these tests exercise sending, on hold or not
+    monkeypatch.setattr(morning, "config", lambda: cfg)
     monkeypatch.setattr(morning, "PACKS", tmp_path / "packs")
     monkeypatch.setattr(morning, "DRAFTS", tmp_path / "drafts")
     monkeypatch.setattr(morning, "SENT", tmp_path / "sent.json")

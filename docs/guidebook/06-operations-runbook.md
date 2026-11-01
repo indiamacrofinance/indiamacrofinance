@@ -3,7 +3,7 @@
 ## Daily routine (about 10 minutes, one person)
 
 1. **Morning (by 10:00 IST):** open the Status page. Triage any new `scraper-broken` issue: assign it, or fix it with `playbooks/fix-scraper.md`.
-2. **Evening (after 19:00 IST):** run `make india-update` from a machine in India. It opens a PR. Check the diff (new periods only, or revisions?) and merge.
+2. **Evening (after 19:00 IST):** run `make india-update` from a machine in India. It pulls, runs every manual source, re-runs any automatic source that is stale or has not succeeded for two days (`pipelines/run.py --catch-up`), recomputes all derived measures, and pushes the data straight to `main` (validation has already run; revisions over a series' threshold still open a `large-revision` issue). Nothing to merge. If a source fails, the rest still publish and the failure shows on the Status page.
 3. **If a briefing PR is open:** review and merge it (see `07-editorial-policy.md`). Unmerged drafts expire after 24 h.
 
 ## Release days
