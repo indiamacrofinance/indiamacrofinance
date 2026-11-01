@@ -1,0 +1,4247 @@
+{
+ "facts": {
+  "calendar.today": "no scheduled releases",
+  "calendar.next": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026",
+  "calendar.past_week": "Index of Industrial Production (Sep 2026) on 28 Oct 2026; Union government monthly accounts (Sep 2026) on 30 Oct 2026",
+  "calendar.next_week": "no scheduled releases",
+  "calendar.past_month": "Index of Industrial Production (Sep 2026) on 28 Oct 2026; Union government monthly accounts (Sep 2026) on 30 Oct 2026",
+  "calendar.next_month": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026; Wholesale Price Index (Oct 2026) on 16 Nov 2026; Index of Core Industries (Oct 2026) on 20 Nov 2026; Union government monthly accounts (Oct 2026) on 30 Nov 2026; Index of Industrial Production (Oct 2026) on 30 Nov 2026; GDP, quarterly estimates (Q2 FY27) on 30 Nov 2026",
+  "calendar.next_highlight": "MPC policy decision (meeting 2–4 Dec) on 4 Dec 2026",
+  "nifty50_close.latest": "23,053.10",
+  "nifty50_close.latest_abs": "23,053.10",
+  "nifty50_close.latest_period": "30 Oct 2026",
+  "nifty50_close.prev": "22,936.75",
+  "nifty50_close.prev_abs": "22,936.75",
+  "nifty50_close.prev_period": "29 Oct 2026",
+  "nifty50_close.change": "116.35",
+  "nifty50_close.direction": "rose",
+  "nifty50_close.direction_noun": "an increase",
+  "nifty50_close.change_phrase": "up 116.35",
+  "nifty50_close.pct_phrase": "up 0.51%",
+  "nifty50_close.week_phrase": "up 2.00%",
+  "nifty50_close.month_phrase": "up 2.81%",
+  "nifty50_close.year_ago": "25,877.85",
+  "nifty50_close.year_ago_abs": "25,877.85",
+  "nifty50_close.year_ago_period": "30 Oct 2025",
+  "nifty50_close.change_yoy": "2,824.75",
+  "nifty50_close.direction_yoy": "fell",
+  "nifty50_close.change_phrase_yoy": "down 2,824.75",
+  "sensex_close.latest": "74,459.53",
+  "sensex_close.latest_abs": "74,459.53",
+  "sensex_close.latest_period": "30 Oct 2026",
+  "sensex_close.prev": "74,151.04",
+  "sensex_close.prev_abs": "74,151.04",
+  "sensex_close.prev_period": "29 Oct 2026",
+  "sensex_close.change": "308.49",
+  "sensex_close.direction": "rose",
+  "sensex_close.direction_noun": "an increase",
+  "sensex_close.change_phrase": "up 308.49",
+  "sensex_close.pct_phrase": "up 0.42%",
+  "sensex_close.week_phrase": "up 1.83%",
+  "sensex_close.month_phrase": "up 3.55%",
+  "sensex_close.year_ago": "84,404.46",
+  "sensex_close.year_ago_abs": "84,404.46",
+  "sensex_close.year_ago_period": "30 Oct 2025",
+  "sensex_close.change_yoy": "9,944.93",
+  "sensex_close.direction_yoy": "fell",
+  "sensex_close.change_phrase_yoy": "down 9,944.93",
+  "indiavix_close.latest": "15.30",
+  "indiavix_close.latest_abs": "15.30",
+  "indiavix_close.latest_period": "30 Oct 2026",
+  "indiavix_close.prev": "15.12",
+  "indiavix_close.prev_abs": "15.12",
+  "indiavix_close.prev_period": "29 Oct 2026",
+  "indiavix_close.change": "0.18",
+  "indiavix_close.direction": "rose",
+  "indiavix_close.direction_noun": "an increase",
+  "indiavix_close.change_phrase": "up 0.18",
+  "indiavix_close.pct_phrase": "up 1.19%",
+  "indiavix_close.week_phrase": "down 9.25%",
+  "indiavix_close.month_phrase": "up 5.81%",
+  "indiavix_close.year_ago": "12.07",
+  "indiavix_close.year_ago_abs": "12.07",
+  "indiavix_close.year_ago_period": "30 Oct 2025",
+  "indiavix_close.change_yoy": "3.23",
+  "indiavix_close.direction_yoy": "rose",
+  "indiavix_close.change_phrase_yoy": "up 3.23",
+  "usdinr_ref.latest": "95.25",
+  "usdinr_ref.latest_abs": "95.25",
+  "usdinr_ref.latest_period": "30 Oct 2026",
+  "usdinr_ref.prev": "95.37",
+  "usdinr_ref.prev_abs": "95.37",
+  "usdinr_ref.prev_period": "29 Oct 2026",
+  "usdinr_ref.change": "0.12",
+  "usdinr_ref.direction": "fell",
+  "usdinr_ref.direction_noun": "a decrease",
+  "usdinr_ref.change_phrase": "down 0.12",
+  "usdinr_ref.pct_phrase": "down 0.13%",
+  "usdinr_ref.week_phrase": "up 0.32%",
+  "usdinr_ref.month_phrase": "down 0.77%",
+  "usdinr_ref.year_ago": "88.60",
+  "usdinr_ref.year_ago_abs": "88.60",
+  "usdinr_ref.year_ago_period": "30 Oct 2025",
+  "usdinr_ref.change_yoy": "6.64",
+  "usdinr_ref.direction_yoy": "rose",
+  "usdinr_ref.change_phrase_yoy": "up 6.64",
+  "gsec_10y_yield.latest": "7.39%",
+  "gsec_10y_yield.latest_abs": "7.39%",
+  "gsec_10y_yield.latest_period": "29 Oct 2026",
+  "gsec_10y_yield.prev": "7.44%",
+  "gsec_10y_yield.prev_abs": "7.44%",
+  "gsec_10y_yield.prev_period": "28 Oct 2026",
+  "gsec_10y_yield.change": "0.05 percentage points",
+  "gsec_10y_yield.direction": "fell",
+  "gsec_10y_yield.direction_noun": "a decrease",
+  "gsec_10y_yield.change_phrase": "down 0.05 percentage points",
+  "gsec_10y_yield.bp_phrase": "down 5 basis points",
+  "term_spread_10y_repo.latest": "2.02%",
+  "term_spread_10y_repo.latest_abs": "2.02%",
+  "term_spread_10y_repo.latest_period": "23 Oct 2026",
+  "term_spread_10y_repo.prev": "2.00%",
+  "term_spread_10y_repo.prev_abs": "2.00%",
+  "term_spread_10y_repo.prev_period": "22 Oct 2026",
+  "term_spread_10y_repo.change": "0.02 percentage points",
+  "term_spread_10y_repo.direction": "rose",
+  "term_spread_10y_repo.direction_noun": "an increase",
+  "term_spread_10y_repo.change_phrase": "up 0.02 percentage points",
+  "term_spread_10y_repo.bp_phrase": "up 2 basis points",
+  "term_spread_10y_repo.week_phrase": "up 12 basis points",
+  "term_spread_10y_repo.month_phrase": "up 13 basis points",
+  "term_spread_10y_repo.year_ago": "0.99%",
+  "term_spread_10y_repo.year_ago_abs": "0.99%",
+  "term_spread_10y_repo.year_ago_period": "23 Oct 2025",
+  "term_spread_10y_repo.change_yoy": "1.03 percentage points",
+  "term_spread_10y_repo.direction_yoy": "rose",
+  "term_spread_10y_repo.change_phrase_yoy": "up 1.03 percentage points",
+  "brent_usd.latest": "$114.88 a barrel",
+  "brent_usd.latest_abs": "$114.88 a barrel",
+  "brent_usd.latest_period": "29 Oct 2026",
+  "brent_usd.prev": "$115.32 a barrel",
+  "brent_usd.prev_abs": "$115.32 a barrel",
+  "brent_usd.prev_period": "28 Oct 2026",
+  "brent_usd.change": "0.44",
+  "brent_usd.direction": "fell",
+  "brent_usd.direction_noun": "a decrease",
+  "brent_usd.change_phrase": "down 0.44",
+  "brent_usd.pct_phrase": "down 0.38%",
+  "brent_usd.week_phrase": "up 1.51%",
+  "brent_usd.month_phrase": "up 12.29%",
+  "brent_usd.year_ago": "$64.92 a barrel",
+  "brent_usd.year_ago_abs": "$64.92 a barrel",
+  "brent_usd.year_ago_period": "29 Oct 2025",
+  "brent_usd.change_yoy": "49.96",
+  "brent_usd.direction_yoy": "rose",
+  "brent_usd.change_phrase_yoy": "up 49.96",
+  "gold_usd_oz.latest": "$4,031 an ounce",
+  "gold_usd_oz.latest_abs": "$4,031 an ounce",
+  "gold_usd_oz.latest_period": "29 Oct 2026",
+  "gold_usd_oz.prev": "$4,052 an ounce",
+  "gold_usd_oz.prev_abs": "$4,052 an ounce",
+  "gold_usd_oz.prev_period": "28 Oct 2026",
+  "gold_usd_oz.change": "20.20",
+  "gold_usd_oz.direction": "fell",
+  "gold_usd_oz.direction_noun": "a decrease",
+  "gold_usd_oz.change_phrase": "down 20.20",
+  "gold_usd_oz.pct_phrase": "down 0.50%",
+  "gold_usd_oz.week_phrase": "down 0.71%",
+  "gold_usd_oz.month_phrase": "down 4.07%",
+  "gold_usd_oz.year_ago": "$4,001 an ounce",
+  "gold_usd_oz.year_ago_abs": "$4,001 an ounce",
+  "gold_usd_oz.year_ago_period": "29 Oct 2025",
+  "gold_usd_oz.change_yoy": "30.70",
+  "gold_usd_oz.direction_yoy": "rose",
+  "gold_usd_oz.change_phrase_yoy": "up 30.70",
+  "repo_rate.latest": "5.50%",
+  "repo_rate.latest_abs": "5.50%",
+  "repo_rate.latest_period": "30 Oct 2026",
+  "repo_rate.prev": "5.50%",
+  "repo_rate.prev_abs": "5.50%",
+  "repo_rate.prev_period": "29 Oct 2026",
+  "repo_rate.change": "0.00 percentage points",
+  "repo_rate.direction": "was unchanged",
+  "repo_rate.direction_noun": "no change",
+  "repo_rate.change_phrase": "unchanged",
+  "repo_rate.bp_phrase": "unchanged",
+  "repo_rate.week_phrase": "unchanged",
+  "repo_rate.month_phrase": "up 25 basis points",
+  "liquidity_surplus.latest": "₹1.72 lakh crore",
+  "liquidity_surplus.latest_abs": "₹1.72 lakh crore",
+  "liquidity_surplus.latest_period": "25 Oct 2026",
+  "liquidity_surplus.prev": "₹1.72 lakh crore",
+  "liquidity_surplus.prev_abs": "₹1.72 lakh crore",
+  "liquidity_surplus.prev_period": "24 Oct 2026",
+  "liquidity_surplus.change": "₹0.00 lakh crore",
+  "liquidity_surplus.direction": "rose",
+  "liquidity_surplus.direction_noun": "an increase",
+  "liquidity_surplus.change_phrase": "up ₹0.00 lakh crore",
+  "liquidity_surplus.pct_phrase": "up 0.15%",
+  "liquidity_surplus.week_phrase": "up 28.00%",
+  "liquidity_surplus.month_phrase": "down 13.28%",
+  "liquidity_surplus.year_ago": "₹0.65 lakh crore",
+  "liquidity_surplus.year_ago_abs": "₹0.65 lakh crore",
+  "liquidity_surplus.year_ago_period": "25 Oct 2025",
+  "liquidity_surplus.change_yoy": "₹1.07 lakh crore",
+  "liquidity_surplus.direction_yoy": "rose",
+  "liquidity_surplus.change_phrase_yoy": "up ₹1.07 lakh crore",
+  "fpi_total_net.latest": "−₹24,475 crore",
+  "fpi_total_net.latest_abs": "₹24,475 crore",
+  "fpi_total_net.latest_period": "October 2026",
+  "fpi_total_net.prev": "−₹58,443 crore",
+  "fpi_total_net.prev_abs": "₹58,443 crore",
+  "fpi_total_net.prev_period": "September 2026",
+  "fpi_total_net.change": "₹33,968 crore",
+  "fpi_total_net.direction": "rose",
+  "fpi_total_net.direction_noun": "an increase",
+  "fpi_total_net.change_phrase": "up ₹33,968 crore",
+  "fpi_total_net.year_ago": "₹35,598 crore",
+  "fpi_total_net.year_ago_abs": "₹35,598 crore",
+  "fpi_total_net.year_ago_period": "October 2025",
+  "fpi_total_net.change_yoy": "₹60,073 crore",
+  "fpi_total_net.direction_yoy": "fell",
+  "fpi_total_net.change_phrase_yoy": "down ₹60,073 crore",
+  "mf_net_inflow_equity.latest": "₹38,307 crore",
+  "mf_net_inflow_equity.latest_abs": "₹38,307 crore",
+  "mf_net_inflow_equity.latest_period": "September 2026",
+  "mf_net_inflow_equity.prev": "₹29,329 crore",
+  "mf_net_inflow_equity.prev_abs": "₹29,329 crore",
+  "mf_net_inflow_equity.prev_period": "August 2026",
+  "mf_net_inflow_equity.change": "₹8,978 crore",
+  "mf_net_inflow_equity.direction": "rose",
+  "mf_net_inflow_equity.direction_noun": "an increase",
+  "mf_net_inflow_equity.change_phrase": "up ₹8,978 crore",
+  "mf_net_inflow_equity.pct_phrase": "up 30.61%",
+  "mf_net_inflow_equity.year_ago": "₹30,422 crore",
+  "mf_net_inflow_equity.year_ago_abs": "₹30,422 crore",
+  "mf_net_inflow_equity.year_ago_period": "September 2025",
+  "mf_net_inflow_equity.change_yoy": "₹7,885 crore",
+  "mf_net_inflow_equity.direction_yoy": "rose",
+  "mf_net_inflow_equity.change_phrase_yoy": "up ₹7,885 crore",
+  "cpi_headline_inflation.latest": "5.54%",
+  "cpi_headline_inflation.latest_abs": "5.54%",
+  "cpi_headline_inflation.latest_period": "September 2026",
+  "cpi_headline_inflation.prev": "4.83%",
+  "cpi_headline_inflation.prev_abs": "4.83%",
+  "cpi_headline_inflation.prev_period": "August 2026",
+  "cpi_headline_inflation.change": "0.71 percentage points",
+  "cpi_headline_inflation.direction": "rose",
+  "cpi_headline_inflation.direction_noun": "an increase",
+  "cpi_headline_inflation.change_phrase": "up 0.71 percentage points",
+  "cpi_headline_inflation.bp_phrase": "up 71 basis points",
+  "cpi_headline_inflation.year_ago": "1.44%",
+  "cpi_headline_inflation.year_ago_abs": "1.44%",
+  "cpi_headline_inflation.year_ago_period": "September 2025",
+  "cpi_headline_inflation.change_yoy": "4.10 percentage points",
+  "cpi_headline_inflation.direction_yoy": "rose",
+  "cpi_headline_inflation.change_phrase_yoy": "up 4.10 percentage points",
+  "cpi_core_index:yoy.latest": "4.33%",
+  "cpi_core_index:yoy.latest_abs": "4.33%",
+  "cpi_core_index:yoy.latest_period": "September 2026",
+  "cpi_core_index:yoy.prev": "4.15%",
+  "cpi_core_index:yoy.prev_abs": "4.15%",
+  "cpi_core_index:yoy.prev_period": "August 2026",
+  "cpi_core_index:yoy.change": "0.18 percentage points",
+  "cpi_core_index:yoy.direction": "rose",
+  "cpi_core_index:yoy.direction_noun": "an increase",
+  "cpi_core_index:yoy.change_phrase": "up 0.18 percentage points",
+  "cpi_core_index:yoy.bp_phrase": "up 18 basis points",
+  "cpi_food_bev_index:yoy.latest": "7.36%",
+  "cpi_food_bev_index:yoy.latest_abs": "7.36%",
+  "cpi_food_bev_index:yoy.latest_period": "September 2026",
+  "cpi_food_bev_index:yoy.prev": "5.68%",
+  "cpi_food_bev_index:yoy.prev_abs": "5.68%",
+  "cpi_food_bev_index:yoy.prev_period": "August 2026",
+  "cpi_food_bev_index:yoy.change": "1.68 percentage points",
+  "cpi_food_bev_index:yoy.direction": "rose",
+  "cpi_food_bev_index:yoy.direction_noun": "an increase",
+  "cpi_food_bev_index:yoy.change_phrase": "up 1.68 percentage points",
+  "cpi_food_bev_index:yoy.bp_phrase": "up 168 basis points",
+  "wpi_headline_index:yoy.latest": "11.4%",
+  "wpi_headline_index:yoy.latest_abs": "11.4%",
+  "wpi_headline_index:yoy.latest_period": "September 2026",
+  "wpi_headline_index:yoy.prev": "9.9%",
+  "wpi_headline_index:yoy.prev_abs": "9.9%",
+  "wpi_headline_index:yoy.prev_period": "August 2026",
+  "wpi_headline_index:yoy.change": "1.5 percentage points",
+  "wpi_headline_index:yoy.direction": "rose",
+  "wpi_headline_index:yoy.direction_noun": "an increase",
+  "wpi_headline_index:yoy.change_phrase": "up 1.5 percentage points",
+  "wpi_headline_index:yoy.bp_phrase": "up 147 basis points",
+  "wpi_headline_index:yoy.year_ago": "−0.2%",
+  "wpi_headline_index:yoy.year_ago_abs": "0.2%",
+  "wpi_headline_index:yoy.year_ago_period": "September 2025",
+  "wpi_headline_index:yoy.change_yoy": "11.6 percentage points",
+  "wpi_headline_index:yoy.direction_yoy": "rose",
+  "wpi_headline_index:yoy.change_phrase_yoy": "up 11.6 percentage points",
+  "gdp_real_growth.latest": "7.8%",
+  "gdp_real_growth.latest_abs": "7.8%",
+  "gdp_real_growth.latest_period": "Q1 FY27",
+  "gdp_real_growth.prev": "8.6%",
+  "gdp_real_growth.prev_abs": "8.6%",
+  "gdp_real_growth.prev_period": "Q4 FY26",
+  "gdp_real_growth.change": "0.8 percentage points",
+  "gdp_real_growth.direction": "fell",
+  "gdp_real_growth.direction_noun": "a decrease",
+  "gdp_real_growth.change_phrase": "down 0.8 percentage points",
+  "gdp_real_growth.bp_phrase": "down 80 basis points",
+  "gdp_real_growth.year_ago": "6.9%",
+  "gdp_real_growth.year_ago_abs": "6.9%",
+  "gdp_real_growth.year_ago_period": "Q1 FY26",
+  "gdp_real_growth.change_yoy": "0.9 percentage points",
+  "gdp_real_growth.direction_yoy": "rose",
+  "gdp_real_growth.change_phrase_yoy": "up 0.9 percentage points",
+  "iip_general_growth.latest": "6.7%",
+  "iip_general_growth.latest_abs": "6.7%",
+  "iip_general_growth.latest_period": "September 2026",
+  "iip_general_growth.prev": "7.8%",
+  "iip_general_growth.prev_abs": "7.8%",
+  "iip_general_growth.prev_period": "August 2026",
+  "iip_general_growth.change": "1.1 percentage points",
+  "iip_general_growth.direction": "fell",
+  "iip_general_growth.direction_noun": "a decrease",
+  "iip_general_growth.change_phrase": "down 1.1 percentage points",
+  "iip_general_growth.bp_phrase": "down 110 basis points",
+  "iip_general_growth.year_ago": "6.1%",
+  "iip_general_growth.year_ago_abs": "6.1%",
+  "iip_general_growth.year_ago_period": "September 2025",
+  "iip_general_growth.change_yoy": "0.6 percentage points",
+  "iip_general_growth.direction_yoy": "rose",
+  "iip_general_growth.change_phrase_yoy": "up 0.6 percentage points",
+  "core_overall_index:yoy.latest": "7.9%",
+  "core_overall_index:yoy.latest_abs": "7.9%",
+  "core_overall_index:yoy.latest_period": "September 2026",
+  "core_overall_index:yoy.prev": "5.9%",
+  "core_overall_index:yoy.prev_abs": "5.9%",
+  "core_overall_index:yoy.prev_period": "August 2026",
+  "core_overall_index:yoy.change": "2.0 percentage points",
+  "core_overall_index:yoy.direction": "rose",
+  "core_overall_index:yoy.direction_noun": "an increase",
+  "core_overall_index:yoy.change_phrase": "up 2.0 percentage points",
+  "core_overall_index:yoy.bp_phrase": "up 205 basis points",
+  "core_overall_index:yoy.year_ago": "3.1%",
+  "core_overall_index:yoy.year_ago_abs": "3.1%",
+  "core_overall_index:yoy.year_ago_period": "September 2025",
+  "core_overall_index:yoy.change_yoy": "4.8 percentage points",
+  "core_overall_index:yoy.direction_yoy": "rose",
+  "core_overall_index:yoy.change_phrase_yoy": "up 4.8 percentage points",
+  "plfs_ur_monthly.latest": "5.0%",
+  "plfs_ur_monthly.latest_abs": "5.0%",
+  "plfs_ur_monthly.latest_period": "September 2026",
+  "plfs_ur_monthly.prev": "5.0%",
+  "plfs_ur_monthly.prev_abs": "5.0%",
+  "plfs_ur_monthly.prev_period": "August 2026",
+  "plfs_ur_monthly.change": "0.0 percentage points",
+  "plfs_ur_monthly.direction": "was unchanged",
+  "plfs_ur_monthly.direction_noun": "no change",
+  "plfs_ur_monthly.change_phrase": "unchanged",
+  "plfs_ur_monthly.bp_phrase": "unchanged",
+  "plfs_ur_monthly.year_ago": "5.2%",
+  "plfs_ur_monthly.year_ago_abs": "5.2%",
+  "plfs_ur_monthly.year_ago_period": "September 2025",
+  "plfs_ur_monthly.change_yoy": "0.2 percentage points",
+  "plfs_ur_monthly.direction_yoy": "fell",
+  "plfs_ur_monthly.change_phrase_yoy": "down 0.2 percentage points",
+  "gst_gross_collections.latest": "₹2.00 lakh crore",
+  "gst_gross_collections.latest_abs": "₹2.00 lakh crore",
+  "gst_gross_collections.latest_period": "August 2026",
+  "gst_gross_collections.prev": "₹2.11 lakh crore",
+  "gst_gross_collections.prev_abs": "₹2.11 lakh crore",
+  "gst_gross_collections.prev_period": "July 2026",
+  "gst_gross_collections.change": "₹0.11 lakh crore",
+  "gst_gross_collections.direction": "fell",
+  "gst_gross_collections.direction_noun": "a decrease",
+  "gst_gross_collections.change_phrase": "down ₹0.11 lakh crore",
+  "gst_gross_collections.pct_phrase": "down 5.38%",
+  "gst_gross_collections.year_ago": "₹1.86 lakh crore",
+  "gst_gross_collections.year_ago_abs": "₹1.86 lakh crore",
+  "gst_gross_collections.year_ago_period": "August 2025",
+  "gst_gross_collections.change_yoy": "₹0.14 lakh crore",
+  "gst_gross_collections.direction_yoy": "rose",
+  "gst_gross_collections.change_phrase_yoy": "up ₹0.14 lakh crore",
+  "gst_gross_growth.latest": "14.78%",
+  "gst_gross_growth.latest_abs": "14.78%",
+  "gst_gross_growth.latest_period": "August 2026",
+  "gst_gross_growth.prev": "15.37%",
+  "gst_gross_growth.prev_abs": "15.37%",
+  "gst_gross_growth.prev_period": "July 2026",
+  "gst_gross_growth.change": "0.59 percentage points",
+  "gst_gross_growth.direction": "fell",
+  "gst_gross_growth.direction_noun": "a decrease",
+  "gst_gross_growth.change_phrase": "down 0.59 percentage points",
+  "gst_gross_growth.bp_phrase": "down 59 basis points",
+  "gst_gross_growth.year_ago": "6.49%",
+  "gst_gross_growth.year_ago_abs": "6.49%",
+  "gst_gross_growth.year_ago_period": "August 2025",
+  "gst_gross_growth.change_yoy": "8.29 percentage points",
+  "gst_gross_growth.direction_yoy": "rose",
+  "gst_gross_growth.change_phrase_yoy": "up 8.29 percentage points",
+  "upi_volume:yoy.latest": "22.6%",
+  "upi_volume:yoy.latest_abs": "22.6%",
+  "upi_volume:yoy.latest_period": "September 2026",
+  "upi_volume:yoy.prev": "22.5%",
+  "upi_volume:yoy.prev_abs": "22.5%",
+  "upi_volume:yoy.prev_period": "August 2026",
+  "upi_volume:yoy.change": "0.1 percentage points",
+  "upi_volume:yoy.direction": "rose",
+  "upi_volume:yoy.direction_noun": "an increase",
+  "upi_volume:yoy.change_phrase": "up 0.1 percentage points",
+  "upi_volume:yoy.bp_phrase": "up 9 basis points",
+  "ewaybills_count:yoy.latest": "7.2%",
+  "ewaybills_count:yoy.latest_abs": "7.2%",
+  "ewaybills_count:yoy.latest_period": "August 2026",
+  "ewaybills_count:yoy.prev": "6.0%",
+  "ewaybills_count:yoy.prev_abs": "6.0%",
+  "ewaybills_count:yoy.prev_period": "July 2026",
+  "ewaybills_count:yoy.change": "1.2 percentage points",
+  "ewaybills_count:yoy.direction": "rose",
+  "ewaybills_count:yoy.direction_noun": "an increase",
+  "ewaybills_count:yoy.change_phrase": "up 1.2 percentage points",
+  "ewaybills_count:yoy.bp_phrase": "up 125 basis points",
+  "ewaybills_count:yoy.year_ago": "23.3%",
+  "ewaybills_count:yoy.year_ago_abs": "23.3%",
+  "ewaybills_count:yoy.year_ago_period": "August 2025",
+  "ewaybills_count:yoy.change_yoy": "16.1 percentage points",
+  "ewaybills_count:yoy.direction_yoy": "fell",
+  "ewaybills_count:yoy.change_phrase_yoy": "down 16.1 percentage points",
+  "auto_pv_sales:yoy.latest": "22.0%",
+  "auto_pv_sales:yoy.latest_abs": "22.0%",
+  "auto_pv_sales:yoy.latest_period": "September 2026",
+  "auto_pv_sales:yoy.prev": "36.5%",
+  "auto_pv_sales:yoy.prev_abs": "36.5%",
+  "auto_pv_sales:yoy.prev_period": "August 2026",
+  "auto_pv_sales:yoy.change": "14.5 percentage points",
+  "auto_pv_sales:yoy.direction": "fell",
+  "auto_pv_sales:yoy.direction_noun": "a decrease",
+  "auto_pv_sales:yoy.change_phrase": "down 14.5 percentage points",
+  "auto_pv_sales:yoy.bp_phrase": "down 1445 basis points",
+  "auto_pv_sales:yoy.year_ago": "4.4%",
+  "auto_pv_sales:yoy.year_ago_abs": "4.4%",
+  "auto_pv_sales:yoy.year_ago_period": "September 2025",
+  "auto_pv_sales:yoy.change_yoy": "17.6 percentage points",
+  "auto_pv_sales:yoy.direction_yoy": "rose",
+  "auto_pv_sales:yoy.change_phrase_yoy": "up 17.6 percentage points",
+  "fuel_consumption_total:yoy.latest": "3.4%",
+  "fuel_consumption_total:yoy.latest_abs": "3.4%",
+  "fuel_consumption_total:yoy.latest_period": "September 2026",
+  "fuel_consumption_total:yoy.prev": "−3.1%",
+  "fuel_consumption_total:yoy.prev_abs": "3.1%",
+  "fuel_consumption_total:yoy.prev_period": "August 2026",
+  "fuel_consumption_total:yoy.change": "6.5 percentage points",
+  "fuel_consumption_total:yoy.direction": "rose",
+  "fuel_consumption_total:yoy.direction_noun": "an increase",
+  "fuel_consumption_total:yoy.change_phrase": "up 6.5 percentage points",
+  "fuel_consumption_total:yoy.bp_phrase": "up 649 basis points",
+  "fuel_consumption_total:yoy.year_ago": "7.0%",
+  "fuel_consumption_total:yoy.year_ago_abs": "7.0%",
+  "fuel_consumption_total:yoy.year_ago_period": "September 2025",
+  "fuel_consumption_total:yoy.change_yoy": "3.7 percentage points",
+  "fuel_consumption_total:yoy.direction_yoy": "fell",
+  "fuel_consumption_total:yoy.change_phrase_yoy": "down 3.7 percentage points",
+  "scb_credit_growth.latest": "18.2%",
+  "scb_credit_growth.latest_abs": "18.2%",
+  "scb_credit_growth.latest_period": "15 Oct 2026",
+  "scb_credit_growth.prev": "19.4%",
+  "scb_credit_growth.prev_abs": "19.4%",
+  "scb_credit_growth.prev_period": "30 Sep 2026",
+  "scb_credit_growth.change": "1.2 percentage points",
+  "scb_credit_growth.direction": "fell",
+  "scb_credit_growth.direction_noun": "a decrease",
+  "scb_credit_growth.change_phrase": "down 1.2 percentage points",
+  "scb_credit_growth.bp_phrase": "down 120 basis points",
+  "m3_growth.latest": "16.0%",
+  "m3_growth.latest_abs": "16.0%",
+  "m3_growth.latest_period": "15 Oct 2026",
+  "m3_growth.prev": "16.9%",
+  "m3_growth.prev_abs": "16.9%",
+  "m3_growth.prev_period": "30 Sep 2026",
+  "m3_growth.change": "0.9 percentage points",
+  "m3_growth.direction": "fell",
+  "m3_growth.direction_noun": "a decrease",
+  "m3_growth.change_phrase": "down 0.9 percentage points",
+  "m3_growth.bp_phrase": "down 90 basis points",
+  "merch_trade_balance.latest": "−$30.2 billion",
+  "merch_trade_balance.latest_abs": "$30.2 billion",
+  "merch_trade_balance.latest_period": "September 2026",
+  "merch_trade_balance.prev": "−$26.9 billion",
+  "merch_trade_balance.prev_abs": "$26.9 billion",
+  "merch_trade_balance.prev_period": "August 2026",
+  "merch_trade_balance.change": "$3.4 billion",
+  "merch_trade_balance.direction": "fell",
+  "merch_trade_balance.direction_noun": "a decrease",
+  "merch_trade_balance.change_phrase": "down $3.4 billion",
+  "merch_trade_balance.year_ago": "−$33.0 billion",
+  "merch_trade_balance.year_ago_abs": "$33.0 billion",
+  "merch_trade_balance.year_ago_period": "September 2025",
+  "merch_trade_balance.change_yoy": "$2.8 billion",
+  "merch_trade_balance.direction_yoy": "rose",
+  "merch_trade_balance.change_phrase_yoy": "up $2.8 billion",
+  "merch_exports:yoy.latest": "23.0%",
+  "merch_exports:yoy.latest_abs": "23.0%",
+  "merch_exports:yoy.latest_period": "September 2026",
+  "merch_exports:yoy.prev": "26.1%",
+  "merch_exports:yoy.prev_abs": "26.1%",
+  "merch_exports:yoy.prev_period": "August 2026",
+  "merch_exports:yoy.change": "3.1 percentage points",
+  "merch_exports:yoy.direction": "fell",
+  "merch_exports:yoy.direction_noun": "a decrease",
+  "merch_exports:yoy.change_phrase": "down 3.1 percentage points",
+  "merch_exports:yoy.bp_phrase": "down 308 basis points",
+  "fx_reserves_total.latest": "$719.7 billion",
+  "fx_reserves_total.latest_abs": "$719.7 billion",
+  "fx_reserves_total.latest_period": "23 Oct 2026",
+  "fx_reserves_total.prev": "$721.0 billion",
+  "fx_reserves_total.prev_abs": "$721.0 billion",
+  "fx_reserves_total.prev_period": "16 Oct 2026",
+  "fx_reserves_total.change": "$1.3 billion",
+  "fx_reserves_total.direction": "fell",
+  "fx_reserves_total.direction_noun": "a decrease",
+  "fx_reserves_total.change_phrase": "down $1.3 billion",
+  "fx_reserves_total.pct_phrase": "down 0.18%",
+  "fx_reserves_total.week_phrase": "down 0.18%",
+  "fx_reserves_total.month_phrase": "down 3.72%",
+  "bop_remittances.latest": "$42.9 billion",
+  "bop_remittances.latest_abs": "$42.9 billion",
+  "bop_remittances.latest_period": "Q1 FY27",
+  "bop_remittances.prev": "$43.5 billion",
+  "bop_remittances.prev_abs": "$43.5 billion",
+  "bop_remittances.prev_period": "Q4 FY26",
+  "bop_remittances.change": "$0.6 billion",
+  "bop_remittances.direction": "fell",
+  "bop_remittances.direction_noun": "a decrease",
+  "bop_remittances.change_phrase": "down $0.6 billion",
+  "bop_remittances.pct_phrase": "down 1.38%",
+  "bop_remittances.year_ago": "$33.2 billion",
+  "bop_remittances.year_ago_abs": "$33.2 billion",
+  "bop_remittances.year_ago_period": "Q1 FY26",
+  "bop_remittances.change_yoy": "$9.7 billion",
+  "bop_remittances.direction_yoy": "rose",
+  "bop_remittances.change_phrase_yoy": "up $9.7 billion",
+  "cga_fiscal_deficit_pct_be.latest": "42.1%",
+  "cga_fiscal_deficit_pct_be.latest_abs": "42.1%",
+  "cga_fiscal_deficit_pct_be.latest_period": "September 2026",
+  "cga_fiscal_deficit_pct_be.prev": "41.9%",
+  "cga_fiscal_deficit_pct_be.prev_abs": "41.9%",
+  "cga_fiscal_deficit_pct_be.prev_period": "August 2026",
+  "cga_fiscal_deficit_pct_be.change": "0.2 percentage points",
+  "cga_fiscal_deficit_pct_be.direction": "rose",
+  "cga_fiscal_deficit_pct_be.direction_noun": "an increase",
+  "cga_fiscal_deficit_pct_be.change_phrase": "up 0.2 percentage points",
+  "cga_fiscal_deficit_pct_be.bp_phrase": "up 20 basis points",
+  "cga_fiscal_deficit_pct_be.year_ago": "36.5%",
+  "cga_fiscal_deficit_pct_be.year_ago_abs": "36.5%",
+  "cga_fiscal_deficit_pct_be.year_ago_period": "September 2025",
+  "cga_fiscal_deficit_pct_be.change_yoy": "5.6 percentage points",
+  "cga_fiscal_deficit_pct_be.direction_yoy": "rose",
+  "cga_fiscal_deficit_pct_be.change_phrase_yoy": "up 5.6 percentage points",
+  "const.rbi_inflation_target": "4%",
+  "const.rbi_tolerance_band": "2–6%",
+  "new.recent": "no new monthly or quarterly data",
+  "today.date": "1 Nov 2026"
+ },
+ "receipts": {
+  "calendar.today": {
+   "source": "registry/calendar",
+   "text": "no scheduled releases"
+  },
+  "calendar.next": {
+   "source": "registry/calendar",
+   "text": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026"
+  },
+  "calendar.next_highlight": {
+   "source": "registry/calendar",
+   "text": "MPC policy decision (meeting 2–4 Dec) on 4 Dec 2026"
+  },
+  "calendar.past_week": {
+   "source": "registry/calendar",
+   "text": "Index of Industrial Production (Sep 2026) on 28 Oct 2026; Union government monthly accounts (Sep 2026) on 30 Oct 2026"
+  },
+  "calendar.next_week": {
+   "source": "registry/calendar",
+   "text": "no scheduled releases"
+  },
+  "nifty50_close.latest": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "23,053.10"
+  },
+  "nifty50_close.latest_abs": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "23,053.10"
+  },
+  "nifty50_close.latest_period": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "30 Oct 2026"
+  },
+  "nifty50_close.prev": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "22,936.75"
+  },
+  "nifty50_close.prev_abs": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "22,936.75"
+  },
+  "nifty50_close.prev_period": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "29 Oct 2026"
+  },
+  "nifty50_close.change": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "116.35"
+  },
+  "nifty50_close.direction": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "rose"
+  },
+  "nifty50_close.direction_noun": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "an increase"
+  },
+  "nifty50_close.change_phrase": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 116.35"
+  },
+  "nifty50_close.pct_phrase": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 0.51%"
+  },
+  "nifty50_close.week_phrase": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 2.00%"
+  },
+  "nifty50_close.month_phrase": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 2.81%"
+  },
+  "nifty50_close.year_ago": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "25,877.85"
+  },
+  "nifty50_close.year_ago_abs": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "25,877.85"
+  },
+  "nifty50_close.year_ago_period": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "30 Oct 2025"
+  },
+  "nifty50_close.change_yoy": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "2,824.75"
+  },
+  "nifty50_close.direction_yoy": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "fell"
+  },
+  "nifty50_close.change_phrase_yoy": {
+   "series": "nifty50_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 2,824.75"
+  },
+  "sensex_close.latest": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "74,459.53"
+  },
+  "sensex_close.latest_abs": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "74,459.53"
+  },
+  "sensex_close.latest_period": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "30 Oct 2026"
+  },
+  "sensex_close.prev": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "74,151.04"
+  },
+  "sensex_close.prev_abs": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "74,151.04"
+  },
+  "sensex_close.prev_period": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "29 Oct 2026"
+  },
+  "sensex_close.change": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "308.49"
+  },
+  "sensex_close.direction": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "rose"
+  },
+  "sensex_close.direction_noun": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "an increase"
+  },
+  "sensex_close.change_phrase": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 308.49"
+  },
+  "sensex_close.pct_phrase": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 0.42%"
+  },
+  "sensex_close.week_phrase": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 1.83%"
+  },
+  "sensex_close.month_phrase": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 3.55%"
+  },
+  "sensex_close.year_ago": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "84,404.46"
+  },
+  "sensex_close.year_ago_abs": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "84,404.46"
+  },
+  "sensex_close.year_ago_period": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "30 Oct 2025"
+  },
+  "sensex_close.change_yoy": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "9,944.93"
+  },
+  "sensex_close.direction_yoy": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "fell"
+  },
+  "sensex_close.change_phrase_yoy": {
+   "series": "sensex_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 9,944.93"
+  },
+  "indiavix_close.latest": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "15.30"
+  },
+  "indiavix_close.latest_abs": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "15.30"
+  },
+  "indiavix_close.latest_period": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "30 Oct 2026"
+  },
+  "indiavix_close.prev": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "15.12"
+  },
+  "indiavix_close.prev_abs": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "15.12"
+  },
+  "indiavix_close.prev_period": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "29 Oct 2026"
+  },
+  "indiavix_close.change": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.18"
+  },
+  "indiavix_close.direction": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "indiavix_close.direction_noun": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "an increase"
+  },
+  "indiavix_close.change_phrase": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 0.18"
+  },
+  "indiavix_close.pct_phrase": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 1.19%"
+  },
+  "indiavix_close.week_phrase": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 9.25%"
+  },
+  "indiavix_close.month_phrase": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 5.81%"
+  },
+  "indiavix_close.year_ago": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "12.07"
+  },
+  "indiavix_close.year_ago_abs": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "12.07"
+  },
+  "indiavix_close.year_ago_period": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "30 Oct 2025"
+  },
+  "indiavix_close.change_yoy": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "3.23"
+  },
+  "indiavix_close.direction_yoy": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "indiavix_close.change_phrase_yoy": {
+   "series": "indiavix_close",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 3.23"
+  },
+  "usdinr_ref.latest": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "95.25"
+  },
+  "usdinr_ref.latest_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "95.25"
+  },
+  "usdinr_ref.latest_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "30 Oct 2026"
+  },
+  "usdinr_ref.prev": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "95.37"
+  },
+  "usdinr_ref.prev_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "95.37"
+  },
+  "usdinr_ref.prev_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "29 Oct 2026"
+  },
+  "usdinr_ref.change": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "0.12"
+  },
+  "usdinr_ref.direction": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "fell"
+  },
+  "usdinr_ref.direction_noun": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "a decrease"
+  },
+  "usdinr_ref.change_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 0.12"
+  },
+  "usdinr_ref.pct_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 0.13%"
+  },
+  "usdinr_ref.week_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 0.32%"
+  },
+  "usdinr_ref.month_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 0.77%"
+  },
+  "usdinr_ref.year_ago": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "88.60"
+  },
+  "usdinr_ref.year_ago_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "88.60"
+  },
+  "usdinr_ref.year_ago_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "30 Oct 2025"
+  },
+  "usdinr_ref.change_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "6.64"
+  },
+  "usdinr_ref.direction_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "rose"
+  },
+  "usdinr_ref.change_phrase_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 6.64"
+  },
+  "gsec_10y_yield.latest": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.39%"
+  },
+  "gsec_10y_yield.latest_abs": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.39%"
+  },
+  "gsec_10y_yield.latest_period": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "29 Oct 2026"
+  },
+  "gsec_10y_yield.prev": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.44%"
+  },
+  "gsec_10y_yield.prev_abs": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.44%"
+  },
+  "gsec_10y_yield.prev_period": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "28 Oct 2026"
+  },
+  "gsec_10y_yield.change": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "0.05 percentage points"
+  },
+  "gsec_10y_yield.direction": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "fell"
+  },
+  "gsec_10y_yield.direction_noun": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "a decrease"
+  },
+  "gsec_10y_yield.change_phrase": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 0.05 percentage points"
+  },
+  "gsec_10y_yield.bp_phrase": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 5 basis points"
+  },
+  "term_spread_10y_repo.latest": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "2.02%"
+  },
+  "term_spread_10y_repo.latest_abs": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "2.02%"
+  },
+  "term_spread_10y_repo.latest_period": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "23 Oct 2026"
+  },
+  "term_spread_10y_repo.prev": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "2.00%"
+  },
+  "term_spread_10y_repo.prev_abs": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "2.00%"
+  },
+  "term_spread_10y_repo.prev_period": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "22 Oct 2026"
+  },
+  "term_spread_10y_repo.change": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "0.02 percentage points"
+  },
+  "term_spread_10y_repo.direction": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "rose"
+  },
+  "term_spread_10y_repo.direction_noun": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "an increase"
+  },
+  "term_spread_10y_repo.change_phrase": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 0.02 percentage points"
+  },
+  "term_spread_10y_repo.bp_phrase": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 2 basis points"
+  },
+  "term_spread_10y_repo.week_phrase": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 12 basis points"
+  },
+  "term_spread_10y_repo.month_phrase": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 13 basis points"
+  },
+  "term_spread_10y_repo.year_ago": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "0.99%"
+  },
+  "term_spread_10y_repo.year_ago_abs": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "0.99%"
+  },
+  "term_spread_10y_repo.year_ago_period": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "23 Oct 2025"
+  },
+  "term_spread_10y_repo.change_yoy": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "1.03 percentage points"
+  },
+  "term_spread_10y_repo.direction_yoy": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "rose"
+  },
+  "term_spread_10y_repo.change_phrase_yoy": {
+   "series": "term_spread_10y_repo",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 1.03 percentage points"
+  },
+  "brent_usd.latest": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$114.88 a barrel"
+  },
+  "brent_usd.latest_abs": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$114.88 a barrel"
+  },
+  "brent_usd.latest_period": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "29 Oct 2026"
+  },
+  "brent_usd.prev": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$115.32 a barrel"
+  },
+  "brent_usd.prev_abs": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$115.32 a barrel"
+  },
+  "brent_usd.prev_period": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "28 Oct 2026"
+  },
+  "brent_usd.change": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.44"
+  },
+  "brent_usd.direction": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "brent_usd.direction_noun": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "a decrease"
+  },
+  "brent_usd.change_phrase": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.44"
+  },
+  "brent_usd.pct_phrase": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.38%"
+  },
+  "brent_usd.week_phrase": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 1.51%"
+  },
+  "brent_usd.month_phrase": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 12.29%"
+  },
+  "brent_usd.year_ago": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$64.92 a barrel"
+  },
+  "brent_usd.year_ago_abs": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$64.92 a barrel"
+  },
+  "brent_usd.year_ago_period": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "29 Oct 2025"
+  },
+  "brent_usd.change_yoy": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "49.96"
+  },
+  "brent_usd.direction_yoy": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "brent_usd.change_phrase_yoy": {
+   "series": "brent_usd",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 49.96"
+  },
+  "gold_usd_oz.latest": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,031 an ounce"
+  },
+  "gold_usd_oz.latest_abs": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,031 an ounce"
+  },
+  "gold_usd_oz.latest_period": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "29 Oct 2026"
+  },
+  "gold_usd_oz.prev": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,052 an ounce"
+  },
+  "gold_usd_oz.prev_abs": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,052 an ounce"
+  },
+  "gold_usd_oz.prev_period": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "28 Oct 2026"
+  },
+  "gold_usd_oz.change": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "20.20"
+  },
+  "gold_usd_oz.direction": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "gold_usd_oz.direction_noun": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "a decrease"
+  },
+  "gold_usd_oz.change_phrase": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 20.20"
+  },
+  "gold_usd_oz.pct_phrase": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.50%"
+  },
+  "gold_usd_oz.week_phrase": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.71%"
+  },
+  "gold_usd_oz.month_phrase": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 4.07%"
+  },
+  "gold_usd_oz.year_ago": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,001 an ounce"
+  },
+  "gold_usd_oz.year_ago_abs": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "$4,001 an ounce"
+  },
+  "gold_usd_oz.year_ago_period": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "29 Oct 2025"
+  },
+  "gold_usd_oz.change_yoy": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "30.70"
+  },
+  "gold_usd_oz.direction_yoy": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "gold_usd_oz.change_phrase_yoy": {
+   "series": "gold_usd_oz",
+   "transform": "level",
+   "period": "2026-10-29",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 30.70"
+  },
+  "repo_rate.latest": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.50%"
+  },
+  "repo_rate.latest_abs": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.50%"
+  },
+  "repo_rate.latest_period": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "30 Oct 2026"
+  },
+  "repo_rate.prev": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.50%"
+  },
+  "repo_rate.prev_abs": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.50%"
+  },
+  "repo_rate.prev_period": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "29 Oct 2026"
+  },
+  "repo_rate.change": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "0.00 percentage points"
+  },
+  "repo_rate.direction": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "was unchanged"
+  },
+  "repo_rate.direction_noun": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "no change"
+  },
+  "repo_rate.change_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.bp_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.week_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.month_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/",
+   "text": "up 25 basis points"
+  },
+  "liquidity_surplus.latest": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹1.72 lakh crore"
+  },
+  "liquidity_surplus.latest_abs": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹1.72 lakh crore"
+  },
+  "liquidity_surplus.latest_period": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "25 Oct 2026"
+  },
+  "liquidity_surplus.prev": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹1.72 lakh crore"
+  },
+  "liquidity_surplus.prev_abs": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹1.72 lakh crore"
+  },
+  "liquidity_surplus.prev_period": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "24 Oct 2026"
+  },
+  "liquidity_surplus.change": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹0.00 lakh crore"
+  },
+  "liquidity_surplus.direction": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "rose"
+  },
+  "liquidity_surplus.direction_noun": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "an increase"
+  },
+  "liquidity_surplus.change_phrase": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "up ₹0.00 lakh crore"
+  },
+  "liquidity_surplus.pct_phrase": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "up 0.15%"
+  },
+  "liquidity_surplus.week_phrase": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "up 28.00%"
+  },
+  "liquidity_surplus.month_phrase": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 13.28%"
+  },
+  "liquidity_surplus.year_ago": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹0.65 lakh crore"
+  },
+  "liquidity_surplus.year_ago_abs": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹0.65 lakh crore"
+  },
+  "liquidity_surplus.year_ago_period": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "25 Oct 2025"
+  },
+  "liquidity_surplus.change_yoy": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "₹1.07 lakh crore"
+  },
+  "liquidity_surplus.direction_yoy": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "rose"
+  },
+  "liquidity_surplus.change_phrase_yoy": {
+   "series": "liquidity_surplus",
+   "transform": "level",
+   "period": "2026-10-25",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "up ₹1.07 lakh crore"
+  },
+  "fpi_total_net.latest": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "−₹24,475 crore"
+  },
+  "fpi_total_net.latest_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹24,475 crore"
+  },
+  "fpi_total_net.latest_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "October 2026"
+  },
+  "fpi_total_net.prev": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "−₹58,443 crore"
+  },
+  "fpi_total_net.prev_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹58,443 crore"
+  },
+  "fpi_total_net.prev_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "September 2026"
+  },
+  "fpi_total_net.change": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹33,968 crore"
+  },
+  "fpi_total_net.direction": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "rose"
+  },
+  "fpi_total_net.direction_noun": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "an increase"
+  },
+  "fpi_total_net.change_phrase": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "up ₹33,968 crore"
+  },
+  "fpi_total_net.year_ago": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹35,598 crore"
+  },
+  "fpi_total_net.year_ago_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹35,598 crore"
+  },
+  "fpi_total_net.year_ago_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "October 2025"
+  },
+  "fpi_total_net.change_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹60,073 crore"
+  },
+  "fpi_total_net.direction_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "fell"
+  },
+  "fpi_total_net.change_phrase_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-10-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "down ₹60,073 crore"
+  },
+  "mf_net_inflow_equity.latest": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹38,307 crore"
+  },
+  "mf_net_inflow_equity.latest_abs": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹38,307 crore"
+  },
+  "mf_net_inflow_equity.latest_period": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "September 2026"
+  },
+  "mf_net_inflow_equity.prev": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹29,329 crore"
+  },
+  "mf_net_inflow_equity.prev_abs": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹29,329 crore"
+  },
+  "mf_net_inflow_equity.prev_period": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "August 2026"
+  },
+  "mf_net_inflow_equity.change": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹8,978 crore"
+  },
+  "mf_net_inflow_equity.direction": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "rose"
+  },
+  "mf_net_inflow_equity.direction_noun": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "an increase"
+  },
+  "mf_net_inflow_equity.change_phrase": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "up ₹8,978 crore"
+  },
+  "mf_net_inflow_equity.pct_phrase": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "up 30.61%"
+  },
+  "mf_net_inflow_equity.year_ago": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹30,422 crore"
+  },
+  "mf_net_inflow_equity.year_ago_abs": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹30,422 crore"
+  },
+  "mf_net_inflow_equity.year_ago_period": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "September 2025"
+  },
+  "mf_net_inflow_equity.change_yoy": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "₹7,885 crore"
+  },
+  "mf_net_inflow_equity.direction_yoy": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "rose"
+  },
+  "mf_net_inflow_equity.change_phrase_yoy": {
+   "series": "mf_net_inflow_equity",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.amfiindia.com/research-information/amfi-monthly",
+   "text": "up ₹7,885 crore"
+  },
+  "cpi_headline_inflation.latest": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.54%"
+  },
+  "cpi_headline_inflation.latest_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.54%"
+  },
+  "cpi_headline_inflation.latest_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "September 2026"
+  },
+  "cpi_headline_inflation.prev": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.83%"
+  },
+  "cpi_headline_inflation.prev_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.83%"
+  },
+  "cpi_headline_inflation.prev_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "August 2026"
+  },
+  "cpi_headline_inflation.change": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "0.71 percentage points"
+  },
+  "cpi_headline_inflation.direction": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "rose"
+  },
+  "cpi_headline_inflation.direction_noun": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "an increase"
+  },
+  "cpi_headline_inflation.change_phrase": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 0.71 percentage points"
+  },
+  "cpi_headline_inflation.bp_phrase": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 71 basis points"
+  },
+  "cpi_headline_inflation.year_ago": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "1.44%"
+  },
+  "cpi_headline_inflation.year_ago_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "1.44%"
+  },
+  "cpi_headline_inflation.year_ago_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "September 2025"
+  },
+  "cpi_headline_inflation.change_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.10 percentage points"
+  },
+  "cpi_headline_inflation.direction_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "rose"
+  },
+  "cpi_headline_inflation.change_phrase_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 4.10 percentage points"
+  },
+  "cpi_core_index:yoy.latest": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "4.33%"
+  },
+  "cpi_core_index:yoy.latest_abs": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "4.33%"
+  },
+  "cpi_core_index:yoy.latest_period": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "September 2026"
+  },
+  "cpi_core_index:yoy.prev": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "4.15%"
+  },
+  "cpi_core_index:yoy.prev_abs": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "4.15%"
+  },
+  "cpi_core_index:yoy.prev_period": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "August 2026"
+  },
+  "cpi_core_index:yoy.change": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "0.18 percentage points"
+  },
+  "cpi_core_index:yoy.direction": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "rose"
+  },
+  "cpi_core_index:yoy.direction_noun": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "an increase"
+  },
+  "cpi_core_index:yoy.change_phrase": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "up 0.18 percentage points"
+  },
+  "cpi_core_index:yoy.bp_phrase": {
+   "series": "cpi_core_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/scripts/BS_ViewBulletin.aspx?Id=24400",
+   "text": "up 18 basis points"
+  },
+  "cpi_food_bev_index:yoy.latest": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "7.36%"
+  },
+  "cpi_food_bev_index:yoy.latest_abs": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "7.36%"
+  },
+  "cpi_food_bev_index:yoy.latest_period": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "September 2026"
+  },
+  "cpi_food_bev_index:yoy.prev": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.68%"
+  },
+  "cpi_food_bev_index:yoy.prev_abs": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.68%"
+  },
+  "cpi_food_bev_index:yoy.prev_period": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "August 2026"
+  },
+  "cpi_food_bev_index:yoy.change": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "1.68 percentage points"
+  },
+  "cpi_food_bev_index:yoy.direction": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "rose"
+  },
+  "cpi_food_bev_index:yoy.direction_noun": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "an increase"
+  },
+  "cpi_food_bev_index:yoy.change_phrase": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 1.68 percentage points"
+  },
+  "cpi_food_bev_index:yoy.bp_phrase": {
+   "series": "cpi_food_bev_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 168 basis points"
+  },
+  "wpi_headline_index:yoy.latest": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "11.4%"
+  },
+  "wpi_headline_index:yoy.latest_abs": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "11.4%"
+  },
+  "wpi_headline_index:yoy.latest_period": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "September 2026"
+  },
+  "wpi_headline_index:yoy.prev": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "9.9%"
+  },
+  "wpi_headline_index:yoy.prev_abs": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "9.9%"
+  },
+  "wpi_headline_index:yoy.prev_period": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "August 2026"
+  },
+  "wpi_headline_index:yoy.change": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "1.5 percentage points"
+  },
+  "wpi_headline_index:yoy.direction": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "rose"
+  },
+  "wpi_headline_index:yoy.direction_noun": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "an increase"
+  },
+  "wpi_headline_index:yoy.change_phrase": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "up 1.5 percentage points"
+  },
+  "wpi_headline_index:yoy.bp_phrase": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "up 147 basis points"
+  },
+  "wpi_headline_index:yoy.year_ago": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "−0.2%"
+  },
+  "wpi_headline_index:yoy.year_ago_abs": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "0.2%"
+  },
+  "wpi_headline_index:yoy.year_ago_period": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "September 2025"
+  },
+  "wpi_headline_index:yoy.change_yoy": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "11.6 percentage points"
+  },
+  "wpi_headline_index:yoy.direction_yoy": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "rose"
+  },
+  "wpi_headline_index:yoy.change_phrase_yoy": {
+   "series": "wpi_headline_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/download_data_2223.asp",
+   "text": "up 11.6 percentage points"
+  },
+  "gdp_real_growth.latest": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "7.8%"
+  },
+  "gdp_real_growth.latest_abs": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "7.8%"
+  },
+  "gdp_real_growth.latest_period": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "Q1 FY27"
+  },
+  "gdp_real_growth.prev": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "8.6%"
+  },
+  "gdp_real_growth.prev_abs": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "8.6%"
+  },
+  "gdp_real_growth.prev_period": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "Q4 FY26"
+  },
+  "gdp_real_growth.change": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "0.8 percentage points"
+  },
+  "gdp_real_growth.direction": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "fell"
+  },
+  "gdp_real_growth.direction_noun": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "a decrease"
+  },
+  "gdp_real_growth.change_phrase": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "down 0.8 percentage points"
+  },
+  "gdp_real_growth.bp_phrase": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "down 80 basis points"
+  },
+  "gdp_real_growth.year_ago": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "6.9%"
+  },
+  "gdp_real_growth.year_ago_abs": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "6.9%"
+  },
+  "gdp_real_growth.year_ago_period": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "Q1 FY26"
+  },
+  "gdp_real_growth.change_yoy": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "0.9 percentage points"
+  },
+  "gdp_real_growth.direction_yoy": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "rose"
+  },
+  "gdp_real_growth.change_phrase_yoy": {
+   "series": "gdp_real_growth",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=nas",
+   "text": "up 0.9 percentage points"
+  },
+  "iip_general_growth.latest": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "6.7%"
+  },
+  "iip_general_growth.latest_abs": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "6.7%"
+  },
+  "iip_general_growth.latest_period": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "September 2026"
+  },
+  "iip_general_growth.prev": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "7.8%"
+  },
+  "iip_general_growth.prev_abs": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "7.8%"
+  },
+  "iip_general_growth.prev_period": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "August 2026"
+  },
+  "iip_general_growth.change": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "1.1 percentage points"
+  },
+  "iip_general_growth.direction": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "fell"
+  },
+  "iip_general_growth.direction_noun": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "a decrease"
+  },
+  "iip_general_growth.change_phrase": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "down 1.1 percentage points"
+  },
+  "iip_general_growth.bp_phrase": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "down 110 basis points"
+  },
+  "iip_general_growth.year_ago": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "6.1%"
+  },
+  "iip_general_growth.year_ago_abs": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "6.1%"
+  },
+  "iip_general_growth.year_ago_period": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "September 2025"
+  },
+  "iip_general_growth.change_yoy": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "0.6 percentage points"
+  },
+  "iip_general_growth.direction_yoy": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "rose"
+  },
+  "iip_general_growth.change_phrase_yoy": {
+   "series": "iip_general_growth",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=iip",
+   "text": "up 0.6 percentage points"
+  },
+  "core_overall_index:yoy.latest": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "7.9%"
+  },
+  "core_overall_index:yoy.latest_abs": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "7.9%"
+  },
+  "core_overall_index:yoy.latest_period": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "September 2026"
+  },
+  "core_overall_index:yoy.prev": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "5.9%"
+  },
+  "core_overall_index:yoy.prev_abs": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "5.9%"
+  },
+  "core_overall_index:yoy.prev_period": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "August 2026"
+  },
+  "core_overall_index:yoy.change": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "2.0 percentage points"
+  },
+  "core_overall_index:yoy.direction": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "rose"
+  },
+  "core_overall_index:yoy.direction_noun": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "an increase"
+  },
+  "core_overall_index:yoy.change_phrase": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "up 2.0 percentage points"
+  },
+  "core_overall_index:yoy.bp_phrase": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "up 205 basis points"
+  },
+  "core_overall_index:yoy.year_ago": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "3.1%"
+  },
+  "core_overall_index:yoy.year_ago_abs": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "3.1%"
+  },
+  "core_overall_index:yoy.year_ago_period": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "September 2025"
+  },
+  "core_overall_index:yoy.change_yoy": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "4.8 percentage points"
+  },
+  "core_overall_index:yoy.direction_yoy": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "rose"
+  },
+  "core_overall_index:yoy.change_phrase_yoy": {
+   "series": "core_overall_index",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://eaindustry.nic.in/ici_download_data.asp",
+   "text": "up 4.8 percentage points"
+  },
+  "plfs_ur_monthly.latest": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.0%"
+  },
+  "plfs_ur_monthly.latest_abs": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.0%"
+  },
+  "plfs_ur_monthly.latest_period": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "September 2026"
+  },
+  "plfs_ur_monthly.prev": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.0%"
+  },
+  "plfs_ur_monthly.prev_abs": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.0%"
+  },
+  "plfs_ur_monthly.prev_period": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "August 2026"
+  },
+  "plfs_ur_monthly.change": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "0.0 percentage points"
+  },
+  "plfs_ur_monthly.direction": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "was unchanged"
+  },
+  "plfs_ur_monthly.direction_noun": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "no change"
+  },
+  "plfs_ur_monthly.change_phrase": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "unchanged"
+  },
+  "plfs_ur_monthly.bp_phrase": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "unchanged"
+  },
+  "plfs_ur_monthly.year_ago": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.2%"
+  },
+  "plfs_ur_monthly.year_ago_abs": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "5.2%"
+  },
+  "plfs_ur_monthly.year_ago_period": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "September 2025"
+  },
+  "plfs_ur_monthly.change_yoy": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "0.2 percentage points"
+  },
+  "plfs_ur_monthly.direction_yoy": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "fell"
+  },
+  "plfs_ur_monthly.change_phrase_yoy": {
+   "series": "plfs_ur_monthly",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=plfs",
+   "text": "down 0.2 percentage points"
+  },
+  "gst_gross_collections.latest": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹2.00 lakh crore"
+  },
+  "gst_gross_collections.latest_abs": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹2.00 lakh crore"
+  },
+  "gst_gross_collections.latest_period": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2026"
+  },
+  "gst_gross_collections.prev": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹2.11 lakh crore"
+  },
+  "gst_gross_collections.prev_abs": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹2.11 lakh crore"
+  },
+  "gst_gross_collections.prev_period": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "July 2026"
+  },
+  "gst_gross_collections.change": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹0.11 lakh crore"
+  },
+  "gst_gross_collections.direction": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "fell"
+  },
+  "gst_gross_collections.direction_noun": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "a decrease"
+  },
+  "gst_gross_collections.change_phrase": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "down ₹0.11 lakh crore"
+  },
+  "gst_gross_collections.pct_phrase": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "down 5.38%"
+  },
+  "gst_gross_collections.year_ago": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹1.86 lakh crore"
+  },
+  "gst_gross_collections.year_ago_abs": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹1.86 lakh crore"
+  },
+  "gst_gross_collections.year_ago_period": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2025"
+  },
+  "gst_gross_collections.change_yoy": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "₹0.14 lakh crore"
+  },
+  "gst_gross_collections.direction_yoy": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "rose"
+  },
+  "gst_gross_collections.change_phrase_yoy": {
+   "series": "gst_gross_collections",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "up ₹0.14 lakh crore"
+  },
+  "gst_gross_growth.latest": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "14.78%"
+  },
+  "gst_gross_growth.latest_abs": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "14.78%"
+  },
+  "gst_gross_growth.latest_period": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2026"
+  },
+  "gst_gross_growth.prev": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "15.37%"
+  },
+  "gst_gross_growth.prev_abs": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "15.37%"
+  },
+  "gst_gross_growth.prev_period": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "July 2026"
+  },
+  "gst_gross_growth.change": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "0.59 percentage points"
+  },
+  "gst_gross_growth.direction": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "fell"
+  },
+  "gst_gross_growth.direction_noun": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "a decrease"
+  },
+  "gst_gross_growth.change_phrase": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "down 0.59 percentage points"
+  },
+  "gst_gross_growth.bp_phrase": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "down 59 basis points"
+  },
+  "gst_gross_growth.year_ago": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "6.49%"
+  },
+  "gst_gross_growth.year_ago_abs": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "6.49%"
+  },
+  "gst_gross_growth.year_ago_period": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2025"
+  },
+  "gst_gross_growth.change_yoy": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "8.29 percentage points"
+  },
+  "gst_gross_growth.direction_yoy": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "rose"
+  },
+  "gst_gross_growth.change_phrase_yoy": {
+   "series": "gst_gross_growth",
+   "transform": "level",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "up 8.29 percentage points"
+  },
+  "upi_volume:yoy.latest": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "22.6%"
+  },
+  "upi_volume:yoy.latest_abs": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "22.6%"
+  },
+  "upi_volume:yoy.latest_period": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "September 2026"
+  },
+  "upi_volume:yoy.prev": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "22.5%"
+  },
+  "upi_volume:yoy.prev_abs": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "22.5%"
+  },
+  "upi_volume:yoy.prev_period": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "August 2026"
+  },
+  "upi_volume:yoy.change": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "0.1 percentage points"
+  },
+  "upi_volume:yoy.direction": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "rose"
+  },
+  "upi_volume:yoy.direction_noun": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "an increase"
+  },
+  "upi_volume:yoy.change_phrase": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "up 0.1 percentage points"
+  },
+  "upi_volume:yoy.bp_phrase": {
+   "series": "upi_volume",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.rbi.org.in/Scripts/PSIUserView.aspx",
+   "text": "up 9 basis points"
+  },
+  "ewaybills_count:yoy.latest": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "7.2%"
+  },
+  "ewaybills_count:yoy.latest_abs": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "7.2%"
+  },
+  "ewaybills_count:yoy.latest_period": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2026"
+  },
+  "ewaybills_count:yoy.prev": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "6.0%"
+  },
+  "ewaybills_count:yoy.prev_abs": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "6.0%"
+  },
+  "ewaybills_count:yoy.prev_period": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "July 2026"
+  },
+  "ewaybills_count:yoy.change": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "1.2 percentage points"
+  },
+  "ewaybills_count:yoy.direction": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "rose"
+  },
+  "ewaybills_count:yoy.direction_noun": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "an increase"
+  },
+  "ewaybills_count:yoy.change_phrase": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "up 1.2 percentage points"
+  },
+  "ewaybills_count:yoy.bp_phrase": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "up 125 basis points"
+  },
+  "ewaybills_count:yoy.year_ago": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "23.3%"
+  },
+  "ewaybills_count:yoy.year_ago_abs": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "23.3%"
+  },
+  "ewaybills_count:yoy.year_ago_period": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "August 2025"
+  },
+  "ewaybills_count:yoy.change_yoy": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "16.1 percentage points"
+  },
+  "ewaybills_count:yoy.direction_yoy": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "fell"
+  },
+  "ewaybills_count:yoy.change_phrase_yoy": {
+   "series": "ewaybills_count",
+   "transform": "yoy",
+   "period": "2026-08-01",
+   "source": "https://www.gst.gov.in/download/gststatistics",
+   "text": "down 16.1 percentage points"
+  },
+  "auto_pv_sales:yoy.latest": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "22.0%"
+  },
+  "auto_pv_sales:yoy.latest_abs": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "22.0%"
+  },
+  "auto_pv_sales:yoy.latest_period": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "September 2026"
+  },
+  "auto_pv_sales:yoy.prev": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "36.5%"
+  },
+  "auto_pv_sales:yoy.prev_abs": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "36.5%"
+  },
+  "auto_pv_sales:yoy.prev_period": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "August 2026"
+  },
+  "auto_pv_sales:yoy.change": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "14.5 percentage points"
+  },
+  "auto_pv_sales:yoy.direction": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "fell"
+  },
+  "auto_pv_sales:yoy.direction_noun": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "a decrease"
+  },
+  "auto_pv_sales:yoy.change_phrase": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "down 14.5 percentage points"
+  },
+  "auto_pv_sales:yoy.bp_phrase": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "down 1445 basis points"
+  },
+  "auto_pv_sales:yoy.year_ago": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "4.4%"
+  },
+  "auto_pv_sales:yoy.year_ago_abs": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "4.4%"
+  },
+  "auto_pv_sales:yoy.year_ago_period": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "September 2025"
+  },
+  "auto_pv_sales:yoy.change_yoy": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "17.6 percentage points"
+  },
+  "auto_pv_sales:yoy.direction_yoy": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "rose"
+  },
+  "auto_pv_sales:yoy.change_phrase_yoy": {
+   "series": "auto_pv_sales",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.siam.in/news-&-updates/press-releases",
+   "text": "up 17.6 percentage points"
+  },
+  "fuel_consumption_total:yoy.latest": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "3.4%"
+  },
+  "fuel_consumption_total:yoy.latest_abs": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "3.4%"
+  },
+  "fuel_consumption_total:yoy.latest_period": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "September 2026"
+  },
+  "fuel_consumption_total:yoy.prev": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "−3.1%"
+  },
+  "fuel_consumption_total:yoy.prev_abs": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "3.1%"
+  },
+  "fuel_consumption_total:yoy.prev_period": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "August 2026"
+  },
+  "fuel_consumption_total:yoy.change": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "6.5 percentage points"
+  },
+  "fuel_consumption_total:yoy.direction": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "rose"
+  },
+  "fuel_consumption_total:yoy.direction_noun": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "an increase"
+  },
+  "fuel_consumption_total:yoy.change_phrase": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "up 6.5 percentage points"
+  },
+  "fuel_consumption_total:yoy.bp_phrase": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "up 649 basis points"
+  },
+  "fuel_consumption_total:yoy.year_ago": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "7.0%"
+  },
+  "fuel_consumption_total:yoy.year_ago_abs": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "7.0%"
+  },
+  "fuel_consumption_total:yoy.year_ago_period": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "September 2025"
+  },
+  "fuel_consumption_total:yoy.change_yoy": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "3.7 percentage points"
+  },
+  "fuel_consumption_total:yoy.direction_yoy": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "fell"
+  },
+  "fuel_consumption_total:yoy.change_phrase_yoy": {
+   "series": "fuel_consumption_total",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://ppac.gov.in/consumption/products-wise",
+   "text": "down 3.7 percentage points"
+  },
+  "scb_credit_growth.latest": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "18.2%"
+  },
+  "scb_credit_growth.latest_abs": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "18.2%"
+  },
+  "scb_credit_growth.latest_period": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "15 Oct 2026"
+  },
+  "scb_credit_growth.prev": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "19.4%"
+  },
+  "scb_credit_growth.prev_abs": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "19.4%"
+  },
+  "scb_credit_growth.prev_period": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "30 Sep 2026"
+  },
+  "scb_credit_growth.change": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "1.2 percentage points"
+  },
+  "scb_credit_growth.direction": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "fell"
+  },
+  "scb_credit_growth.direction_noun": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "a decrease"
+  },
+  "scb_credit_growth.change_phrase": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 1.2 percentage points"
+  },
+  "scb_credit_growth.bp_phrase": {
+   "series": "scb_credit_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 120 basis points"
+  },
+  "m3_growth.latest": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "16.0%"
+  },
+  "m3_growth.latest_abs": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "16.0%"
+  },
+  "m3_growth.latest_period": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "15 Oct 2026"
+  },
+  "m3_growth.prev": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "16.9%"
+  },
+  "m3_growth.prev_abs": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "16.9%"
+  },
+  "m3_growth.prev_period": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "30 Sep 2026"
+  },
+  "m3_growth.change": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "0.9 percentage points"
+  },
+  "m3_growth.direction": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "fell"
+  },
+  "m3_growth.direction_noun": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "a decrease"
+  },
+  "m3_growth.change_phrase": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 0.9 percentage points"
+  },
+  "m3_growth.bp_phrase": {
+   "series": "m3_growth",
+   "transform": "level",
+   "period": "2026-10-15",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 90 basis points"
+  },
+  "merch_trade_balance.latest": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$30.2 billion"
+  },
+  "merch_trade_balance.latest_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$30.2 billion"
+  },
+  "merch_trade_balance.latest_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "September 2026"
+  },
+  "merch_trade_balance.prev": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$26.9 billion"
+  },
+  "merch_trade_balance.prev_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$26.9 billion"
+  },
+  "merch_trade_balance.prev_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "August 2026"
+  },
+  "merch_trade_balance.change": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$3.4 billion"
+  },
+  "merch_trade_balance.direction": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "fell"
+  },
+  "merch_trade_balance.direction_noun": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "a decrease"
+  },
+  "merch_trade_balance.change_phrase": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "down $3.4 billion"
+  },
+  "merch_trade_balance.year_ago": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$33.0 billion"
+  },
+  "merch_trade_balance.year_ago_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$33.0 billion"
+  },
+  "merch_trade_balance.year_ago_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "September 2025"
+  },
+  "merch_trade_balance.change_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$2.8 billion"
+  },
+  "merch_trade_balance.direction_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "rose"
+  },
+  "merch_trade_balance.change_phrase_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "up $2.8 billion"
+  },
+  "merch_exports:yoy.latest": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "23.0%"
+  },
+  "merch_exports:yoy.latest_abs": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "23.0%"
+  },
+  "merch_exports:yoy.latest_period": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "September 2026"
+  },
+  "merch_exports:yoy.prev": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "26.1%"
+  },
+  "merch_exports:yoy.prev_abs": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "26.1%"
+  },
+  "merch_exports:yoy.prev_period": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "August 2026"
+  },
+  "merch_exports:yoy.change": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "3.1 percentage points"
+  },
+  "merch_exports:yoy.direction": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "fell"
+  },
+  "merch_exports:yoy.direction_noun": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "a decrease"
+  },
+  "merch_exports:yoy.change_phrase": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "down 3.1 percentage points"
+  },
+  "merch_exports:yoy.bp_phrase": {
+   "series": "merch_exports",
+   "transform": "yoy",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "down 308 basis points"
+  },
+  "fx_reserves_total.latest": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$719.7 billion"
+  },
+  "fx_reserves_total.latest_abs": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$719.7 billion"
+  },
+  "fx_reserves_total.latest_period": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "23 Oct 2026"
+  },
+  "fx_reserves_total.prev": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$721.0 billion"
+  },
+  "fx_reserves_total.prev_abs": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$721.0 billion"
+  },
+  "fx_reserves_total.prev_period": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "16 Oct 2026"
+  },
+  "fx_reserves_total.change": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$1.3 billion"
+  },
+  "fx_reserves_total.direction": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "fell"
+  },
+  "fx_reserves_total.direction_noun": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "a decrease"
+  },
+  "fx_reserves_total.change_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down $1.3 billion"
+  },
+  "fx_reserves_total.pct_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 0.18%"
+  },
+  "fx_reserves_total.week_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 0.18%"
+  },
+  "fx_reserves_total.month_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-23",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 3.72%"
+  },
+  "bop_remittances.latest": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$42.9 billion"
+  },
+  "bop_remittances.latest_abs": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$42.9 billion"
+  },
+  "bop_remittances.latest_period": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q1 FY27"
+  },
+  "bop_remittances.prev": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$43.5 billion"
+  },
+  "bop_remittances.prev_abs": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$43.5 billion"
+  },
+  "bop_remittances.prev_period": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q4 FY26"
+  },
+  "bop_remittances.change": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$0.6 billion"
+  },
+  "bop_remittances.direction": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "fell"
+  },
+  "bop_remittances.direction_noun": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "a decrease"
+  },
+  "bop_remittances.change_phrase": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "down $0.6 billion"
+  },
+  "bop_remittances.pct_phrase": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "down 1.38%"
+  },
+  "bop_remittances.year_ago": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$33.2 billion"
+  },
+  "bop_remittances.year_ago_abs": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$33.2 billion"
+  },
+  "bop_remittances.year_ago_period": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q1 FY26"
+  },
+  "bop_remittances.change_yoy": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$9.7 billion"
+  },
+  "bop_remittances.direction_yoy": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "rose"
+  },
+  "bop_remittances.change_phrase_yoy": {
+   "series": "bop_remittances",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "up $9.7 billion"
+  },
+  "cga_fiscal_deficit_pct_be.latest": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "42.1%"
+  },
+  "cga_fiscal_deficit_pct_be.latest_abs": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "42.1%"
+  },
+  "cga_fiscal_deficit_pct_be.latest_period": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "September 2026"
+  },
+  "cga_fiscal_deficit_pct_be.prev": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "41.9%"
+  },
+  "cga_fiscal_deficit_pct_be.prev_abs": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "41.9%"
+  },
+  "cga_fiscal_deficit_pct_be.prev_period": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "August 2026"
+  },
+  "cga_fiscal_deficit_pct_be.change": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "0.2 percentage points"
+  },
+  "cga_fiscal_deficit_pct_be.direction": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "rose"
+  },
+  "cga_fiscal_deficit_pct_be.direction_noun": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "an increase"
+  },
+  "cga_fiscal_deficit_pct_be.change_phrase": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "up 0.2 percentage points"
+  },
+  "cga_fiscal_deficit_pct_be.bp_phrase": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "up 20 basis points"
+  },
+  "cga_fiscal_deficit_pct_be.year_ago": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "36.5%"
+  },
+  "cga_fiscal_deficit_pct_be.year_ago_abs": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "36.5%"
+  },
+  "cga_fiscal_deficit_pct_be.year_ago_period": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "September 2025"
+  },
+  "cga_fiscal_deficit_pct_be.change_yoy": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "5.6 percentage points"
+  },
+  "cga_fiscal_deficit_pct_be.direction_yoy": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "rose"
+  },
+  "cga_fiscal_deficit_pct_be.change_phrase_yoy": {
+   "series": "cga_fiscal_deficit_pct_be",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://cga.nic.in/",
+   "text": "up 5.6 percentage points"
+  },
+  "const.rbi_inflation_target": {
+   "constant": "rbi_inflation_target",
+   "source": "RBI Act s.45ZA; flexible inflation target notified by the Government of India (CPI, 4% +/- 2%)",
+   "text": "4%"
+  },
+  "const.rbi_tolerance_band": {
+   "constant": "rbi_tolerance_band",
+   "source": "RBI Act s.45ZA; flexible inflation target notified by the Government of India (CPI, 4% +/- 2%)",
+   "text": "2–6%"
+  }
+ }
+}
