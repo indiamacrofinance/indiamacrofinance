@@ -6,9 +6,10 @@ The name is defined **only** in `site.config.yaml`.
 
 1. Edit `site.name`, `site.short_name`, `site.tagline` in `site.config.yaml`.
 2. Replace `assets/brand/` wordmark files if they contain text (the mark itself is name-independent).
-3. `make check` (the name check now looks for the *new* name outside config, so it catches nothing old). Also run `scripts/check_name.py --also "<old name>"` to catch leftovers.
-4. Rebuild and deploy.
-5. Optional: rename the GitHub repo or org. GitHub keeps redirects.
+3. Update `README.md` by hand (GitHub shows it as the repo's landing page and cannot read the config; the name check exempts it).
+4. `make check` (the name check now looks for the *new* name outside config, so it catches nothing old). Also run `scripts/check_name.py --also "<old name>"` to catch leftovers.
+5. Rebuild and deploy.
+6. Optional: rename the GitHub repo or org. GitHub keeps redirects.
 
 ## New domain
 

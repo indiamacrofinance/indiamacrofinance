@@ -17,7 +17,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 # Historical records may name the site; everything else must not.
-EXEMPT = {"site.config.yaml", "docs/guidebook/09-rebranding.md"}   # the rename record names old names
+EXEMPT = {"site.config.yaml", "docs/guidebook/09-rebranding.md",   # the rename record names old names
+          "README.md"}   # GitHub's landing page cannot read the config; update it on a rename
 # Sent newsletters are a record of what went out (rendered from the config at the time).
 EXEMPT_DIRS = ("docs/guidebook/decisions/", "data/newsletter/morning/")
 
