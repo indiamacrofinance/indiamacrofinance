@@ -40,6 +40,24 @@ ROWS = {  # label prefix -> series
     "4.8. Loans against gold": "credit_gold_growth",
     "4.5. Credit Card": "credit_cards_growth",
 }
+# Amounts outstanding (Rs lakh crore) for credit contributions (derived/credit_contributions.py).
+LEVELS = {
+    "1. Agriculture": "credit_level_agri",
+    "2. Industry": "credit_level_industry",
+    "2.1. Micro and Small": "credit_level_mse",
+    "2.2. Medium": "credit_level_medium",
+    "2.3. Large": "credit_level_large",
+    "3. Services": "credit_level_services",
+    "3.7. Trade": "credit_level_trade",
+    "3.8. Commercial Real Estate": "credit_level_cre",
+    "3.9. Non-Banking Financial": "credit_level_nbfc",
+    "4. Personal Loans": "credit_level_personal",
+    "4.2. Housing": "credit_level_housing",
+    "4.5. Credit Card": "credit_level_cards",
+    "4.7. Vehicle Loans": "credit_level_vehicle",
+    "4.8. Loans against gold": "credit_level_gold",
+    "4.9. Other Personal Loans": "credit_level_other_personal",
+}
 DATE = re.compile(r"(\d{1,2})\.([A-Za-z]{3}),\s*(\d{4})")
 
 
@@ -60,12 +78,30 @@ def yoy_columns(row: pd.Series) -> dict[int, str]:
     return {pairs[0][0]: year_before, pairs[1][0]: latest}
 
 
+def level_columns(row: pd.Series) -> dict[int, str]:
+    """{column: period} for the outstanding-amount dates of a block (plain dates, not "a / b"):
+    the latest month, the same month a year earlier and two years earlier. As with growth,
+    an earlier date can be a reporting Friday in the next month, so periods derive from the latest."""
+    dated = [(c, datetime.strptime(" ".join(DATE.search(v).groups()), "%d %b %Y"))
+             for c, v in row.items() if isinstance(v, str) and "/" not in v and DATE.search(v)]
+    if not dated:
+        return {}
+    latest_col, latest = max(dated, key=lambda x: x[1])
+    out = {latest_col: latest.strftime("%Y-%m-01")}
+    for years in (1, 2):
+        target = latest.replace(year=latest.year - years)
+        near = [(c, d) for c, d in dated if abs((d - target).days) <= 20]
+        if near:
+            out[min(near, key=lambda x: abs((x[1] - target).days))[0]] = target.strftime("%Y-%m-01")
+    return out
+
+
 def parse_statement(content: bytes) -> list[dict]:
     df = pd.read_excel(io.BytesIO(content), sheet_name="Statement 1", header=None)
-    cols, rows = {}, []
+    cols, lcols, rows = {}, {}, []
     for _, r in df.iterrows():
         if any(isinstance(v, str) and "/" in v and DATE.search(v) for v in r):
-            cols = yoy_columns(r)                             # a new block of dates
+            cols, lcols = yoy_columns(r), level_columns(r)   # a new block of dates
             continue
         label = re.sub(r"\s+", " ", str(r[0])).strip()
         sid = next((s for k, s in ROWS.items() if label.startswith(k)), None)
@@ -74,15 +110,22 @@ def parse_statement(content: bytes) -> list[dict]:
                 v = pd.to_numeric(r[c], errors="coerce")
                 if pd.notna(v):
                     rows.append({"series_id": sid, "period": period, "value": round(float(v), 2)})
+        lid = next((s for k, s in LEVELS.items() if label.startswith(k)), None)
+        if lid and lcols:
+            for c, period in lcols.items():
+                v = pd.to_numeric(r[c], errors="coerce")
+                if pd.notna(v):
+                    rows.append({"series_id": lid, "period": period, "value": round(float(v) / 1e5, 4)})
     found = {r["series_id"] for r in rows}
-    if set(ROWS.values()) - found:
-        raise ValueError(f"sectoral credit rows not found: {sorted(set(ROWS.values()) - found)}")
+    wanted = set(ROWS.values()) | set(LEVELS.values())
+    if wanted - found:
+        raise ValueError(f"sectoral credit rows not found: {sorted(wanted - found)}")
     return rows
 
 
 class SectoralCredit(Source):
     name = "rbi_sectoral_credit"
-    series_ids = tuple(ROWS.values())
+    series_ids = (*ROWS.values(), *LEVELS.values())
 
     def fetch(self) -> list[Raw]:
         months = BACKFILL_MONTHS if len(load_series("credit_agri_growth")) < MIN_HISTORY else RECENT_MONTHS

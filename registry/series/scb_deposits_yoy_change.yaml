@@ -1,0 +1,39 @@
+id: scb_deposits_yoy_change
+title: 'Scheduled commercial banks: change in aggregate deposits over a year (Rs lakh
+  crore)'
+short_title: Y/y change in aggregate deposits
+area: money
+source:
+  agency: RBI
+  dataset: 'Weekly Statistical Supplement: Scheduled Commercial Banks - Business in
+    India'
+  url: https://www.rbi.org.in/Scripts/BS_viewWss.aspx
+  module: pipelines/sources/rbi/wss.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: F
+unit: inr_lakh_crore
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+- yoy
+release:
+  calendar: rbi
+  rule: WSS released Friday evening
+  lag_days: 14
+validation:
+  range:
+  - -50
+  - 100
+  revision_alert: 5
+pages:
+- page: money-banking
+  section: credit
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Year-on-year variation in aggregate deposits on each fortnightly reporting
+  date, as published in the WSS (table 4, last column), in Rs lakh crore.

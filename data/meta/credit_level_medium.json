@@ -1,0 +1,29 @@
+{
+  "id": "credit_level_medium",
+  "title": "Bank credit outstanding: medium industry",
+  "short_title": "Credit: medium industry",
+  "unit": "inr_lakh_crore",
+  "frequency": "M",
+  "base_year": null,
+  "source": {
+    "agency": "RBI",
+    "dataset": "Sectoral Deployment of Bank Credit (monthly press release, Statement 1)",
+    "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+    "module": "pipelines/sources/rbi/sectoral_credit.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2023-06-01",
+  "last_period": "2026-09-01",
+  "last_value": 5.1402,
+  "observations": 40,
+  "updated_at": "2026-11-01T14:43:48+00:00",
+  "fetched_from": [
+    "https://rbidocs.rbi.org.in/rdocs/content/docs/SIBC30092026ENG.xlsx",
+    "https://rbidocs.rbi.org.in/rdocs/content/docs/SIBC30102026E.xlsx"
+  ],
+  "raw_files": [
+    "data/raw/rbi_sectoral_credit/20261101T144346-a8fe240d52.xlsx",
+    "data/raw/rbi_sectoral_credit/20261101T144348-3ff4c10c13.xlsx"
+  ]
+}

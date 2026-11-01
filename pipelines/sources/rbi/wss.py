@@ -37,6 +37,8 @@ FX_ROWS = {"Total Reserves": "fx_reserves_total", "Foreign Currency Assets": "fx
 BANK_LEVELS = {"2.1 Aggregate Deposits": "scb_deposits", "7 Bank Credit": "scb_credit",
                "7a.2 Non-food credit": "scb_nonfood_credit"}
 BANK_GROWTH = {"2.1a Growth": "scb_deposits_growth", "7.1a Growth": "scb_credit_growth"}
+# Last column of the level rows: the year-on-year change in Rs crore, current year.
+BANK_YOY_CHANGE = {"2.1 Aggregate Deposits": "scb_deposits_yoy_change", "7 Bank Credit": "scb_credit_yoy_change"}
 RATE_ROWS = {
     "Cash Reserve Ratio": "crr", "Statutory Liquidity Ratio": "slr", "Policy Repo Rate": "repo_rate",
     "Standing Deposit Facility": "sdf_rate", "Marginal Standing Facility": "msf_rate",
@@ -96,6 +98,9 @@ def parse_banks(df: pd.DataFrame) -> list[dict]:
         for key, sid in BANK_LEVELS.items():
             if text.startswith(key) and nums:
                 rows.append({"series_id": sid, "period": as_on, "value": nums[0] / 1e5})
+        for key, sid in BANK_YOY_CHANGE.items():
+            if text.startswith(key) and len(nums) >= 6:
+                rows.append({"series_id": sid, "period": as_on, "value": nums[-1] / 1e5})
         for key, sid in BANK_GROWTH.items():
             if text.startswith(key) and nums:
                 # Last column is year-on-year growth for the current year, as published.
@@ -227,7 +232,7 @@ def section_of(df: pd.DataFrame) -> int:
 # Series per section: if any has little history yet, that section backfills.
 MIN_HISTORY = 20
 SECTION_SERIES = {2: list(FX_ROWS.values()),
-                  3: [*BANK_LEVELS.values(), *BANK_GROWTH.values()],
+                  3: [*BANK_LEVELS.values(), *BANK_GROWTH.values(), *BANK_YOY_CHANGE.values()],
                   4: list(dict.fromkeys(RATE_ROWS.values())),
                   7: ["m3", "m3_growth", "currency_public_growth"],
                   8: ["reserve_money", "reserve_money_growth"],
@@ -238,7 +243,7 @@ SECTION_SERIES = {2: list(FX_ROWS.values()),
 
 class RbiWSS(Source):
     name = "rbi_wss"
-    series_ids = (*FX_ROWS.values(), *BANK_LEVELS.values(), *BANK_GROWTH.values(),
+    series_ids = (*FX_ROWS.values(), *BANK_LEVELS.values(), *BANK_GROWTH.values(), *BANK_YOY_CHANGE.values(),
                   *dict.fromkeys(RATE_ROWS.values()), *SECTION_SERIES[7], *SECTION_SERIES[8],
                   *SECTION_SERIES[25], *SECTION_SERIES[13], *SECTION_SERIES[14])
 

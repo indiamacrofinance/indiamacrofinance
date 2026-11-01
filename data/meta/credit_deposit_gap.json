@@ -1,0 +1,25 @@
+{
+  "id": "credit_deposit_gap",
+  "title": "Credit-deposit gap of scheduled commercial banks: y/y change in credit minus y/y change in deposits",
+  "short_title": "Credit-deposit gap",
+  "unit": "inr_lakh_crore",
+  "frequency": "F",
+  "base_year": null,
+  "source": {
+    "agency": "RBI; site calculation",
+    "dataset": "Weekly Statistical Supplement: Scheduled Commercial Banks",
+    "url": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+    "module": "pipelines/sources/derived/credit_deposit.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2025-08-22",
+  "last_period": "2026-10-15",
+  "last_value": -4.857,
+  "observations": 29,
+  "updated_at": "2026-11-01T14:40:34+00:00",
+  "fetched_from": [
+    "derived: derived_credit_deposit"
+  ],
+  "raw_files": []
+}

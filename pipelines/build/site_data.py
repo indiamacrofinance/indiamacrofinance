@@ -180,6 +180,21 @@ def cpi_contributions() -> list[dict]:
                           "Core": ("cpi_core_index", w["core"])})
 
 
+def credit_contribution_charts() -> dict[str, dict]:
+    """Stacked contributions to credit growth by panel: {panel: {"rows": [...], "total": [[period, %]]}}."""
+    out = {}
+    for panel in ("credit_contrib_sectors", "credit_contrib_industry", "credit_contrib_services", "credit_contrib_personal"):
+        df = store.load_panel(panel)
+        if df.empty:
+            continue
+        df["value"] = df["value"].astype(float)
+        rows = [{"period": r.period, "component": r.entity, "series": panel, "pp": round(r.value, 3)}
+                for r in df.sort_values(["period", "entity"]).itertuples()]
+        total = df.groupby("period")["value"].sum().round(2)
+        out[panel] = {"rows": rows, "total": [[p, v] for p, v in total.items()]}
+    return out
+
+
 def cpi_diffusion() -> dict[str, list[dict]]:
     """Diffusion indices as stacked shares: {"headline": rows, "core": rows}, rows like the
     contribution charts (component = inflation bucket, pp = % of the basket)."""
@@ -630,6 +645,7 @@ def main() -> int:
     write_json(OUT / "home.json", {"tiles": tiles, "questions": questions})
     write_json(OUT / "cpi_contributions.json", cpi_contributions())
     write_json(OUT / "cpi_diffusion.json", cpi_diffusion())
+    write_json(OUT / "credit_contributions.json", credit_contribution_charts())
     write_json(OUT / "cpi_division_contributions.json", cpi_division_contributions(specs))
     write_json(OUT / "gdp_contributions.json", gdp_contributions())
 

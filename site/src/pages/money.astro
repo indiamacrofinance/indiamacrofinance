@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import LineChart from "../components/LineChart.astro";
+import StackedBars from "../components/StackedBars.astro";
 import PeriodTable from "../components/PeriodTable.astro";
 import { series, latest } from "../lib/data.js";
 import { num, period } from "../lib/format.js";
@@ -13,6 +14,7 @@ const m3 = latest(series("m3_growth"));
 const mpc = JSON.parse(fs.readFileSync("src/data/generated/mpc_decisions.json", "utf8"));
 const lastMpc = mpc.rows[0];
 const move = (bp) => bp === null ? "–" : bp === 0 ? "hold" : `${bp > 0 ? "+" : "−"}${Math.abs(bp)} bp`;
+const creditContrib = JSON.parse(fs.readFileSync("src/data/generated/credit_contributions.json", "utf8"));
 ---
 <Base current="money" title="Money & banking">
   <h1>Money &amp; banking</h1>
@@ -55,8 +57,13 @@ const move = (bp) => bp === null ? "–" : bp === 0 ? "hold" : `${bp > 0 ? "+" :
       lines={[{ id: "scb_deposits", label: "Deposits" }, { id: "scb_credit", label: "Credit" }]} years={1} />
   </div>
   <p class="chart-sub">RBI notes that these data include the effect of a non-bank merging into a bank, which lifts year-on-year growth; see the note in the WSS table.</p>
-  <LineChart title="Credit–deposit ratio" subtitle="Bank credit as % of aggregate deposits, scheduled commercial banks, fortnightly (site calculation from the two RBI series)"
-    lines={[{ id: "credit_deposit_ratio", label: "Credit–deposit ratio" }]} years={1} />
+  <div class="grid2">
+    <LineChart title="Credit–deposit ratio" subtitle="Bank credit as % of aggregate deposits, scheduled commercial banks, fortnightly (site calculation from the two RBI series)"
+      lines={[{ id: "credit_deposit_ratio", label: "Credit–deposit ratio" }]} years={1} />
+    <LineChart title="Credit–deposit gap" subtitle="₹ lakh crore: rise in bank credit over the past year minus rise in deposits; above zero, lending outpaced deposits"
+      lines={[{ id: "credit_deposit_gap", label: "Gap" }]} reference={{ target: 0 }} years={1} />
+  </div>
+  <p class="chart-sub">When the gap is positive, banks are lending out more new money than they take in as deposits and must fund the difference by borrowing, issuing certificates of deposit or selling investments; that is when CD rates tend to rise. Site calculation from RBI's year-on-year changes in the Weekly Statistical Supplement (table 4).</p>
 
   <h2 id="sectoral-credit">Who is borrowing: credit by sector</h2>
   <div class="grid2">
@@ -65,6 +72,25 @@ const move = (bp) => bp === null ? "–" : bp === 0 ? "hold" : `${bp > 0 ? "+" :
     <LineChart title="Personal loans by type" subtitle="% change on a year earlier, as published"
       lines={[{ id: "credit_housing_growth", label: "Housing" }, { id: "credit_vehicle_growth", label: "Vehicle" }, { id: "credit_cards_growth", label: "Credit cards" }]} years={2} />
   </div>
+  <div class="grid2">
+    <StackedBars title="What is driving credit growth" subtitle="Percentage points of y/y growth in credit to the four main sectors; the line is their total growth"
+      rows={creditContrib.credit_contrib_sectors.rows} total={creditContrib.credit_contrib_sectors.total} yLabel="pp"
+      source="RBI, sectoral deployment of bank credit; site calculations." />
+    <StackedBars title="What is driving personal loans" subtitle="Percentage points of y/y growth in personal loans; the line is their growth as published"
+      rows={creditContrib.credit_contrib_personal.rows} total={creditContrib.credit_contrib_personal.total} yLabel="pp"
+      source="RBI, sectoral deployment of bank credit; site calculations." />
+  </div>
+  <details><summary>Industry by firm size, and services by type</summary>
+    <div class="grid2">
+      <StackedBars title="Credit to industry" subtitle="Percentage points of y/y growth, by firm size"
+        rows={creditContrib.credit_contrib_industry.rows} total={creditContrib.credit_contrib_industry.total} yLabel="pp"
+        source="RBI; site calculations." />
+      <StackedBars title="Credit to services" subtitle="Percentage points of y/y growth"
+        rows={creditContrib.credit_contrib_services.rows} total={creditContrib.credit_contrib_services.total} yLabel="pp"
+        source="RBI; site calculations." />
+    </div>
+  </details>
+  <p class="chart-sub">Each bar splits a growth rate into the part due to each kind of borrower: the rise in that borrower's loans over the year as a share of the total a year earlier. The parts add up to the growth rate (and match RBI's published growth for personal loans, industry and services). The sector chart covers the four main sectors, which make up about 95% of non-food credit; RBI reports total non-food credit on a different date. Amounts from RBI's monthly Statement 1; the month, a year earlier and two years earlier come from each release.</p>
   <PeriodTable heading="% y/y, last reporting day of the month" n={6} rows={[
     { id: "credit_nonfood_growth", label: "Non-food credit" },
     { id: "credit_agri_growth", indent: true }, { id: "credit_industry_growth", indent: true }, { id: "credit_services_growth", indent: true },

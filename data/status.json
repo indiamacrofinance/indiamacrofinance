@@ -847,78 +847,218 @@
     "last_period": "2026-09-01"
   },
   "credit_agri_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_cards_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
+  "credit_contrib_industry": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_contrib_personal": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_contrib_sectors": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_contrib_services": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_deposit_gap": {
+    "last_attempt": "2026-11-01T14:40:34+00:00",
+    "last_success": "2026-11-01T14:40:34+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-15"
+  },
   "credit_deposit_ratio": {
-    "last_attempt": "2026-10-30T18:33:51+00:00",
-    "last_success": "2026-10-30T18:33:51+00:00",
+    "last_attempt": "2026-11-01T14:40:34+00:00",
+    "last_success": "2026-11-01T14:40:34+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "credit_gold_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_housing_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_industry_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_agri": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_cards": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_cre": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_gold": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_housing": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_industry": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_large": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_medium": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_mse": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_nbfc": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_other_personal": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_personal": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_services": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_trade": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "credit_level_vehicle": {
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_nbfc_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_nonfood_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_personal_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_services_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_vehicle_growth": {
-    "last_attempt": "2026-10-30T18:31:07+00:00",
-    "last_success": "2026-10-30T18:31:07+00:00",
+    "last_attempt": "2026-11-01T14:43:48+00:00",
+    "last_success": "2026-11-01T14:43:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1385,6 +1525,13 @@
     "last_error": null,
     "last_period": "2026-04-01"
   },
+  "incremental_credit_deposit_ratio": {
+    "last_attempt": "2026-11-01T14:40:34+00:00",
+    "last_success": "2026-11-01T14:40:34+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-15"
+  },
   "indiavix_close": {
     "last_attempt": "2026-11-01T13:16:38+00:00",
     "last_success": "2026-11-01T13:16:38+00:00",
@@ -1728,6 +1875,13 @@
     "last_error": null,
     "last_period": "2026-10-15"
   },
+  "scb_credit_yoy_change": {
+    "last_attempt": "2026-11-01T14:40:15+00:00",
+    "last_success": "2026-11-01T14:40:15+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-15"
+  },
   "scb_deposits": {
     "last_attempt": "2026-10-30T18:29:38+00:00",
     "last_success": "2026-10-30T18:29:38+00:00",
@@ -1738,6 +1892,13 @@
   "scb_deposits_growth": {
     "last_attempt": "2026-10-30T18:29:39+00:00",
     "last_success": "2026-10-30T18:29:39+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-10-15"
+  },
+  "scb_deposits_yoy_change": {
+    "last_attempt": "2026-11-01T14:40:15+00:00",
+    "last_success": "2026-11-01T14:40:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"

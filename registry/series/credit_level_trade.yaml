@@ -1,0 +1,36 @@
+id: credit_level_trade
+title: 'Bank credit outstanding: trade'
+short_title: 'Credit: trade'
+area: money
+source:
+  agency: RBI
+  dataset: Sectoral Deployment of Bank Credit (monthly press release, Statement 1)
+  url: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx
+  module: pipelines/sources/rbi/sectoral_credit.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: inr_lakh_crore
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: monthly press release, about a month after the month
+  lag_days: 35
+validation:
+  range:
+  - 0
+  - 200
+  revision_alert: 3
+pages:
+- page: money-banking
+  section: sectoral-credit
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Rs lakh crore outstanding, RBI Statement 1 row '3.7. Trade'; the month, a year
+  earlier and two years earlier from each release (newest release wins).

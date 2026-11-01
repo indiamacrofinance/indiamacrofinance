@@ -1,0 +1,36 @@
+id: credit_contrib_personal
+title: Contributions to personal loan growth, by type
+short_title: Contributions to personal loan growth, by type
+area: money
+source:
+  agency: RBI; site calculation
+  dataset: Sectoral Deployment of Bank Credit (monthly press release, Statement 1)
+  url: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx
+  module: pipelines/sources/derived/credit_contributions.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: percentage_points
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: monthly press release, about a month after the month
+  lag_days: 35
+validation:
+  range:
+  - -30
+  - 60
+  revision_alert: 5
+pages:
+- page: money-banking
+  section: sectoral-credit
+original: true
+discontinued: null
+owner: ''
+verified_against: []
+notes: Percentage points of y/y growth; components sum to the parent's growth. Method
+  in pipelines/sources/derived/credit_contributions.py.

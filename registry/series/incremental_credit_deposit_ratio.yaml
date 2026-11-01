@@ -1,0 +1,36 @@
+id: incremental_credit_deposit_ratio
+title: Incremental credit-deposit ratio of scheduled commercial banks (y/y)
+short_title: Incremental credit-deposit ratio
+area: money
+source:
+  agency: RBI; site calculation
+  dataset: 'Weekly Statistical Supplement: Scheduled Commercial Banks'
+  url: https://www.rbi.org.in/Scripts/BS_viewWss.aspx
+  module: pipelines/sources/derived/credit_deposit.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: F
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: WSS released Friday evening
+  lag_days: 14
+validation:
+  range:
+  - -200
+  - 400
+  revision_alert: 5
+pages:
+- page: money-banking
+  section: credit
+original: true
+discontinued: null
+owner: ''
+verified_against: []
+notes: Change in credit over a year as % of the change in deposits over the same year.
+  Site calculation from the WSS (table 4).

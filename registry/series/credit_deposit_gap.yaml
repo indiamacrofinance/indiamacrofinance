@@ -1,0 +1,38 @@
+id: credit_deposit_gap
+title: 'Credit-deposit gap of scheduled commercial banks: y/y change in credit minus
+  y/y change in deposits'
+short_title: Credit-deposit gap
+area: money
+source:
+  agency: RBI; site calculation
+  dataset: 'Weekly Statistical Supplement: Scheduled Commercial Banks'
+  url: https://www.rbi.org.in/Scripts/BS_viewWss.aspx
+  module: pipelines/sources/derived/credit_deposit.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: F
+unit: inr_lakh_crore
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: WSS released Friday evening
+  lag_days: 14
+validation:
+  range:
+  - -60
+  - 60
+  revision_alert: 5
+pages:
+- page: money-banking
+  section: credit
+original: true
+discontinued: null
+owner: ''
+verified_against: []
+notes: Positive when credit grew by more rupees over the year than deposits, so banks
+  funded lending from other sources (borrowing, CDs, running down investments). Site
+  calculation from the WSS (table 4).

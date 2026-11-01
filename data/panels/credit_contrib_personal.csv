@@ -1,0 +1,169 @@
+entity,period,value,vintage,note
+Credit cards,2024-06-01,1.183,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-07-01,1.027,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-08-01,0.942,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-09-01,0.838,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-10-01,0.812,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-11-01,0.874,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2024-12-01,0.757,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-01-01,0.642,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-02-01,0.548,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-03-01,0.512,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-04-01,0.513,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-05-01,0.415,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-06-01,0.356,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-07-01,0.28,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-08-01,0.217,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-09-01,0.179,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-10-01,0.383,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-11-01,0.123,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2025-12-01,0.051,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-01-01,0.074,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-02-01,0.085,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-03-01,0.169,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-04-01,0.181,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-05-01,0.063,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-06-01,0.092,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-07-01,0.108,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-08-01,0.169,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Credit cards,2026-09-01,0.321,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-06-01,0.453,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-07-01,0.597,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-08-01,0.677,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-09-01,0.876,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-10-01,1.159,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-11-01,1.367,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2024-12-01,1.485,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-01-01,1.599,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-02-01,1.812,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-03-01,2.113,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-04-01,2.389,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-05-01,2.608,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-06-01,2.938,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-07-01,3.066,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-08-01,3.099,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-09-01,3.089,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-10-01,3.352,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-11-01,3.468,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2025-12-01,3.692,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-01-01,3.854,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-02-01,4.078,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-03-01,4.254,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-04-01,4.464,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-05-01,4.342,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-06-01,4.219,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-07-01,4.186,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-08-01,4.077,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Gold loans,2026-09-01,4.121,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-06-01,17.074,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-07-01,6.602,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-08-01,6.718,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-09-01,6.474,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-10-01,6.175,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-11-01,6.25,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2024-12-01,5.666,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-01-01,5.601,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-02-01,5.651,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-03-01,5.457,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-04-01,4.989,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-05-01,4.584,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-06-01,4.881,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-07-01,4.906,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-08-01,4.947,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-09-01,5.039,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-10-01,5.572,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-11-01,4.984,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2025-12-01,5.585,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-01-01,5.598,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-02-01,5.542,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-03-01,5.786,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-04-01,5.714,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-05-01,5.455,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-06-01,5.479,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-07-01,5.62,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-08-01,5.552,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Housing,2026-09-01,5.665,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-06-01,4.81,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-07-01,3.82,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-08-01,3.717,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-09-01,3.583,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-10-01,2.76,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-11-01,2.966,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2024-12-01,2.336,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-01-01,2.2,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-02-01,2.03,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-03-01,2.007,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-04-01,2.253,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-05-01,1.911,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-06-01,1.858,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-07-01,1.98,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-08-01,1.977,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-09-01,1.881,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-10-01,2.576,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-11-01,2.3,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2025-12-01,2.609,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-01-01,2.986,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-02-01,3.113,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-03-01,3.336,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-04-01,3.254,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-05-01,3.185,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-06-01,3.581,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-07-01,3.702,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-08-01,3.75,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Other personal loans,2026-09-01,3.888,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-06-01,0.647,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-07-01,0.7,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-08-01,0.684,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-09-01,0.639,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-10-01,0.707,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-11-01,0.776,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2024-12-01,0.837,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-01-01,0.774,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-02-01,0.672,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-03-01,0.677,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-04-01,0.793,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-05-01,0.662,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-06-01,0.674,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-07-01,0.684,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-08-01,0.677,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-09-01,0.609,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-10-01,0.754,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-11-01,0.585,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2025-12-01,0.697,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-01-01,0.623,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-02-01,0.605,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-03-01,0.752,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-04-01,0.516,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-05-01,0.511,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-06-01,0.573,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-07-01,0.662,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-08-01,1.322,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Others,2026-09-01,1.537,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-06-01,1.805,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-07-01,1.557,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-08-01,1.548,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-09-01,2.72,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-10-01,1.289,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-11-01,1.119,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2024-12-01,0.96,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-01-01,1.038,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-02-01,1.024,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-03-01,0.924,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-04-01,0.955,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-05-01,0.933,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-06-01,0.987,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-07-01,0.954,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-08-01,0.935,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-09-01,0.706,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-10-01,1.331,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-11-01,1.303,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2025-12-01,1.743,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-01-01,1.801,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-02-01,1.801,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-03-01,1.941,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-04-01,1.886,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-05-01,1.819,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-06-01,1.814,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-07-01,1.956,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-08-01,2.052,2026-11-01,site calculation: change in the component over a year / parent a year earlier
+Vehicles,2026-09-01,1.721,2026-11-01,site calculation: change in the component over a year / parent a year earlier

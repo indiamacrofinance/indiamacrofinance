@@ -1,0 +1,25 @@
+{
+  "id": "incremental_credit_deposit_ratio",
+  "title": "Incremental credit-deposit ratio of scheduled commercial banks (y/y)",
+  "short_title": "Incremental credit-deposit ratio",
+  "unit": "percent",
+  "frequency": "F",
+  "base_year": null,
+  "source": {
+    "agency": "RBI; site calculation",
+    "dataset": "Weekly Statistical Supplement: Scheduled Commercial Banks",
+    "url": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+    "module": "pipelines/sources/derived/credit_deposit.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2025-08-22",
+  "last_period": "2026-10-15",
+  "last_value": 87.84,
+  "observations": 29,
+  "updated_at": "2026-11-01T14:40:34+00:00",
+  "fetched_from": [
+    "derived: derived_credit_deposit"
+  ],
+  "raw_files": []
+}
