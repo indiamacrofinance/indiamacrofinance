@@ -1,0 +1,33 @@
+name: redirect-old-pages
+# Manual, one-off: replaces an old Cloudflare Pages project (default econvitalsindia, from
+# before the rename) with a site that redirects every path to the same path on the current
+# address. Run again only if the current address changes. See docs/guidebook/09-rebranding.md.
+on:
+  workflow_dispatch:
+    inputs:
+      old_project:
+        description: Old Pages project to turn into a redirect
+        default: econvitalsindia
+      target:
+        description: Where to send visitors (no trailing slash)
+        default: https://indiatracker.pages.dev
+permissions:
+  contents: read
+jobs:
+  redirect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      OLD: ${{ inputs.old_project }}
+      TARGET: ${{ inputs.target }}
+    steps:
+      - name: Build the redirect site
+        run: |
+          mkdir -p out
+          printf '/ %s/ 301\n/* %s/:splat 301\n' "$TARGET" "$TARGET" > out/_redirects
+          printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=%s/"><title>Moved</title><p>This site has moved to <a href="%s/">%s</a>.</p>\n' "$TARGET" "$TARGET" "$TARGET" > out/index.html
+          cat out/_redirects
+      - name: Upload to the old Pages project
+        run: npx --yes wrangler@4 pages deploy out --project-name="$OLD" --branch=main --commit-dirty=true

@@ -35,3 +35,11 @@ Still carrying the old spelling, on purpose or until the maintainer changes them
 `newsletter.enabled` sends the morning email; `newsletter.public` shows the sign-up box, the
 About section and the privacy note. Since 2026-11-01: enabled, not public (existing
 subscribers still get the email; no new sign-ups from the site).
+
+## Old address
+
+Since 2026-11-01 deploys go to the Pages project `indiatracker` (repository variable
+`CF_PAGES_PROJECT`). The old project `econvitalsindia` was turned into a redirect by the manual
+workflow `redirect-old-pages.yml`: every path on econvitalsindia.pages.dev goes (301) to the
+same path on indiatracker.pages.dev. When the custom domain is connected, run it again with
+`target` set to the domain, if the old address should skip the pages.dev hop.
