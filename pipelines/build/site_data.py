@@ -195,6 +195,60 @@ def credit_contribution_charts() -> dict[str, dict]:
     return out
 
 
+def policy_cycles(decisions: pd.Series) -> list[dict]:
+    """Easing/tightening cycles from MPC decisions (period -> repo after the meeting): maximal
+    runs of rate moves of the same sign, with holds in between allowed. Each cycle runs from its
+    first move to the month before the first opposite move (or open, if none yet)."""
+    moves = decisions.diff().dropna()
+    moves = moves[moves != 0]
+    cycles = []
+    for period, change in moves.items():
+        sign = 1 if change > 0 else -1
+        if cycles and cycles[-1]["sign"] == sign:
+            cycles[-1]["last_move"] = period
+        else:
+            cycles.append({"sign": sign, "start": period, "last_move": period})
+    for k, c in enumerate(cycles):
+        nxt = cycles[k + 1]["start"] if k + 1 < len(cycles) else None
+        c["end"] = (nxt - pd.DateOffset(months=1)) if nxt is not None else None
+        before = decisions[decisions.index < c["start"]]
+        c["repo_before"] = float(before.iloc[-1]) if len(before) else None
+        c["repo_after"] = float(decisions[decisions.index <= c["last_move"]].iloc[-1])
+    return cycles
+
+
+def transmission() -> dict:
+    """Table II.7-style transmission: for each policy cycle, the change (basis points) in the
+    repo rate and in banks' lending and deposit rates (all SCBs), from the month before the
+    first move to the cycle's end or the latest month with data."""
+    decisions = load("mpc_repo_decision").set_index("period")["value"]
+    scb = "All scheduled commercial banks"
+    rates = {}
+    for sid in ("walr_fresh", "walr_outstanding", "wadtdr_fresh", "wadtdr_outstanding", "mclr_1y_median"):
+        df = store.load_panel(sid)
+        df = df[df["entity"] == scb]
+        rates[sid] = pd.Series(df["value"].astype(float).values, index=pd.to_datetime(df["period"])).sort_index()
+    rows = []
+    for c in policy_cycles(decisions):
+        base = c["start"] - pd.DateOffset(months=1)
+        row = {"kind": "Tightening" if c["sign"] > 0 else "Easing", "start": c["start"].strftime("%Y-%m-%d"),
+               "end": c["end"].strftime("%Y-%m-%d") if c["end"] is not None else None,
+               "repo_bp": None if c["repo_before"] is None else round(100 * (c["repo_after"] - c["repo_before"]))}
+        last = None
+        for sid, s in rates.items():
+            at_base = s[s.index <= base]
+            upto = s[s.index <= c["end"]] if c["end"] is not None else s
+            if at_base.empty or upto.empty or at_base.index[-1] < base - pd.DateOffset(months=2) or upto.index[-1] <= base:
+                row[sid] = None
+                continue
+            row[sid] = round(100 * (upto.iloc[-1] - at_base.iloc[-1]))
+            last = max(last, upto.index[-1]) if last is not None else upto.index[-1]
+        row["data_to"] = last.strftime("%Y-%m-%d") if last is not None else None
+        if row["repo_bp"] is not None:
+            rows.append(row)
+    return {"cycles": rows[::-1]}
+
+
 def cpi_diffusion() -> dict[str, list[dict]]:
     """Diffusion indices as stacked shares: {"headline": rows, "core": rows}, rows like the
     contribution charts (component = inflation bucket, pp = % of the basket)."""
@@ -645,6 +699,7 @@ def main() -> int:
     write_json(OUT / "home.json", {"tiles": tiles, "questions": questions})
     write_json(OUT / "cpi_contributions.json", cpi_contributions())
     write_json(OUT / "cpi_diffusion.json", cpi_diffusion())
+    write_json(OUT / "transmission.json", transmission())
     write_json(OUT / "credit_contributions.json", credit_contribution_charts())
     write_json(OUT / "cpi_division_contributions.json", cpi_division_contributions(specs))
     write_json(OUT / "gdp_contributions.json", gdp_contributions())

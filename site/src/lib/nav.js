@@ -52,6 +52,7 @@ export const topics = [
   { key: "money", label: "Money", href: "/money/", items: [
     ["Policy rates and the call rate", "/money/"],
     ["MPC decisions and votes", "/money/#decisions"],
+    ["Transmission to bank rates", "/money/#transmission"],
     ["Liquidity", "/money/#liquidity"],
     ["Bank credit and deposits", "/money/#credit"],
     ["Credit by sector", "/money/#sectoral-credit"],

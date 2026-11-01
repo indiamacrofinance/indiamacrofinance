@@ -34,3 +34,4 @@ pages:
 original: false
 notes: Entity = MoSPI item code; names, parents and weights in registry/weights/cpi2024_items.csv.
   From January 2025.
+panel: true

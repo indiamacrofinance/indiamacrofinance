@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import LineChart from "../components/LineChart.astro";
 import StackedBars from "../components/StackedBars.astro";
+import PanelLines from "../components/PanelLines.astro";
 import PeriodTable from "../components/PeriodTable.astro";
 import { series, latest } from "../lib/data.js";
 import { num, period } from "../lib/format.js";
@@ -15,6 +16,13 @@ const mpc = JSON.parse(fs.readFileSync("src/data/generated/mpc_decisions.json", 
 const lastMpc = mpc.rows[0];
 const move = (bp) => bp === null ? "–" : bp === 0 ? "hold" : `${bp > 0 ? "+" : "−"}${Math.abs(bp)} bp`;
 const creditContrib = JSON.parse(fs.readFileSync("src/data/generated/credit_contributions.json", "utf8"));
+const trans = JSON.parse(fs.readFileSync("src/data/generated/transmission.json", "utf8"));
+const panelJson = (id) => JSON.parse(fs.readFileSync(`src/data/generated/panels/${id}.json`, "utf8"));
+const walrFresh = panelJson("walr_fresh"), wadtdrFresh = panelJson("wadtdr_fresh");
+const benchmarks = panelJson("loan_benchmark_share"), walrSector = panelJson("walr_fresh_sector");
+const groups = ["All scheduled commercial banks", "Public sector banks", "Private sector banks", "Foreign banks"];
+const bp = (v) => (v === null || v === undefined ? "–" : `${v > 0 ? "+" : ""}${v}`);
+const monthName = (d) => (d ? period(d, "M") : "now");
 ---
 <Base current="money" title="Money & banking">
   <h1>Money &amp; banking</h1>
@@ -43,6 +51,26 @@ const creditContrib = JSON.parse(fs.readFileSync("src/data/generated/credit_cont
     </table></div>
   </details>
   <p class="chart-sub">From the resolution in each set of MPC minutes. Vote: members for and against the rate resolution; since 2025 the minutes also record the size of move each member voted for, and members who backed a different size are noted. The stance is as worded in the minutes; when the minutes don't restate it, the previous meeting's stance is shown. Source: RBI, minutes of the MPC meetings.</p>
+
+  <h2 id="transmission">Transmission: from the repo rate to bank rates</h2>
+  <div class="scroll"><table class="data">
+    <thead><tr><th>Cycle</th><th>Repo rate</th><th>Deposit rate, new deposits</th><th>Deposit rate, outstanding</th><th>1-year MCLR (median)</th><th>Lending rate, new loans</th><th>Lending rate, outstanding loans</th></tr></thead>
+    <tbody>
+      {trans.cycles.slice(0, 5).map((c) => <tr>
+        <td>{c.kind}, {period(c.start, "M")} to {monthName(c.end)}</td><td>{bp(c.repo_bp)}</td>
+        <td>{bp(c.wadtdr_fresh)}</td><td>{bp(c.wadtdr_outstanding)}</td><td>{bp(c.mclr_1y_median)}</td>
+        <td>{bp(c.walr_fresh)}</td><td>{bp(c.walr_outstanding)}</td></tr>)}
+    </tbody>
+  </table></div>
+  <p class="chart-sub">Change in basis points, all scheduled commercial banks, from the month before the cycle's first rate move to its end (the month before the first move the other way) or the latest month with data. A cycle can include meetings that held the rate. Rates on new loans and deposits move faster than those on the stock, which reprices only as loans and deposits roll over. These match RBI's own transmission table in the Monetary Policy Report (October 2026, Table II.7) for the same months. Source: RBI, Lending and Deposit Rates of Scheduled Commercial Banks (monthly); site calculations.</p>
+  <div class="grid2">
+    <PanelLines title="Lending rates on new loans" subtitle="Weighted average lending rate on fresh rupee loans, %" panel={walrFresh} entities={groups} years={4} source="RBI." />
+    <PanelLines title="Deposit rates on new term deposits" subtitle="Weighted average domestic term deposit rate on fresh deposits, %" panel={wadtdrFresh} entities={groups} years={4} source="RBI." />
+    <PanelLines title="Lending rates on new loans, by sector" subtitle="Weighted average lending rate on fresh rupee loans, all banks, %" panel={walrSector}
+      entities={["Housing", "Vehicle", "MSMEs", "Industry (Large)", "Agriculture", "Other Personal Loans"]} years={4} source="RBI." />
+    <PanelLines title="How floating-rate loans are priced" subtitle="Share of outstanding floating-rate loans by benchmark, all banks, %; EBLR loans are mostly linked to the repo rate and reprice with it"
+      panel={benchmarks} entities={["EBLR", "MCLR", "Base Rate", "Others"]} years={8} source="RBI." />
+  </div>
 
   <h2 id="liquidity">Liquidity</h2>
   <LineChart title="Banking system liquidity" subtitle="₹ lakh crore, daily; net absorption (+) or injection (−) by RBI across all its operations. Above zero, banks hold surplus funds"

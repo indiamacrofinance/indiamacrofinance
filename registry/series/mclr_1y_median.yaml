@@ -1,0 +1,38 @@
+id: mclr_1y_median
+title: One-year MCLR, median across banks in each group
+short_title: 1-year MCLR (median)
+area: money
+source:
+  agency: Reserve Bank of India
+  dataset: Lending and Deposit Rates of Scheduled Commercial Banks (monthly press
+    release)
+  url: https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx
+  module: pipelines/sources/rbi/lending_rates.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: monthly press release, end of the following month
+  lag_days: 35
+validation:
+  range:
+  - 0
+  - 25
+  revision_alert: 5
+pages:
+- page: money-banking
+  section: transmission
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Panel; entity = bank group, sector or benchmark. Each release carries the full
+  history, so the latest one is read.
+panel: true

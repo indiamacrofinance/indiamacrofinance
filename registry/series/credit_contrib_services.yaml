@@ -34,3 +34,4 @@ owner: ''
 verified_against: []
 notes: Percentage points of y/y growth; components sum to the parent's growth. Method
   in pipelines/sources/derived/credit_contributions.py.
+panel: true
