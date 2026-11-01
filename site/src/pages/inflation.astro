@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import LineChart from "../components/LineChart.astro";
 import ProjectionTable from "../components/ProjectionTable.astro";
 import QuarterProjectionTable from "../components/QuarterProjectionTable.astro";
+import FanChart from "../components/FanChart.astro";
 import StackedBars from "../components/StackedBars.astro";
 import RankedBars from "../components/RankedBars.astro";
 import PeriodTable from "../components/PeriodTable.astro";
@@ -39,6 +40,8 @@ const wpiYoy = latest(series("wpi_headline_index"), "yoy");
 const indent = new Set(["cpi_elec_gas_fuels_index", "cpi_vehicle_fuels_index"]);
 const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json", "utf8"));
 const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projections.json", "utf8"));
+const fan = JSON.parse(fs.readFileSync("src/data/generated/cpi_fan.json", "utf8"));
+const horizonLabel = (h) => (h < 0 ? "Quarter just ended" : h === 0 ? "Current quarter" : `${h} quarter${h > 1 ? "s" : ""} ahead`);
 ---
 <Base current="inflation" title="Inflation">
   <h1>Inflation</h1>
@@ -105,6 +108,17 @@ const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projectio
 
   <h3 id="rbi-quarterly">Quarter by quarter</h3>
   <QuarterProjectionTable rows={qproj.cpi} label="CPI inflation (y/y)" note="Outturn: the average of the quarter's three monthly inflation rates as published at the time (2012 base in 2025, 2024 base from 2026)." source="RBI, MPC resolutions (in the minutes); MoSPI; site calculations." />
+
+  <h3 id="rbi-uncertainty">How uncertain is RBI's path? <span class="badge">Original</span></h3>
+  {fan && fan.path.some((p) => !p.anchor) && <div class="grid2">
+    <FanChart title={`RBI's CPI projection path (${period(fan.meeting, "M")} meeting)`} subtitle="% y/y, quarterly average; shaded: 50%, 70% and 90% ranges if RBI's errors are like its past ones"
+      fan={fan} target={4} band={[2, 6]} source="RBI, MPC resolutions; MoSPI; site calculations." />
+    <div><p class="chart-title">How far off RBI's quarterly CPI projections have been</p>
+      <div class="scroll"><table class="data"><thead><tr><th>Projecting</th><th>Typical miss (RMSE, pp)</th><th>Average miss</th><th>Projections</th></tr></thead>
+        <tbody>{fan.errors.filter((e) => e.n >= 5).map((e) => <tr><td>{horizonLabel(e.h)}</td><td>{num(e.rmse, 2)}</td><td>{e.bias > 0 ? "+" : ""}{num(e.bias, 2)}</td><td>{e.n}</td></tr>)}</tbody></table></div>
+      <p class="chart-sub">Miss = outturn minus projection (average of the quarter's three published monthly rates), across every MPC resolution since 2018 that gave quarterly figures. RMSE is the root-mean-square miss; a negative average means inflation came in below RBI's projection on average.</p></div>
+  </div>}
+  <p class="chart-sub">RBI publishes fan charts from its own models in the Monetary Policy Report. These bands are a different, simpler thing: they ask how wide the range around RBI's latest path would be if its errors were like its past ones at the same distance ahead (projection ± 0.67, 1.04 and 1.64 times the RMSE, i.e. assuming roughly normal errors). With about 25 past errors at each horizon, the bands are themselves approximate.</p>
 
   <h2 id="momentum">Momentum or base effect?</h2>
   <StackedBars title="Why the inflation rate changed this month" subtitle="Change in 12-month CPI inflation (dots), split into this month's price change and last year's (log points, close to percentage points)"

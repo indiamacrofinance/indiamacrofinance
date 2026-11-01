@@ -1,0 +1,25 @@
+{
+  "id": "cpi_inflation_2012base",
+  "title": "CPI inflation, all India combined, as published on the 2012 base (2013-2025)",
+  "short_title": "CPI inflation (2012 base, as published)",
+  "unit": "percent",
+  "frequency": "M",
+  "base_year": "as published (see note column)",
+  "source": {
+    "agency": "MoSPI (NSO)",
+    "dataset": "CPI inflation (base 2024 back/current; base 2012 for 2025)",
+    "url": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+    "module": "pipelines/sources/mospi/cpi_2012base.py"
+  },
+  "licence": "GODL",
+  "downloadable": true,
+  "first_period": "2014-01-01",
+  "last_period": "2025-12-01",
+  "last_value": 1.33,
+  "observations": 142,
+  "updated_at": "2026-11-01T15:00:50+00:00",
+  "fetched_from": [
+    "derived: mospi_cpi_2012base"
+  ],
+  "raw_files": []
+}

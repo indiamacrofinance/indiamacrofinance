@@ -54,6 +54,13 @@ Every measure we construct, rather than copy from an agency, is listed here and 
 - **Checks (October 2026 MPR, January–August 2026):** CPI excluding food and fuel matches RBI in all 8 months; excluding food, fuel and precious metals matches in all 8 (Table IV.1); weighted median matches (mean error 0.01 pp); 5%, 10% and 25% trimmed means are within 0.02–0.06 pp on average (Table IV.2); the share of the basket above 4% is 22.4% in April and 36.8% in August against RBI's "23 per cent" and "around 37 per cent"; the core basket has 198 items, as in RBI's box; core sub-group shares match Chart IV.15 within 0.4 pp. Pinned in `tests/sources/test_cpi_underlying.py`.
 - **Limits:** recovered weights are estimates, so a single small item's weight is less certain than any aggregate. RBI's own series before 2026 use the old 2012 base; ours start in 2026 and are not spliced to it.
 
+### How uncertain is RBI's CPI path (forecast bands from RBI's own errors)
+- **What:** bands around RBI's latest quarter-by-quarter CPI projection path (`cpi_fan` in `pipelines/build/site_data.py`), shown with a table of RBI's past misses by horizon. Not RBI's fan chart, which comes from its own models.
+- **Data:** every quarterly projection in MPC resolutions since 2018 (`pipelines/sources/rbi/mpc_projections_q.py`, which skips recaps of earlier projections, HRA-excluded variants and outturns), against the outturn = average of the quarter's three monthly y/y rates as published. For 2014-2024 these are MoSPI's 2024-base back-series rates, which we checked are identical to the rates originally published on the 2012 base (difference 0.00 in every month), i.e. the numbers RBI was forecasting.
+- **Method:** horizon h = quarters from the meeting's quarter to the target quarter (0 = the quarter under way). For each h, the root-mean-square miss (which includes any bias) sets bands of projection ± 0.674, 1.036 and 1.645 × RMSE (50%, 70%, 90%, assuming roughly normal errors). Horizons with fewer than 12 past errors borrow the nearest shorter horizon. Quarters already complete get no band.
+- **Numbers (November 2026):** RMSE 0.44 pp for the current quarter, 1.04 one quarter ahead, 1.41 two ahead, 1.44 three ahead, from 25-27 errors each; average misses are small (-0.14 to +0.08 pp).
+- **Limits:** about 25 errors per horizon, so the band edges are approximate; errors from the 2020 pandemic quarters are included. GDP is not done: RBI's pre-2026 GDP projections were on the old 2011-12 base while the outturns are now on the 2022-23 base, so the errors would mix forecasting and rebasing.
+
 ## Planned
 
 ### Linked series across base years (Phase 2)

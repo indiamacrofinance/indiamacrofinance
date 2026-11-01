@@ -282,6 +282,73 @@ def quarterly_projections(n: int = 10) -> dict[str, list[dict]]:
     return out
 
 
+def fiscal_quarter_start(month: pd.Timestamp) -> pd.Timestamp:
+    """First month of the financial-year quarter containing `month` (Apr-Jun, Jul-Sep, ...)."""
+    return pd.Timestamp(month.year, month.month - (month.month - 1) % 3, 1)
+
+
+def cpi_fan(min_errors: int = 12) -> dict | None:
+    """Uncertainty bands around RBI's latest CPI projection path, from RBI's own past errors.
+
+    Every past quarterly projection with an outturn gives an error (outturn - projection) at a
+    horizon h = quarters from the meeting's quarter to the target quarter (h <= 0: the quarter
+    under way, -1: the quarter just ended). For each horizon, the root-mean-square error (RMSE, which includes
+    any bias) sets bands of +/- z x RMSE, z = 0.674, 1.036 and 1.645 for 50%, 70% and 90%,
+    assuming errors are roughly normal. Horizons with fewer than min_errors errors are pooled
+    with the nearest shorter horizon."""
+    cpi = load("cpi_headline_inflation").set_index("period")["value"]
+    d = store.load_panel("mpc_cpi_projection_q")
+    if d.empty:
+        return None
+    d["value"] = d["value"].astype(float)
+
+    def horizon(q, meeting):
+        qs, mq = quarter_start(q), fiscal_quarter_start(pd.Timestamp(meeting))
+        return (qs.year - mq.year) * 4 + (qs.month - mq.month) // 3
+
+    def outturn(q):
+        months = [quarter_start(q) + pd.DateOffset(months=k) for k in range(3)]
+        a = cpi.reindex(months)
+        return float(a.mean()) if a.notna().all() else None
+
+    errs = []
+    for r in d.itertuples():
+        a = outturn(r.entity)
+        if a is not None:
+            errs.append({"h": horizon(r.entity, r.period), "err": a - r.value})
+    e = pd.DataFrame(errs)
+    stats = {int(h): {"n": int(len(g)), "rmse": float((g.err ** 2).mean() ** 0.5), "bias": float(g.err.mean())}
+             for h, g in e.groupby("h")}
+    usable = sorted(h for h, st in stats.items() if st["n"] >= min_errors)
+    latest = d[d["period"] == d["period"].max()]
+    path = []
+    for r in latest.sort_values("entity").itertuples():
+        if outturn(r.entity) is not None:                  # quarter over: no band needed
+            continue
+        h = max(horizon(r.entity, r.period), 0)
+        hh = max([u for u in usable if 0 <= u <= h], default=None)
+        if hh is None:
+            continue
+        rmse = stats[hh]["rmse"]
+        point = {"label": r.entity.replace(" Q", ", Q"), "date": (quarter_start(r.entity) + pd.DateOffset(months=1)).strftime("%Y-%m-%d"),
+                 "mid": r.value, "h": h, "rmse": round(rmse, 2), "n": stats[hh]["n"]}
+        for k, z in (("50", 0.674), ("70", 1.036), ("90", 1.645)):
+            point[f"lo{k}"], point[f"hi{k}"] = round(r.value - z * rmse, 2), round(r.value + z * rmse, 2)
+        path.append(point)
+    hist = []
+    # Quarterly outturns for the last three years, dated mid-quarter.
+    qcpi = cpi[cpi.index >= cpi.index.max() - pd.DateOffset(years=3)]
+    for qs, g in qcpi.groupby(qcpi.index.map(fiscal_quarter_start)):
+        if len(g) == 3:
+            hist.append([(qs + pd.DateOffset(months=1)).strftime("%Y-%m-%d"), round(float(g.mean()), 2)])
+    if path and hist:                                     # start the fan at the last outturn
+        d0, v0 = hist[-1]
+        path.insert(0, {"label": "Latest outturn", "date": d0, "mid": v0, "anchor": True,
+                        **{f"{b}{k}": v0 for k in ("50", "70", "90") for b in ("lo", "hi")}})
+    return {"meeting": latest["period"].iloc[0], "path": path, "history": hist,
+            "errors": [{"h": h, **{k: round(v, 2) if isinstance(v, float) else v for k, v in st.items()}} for h, st in sorted(stats.items())]}
+
+
 def cpi_diffusion() -> dict[str, list[dict]]:
     """Diffusion indices as stacked shares: {"headline": rows, "core": rows}, rows like the
     contribution charts (component = inflation bucket, pp = % of the basket)."""
@@ -734,6 +801,7 @@ def main() -> int:
     write_json(OUT / "cpi_diffusion.json", cpi_diffusion())
     write_json(OUT / "transmission.json", transmission())
     write_json(OUT / "quarterly_projections.json", quarterly_projections())
+    write_json(OUT / "cpi_fan.json", cpi_fan())
     write_json(OUT / "credit_contributions.json", credit_contribution_charts())
     write_json(OUT / "cpi_division_contributions.json", cpi_division_contributions(specs))
     write_json(OUT / "gdp_contributions.json", gdp_contributions())

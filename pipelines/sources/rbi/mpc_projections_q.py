@@ -25,8 +25,14 @@ from pipelines.core.http import fetch_raw
 from pipelines.core.store import load_panel
 from pipelines.sources.rbi._minutes import FIRST_MEETING, TITLE, meeting_period, text_of
 from pipelines.sources.rbi._press import RELEASE, releases
-from pipelines.sources.rbi.mpc_decisions import SENTENCE
 
+# Sentence ends: a full stop followed by a space (decimal points never are). Paragraph numbers
+# ("... in H2. 21. Turning to ...") would otherwise glue a projection sentence to the next
+# paragraph's outturn ("placed GDP growth for Q4:2017-18 at 7.7 per cent").
+SENTENCE = re.compile(r"\.\s+")
+# Recaps of earlier projections ("was projected at ...", "the projection of 4.0 per cent") and
+# variants excluding the HRA (housing allowance) revision are not the meeting's headline path.
+RETRO = re.compile(r"\b(?:was|were|had been|earlier)\s+projected|projection of|(?:resolution|statement)[^.]{0,100}\bprojected|[Ee]xcluding the (?:impact of )?HRA|[Ee]xcluding the HRA impact")
 QUARTER = re.compile(r"Q([1-4])(?:\s*:\s*(20\d\d-\d\d))?")
 FY = re.compile(r"\b(20\d\d-\d\d)\b")
 VALUE = r"(-?\d{1,2}(?:\.\d{1,2})?)\s*per\s*cent"
@@ -68,6 +74,17 @@ def quarter_values(sentence: str) -> dict[str, float]:
         q = label(m)
         if q and q not in out:
             out[q] = float(m.group(3))
+    # Older wording, value first: "projected at 3.7 per cent in Q2:2018-19, ... 4.8 per cent in
+    # Q1:2019-20" (a range such as "3.8-4.5 per cent in H2" is not a point projection).
+    for m in re.finditer(r"(?<![\d.-])" + VALUE + r"\s+in\s+Q([1-4])(?:\s*:\s*(20\d\d-\d\d))?", s):
+        fy_explicit = m.group(3)
+        if fy_explicit:
+            fy = fy_explicit
+        else:
+            before = FY.findall(s[:m.start()])
+            fy = before[-1] if before else fy
+        if fy and f"{fy} Q{m.group(2)}" not in out:
+            out[f"{fy} Q{m.group(2)}"] = float(m.group(1))
     return out
 
 
@@ -77,7 +94,7 @@ def parse_minutes(text: str) -> list[dict]:
     head = text[:stop if stop > 0 else None]
     rows = []
     for sentence in SENTENCE.split(head):
-        if "project" not in sentence:
+        if "project" not in sentence or RETRO.search(sentence):
             continue
         for sid, subject in SUBJECTS.items():
             if re.search(subject, sentence) and not ("core" in sentence.lower() and sid == "mpc_cpi_projection_q"):
@@ -105,7 +122,9 @@ class MpcProjectionsQ(Source):
             rows += parse_minutes(text_of(raw.content))
         df = pd.DataFrame(rows)
         df["note"] = "MPC resolution"
-        return df.drop_duplicates(["series_id", "entity", "period"], keep="last")
+        # The first statement of a quarter in a resolution is its projection; later mentions
+        # restate or qualify it.
+        return df.drop_duplicates(["series_id", "entity", "period"], keep="first")
 
 
 SOURCE = MpcProjectionsQ()

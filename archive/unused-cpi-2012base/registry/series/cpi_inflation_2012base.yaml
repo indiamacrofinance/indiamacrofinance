@@ -1,0 +1,36 @@
+id: cpi_inflation_2012base
+title: CPI inflation, all India combined, as published on the 2012 base (2013-2025)
+short_title: CPI inflation (2012 base, as published)
+area: inflation
+source:
+  agency: MoSPI (NSO)
+  dataset: CPI inflation (base 2024 back/current; base 2012 for 2025)
+  url: https://esankhyiki.mospi.gov.in/macroindicators?product=cpi
+  module: pipelines/sources/mospi/cpi_2012base.py
+licence: GODL
+downloadable: true
+fetch: auto
+frequency: M
+unit: percent
+base_year: as published (see note column)
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: mospi
+  rule: 12th of month, 16:00 IST, for previous month
+  lag_days: 45
+validation:
+  range:
+  - -5
+  - 20
+  revision_alert: 2
+pages:
+- page: inflation
+  section: rbi-projections
+original: false
+discontinued: '2025-12-01'
+owner: ''
+verified_against: []
+notes: Closed series kept to judge RBI's forecasts against the figures it was targeting
+  at the time; the main CPI series uses MoSPI's 2024-base back series for 2014-2024.

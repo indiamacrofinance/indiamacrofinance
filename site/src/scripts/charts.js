@@ -74,8 +74,32 @@ function drawCurve(el, spec) {
   el.replaceChildren(legend, plot);
 }
 
+function drawFan(el, spec) {
+  // Outturns as a line, a projection path as dots, with shaded bands (widest first).
+  const hist = spec.history.map(([d, v]) => ({ date: new Date(d), value: v }));
+  const path = spec.path.map((p) => ({ ...p, date: new Date(p.date) }));
+  const marks = [];
+  if (spec.band) marks.push(Plot.rectY([spec.band], { x1: hist[0].date, x2: path.at(-1).date, y1: (b) => b[0], y2: (b) => b[1], fill: "var(--accent)", fillOpacity: 0.07 }));
+  if (spec.target !== undefined) marks.push(Plot.ruleY([spec.target], { stroke: "var(--accent)", strokeDasharray: "4,3" }));
+  for (const [k, op] of [["90", 0.12], ["70", 0.2], ["50", 0.32]]) {
+    marks.push(Plot.areaY(path, { x: "date", y1: `lo${k}`, y2: `hi${k}`, fill: palette[0], fillOpacity: op, curve: "monotone-x" }));
+  }
+  marks.push(Plot.lineY(hist, { x: "date", y: "value", stroke: "currentColor", strokeWidth: 1.8 }));
+  marks.push(Plot.lineY(path, { x: "date", y: "mid", stroke: palette[0], strokeWidth: 1.8, strokeDasharray: "4,3" }));
+  marks.push(Plot.dot(path.filter((p) => !p.anchor), { x: "date", y: "mid", fill: palette[0], r: 3.5, tip: true,
+    title: (d) => `${d.label}: ${d.mid.toFixed(1)}%\n50%: ${d.lo50.toFixed(1)}–${d.hi50.toFixed(1)}\n90%: ${d.lo90.toFixed(1)}–${d.hi90.toFixed(1)}` }));
+  marks.push(Plot.ruleY([0], { stroke: "currentColor", strokeOpacity: 0.25 }));
+  const width = el.clientWidth || 600;
+  el.replaceChildren(Plot.plot({
+    width, height: Math.max(240, Math.min(340, width * 0.55)),
+    style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "11px", background: "transparent" },
+    x: { type: "utc" }, y: { grid: true, label: spec.yLabel ?? "%" }, marks,
+  }));
+}
+
 function draw(el) {
   const spec = JSON.parse(el.dataset.chart);
+  if (spec.kind === "fan") return drawFan(el, spec);
   if (spec.kind === "stacked") return drawStacked(el, spec);
   if (spec.kind === "curve") return drawCurve(el, spec);
   if (spec.kind === "hbar") return drawHbar(el, spec);

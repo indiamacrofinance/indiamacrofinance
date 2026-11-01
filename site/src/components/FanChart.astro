@@ -1,0 +1,13 @@
+---
+// Outturns, a projection path and shaded uncertainty bands (drawn by charts.js, kind "fan").
+const { title, subtitle, fan, target = null, band = null, source } = Astro.props;
+---
+<figure class="chart">
+  <p class="chart-title">{title}</p>
+  {subtitle && <p class="chart-sub">{subtitle}</p>}
+  <div class="plot" data-chart={JSON.stringify({ kind: "fan", history: fan.history, path: fan.path, target: target ?? undefined, band })}></div>
+  <figcaption><span>Source: {source}</span></figcaption>
+</figure>
+<script>
+  import "../scripts/charts.js";
+</script>
