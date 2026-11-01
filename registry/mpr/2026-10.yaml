@@ -1,0 +1,32 @@
+# RBI Monetary Policy Report, October 2026: published numbers shown on the Money page
+# ("RBI's outlook"). Entered by hand from the report (twice a year, April and October);
+# page numbers are the report's printed numbers. Nothing here is our estimate.
+# To add a new report: copy this file to registry/mpr/<yyyy-mm>.yaml and edit; the page
+# shows the newest file.
+title: "Monetary Policy Report – October 2026"
+date: "2026-10-07"
+url: "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=24085"
+pdf: "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/01MPR071020267B057FA4E71E4164A8B14EDC40197418.PDF"
+projections:            # Table V.3, Reserve Bank's baseline (per cent)
+  years: ["2026-27", "2027-28"]
+  cpi_inflation: [5.2, 5.0]
+  real_gdp_growth: [7.1, 7.0]
+assumptions:            # Table V.2 (p. 86)
+  - ["Crude oil (Brent)", "US$95 a barrel in H2 2026-27; US$85 in 2027-28"]
+  - ["Exchange rate", "₹95 per US dollar in 2026-27 (an assumption for the projections, not a view on the rupee)"]
+  - ["Monsoon", "Below normal in 2026-27; normal in 2027-28"]
+  - ["Global growth", "3.0% in 2026; 3.4% in 2027"]
+  - ["Fiscal deficit", "Within Budget Estimates 2026-27: Centre 4.3% of GDP, Centre and states 7.0%"]
+scenarios:              # Section V.4 and Charts V.11-V.12 (pp. 94-97); change vs baseline, basis points
+  - {shock: "Global growth 100 bps lower", inflation: -15, growth: -30}
+  - {shock: "Global growth 50 bps higher", inflation: 7, growth: 15}
+  - {shock: "Crude oil 10% higher (full pass-through to domestic fuel prices)", inflation: 50, growth: -15}
+  - {shock: "Crude oil 10% lower", inflation: -50, growth: 15}
+  - {shock: "Rupee 5% weaker", inflation: 40, growth: 25}
+  - {shock: "Rupee 5% stronger", inflation: -40, growth: -25}
+  - {shock: "Adverse food prices (weather, El Niño)", inflation: 40, growth: null}
+  - {shock: "Benign food prices (buffer stocks, supply measures)", inflation: -40, growth: null}
+not_reproduced: >-
+  The report's model-based results (the scenario model, the fan charts around the
+  projections, the shock decomposition of CPI and the bank-lending model) come from RBI's
+  own models and confidential bank data; see the report itself.

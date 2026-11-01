@@ -22,3 +22,8 @@ repo_rate, sdf_rate, msf_rate, wacr, liquidity_surplus, mpc_repo_decision, crr, 
 
 ## Phase
 1 (repo, WACR, credit), 2 (page)
+- [x] Transmission to lending and deposit rates by policy cycle (RBI MPR Table II.7; matches RBI), WALR/WADTDR by bank group and sector, loan benchmark shares (2026-11-01)
+- [x] Credit-deposit gap; contributions to credit growth by sector, firm size, services and personal-loan type (2026-11-01)
+- [x] RBI's outlook: MPR assumptions, projections and risk scenarios (registry/mpr/, hand-entered twice a year)
+- [ ] Liquidity drivers (MPR Table II.1). Deferred 2026-11-01: the largest driver, RBI's net forex purchases, is published monthly in the Bulletin with a two-month lag; weekly RBI forex assets include revaluation, so they cannot stand in. A table without it would mislead.
+

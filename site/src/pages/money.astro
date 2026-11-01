@@ -23,6 +23,9 @@ const benchmarks = panelJson("loan_benchmark_share"), walrSector = panelJson("wa
 const groups = ["All scheduled commercial banks", "Public sector banks", "Private sector banks", "Foreign banks"];
 const bp = (v) => (v === null || v === undefined ? "–" : `${v > 0 ? "+" : ""}${v}`);
 const monthName = (d) => (d ? period(d, "M") : "now");
+import yaml from "js-yaml";
+const mprFiles = fs.readdirSync("../registry/mpr").filter((f) => f.endsWith(".yaml")).sort();
+const mpr = yaml.load(fs.readFileSync(`../registry/mpr/${mprFiles.at(-1)}`, "utf8"));
 ---
 <Base current="money" title="Money & banking">
   <h1>Money &amp; banking</h1>
@@ -32,6 +35,17 @@ const monthName = (d) => (d ? period(d, "M") : "now");
   <LineChart title="Policy corridor and the call rate" subtitle="Per cent; the call rate (WACR) normally trades between the SDF floor and the MSF ceiling"
     lines={[{ id: "msf_rate", label: "MSF (ceiling)", step: true }, { id: "repo_rate", label: "Repo", step: true }, { id: "sdf_rate", label: "SDF (floor)", step: true }, { id: "wacr", label: "Call rate (WACR)" }]} years={1} />
   <p class="chart-sub">Week-ended values from RBI's Weekly Statistical Supplement, plus daily readings of RBI's home page since 28 Oct 2026.</p>
+
+  <h2 id="rbi-outlook">RBI's outlook: assumptions and risks</h2>
+  <p>From RBI's <a href={mpr.url}>{mpr.title}</a> ({period(mpr.date, "D")}). RBI projects CPI inflation at {mpr.projections.cpi_inflation.map((v, k) => `${num(v, 1)}% in ${mpr.projections.years[k]}`).join(" and ")}, and real GDP growth at {mpr.projections.real_gdp_growth.map((v, k) => `${num(v, 1)}% in ${mpr.projections.years[k]}`).join(" and ")}.</p>
+  <div class="grid2">
+    <div><p class="chart-title">What the projections assume</p>
+      <div class="scroll"><table class="data"><tbody>{mpr.assumptions.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody></table></div></div>
+    <div><p class="chart-title">If things turn out differently</p>
+      <div class="scroll"><table class="data"><thead><tr><th>Scenario, against the baseline</th><th>Inflation</th><th>GDP growth</th></tr></thead>
+        <tbody>{mpr.scenarios.map((r) => <tr><td>{r.shock}</td><td>{r.inflation > 0 ? "+" : ""}{r.inflation} bps</td><td>{r.growth === null ? "–" : `${r.growth > 0 ? "+" : ""}${r.growth} bps`}</td></tr>)}</tbody></table></div></div>
+  </div>
+  <p class="chart-sub">Numbers as published by RBI (Tables V.2 and V.3 and section V.4 of the report). {mpr.not_reproduced} The inflation measures RBI uses in the report (trimmed means, weighted median, diffusion) are rebuilt on the <a href="/inflation/#underlying">Inflation page</a>; its transmission and credit tables are below.</p>
 
   <h2 id="decisions">MPC decisions</h2>
   <div class="scroll"><table class="data">

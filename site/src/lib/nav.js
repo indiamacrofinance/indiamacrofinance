@@ -51,6 +51,7 @@ export const topics = [
   ] },
   { key: "money", label: "Money", href: "/money/", items: [
     ["Policy rates and the call rate", "/money/"],
+    ["RBI's outlook: assumptions and risks", "/money/#rbi-outlook"],
     ["MPC decisions and votes", "/money/#decisions"],
     ["Transmission to bank rates", "/money/#transmission"],
     ["Liquidity", "/money/#liquidity"],

@@ -72,3 +72,14 @@ No draft that day means no email. Optional subject: front matter `subject: "..."
 **Held sign-ups:** Buttondown's spam filter ("firewall", buttondown.com/settings/firewall, set to "Accept and mark as blocked") can hold a sign-up. The reader is told it is under review and that the maintainer will take care of it. Check Buttondown → Subscribers for anyone marked **Blocked** every few days and unblock real people; Buttondown then sends their confirmation email. `.github/workflows/newsletter-status.yml` lists subscribers (masked) with their status.
 
 **The weekly digest** (`digest.py`, `newsletter.yml`) still exists but runs only by hand, as a Buttondown draft, because the morning email uses the free plan's one-email-a-day allowance.
+
+## Twice a year: RBI's Monetary Policy Report (April and October)
+
+Copy `registry/mpr/<previous>.yaml` to `registry/mpr/<yyyy-mm>.yaml` and enter the new report's
+Table V.2 (assumptions), Table V.3 (RBI's baseline projections) and the risk scenarios in
+section V.4, with page numbers. The Money page ("RBI's outlook") shows the newest file. Then
+check the rebuilt inflation measures (`tests/sources/test_cpi_underlying.py`) and the
+transmission table against the new report's Tables IV.1, IV.2 and II.7; a mismatch beyond
+rounding means MoSPI revised indices or RBI changed a definition. If MoSPI revised indices,
+re-run `scripts/estimate_cpi_item_weights.py`.
+
