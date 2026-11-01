@@ -2,6 +2,10 @@
 
 The name lives only in site.config.yaml so the site can be renamed by
 editing one file (docs/guidebook/09-rebranding.md).
+
+The match is case-sensitive: it looks for the display name exactly as written in the config,
+so lowercase identifiers that must spell it (the pages.dev address, the Pages project, the
+GitHub org and repo, the domain) are allowed.
 """
 import argparse
 import re
@@ -13,7 +17,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 # Historical records may name the site; everything else must not.
-EXEMPT = {"site.config.yaml"}
+EXEMPT = {"site.config.yaml", "docs/guidebook/09-rebranding.md"}   # the rename record names old names
 # Sent newsletters are a record of what went out (rendered from the config at the time).
 EXEMPT_DIRS = ("docs/guidebook/decisions/", "data/newsletter/morning/")
 
@@ -42,7 +46,7 @@ def main() -> int:
 
     config = yaml.safe_load((ROOT / "site.config.yaml").read_text())
     names = [config["site"]["name"], *args.also]
-    pattern = re.compile("|".join(re.escape(n) for n in names), re.IGNORECASE)
+    pattern = re.compile("|".join(re.escape(n) for n in names))
 
     hits = []
     for rel in tracked_files():

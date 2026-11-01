@@ -21,7 +21,6 @@ The name is defined **only** in `site.config.yaml`.
 The site was first called "Econvitals India". It was renamed to the current name (site.name) by editing
 `site.config.yaml` alone; `scripts/check_name.py --also "Econvitals India"` found no leftovers.
 Still carrying the old spelling, on purpose or until the maintainer changes them:
-- the GitHub org/repo (`econvitalsindia/econvitalsindia`; GitHub redirects after a rename),
 - the Cloudflare Pages project and its `econvitalsindia.pages.dev` address (Pages projects
   cannot be renamed; connect the custom domain instead, or create a new project and set the
   repository variable `CF_PAGES_PROJECT`, which deploy.yml reads),
@@ -35,6 +34,14 @@ Still carrying the old spelling, on purpose or until the maintainer changes them
 `newsletter.enabled` sends the morning email; `newsletter.public` shows the sign-up box, the
 About section and the privacy note. Since 2026-11-01: enabled, not public (existing
 subscribers still get the email; no new sign-ups from the site).
+
+## GitHub
+
+On 2026-11-01 the repo moved from `econvitalsindia/econvitalsindia` to
+`indiatrackerorg/indiatracker` (repo renamed with `gh repo rename`, organisation renamed by its
+owner in the web settings; plain `indiatracker` is a personal account). GitHub redirects the
+old URLs; secrets, variables, rulesets and security settings moved with the repo. Workflows
+never hard-code the repo path.
 
 ## Old address
 
