@@ -63,3 +63,17 @@ def test_missing_parser_columns_mark_source_stale(tmp_path, monkeypatch, missing
     assert {f["series_id"] for f in failures} == {"x", "y"}
     assert all("parser missing columns" in f["error"] for f in failures)
     assert all(s["stale"] for s in store.load_status().values())
+
+
+def test_object_column_of_numbers_is_accepted():
+    from decimal import Decimal
+    rows = pd.DataFrame({"period": ["2026-01-01", "2026-02-01", "2026-03-01"],
+                         "value": pd.Series([2, 3.5, Decimal("4.25")], dtype=object)})
+    assert validate("x", rows, SPEC) == []
+
+
+@pytest.mark.parametrize("value", ["5.2", "bad", True])
+def test_text_and_bools_are_rejected(value):
+    rows = pd.DataFrame({"period": ["2026-01-01", "2026-02-01"],
+                         "value": pd.Series([2.0, value], dtype=object)})
+    assert "non-numeric" in validate("x", rows, SPEC)[0]

@@ -5,6 +5,8 @@ is left as it was (AGENTS.md hard rule 3).
 """
 from __future__ import annotations
 
+import numbers
+
 import pandas as pd
 
 
@@ -23,12 +25,19 @@ def validate(series_id: str, new: pd.DataFrame, spec: dict, *, panel: bool = Fal
     for key in keys:
         if (new[key].isna() | new[key].astype(str).str.strip().eq("")).any():
             problems.append(f"{series_id}: missing {key}")
-    if not pd.api.types.is_numeric_dtype(new["value"]):
-        return problems + [f"{series_id}: values must be numeric"]
-    if new["value"].isna().any():
-        problems.append(f"{series_id}: {int(new['value'].isna().sum())} missing values")
+    values = new["value"]
+    if not pd.api.types.is_numeric_dtype(values):
+        # An object column is fine if every entry is a real number (e.g. ints mixed with floats
+        # or Decimals); text, including numbers written as text ("5.2"), is not.
+        is_num = values.map(lambda v: isinstance(v, numbers.Number) and not isinstance(v, bool))
+        if not is_num.all():
+            sample = values[~is_num].astype(str).head(3).tolist()
+            return problems + [f"{series_id}: {int((~is_num).sum())} non-numeric values, e.g. {sample}"]
+        values = values.astype(float)
+    if values.isna().any():
+        problems.append(f"{series_id}: {int(values.isna().sum())} missing values")
     lo, hi = spec["validation"]["range"]
-    bad = new[(new["value"] < lo) | (new["value"] > hi)]
+    bad = new[(values < lo) | (values > hi)]
     if not bad.empty:
         sample = bad.head(3)[["period", "value"]].astype(str).values.tolist()
         problems.append(f"{series_id}: {len(bad)} values outside plausible range [{lo}, {hi}], e.g. {sample}")

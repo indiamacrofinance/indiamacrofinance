@@ -46,7 +46,7 @@ A source that fails to fetch, parse or validate:
 
 1. leaves `data/series/<id>.csv` (or `data/panels/<id>.csv`) untouched,
 2. sets `stale: true` and `last_error` in `data/status.json`,
-3. opens or updates one GitHub issue per series, labelled `scraper-broken`,
+3. opens or updates one GitHub issue per source, labelled `scraper-broken` (`scripts/report_failures.py`; network errors wait until the source has been down for a day, and the issue closes itself when the source next runs cleanly),
 4. shows on the internal Status page.
 
 Both series and panels reject missing or nonnumeric values, missing keys, duplicate
