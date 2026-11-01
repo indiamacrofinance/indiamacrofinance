@@ -1,0 +1,36 @@
+id: cpi_precious_metals_contribution
+title: Contribution of gold and silver jewellery to CPI inflation
+short_title: Precious metals contribution
+area: inflation
+source:
+  agency: MoSPI; site calculation
+  dataset: CPI (base 2024) items with recovered weights
+  url: https://esankhyiki.mospi.gov.in/
+  module: pipelines/sources/derived/cpi_underlying.py
+licence: GODL
+downloadable: true
+fetch: auto
+frequency: M
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: mospi
+  rule: with the national CPI release
+  lag_days: 45
+discontinued: null
+owner: ''
+verified_against: []
+unit: percentage_points
+validation:
+  range:
+  - -5
+  - 10
+  revision_alert: 5
+pages:
+- page: inflation
+  section: underlying
+original: true
+notes: Percentage points of headline y/y inflation from gold and silver jewellery.
+  From January 2026. Matches RBI's published values to rounding; method in docs/guidebook/08-original-measures.md.

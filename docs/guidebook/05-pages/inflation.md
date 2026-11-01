@@ -29,3 +29,4 @@ Headline, food and the rural/urban y/y figures match the MoSPI press release. Th
 
 ## Phase
 1 (headline, core, WPI), 2 (page)
+- [x] Underlying inflation (trimmed means, weighted median, core ex precious metals), diffusion indices and goods/services from the 358 CPI items, matching RBI's MPR (added 2026-11-01)

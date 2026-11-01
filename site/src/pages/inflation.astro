@@ -28,6 +28,7 @@ const latestPeriod = rows[0].last.period;
 const published = series("cpi_headline_inflation");
 const contrib = JSON.parse(fs.readFileSync("src/data/generated/cpi_contributions.json", "utf8"));
 const momentum = JSON.parse(fs.readFileSync("src/data/generated/cpi_momentum_base.json", "utf8"));
+const diffusion = JSON.parse(fs.readFileSync("src/data/generated/cpi_diffusion.json", "utf8"));
 const food = JSON.parse(fs.readFileSync("src/data/generated/panels/cpi_food_inflation.json", "utf8"));
 const foodLast = food.ref_period, foodCols = food.periods.slice(-6);
 const foodBars = food.rows.map((r) => ({ label: r.entity, value: r.values[foodLast] })).filter((r) => r.value !== null && r.value !== undefined);
@@ -56,6 +57,37 @@ const proj = JSON.parse(fs.readFileSync("src/data/generated/rbi_projections.json
   </div>
 
   <p class="chart-sub"><a href="/inflation/detail/">All twelve divisions of the CPI basket, with their contributions →</a></p>
+
+  <h2 id="underlying">Underlying inflation <span class="badge">Original</span></h2>
+  <div class="grid2">
+    <LineChart title="Measures of underlying inflation" subtitle="% change on a year earlier; statistical measures that set aside the most volatile prices"
+      lines={[{ id: "cpi_trimmed_mean_5", label: "5% trimmed mean" }, { id: "cpi_trimmed_mean_10", label: "10% trimmed mean" },
+              { id: "cpi_trimmed_mean_25", label: "25% trimmed mean" }, { id: "cpi_weighted_median", label: "Weighted median" }]}
+      reference={{ target: 4 }} years={1} />
+    <LineChart title="Core inflation, with and without gold and silver" subtitle="% change on a year earlier"
+      lines={[{ id: "cpi_core_index", how: "yoy", label: "Excluding food and fuel" },
+              { id: "cpi_ex_food_fuel_pm_inflation", label: "Also excluding precious metals" }]}
+      reference={{ target: 4 }} years={1} />
+  </div>
+  <p class="chart-sub">Built from all 358 items in the CPI basket. Trimmed means drop the items with the most extreme price changes each month (the 5% measure drops 5% of the basket by weight, half from each end) and average the rest; the weighted median is the inflation rate of the item in the middle of the basket. Precious metals are gold and silver jewellery, which have risen far faster than other prices. These follow the definitions in RBI's Monetary Policy Report and reproduce its published values for January to August 2026 to the rounding. MoSPI does not publish item weights, so we recover them from its own indices; see <a href="/methods/">Methods</a> ("Underlying inflation"). Item data start in 2025, so these series start in January 2026.</p>
+
+  <h2 id="diffusion">How widespread is inflation?</h2>
+  <div class="grid2">
+    <StackedBars title="Whole CPI basket" subtitle="Share of the basket (by weight) whose prices rose by…" rows={diffusion.headline} yLabel="% of basket"
+      source="MoSPI; site calculations (Original), definitions as in RBI's Monetary Policy Report (Box IV.1)." />
+    <StackedBars title="CPI excluding food and fuel" subtitle="Share of the core basket (by weight) whose prices rose by…" rows={diffusion.core} yLabel="% of basket"
+      source="MoSPI; site calculations (Original)." />
+  </div>
+  <p class="chart-sub">A diffusion index shows whether inflation is concentrated in a few items or spreading across the basket. A rising share in the higher buckets alongside rising headline inflation means price pressures are broadening; a high headline rate with few items in the higher buckets points to a handful of items, such as a food or fuel shock.</p>
+
+  <h2 id="goods-services">Goods and services</h2>
+  <div class="grid2">
+    <LineChart title="Goods and services inflation" subtitle="% change on a year earlier; 308 goods and 50 services in the basket"
+      lines={[{ id: "cpi_goods_inflation", label: "Goods" }, { id: "cpi_services_inflation", label: "Services" }]}
+      reference={{ target: 4 }} years={1} />
+    <LineChart title="Gold and silver's share of inflation" subtitle="Percentage points of headline CPI inflation from gold and silver jewellery"
+      lines={[{ id: "cpi_precious_metals_contribution", label: "Precious metals" }]} years={1} />
+  </div>
 
   <h2 id="food-watch">Food watch</h2>
   <RankedBars title={`Food prices by item, ${period(foodLast, "M")}`} subtitle="CPI inflation, % on a year earlier, as published; dashed line = CPI food and beverages"

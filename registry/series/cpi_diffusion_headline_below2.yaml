@@ -1,0 +1,37 @@
+id: cpi_diffusion_headline_below2
+title: Share of the whole CPI basket with inflation below 2%
+short_title: 'Diffusion (headline): below 2%'
+area: inflation
+source:
+  agency: MoSPI; site calculation
+  dataset: CPI (base 2024) items with recovered weights
+  url: https://esankhyiki.mospi.gov.in/
+  module: pipelines/sources/derived/cpi_underlying.py
+licence: GODL
+downloadable: true
+fetch: auto
+frequency: M
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: mospi
+  rule: with the national CPI release
+  lag_days: 45
+discontinued: null
+owner: ''
+verified_against: []
+unit: percent
+validation:
+  range:
+  - 0
+  - 100
+  revision_alert: 5
+pages:
+- page: inflation
+  section: underlying
+original: true
+notes: Weighted share (%) of the whole CPI basket whose items' y/y inflation is below
+  2% (RBI MPR Box IV.1 diffusion index). From January 2026. Matches RBI's published
+  values to rounding; method in docs/guidebook/08-original-measures.md.

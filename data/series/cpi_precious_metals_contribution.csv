@@ -1,0 +1,10 @@
+period,value,vintage,note
+2026-01-01,0.85,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-02-01,0.9,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-03-01,0.86,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-04-01,0.81,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-05-01,0.86,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-06-01,0.78,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-07-01,0.68,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-08-01,0.7,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv
+2026-09-01,0.63,2026-11-01,site calculation (Original); item weights in registry/weights/cpi2024_items.csv

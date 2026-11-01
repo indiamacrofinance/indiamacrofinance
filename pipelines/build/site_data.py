@@ -180,6 +180,22 @@ def cpi_contributions() -> list[dict]:
                           "Core": ("cpi_core_index", w["core"])})
 
 
+def cpi_diffusion() -> dict[str, list[dict]]:
+    """Diffusion indices as stacked shares: {"headline": rows, "core": rows}, rows like the
+    contribution charts (component = inflation bucket, pp = % of the basket)."""
+    labels = {"below2": "Below 2%", "2to4": "2-4%", "4to6": "4-6%", "above6": "6% and above"}
+    out = {}
+    for basket in ("headline", "core"):
+        rows = []
+        for key, label in labels.items():
+            sid = f"cpi_diffusion_{basket}_{key}"
+            for _, r in load(sid).iterrows():
+                rows.append({"period": pd.Timestamp(r["period"]).strftime("%Y-%m-%d"), "component": label,
+                             "series": sid, "pp": round(float(r["value"]), 2)})
+        out[basket] = rows
+    return out
+
+
 def cpi_division_contributions(specs: dict) -> list[dict]:
     """All 12 COICOP divisions (weights: registry/weights/cpi2024_divisions.yaml)."""
     w = yaml.safe_load((store.ROOT / "registry" / "weights" / "cpi2024_divisions.yaml").read_text())["weights"]
@@ -613,6 +629,7 @@ def main() -> int:
                  for q in pages.get("home", {}).get("questions", [])]
     write_json(OUT / "home.json", {"tiles": tiles, "questions": questions})
     write_json(OUT / "cpi_contributions.json", cpi_contributions())
+    write_json(OUT / "cpi_diffusion.json", cpi_diffusion())
     write_json(OUT / "cpi_division_contributions.json", cpi_division_contributions(specs))
     write_json(OUT / "gdp_contributions.json", gdp_contributions())
 

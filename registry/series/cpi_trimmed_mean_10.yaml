@@ -1,0 +1,36 @@
+id: cpi_trimmed_mean_10
+title: CPI inflation, 10% trimmed mean
+short_title: 10% trimmed mean
+area: inflation
+source:
+  agency: MoSPI; site calculation
+  dataset: CPI (base 2024) items with recovered weights
+  url: https://esankhyiki.mospi.gov.in/
+  module: pipelines/sources/derived/cpi_underlying.py
+licence: GODL
+downloadable: true
+fetch: auto
+frequency: M
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: mospi
+  rule: with the national CPI release
+  lag_days: 45
+discontinued: null
+owner: ''
+verified_against: []
+unit: percent
+validation:
+  range:
+  - -20
+  - 40
+  revision_alert: 5
+pages:
+- page: inflation
+  section: underlying
+original: true
+notes: As the 5% trimmed mean, dropping 10% of the basket (5% from each tail). From
+  January 2026. Matches RBI's published values to rounding; method in docs/guidebook/08-original-measures.md.

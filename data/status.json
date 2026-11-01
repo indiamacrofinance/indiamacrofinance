@@ -573,6 +573,62 @@
     "last_error": null,
     "last_period": "2026-09-01"
   },
+  "cpi_diffusion_core_2to4": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_core_4to6": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_core_above6": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_core_below2": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_headline_2to4": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_headline_4to6": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_headline_above6": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_diffusion_headline_below2": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
   "cpi_education_index": {
     "last_attempt": "2026-10-30T19:36:28+00:00",
     "last_success": "2026-10-30T19:36:28+00:00",
@@ -583,6 +639,13 @@
   "cpi_elec_gas_fuels_index": {
     "last_attempt": "2026-10-30T19:36:27+00:00",
     "last_success": "2026-10-30T19:36:27+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_ex_food_fuel_pm_inflation": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -604,6 +667,13 @@
   "cpi_fuel_index": {
     "last_attempt": "2026-10-30T19:42:59+00:00",
     "last_success": "2026-10-30T19:42:59+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_goods_inflation": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -650,6 +720,20 @@
     "last_error": null,
     "last_period": "2026-09-01"
   },
+  "cpi_item_index": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_item_inflation": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
   "cpi_iw_index": {
     "last_attempt": "2026-10-31T07:54:56+00:00",
     "last_success": "2026-10-31T07:54:56+00:00",
@@ -678,6 +762,13 @@
     "last_error": null,
     "last_period": "2026-09-01"
   },
+  "cpi_precious_metals_contribution": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
   "cpi_recreation_index": {
     "last_attempt": "2026-10-30T19:36:28+00:00",
     "last_success": "2026-10-30T19:36:28+00:00",
@@ -699,9 +790,37 @@
     "last_error": null,
     "last_period": "2026-09-01"
   },
+  "cpi_services_inflation": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
   "cpi_transport_index": {
     "last_attempt": "2026-10-30T19:36:28+00:00",
     "last_success": "2026-10-30T19:36:28+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_trimmed_mean_10": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_trimmed_mean_25": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_trimmed_mean_5": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -716,6 +835,13 @@
   "cpi_vehicle_fuels_index": {
     "last_attempt": "2026-10-30T19:36:28+00:00",
     "last_success": "2026-10-30T19:36:28+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-09-01"
+  },
+  "cpi_weighted_median": {
+    "last_attempt": "2026-11-01T14:36:23+00:00",
+    "last_success": "2026-11-01T14:36:23+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"

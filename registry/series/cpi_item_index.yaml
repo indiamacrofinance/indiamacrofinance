@@ -1,0 +1,36 @@
+id: cpi_item_index
+title: CPI index for each of the 358 items, all India combined
+short_title: CPI by item (index)
+area: inflation
+source:
+  agency: MoSPI
+  dataset: Consumer Price Index (base 2024), item level
+  url: https://esankhyiki.mospi.gov.in/
+  module: pipelines/sources/mospi/cpi_items.py
+licence: GODL
+downloadable: true
+fetch: auto
+frequency: M
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: mospi
+  rule: with the national CPI release
+  lag_days: 45
+discontinued: null
+owner: ''
+verified_against: []
+unit: index
+validation:
+  range:
+  - 10
+  - 1000
+  revision_alert: 2
+pages:
+- page: inflation
+  section: underlying
+original: false
+notes: Entity = MoSPI item code; names, parents and weights in registry/weights/cpi2024_items.csv.
+  From January 2025.

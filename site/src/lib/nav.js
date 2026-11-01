@@ -18,6 +18,9 @@ export const topics = [
   { key: "inflation", label: "Inflation", href: "/inflation/", items: [
     ["Headline and core CPI", "/inflation/"],
     ["What is driving inflation", "/inflation/#drivers"],
+    ["Underlying inflation: trimmed means, median", "/inflation/#underlying"],
+    ["How widespread is inflation?", "/inflation/#diffusion"],
+    ["Goods and services", "/inflation/#goods-services"],
     ["Food watch: prices by item", "/inflation/#food-watch"],
     ["RBI's projections vs outturn", "/inflation/#rbi-projections"],
     ["Momentum or base effect?", "/inflation/#momentum"],

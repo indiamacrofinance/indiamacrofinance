@@ -1,0 +1,25 @@
+{
+  "id": "cpi_diffusion_core_2to4",
+  "title": "Share of the CPI excluding food and fuel with inflation 2% to 4%",
+  "short_title": "Diffusion (core): 2% to 4%",
+  "unit": "percent",
+  "frequency": "M",
+  "base_year": null,
+  "source": {
+    "agency": "MoSPI; site calculation",
+    "dataset": "CPI (base 2024) items with recovered weights",
+    "url": "https://esankhyiki.mospi.gov.in/",
+    "module": "pipelines/sources/derived/cpi_underlying.py"
+  },
+  "licence": "GODL",
+  "downloadable": true,
+  "first_period": "2026-01-01",
+  "last_period": "2026-09-01",
+  "last_value": 47.2,
+  "observations": 9,
+  "updated_at": "2026-11-01T14:36:23+00:00",
+  "fetched_from": [
+    "derived: derived_cpi_underlying"
+  ],
+  "raw_files": []
+}

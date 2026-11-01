@@ -1,0 +1,668 @@
+code,parent,level,kind,weight,name
+01,,0,,36.75,Food and beverages
+01.1,01,1,,34.77361,Food
+01.1.1,01.1,2,,5.95535,Cereals and cereal products
+01.1.1.1,01.1.1,3,,3.02547,Cereals
+01.1.1.1.1.01,01.1.1.1,5,good,2.01578,Rice
+01.1.1.1.1.02,01.1.1.1,5,good,0.76295,Wheat
+01.1.1.1.1.03,01.1.1.1,5,good,0.06441,Jowar and its products
+01.1.1.1.1.04,01.1.1.1,5,good,0.02856,Ragi and its products
+01.1.1.1.1.05,01.1.1.1,5,good,0.05365,Bajra and its products
+01.1.1.1.1.06,01.1.1.1,5,good,0.03963,Maize and its products
+01.1.1.1.1.07,01.1.1.1,5,good,0.00629,Small millets and its products
+01.1.1.1.1.08,01.1.1.1,5,good,0.00794,Barley and its products
+01.1.1.1.1.09,01.1.1.1,5,good,0.02535,Other cereals and products
+01.1.1.1.1.10,01.1.1.1,5,good,0.0,Other wheat products
+01.1.1.1.1.11,01.1.1.1,5,good,0.01659,Rice PDS
+01.1.1.1.1.12,01.1.1.1,5,good,0.00432,Wheat PDS
+01.1.1.2,01.1.1,3,,0.81139,Flour of cereals
+01.1.1.2.1.01,01.1.1.2,5,good,0.76709,Wheat atta
+01.1.1.2.1.02,01.1.1.2,5,good,0.0418,Maida
+01.1.1.2.1.03,01.1.1.2,5,good,0.0025,Wheat atta PDS
+01.1.1.3,01.1.1,3,,1.44819,Bread and bakery products
+01.1.1.3.1.01,01.1.1.3,5,good,0.72354,Biscuits
+01.1.1.3.1.02,01.1.1.3,5,good,0.31487,"Chips , nachos, puffs, wafers, etc."
+01.1.1.3.1.03,01.1.1.3,5,good,0.20615,"Cake, pastry"
+01.1.1.3.1.04,01.1.1.3,5,good,0.20362,Bread (bakery)
+01.1.1.4,01.1.1,3,,0.24347,Breakfast cereals
+01.1.1.4.1.01,01.1.1.4,5,good,0.11266,Breakfast cereals
+01.1.1.4.1.02,01.1.1.4,5,good,0.1098,Muri
+01.1.1.4.1.03,01.1.1.4,5,good,0.02101,Other rice products
+01.1.1.5,01.1.1,3,,0.25823,"Macaroni, noodles, couscous and similar pasta products"
+01.1.1.5.1.01,01.1.1.5,5,good,0.22765,Noodles
+01.1.1.5.1.02,01.1.1.5,5,good,0.03058,Vermicelli (sewai)
+01.1.1.9,01.1.1,3,,0.16859,Other milled cereal and grain products
+01.1.1.9.1.01,01.1.1.9,5,good,0.08688,"Suji, rawa"
+01.1.1.9.1.02,01.1.1.9,5,good,0.08171,Chidwa
+01.1.2,01.1,2,,2.49585,"Meat, fresh, chilled or frozen"
+01.1.2.2,01.1.2,3,,2.49585,"Meat, fresh, chilled or frozen"
+01.1.2.2.1.01,01.1.2.2,5,good,1.5651,Chicken
+01.1.2.2.1.02,01.1.2.2,5,good,0.6658,Goat meat/ mutton
+01.1.2.2.1.03,01.1.2.2,5,good,0.18654,Beef/ buffalo meat
+01.1.2.2.1.04,01.1.2.2,5,good,0.06299,Pork
+01.1.2.2.1.05,01.1.2.2,5,good,0.01543,"Others: birds, crab,oyster, etc."
+01.1.3,01.1,2,,1.02535,Fish and other seafood
+01.1.3.1,01.1.3,3,,1.02535,Fish and prawn
+01.1.3.1.1.01,01.1.3.1,5,good,1.02535,Fish and prawn
+01.1.4,01.1,2,,7.28055,"Milk, other dairy products and eggs"
+01.1.4.1,01.1.4,3,,5.20381,Milk: liquid
+01.1.4.1.1.01,01.1.4.1,5,good,5.20381,Milk: liquid
+01.1.4.3,01.1.4,3,,0.0389,Milk: condensed/ powder
+01.1.4.3.1.01,01.1.4.3,5,good,0.0389,Milk: condensed/ powder
+01.1.4.5,01.1.4,3,,0.24886,Cheese
+01.1.4.5.1.01,01.1.4.5,5,good,0.24612,Paneer
+01.1.4.5.1.02,01.1.4.5,5,good,0.00274,Cheese
+01.1.4.6,01.1.4,3,,0.39069,"Curd, Yoghurt and similar products"
+01.1.4.6.1.01,01.1.4.6,5,good,0.2904,"Curd, yogurt"
+01.1.4.6.1.02,01.1.4.6,5,good,0.05485,Butter milk
+01.1.4.6.1.03,01.1.4.6,5,good,0.04544,Lassi
+01.1.4.7,01.1.4,3,,0.88326,Milk-based dessert and beverages
+01.1.4.7.1.01,01.1.4.7,5,good,0.54932,Tea: cups
+01.1.4.7.1.02,01.1.4.7,5,good,0.28927,Prepared sweets- milk based
+01.1.4.7.1.03,01.1.4.7,5,good,0.04467,Coffee: cups
+01.1.4.8,01.1.4,3,,0.49495,Eggs
+01.1.4.8.1.01,01.1.4.8,5,good,0.49495,Eggs
+01.1.4.9,01.1.4,3,,0.02008,Other dairy products
+01.1.4.9.1.01,01.1.4.9,5,good,0.02008,Other milk products
+01.1.5,01.1,2,,2.73745,Oils and fats
+01.1.5.1,01.1.5,3,,2.18004,Vegetable oils
+01.1.5.1.1.01,01.1.5.1,5,good,1.04417,Refined oil
+01.1.5.1.1.02,01.1.5.1,5,good,0.95934,Mustard oil
+01.1.5.1.1.03,01.1.5.1,5,good,0.08257,Groundnut oil
+01.1.5.1.1.04,01.1.5.1,5,good,0.05747,Coconut oil
+01.1.5.1.1.05,01.1.5.1,5,good,0.01367,Edible oil
+01.1.5.1.1.06,01.1.5.1,5,good,0.02282,Edible oil PDS
+01.1.5.2,01.1.5,3,,0.54881,Butter and other oils and fats derived from milk
+01.1.5.2.1.01,01.1.5.2,5,good,0.51696,Ghee
+01.1.5.2.1.02,01.1.5.2,5,good,0.03185,Butter
+01.1.5.3,01.1.5,3,,0.0086,Margarine and similar preparations
+01.1.5.3.1.01,01.1.5.3,5,good,0.0086,Vanaspati and margarine
+01.1.6,01.1,2,,3.71595,Fruits and nuts
+01.1.6.1,01.1.6,3,,1.33668,"Dates, figs and tropical fruits, fresh"
+01.1.6.1.1.01,01.1.6.1,5,good,0.46749,Banana
+01.1.6.1.1.02,01.1.6.1,5,good,0.30748,Mango
+01.1.6.1.1.03,01.1.6.1,5,good,0.13751,Green coconut
+01.1.6.1.1.04,01.1.6.1,5,good,0.19385,Coconut
+01.1.6.1.1.05,01.1.6.1,5,good,0.10977,Papaya
+01.1.6.1.1.06,01.1.6.1,5,good,0.10144,Guava
+01.1.6.1.1.07,01.1.6.1,5,good,0.0145,Pineapple
+01.1.6.1.1.08,01.1.6.1,5,good,0.00463,Fig: anjeer
+01.1.6.2,01.1.6,3,,0.28301,"Citrus fruits, fresh"
+01.1.6.2.1.01,01.1.6.2,5,good,0.14529,Orange and sweet lime (mausami)
+01.1.6.2.1.02,01.1.6.2,5,good,0.13772,Lemon
+01.1.6.3,01.1.6,3,,0.57969,"Stone fruits and pome fruits, fresh"
+01.1.6.3.1.01,01.1.6.3,5,good,0.56348,Apple
+01.1.6.3.1.02,01.1.6.3,5,good,0.01028,Litchi
+01.1.6.3.1.03,01.1.6.3,5,good,0.00478,Pears/ nashpati
+01.1.6.3.1.04,01.1.6.3,5,good,0.00116,Apricot
+01.1.6.4,01.1.6,3,,0.00224,"Berries, fresh"
+01.1.6.4.1.01,01.1.6.4,5,good,0.00224,Berries
+01.1.6.5,01.1.6,3,,0.39145,"Other fruits, fresh"
+01.1.6.5.1.01,01.1.6.5,5,good,0.15853,Grapes
+01.1.6.5.1.02,01.1.6.5,5,good,0.13044,Watermelon
+01.1.6.5.1.03,01.1.6.5,5,good,0.0328,Kharbooza
+01.1.6.5.1.04,01.1.6.5,5,good,0.00918,Singara
+01.1.6.5.1.05,01.1.6.5,5,good,0.06049,Other fresh fruits
+01.1.6.7,01.1.6,3,,0.40231,"Fruits, dried and dehydrated"
+01.1.6.7.1.01,01.1.6.7,5,good,0.13999,Dates
+01.1.6.7.1.02,01.1.6.7,5,good,0.16402,Raisin (kishmish) and monacca
+01.1.6.7.1.03,01.1.6.7,5,good,0.0856,Coconut: copra
+01.1.6.7.1.04,01.1.6.7,5,good,0.01271,Other dry fruits
+01.1.6.8,01.1.6,3,,0.72057,"Nuts, in shell or shelled"
+01.1.6.8.1.01,01.1.6.8,5,good,0.31861,Groundnut
+01.1.6.8.1.02,01.1.6.8,5,good,0.17746,Cashew nut
+01.1.6.8.1.03,01.1.6.8,5,good,0.2245,Other nuts
+01.1.7,01.1,2,,6.81782,"Vegetables, tubers, plantains, cooking bananas and pulses"
+01.1.7.1,01.1.7,3,,0.69383,"Leafy or stem vegetables, fresh or chilled"
+01.1.7.1.1.01,01.1.7.1,5,good,0.23323,Cauliflower
+01.1.7.1.1.02,01.1.7.1,5,good,0.15198,Cabbage
+01.1.7.1.1.03,01.1.7.1,5,good,0.30863,Palak and other leafy vegetables
+01.1.7.2,01.1.7,3,,1.60102,"Fruit-bearing vegetables, fresh or chilled"
+01.1.7.2.1.01,01.1.7.2,5,good,0.49617,Tomato
+01.1.7.2.1.02,01.1.7.2,5,good,0.24867,Lady's finger
+01.1.7.2.1.03,01.1.7.2,5,good,0.291,Brinjal
+01.1.7.2.1.04,01.1.7.2,5,good,0.23783,Green chillies
+01.1.7.2.1.05,01.1.7.2,5,good,0.20383,"Gourd, pumpkin"
+01.1.7.2.1.06,01.1.7.2,5,good,0.12352,Parwal/patal and Kundru
+01.1.7.3,01.1.7,3,,0.28822,"Green leguminous vegetables, fresh or chilled"
+01.1.7.3.1.01,01.1.7.3,5,good,0.16305,Beans and Barbati
+01.1.7.3.1.02,01.1.7.3,5,good,0.12517,Peas
+01.1.7.4,01.1.7,3,,1.74978,"Other vegetables, fresh or chilled"
+01.1.7.4.1.01,01.1.7.4,5,good,0.70034,Onion
+01.1.7.4.1.02,01.1.7.4,5,good,0.37363,Garlic
+01.1.7.4.1.03,01.1.7.4,5,good,0.12187,Carrot
+01.1.7.4.1.04,01.1.7.4,5,good,0.06553,Radish
+01.1.7.4.1.05,01.1.7.4,5,good,0.00939,Jackfruit
+01.1.7.4.1.06,01.1.7.4,5,good,0.47903,Other vegetables
+01.1.7.5,01.1.7,3,,0.75485,"Tubers, plantains and cooking bananas, fresh or chilled"
+01.1.7.5.1.01,01.1.7.5,5,good,0.75485,Potato
+01.1.7.6,01.1.7,3,,1.47523,Pulses
+01.1.7.6.1.01,01.1.7.6,5,good,0.53454,"Arhar, tur"
+01.1.7.6.1.02,01.1.7.6,5,good,0.23396,Moong
+01.1.7.6.1.03,01.1.7.6,5,good,0.18391,Urd
+01.1.7.6.1.04,01.1.7.6,5,good,0.20637,Masur
+01.1.7.6.1.05,01.1.7.6,5,good,0.11632,Gram: split
+01.1.7.6.1.06,01.1.7.6,5,good,0.08445,Gram: whole
+01.1.7.6.1.07,01.1.7.6,5,good,0.05212,"Peas, chickpeas"
+01.1.7.6.1.08,01.1.7.6,5,good,0.05131,Other pulses
+01.1.7.6.1.09,01.1.7.6,5,good,0.01225,Pulses PDS
+01.1.7.9,01.1.7,3,,0.25488,"Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations"
+01.1.7.9.1.01,01.1.7.9,5,good,0.12356,Besan and Gram products
+01.1.7.9.1.02,01.1.7.9,5,good,0.08551,Pickles
+01.1.7.9.1.03,01.1.7.9,5,good,0.04581,Other pulse products
+01.1.8,01.1,2,,1.40079,"Sugar, confectionery and desserts"
+01.1.8.1,01.1.8,3,,0.58712,Cane sugar and beet sugar
+01.1.8.1.1.01,01.1.8.1,5,good,0.48972,Sugar
+01.1.8.1.1.02,01.1.8.1,5,good,0.08015,Jaggery (gur)
+01.1.8.1.1.03,01.1.8.1,5,good,0.01725,Sugar PDS
+01.1.8.3,01.1.8,3,,0.02679,"Jams, marmalades, fruit jellies, purées and pastes, and honey"
+01.1.8.3.1.01,01.1.8.3,5,good,0.01309,Jam/ jelly
+01.1.8.3.1.02,01.1.8.3,5,good,0.01369,Honey
+01.1.8.5,01.1.8,3,,0.20552,"Chocolate, cocoa and cocoa-based food products"
+01.1.8.5.1.01,01.1.8.5,5,good,0.20552,"Chocolates, etc."
+01.1.8.6,01.1.8,3,,0.29313,"Ice, ice cream and sorbets"
+01.1.8.6.1.01,01.1.8.6,5,good,0.29313,Ice-cream
+01.1.8.9,01.1.8,3,,0.28823,Other sugar confectionery and desserts
+01.1.8.9.1.01,01.1.8.9,5,good,0.28118,Prepared sweets - non milk based
+01.1.8.9.1.02,01.1.8.9,5,good,0.00705,"Candy, misri"
+01.1.9,01.1,2,,3.34452,Ready-made food and other food products
+01.1.9.1,01.1.9,3,,0.34143,Ready-made food
+01.1.9.1.1.01,01.1.9.1,5,good,0.21319,Other served processed food
+01.1.9.1.1.02,01.1.9.1,5,good,0.12824,Other packaged processed food
+01.1.9.2,01.1.9,3,,0.12859,Baby food
+01.1.9.2.1.01,01.1.9.2,5,good,0.12859,Baby food
+01.1.9.3,01.1.9,3,,0.10588,"Salt, condiments and sauces"
+01.1.9.3.1.01,01.1.9.3,5,good,0.09213,Salt
+01.1.9.3.1.02,01.1.9.3,5,good,0.01329,Sauce and Mayonnaise
+01.1.9.3.1.03,01.1.9.3,5,good,0.00046,Salt PDS
+01.1.9.4,01.1.9,3,,2.28336,"Spices, culinary herbs and seeds"
+01.1.9.4.1.01,01.1.9.4,5,good,0.40692,Dry chillies
+01.1.9.4.1.02,01.1.9.4,5,good,0.36498,Cumin (jeera)
+01.1.9.4.1.03,01.1.9.4,5,good,0.2968,Coriander (dhania)
+01.1.9.4.1.04,01.1.9.4,5,good,0.25673,Ginger
+01.1.9.4.1.05,01.1.9.4,5,good,0.26365,Turmeric
+01.1.9.4.1.06,01.1.9.4,5,good,0.17383,Curry powder
+01.1.9.4.1.07,01.1.9.4,5,good,0.11045,Black pepper
+01.1.9.4.1.08,01.1.9.4,5,good,0.06032,Tamarind
+01.1.9.4.1.09,01.1.9.4,5,good,0.07303,Oilseeds
+01.1.9.4.1.10,01.1.9.4,5,good,0.02875,Poppy seeds
+01.1.9.4.1.11,01.1.9.4,5,good,0.2479,Other spices
+01.1.9.9,01.1.9,3,,0.48526,Other food products n.e.c.
+01.1.9.9.1.01,01.1.9.9,5,good,0.44841,"Papad, bhujia, namkeen, mixture and chanachur"
+01.1.9.9.1.02,01.1.9.9,5,good,0.03685,Health supplements (probiotic tablet and drinks)
+01.2,01,1,,1.76417,Beverages
+01.2.1,01.2,2,,0.50308,Fruit and vegetable juices
+01.2.1.0,01.2.1,3,,0.50308,Fruit and vegetable juices
+01.2.1.0.1.01,01.2.1.0,5,good,0.50308,Fruit juice
+01.2.2,01.2,2,,0.04789,Coffee and coffee substitutes
+01.2.2.0,01.2.2,3,,0.04789,Coffee: powder
+01.2.2.0.1.01,01.2.2.0,5,good,0.04789,Coffee: powder
+01.2.3,01.2,2,,0.67091,"Tea, maté and other plant-derived products for infusion"
+01.2.3.0,01.2.3,3,,0.67091,Tea: leaf
+01.2.3.0.1.01,01.2.3.0,5,good,0.67091,Tea: leaf
+01.2.4,01.2,2,,0.10218,Cocoa drinks
+01.2.4.0,01.2.4,3,,0.10218,Cocoa drinks
+01.2.4.0.1.01,01.2.4.0,5,good,0.10218,Beverages: cocoa and chocolate drink
+01.2.5,01.2,2,,0.07551,Water
+01.2.5.0,01.2.5,3,,0.07551,Packaged water
+01.2.5.0.1.01,01.2.5.0,5,good,0.07551,Packaged water
+01.2.6,01.2,2,,0.08957,Soft drinks
+01.2.6.0,01.2.6,3,,0.08957,Soda drinks
+01.2.6.0.1.01,01.2.6.0,5,good,0.08957,Soda drinks
+01.2.9,01.2,2,,0.27502,Other beverages
+01.2.9.0,01.2.9,3,,0.27502,Other beverages
+01.2.9.0.1.01,01.2.9.0,5,good,0.03756,Health supplements (protein powder)
+01.2.9.0.1.02,01.2.9.0,5,good,0.09726,Health drinks
+01.2.9.0.1.03,01.2.9.0,5,good,0.1402,Other cold beverages
+01.3,01,1,,0.21222,Services for processing primary goods for food
+01.3.0,01.3,2,,0.21222,Services for processing primary goods for food
+01.3.0.0,01.3.0,3,,0.21222,Services for processing primary goods for food
+01.3.0.0.2.01,01.3.0.0,5,service,0.21222,Grinding/ husking charges
+02,,0,,2.99,"Paan, tobacco and intoxicants"
+02.1,02,1,,1.44453,Alcoholic beverages
+02.1.1,02.1,2,,1.02903,Spirits and liquors
+02.1.1.0,02.1.1,3,,1.02903,Spirits and liquors
+02.1.1.0.1.01,02.1.1.0,5,good,0.63481,Foreign/refined liquor or wine
+02.1.1.0.1.02,02.1.1.0,5,good,0.39422,Country liquor
+02.1.2,02.1,2,,0.06448,Wine
+02.1.2.2,02.1.2,3,,0.06448,Wine from other sources
+02.1.2.2.1.01,02.1.2.2,5,good,0.06448,Toddy
+02.1.3,02.1,2,,0.30901,Beer
+02.1.3.0,02.1.3,3,,0.30901,Beer
+02.1.3.0.1.01,02.1.3.0,5,good,0.30901,Beer
+02.1.9,02.1,2,,0.042,Other alcoholic beverages
+02.1.9.0,02.1.9,3,,0.042,Other alcoholic beverages
+02.1.9.0.1.01,02.1.9.0,5,good,0.042,Other intoxicants
+02.3,02,1,,1.54547,Paan and tobacco
+02.3.0,02.3,2,,1.54547,Paan and other tobacco products
+02.3.0.1,02.3.0,3,,0.31067,Cigarettes
+02.3.0.1.1.01,02.3.0.1,5,good,0.31067,Cigarettes
+02.3.0.2,02.3.0,3,,0.00119,Cigars
+02.3.0.2.1.01,02.3.0.2,5,good,0.00119,Cheroot
+02.3.0.9,02.3.0,3,,1.23361,Paan and other tobacco products
+02.3.0.9.1.01,02.3.0.9,5,good,0.43186,"Gutka, zarda, kimam, surti"
+02.3.0.9.1.02,02.3.0.9,5,good,0.21949,Paan: finished
+02.3.0.9.1.03,02.3.0.9,5,good,0.20288,Bidi
+02.3.0.9.1.04,02.3.0.9,5,good,0.11565,Ingredients for paan
+02.3.0.9.1.05,02.3.0.9,5,good,0.09825,Leaf tobacco
+02.3.0.9.1.06,02.3.0.9,5,good,0.05523,Paan: leaf
+02.3.0.9.1.07,02.3.0.9,5,good,0.00659,Hookah tobacco
+02.3.0.9.1.08,02.3.0.9,5,good,0.0,Snuff
+02.3.0.9.1.09,02.3.0.9,5,good,0.10367,Other tobacco products
+03,,0,,6.38,Clothing and footwear
+03.1,03,1,,5.52674,Clothing
+03.1.1,03.1,2,,0.3146,Clothing materials
+03.1.1.0,03.1.1,3,,0.3146,Clothing materials
+03.1.1.0.1.01,03.1.1.0,5,good,0.3146,Clothing materials
+03.1.2,03.1,2,,3.94515,Garments
+03.1.2.1,03.1.2,3,,1.65142,Garments for men or boys
+03.1.2.1.1.01,03.1.2.1,5,good,0.66718,"Shirts, T-shirts, Kurta (gents)"
+03.1.2.1.1.02,03.1.2.1,5,good,0.49222,"Trousers, jeans, track pant, shorts (gents)"
+03.1.2.1.1.03,03.1.2.1,5,good,0.12479,"Coat, jacket, blazer, sweater, sweatshirts and windcheater (gents)"
+03.1.2.1.1.04,03.1.2.1,5,good,0.09618,Dhoti/ Lungi
+03.1.2.1.1.05,03.1.2.1,5,good,0.27106,Other garments for men or boys
+03.1.2.2,03.1.2,3,,2.05327,Garments for women or girls
+03.1.2.2.1.01,03.1.2.2,5,good,0.52381,Saree
+03.1.2.2.1.02,03.1.2.2,5,good,0.2888,"Tops, shrugs, kurti (ladies)"
+03.1.2.2.1.03,03.1.2.2,5,good,0.51574,"Trousers, jeans, slawars, Skirts (ladies)"
+03.1.2.2.1.04,03.1.2.2,5,good,0.10238,"Coat, jacket, blazer, sweater, sweatshirts and windcheater  (ladies)"
+03.1.2.2.1.05,03.1.2.2,5,good,0.62254,Other garments for women or girls
+03.1.2.3,03.1.2,3,,0.04818,Garments for infants (under 2 years of age)
+03.1.2.3.1.01,03.1.2.3,5,good,0.04818,Garments for infants
+03.1.2.4,03.1.2,3,,0.19227,School uniforms
+03.1.2.4.1.01,03.1.2.4,5,good,0.19227,School uniforms
+03.1.3,03.1,2,,0.28449,Other articles of clothing and clothing accessories
+03.1.3.1,03.1.3,3,,0.28449,Other articles of clothing
+03.1.3.1.1.01,03.1.3.1,5,good,0.12005,"Gamchha, towel and handkerchief"
+03.1.3.1.1.02,03.1.3.1,5,good,0.06595,Shawl and chaddar
+03.1.3.1.1.03,03.1.3.1,5,good,0.09849,Other articles of clothing (including knitting wool)
+03.1.4,03.1,2,,0.9825,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing"
+03.1.4.1,03.1.4,3,,0.10485,"Cleaning, ironing, dry cleaning and dyeing of clothing"
+03.1.4.1.2.01,03.1.4.1,5,service,0.10485,"Washerman, laundry, ironing, dry cleaning and dyeing"
+03.1.4.2,03.1.4,3,,0.87765,"Repair, tailoring and hire of clothing"
+03.1.4.2.2.01,03.1.4.2,5,service,0.87765,Tailor
+03.2,03,1,,0.85326,Footwear
+03.2.1,03.2,2,,0.85326,Shoes and other footwear
+03.2.1.1,03.2.1,3,,0.30867,Footwear for men
+03.2.1.1.1.01,03.2.1.1,5,good,0.30867,Footwear for men
+03.2.1.2,03.2.1,3,,0.28708,Footwear for women
+03.2.1.2.1.01,03.2.1.2,5,good,0.28708,Footwear for women
+03.2.1.3,03.2.1,3,,0.2575,Footwear for infants and children
+03.2.1.3.1.01,03.2.1.3,5,good,0.2575,Footwear for infants and children
+04,,0,,17.66,"Housing, water, electricity, gas and other fuels"
+04.1,04,1,,10.76503,Actual rental payments made for housing
+04.1.1,04.1,2,,10.76503,Actual rental payments made by tenants for main residence
+04.1.1.0,04.1.1,3,,10.76503,Actual rental payments made by tenants for main residence
+04.1.1.0.2.01,04.1.1.0,5,service,10.76503,House Rent
+04.3,04,1,,1.20711,"Maintenance, repair and security of the dwelling"
+04.3.1,04.3,2,,0.09559,Security equipment and materials for dwelling maintenance and repair
+04.3.1.1,04.3.1,3,,0.09559,Materials for the maintenance and repair of the dwelling
+04.3.1.1.1.01,04.3.1.1,5,good,0.09559,"Plugs, switches and other electrical fittings"
+04.3.2,04.3,2,,1.11153,"Services for the maintenance, repair and security of the dwelling"
+04.3.2.0,04.3.2,3,,1.11153,"Services for the maintenance, repair and security of the dwelling"
+04.3.2.0.2.01,04.3.2.0,5,service,0.79364,Residential building and land (minor repairs)
+04.3.2.0.2.02,04.3.2.0,5,service,0.19941,"Repair charges for non-durables (electricity charges, plumbing charges etc.)"
+04.3.2.0.2.03,04.3.2.0,5,service,0.0136,Watchmen/security guard
+04.3.2.0.2.04,04.3.2.0,5,service,0.10488,Other consumer rent
+04.4,04,1,,0.31589,Water supply and miscellaneous services relating to the dwelling
+04.4.1,04.4,2,,0.24178,Water supply
+04.4.1.1,04.4.1,3,,0.24178,Water charges
+04.4.1.1.2.01,04.4.1.1,5,service,0.24178,Water charges
+04.4.4,04.4,2,,0.07411,Other services related to the dwelling
+04.4.4.9,04.4.4,3,,0.07411,Other services related to the dwelling n.e.c.
+04.4.4.9.2.01,04.4.4.9,5,service,0.07411,Sweeper
+04.5,04,1,,5.37197,"Electricity, gas and other fuels"
+04.5.1,04.5,2,,2.33144,Electricity
+04.5.1.0,04.5.1,3,,2.33144,Electricity
+04.5.1.0.2.01,04.5.1.0,5,service,2.33144,Electricity charges
+04.5.2,04.5,2,,1.9856,Gas
+04.5.2.2,04.5.2,3,,1.9856,LPG Cylinders and Piped natural gas
+04.5.2.2.1.01,04.5.2.2,5,good,1.9856,LPG cylinder and piped natural gas
+04.5.3,04.5,2,,0.01152,Liquid fuels
+04.5.3.0,04.5.3,3,,0.01152,Liquid fuels
+04.5.3.0.1.01,04.5.3.0,5,good,0.00628,Kerosene
+04.5.3.0.1.02,04.5.3.0,5,good,0.00524,Kerosene PDS
+04.5.4,04.5,2,,1.04341,Solid fuels
+04.5.4.1,04.5.4,3,,0.00733,Coal
+04.5.4.1.1.01,04.5.4.1,5,good,0.00733,Coal
+04.5.4.2,04.5.4,3,,0.8718,Firewood and chips
+04.5.4.2.1.01,04.5.4.2,5,good,0.8718,Firewood and chips
+04.5.4.3,04.5.4,3,,0.00286,Charcoal
+04.5.4.3.1.01,04.5.4.3,5,good,0.00286,Charcoal
+04.5.4.9,04.5.4,3,,0.16143,Other solid fuels
+04.5.4.9.1.01,04.5.4.9,5,good,0.14759,Dung cake
+04.5.4.9.1.02,04.5.4.9,5,good,0.01383,Fuel (biogas and gobar gas)
+05,,0,,4.47,"Furnishings, household equipment and routine household maintenance"
+05.1,05,1,,0.54833,"Furniture, furnishings, and loose carpets"
+05.1.1,05.1,2,,0.54833,"Furniture, furnishings and loose carpets"
+05.1.1.1,05.1.1,3,,0.34757,Household furniture
+05.1.1.1.1.01,05.1.1.1,5,good,0.13412,"Chair, stool, bench and table"
+05.1.1.1.1.02,05.1.1.1,5,good,0.07125,Almirah and dressing table
+05.1.1.1.1.03,05.1.1.1,5,good,0.08379,Bedstead
+05.1.1.1.1.04,05.1.1.1,5,good,0.05842,Other furniture and fixtures
+05.1.1.3,05.1.1,3,,0.14598,Lighting equipment
+05.1.1.3.1.01,05.1.1.3,5,good,0.02763,"Lantern, lamp, electric lampshade and emergency light"
+05.1.1.3.1.02,05.1.1.3,5,good,0.11834,"Other electric bulb, tubelight and decorative lights"
+05.1.1.4,05.1.1,3,,0.05478,"Furnishings, loose carpets and rugs"
+05.1.1.4.1.01,05.1.1.4,5,good,0.04429,"Carpet, daree and other floor mattings"
+05.1.1.4.1.02,05.1.1.4,5,good,0.01049,"Paintings, drawings and engravings"
+05.2,05,1,,0.31405,Household textiles
+05.2.1,05.2,2,,0.31405,Household textiles
+05.2.1.1,05.2.1,3,,0.01298,Furnishing fabrics and curtains
+05.2.1.1.1.01,05.2.1.1,5,good,0.01298,"Cloth for upholstery, curtains, tablecloth etc."
+05.2.1.2,05.2.1,3,,0.30107,Bed linen and bedding
+05.2.1.2.1.01,05.2.1.2,5,good,0.12574,Bed sheet and bed cover
+05.2.1.2.1.02,05.2.1.2,5,good,0.08824,Rug and blanket
+05.2.1.2.1.03,05.2.1.2,5,good,0.02578,Pillow and cushion
+05.2.1.2.1.04,05.2.1.2,5,good,0.02807,Quilt and mattress
+05.2.1.2.1.05,05.2.1.2,5,good,0.02658,Mosquito net
+05.2.1.2.1.06,05.2.1.2,5,good,0.00666,Bedding
+05.3,05,1,,0.73253,Household appliances
+05.3.1,05.3,2,,0.39749,Major electric and other household appliances
+05.3.1.1,05.3.1,3,,0.13016,Major kitchen appliances
+05.3.1.1.1.01,05.3.1.1,5,good,0.08429,Refrigerator/freezers
+05.3.1.1.1.02,05.3.1.1,5,good,0.04587,"stove, gas burner and induction"
+05.3.1.2,05.3.1,3,,0.04914,Major laundry appliances
+05.3.1.2.1.01,05.3.1.2,5,good,0.04914,Washing machine
+05.3.1.3,05.3.1,3,,0.1283,Heaters and air conditioners
+05.3.1.3.1.01,05.3.1.3,5,good,0.04402,Air conditioner
+05.3.1.3.1.02,05.3.1.3,5,good,0.06417,Air cooler
+05.3.1.3.1.03,05.3.1.3,5,good,0.01263,Geysers and sterilizers
+05.3.1.3.1.04,05.3.1.3,5,good,0.0047,Electric air heaters and blowers
+05.3.1.3.1.05,05.3.1.3,5,good,0.00278,"Ventilation system such as exhaust, chimney, etc."
+05.3.1.9,05.3.1,3,,0.0899,Other major household appliances
+05.3.1.9.1.01,05.3.1.9,5,good,0.02112,Water purifier
+05.3.1.9.1.02,05.3.1.9,5,good,0.02043,"Inverter, generators and stabilizers"
+05.3.1.9.1.03,05.3.1.9,5,good,0.01213,Sewing machine
+05.3.1.9.1.04,05.3.1.9,5,good,0.00161,Air purifier
+05.3.1.9.1.05,05.3.1.9,5,good,0.00511,Other machines for household work
+05.3.1.9.1.06,05.3.1.9,5,good,0.0295,Other durables
+05.3.2,05.3,2,,0.33504,Small household appliances
+05.3.2.1,05.3.2,3,,0.08553,Small appliances for the cooking and processing of food
+05.3.2.1.1.01,05.3.2.1,5,good,0.06219,"Mixer/grinder, juicer and food processor"
+05.3.2.1.1.02,05.3.2.1,5,good,0.02334,Other cooking/ household appliances
+05.3.2.9,05.3.2,3,,0.2495,Other small household appliances
+05.3.2.9.1.01,05.3.2.9,5,good,0.14738,Electric fan
+05.3.2.9.1.02,05.3.2.9,5,good,0.06784,Bathroom and sanitary equipment
+05.3.2.9.1.03,05.3.2.9,5,good,0.03428,"Electric iron, heater, toaster, micro-oven, electric kettle, vacuum cleaner and other electric heating appliances"
+05.4,05,1,,0.50713,"Glassware, tableware and household utensils"
+05.4.0,05.4,2,,0.50713,"Glassware, tableware and household utensils"
+05.4.0.1,05.4.0,3,,0.02279,"Glassware, crystal ware, ceramic ware and china ware"
+05.4.0.1.1.01,05.4.0.1,5,good,0.02279,Glassware
+05.4.0.3,05.4.0,3,,0.48435,Kitchen utensils and articles
+05.4.0.3.1.01,05.4.0.3,5,good,0.17515,Bucket and other plastic goods
+05.4.0.3.1.02,05.4.0.3,5,good,0.13859,Stainless steel utensils
+05.4.0.3.1.03,05.4.0.3,5,good,0.02781,Water bottle/feeding bottle
+05.4.0.3.1.04,05.4.0.3,5,good,0.00923,"Casseroles, thermos, flask and thermoware"
+05.4.0.3.1.05,05.4.0.3,5,good,0.03025,"Other metal utensils (non-stick cookware, etc.)"
+05.4.0.3.1.06,05.4.0.3,5,good,0.04643,Other crockery and utensils
+05.4.0.3.1.07,05.4.0.3,5,good,0.0569,Pressure cooker/ pressure pan
+05.5,05,1,,0.23382,Tools and equipment for house and garden
+05.5.2,05.5,2,,0.23382,Non-motorized tools and miscellaneous accessories
+05.5.2.2,05.5.2,3,,0.23382,Miscellaneous accessories
+05.5.2.2.1.01,05.5.2.2,5,good,0.17035,"LED bulb, CFL bulbs"
+05.5.2.2.1.02,05.5.2.2,5,good,0.03376,Electric batteries
+05.5.2.2.1.03,05.5.2.2,5,good,0.02971,Other minor durable-type goods
+05.6,05,1,,2.13414,Goods and services for routine household maintenance
+05.6.1,05.6,2,,1.49389,Non-durable household goods
+05.6.1.1,05.6.1,3,,0.84759,Household cleaning and maintenance products
+05.6.1.1.1.01,05.6.1.1,5,good,0.57369,Washing soap/soda/powder/liquid detergent
+05.6.1.1.1.02,05.6.1.1,5,good,0.19067,"Floor cleaner, toilet cleaner"
+05.6.1.1.1.03,05.6.1.1,5,good,0.08323,Other washing requisites
+05.6.1.9,05.6.1,3,,0.6463,Other non-durable household goods
+05.6.1.9.1.01,05.6.1.9,5,good,0.16906,Incense (agarbatti) and room freshener
+05.6.1.9.1.02,05.6.1.9,5,good,0.13956,"Mosquito repellent, insecticide, anti-rodent, etc."
+05.6.1.9.1.03,05.6.1.9,5,good,0.04244,"Earthenware, paperware, thermocol plates, etc."
+05.6.1.9.1.04,05.6.1.9,5,good,0.03044,Matchbox
+05.6.1.9.1.05,05.6.1.9,5,good,0.0254,Candle
+05.6.1.9.1.06,05.6.1.9,5,good,0.2394,Other petty articles
+05.6.2,05.6,2,,0.64025,Domestic services and household services
+05.6.2.1,05.6.2,3,,0.17797,Domestic services provided by paid staff
+05.6.2.1.2.01,05.6.2.1,5,service,0.14653,Domestic helper/cook
+05.6.2.1.2.02,05.6.2.1,5,service,0.02609,Driver
+05.6.2.1.2.03,05.6.2.1,5,service,0.00535,"Attendant, babysitter"
+05.6.2.9,05.6.2,3,,0.46228,Other consumer services excluding conveyance
+05.6.2.9.2.01,05.6.2.9,5,service,0.46228,Other consumer services excluding conveyance
+06,,0,,6.1,Health
+06.1,06,1,,3.90102,Medicines and health products
+06.1.1,06.1,2,,3.76302,Medicines
+06.1.1.1,06.1.1,3,,3.72173,Medicines and vaccines
+06.1.1.1.1.01,06.1.1.1,5,good,3.72173,Medicine
+06.1.1.2,06.1.1,3,,0.04128,Health supplements
+06.1.1.2.1.01,06.1.1.2,5,good,0.04128,Health supplements (chawanprash)
+06.1.2,06.1,2,,0.04118,Medical products
+06.1.2.1,06.1.2,3,,0.01881,Medical diagnostic products
+06.1.2.1.1.01,06.1.2.1,5,good,0.01881,Other medical equipment
+06.1.2.2,06.1.2,3,,0.01771,Family planning devices
+06.1.2.2.1.01,06.1.2.2,5,good,0.01771,Family planning devices
+06.1.2.3,06.1.2,3,,0.00467,Treatment devices for personal use
+06.1.2.3.1.01,06.1.2.3,5,good,0.00467,Nebulizer
+06.1.3,06.1,2,,0.09682,Assistive products
+06.1.3.1,06.1.3,3,,0.08626,Assistive products for vision
+06.1.3.1.1.01,06.1.3.1,5,good,0.08626,"Spectacles/goggles, contact lenses"
+06.1.3.2,06.1.3,3,,0.00438,Assistive products for hearing and communication
+06.1.3.2.1.01,06.1.3.2,5,good,0.00438,Hearing aids and orthopaedic equipment
+06.1.3.3,06.1.3,3,,0.00617,Assistive products for mobility and daily living
+06.1.3.3.1.01,06.1.3.3,5,good,0.00432,Massager
+06.1.3.3.1.02,06.1.3.3,5,good,0.00186,Wheelchair
+06.2,06,1,,1.14133,Outpatient care services
+06.2.3,06.2,2,,1.14133,Other outpatient care services
+06.2.3.1,06.2.3,3,,1.14133,Outpatient curative and rehabilitative services
+06.2.3.1.2.01,06.2.3.1,5,service,0.91366,Doctor's/surgeon's fee
+06.2.3.1.2.02,06.2.3.1,5,service,0.22767,Other medical expenses
+06.3,06,1,,0.48225,Inpatient care services
+06.3.1,06.3,2,,0.48225,Inpatient curative and rehabilitative services
+06.3.1.0,06.3.1,3,,0.48225,Inpatient curative and rehabilitative services
+06.3.1.0.2.01,06.3.1.0,5,service,0.48225,Hospital and nursing home charges
+06.4,06,1,,0.5754,Other health services
+06.4.1,06.4,2,,0.5754,Diagnostic imaging services and medical laboratory services
+06.4.1.0,06.4.1,3,,0.5754,Diagnostic imaging services and medical laboratory services
+06.4.1.0.2.01,06.4.1.0,5,service,0.5754,"X-ray, ECG and pathological test"
+07,,0,,8.8,Transport
+07.1,07,1,,1.18543,Purchase of vehicles
+07.1.1,07.1,2,,0.46678,Motor cars
+07.1.1.1,07.1.1,3,,0.46678,Motor car and jeep
+07.1.1.1.1.01,07.1.1.1,5,good,0.46678,Motor car and jeep
+07.1.2,07.1,2,,0.65858,Motorcycles
+07.1.2.0,07.1.2,3,,0.65858,Motor cycle and scooter
+07.1.2.0.1.01,07.1.2.0,5,good,0.65858,Motor cycle and scooter
+07.1.3,07.1,2,,0.06007,Bicycles
+07.1.3.0,07.1.3,3,,0.06007,Bicycle
+07.1.3.0.1.01,07.1.3.0,5,good,0.06007,Bicycle
+07.2,07,1,,5.0402,Operation of personal transport equipment
+07.2.1,07.2,2,,0.19178,Parts and accessories for personal transport equipment
+07.2.1.1,07.2.1,3,,0.15385,Tyres and tubes
+07.2.1.1.1.01,07.2.1.1,5,good,0.15385,Tyres and tubes
+07.2.1.2,07.2.1,3,,0.00484,Parts for personal transport equipment
+07.2.1.2.1.01,07.2.1.2,5,good,0.00484,Other transport equipment
+07.2.1.3,07.2.1,3,,0.03308,Accessories for personal transport equipment
+07.2.1.3.1.01,07.2.1.3,5,good,0.03308,Helmet
+07.2.2,07.2,2,,4.84843,Fuels and lubricants for personal transport equipment
+07.2.2.1,07.2.2,3,,0.28983,Diesel
+07.2.2.1.1.01,07.2.2.1,5,good,0.28983,Diesel
+07.2.2.2,07.2.2,3,,4.51563,Petrol
+07.2.2.2.1.01,07.2.2.2,5,good,4.51563,Petrol
+07.2.2.3,07.2.2,3,,0.04297,Other fuels for personal transport equipment
+07.2.2.3.1.01,07.2.2.3,5,good,0.04297,Other natural gas (CNG)
+07.3,07,1,,2.56554,Passenger transport services
+07.3.1,07.3,2,,0.87598,Passenger transport by railway
+07.3.1.1,07.3.1,3,,0.18728,Passenger transport by train
+07.3.1.1.2.01,07.3.1.1,5,service,0.18728,Rail fare
+07.3.1.2,07.3.1,3,,0.6887,Passenger transport by rapid transit and tram
+07.3.1.2.2.01,07.3.1.2,5,service,0.6887,Bus/tram fare: occasional
+07.3.2,07.3,2,,1.65919,Passenger transport by road
+07.3.2.1,07.3.2,3,,0.15784,Passenger transport by bus and coach
+07.3.2.1.2.01,07.3.2.1,5,service,0.11781,Bus/tram fare for commuting to work: daily
+07.3.2.1.2.02,07.3.2.1,5,service,0.04002,Bus fare for commuting to work: periodic
+07.3.2.2,07.3.2,3,,0.18476,Passenger transport by taxi and hired vehicle with driver
+07.3.2.2.2.01,07.3.2.2,5,service,0.11183,Taxi fare
+07.3.2.2.2.02,07.3.2.2,5,service,0.07293,"Car/bus hired for ceremonial occasion, picnic, etc"
+07.3.2.3,07.3.2,3,,0.52628,Passenger transport for students to and from school
+07.3.2.3.2.01,07.3.2.3,5,service,0.37873,"Bus fare for school, college: periodic"
+07.3.2.3.2.02,07.3.2.3,5,service,0.14754,"Bus /tram fare for school, college: daily"
+07.3.2.9,07.3.2,3,,0.79031,Other passenger transport by road
+07.3.2.9.2.01,07.3.2.9,5,service,0.69873,Auto-rickshaw/e-rickshaw fare
+07.3.2.9.2.02,07.3.2.9,5,service,0.01106,Rickshaw fare
+07.3.2.9.2.03,07.3.2.9,5,service,0.08052,Other conveyance expenses
+07.3.3,07.3,2,,0.02933,Passenger transport by air
+07.3.3.1,07.3.3,3,,0.02933,"Passenger transport by air, domestic"
+07.3.3.1.2.01,07.3.3.1,5,service,0.02933,Airfare
+07.3.4,07.3,2,,0.00105,Passenger transport by sea and inland waterway
+07.3.4.0,07.3.4,3,,0.00105,Passenger transport by sea and inland waterway
+07.3.4.0.2.01,07.3.4.0,5,service,0.00105,"Steamer, boat fare"
+07.4,07,1,,0.00883,Transport services for goods
+07.4.1,07.4,2,,0.00883,Postal and courier services
+07.4.1.2,07.4.1,3,,0.00883,Courier and parcel delivery services
+07.4.1.2.2.01,07.4.1.2,5,service,0.00883,"Postage, couriers and money order"
+08,,0,,3.61,Information and communication
+08.1,08,1,,0.79129,Information and communication equipment
+08.1.1,08.1,2,,0.00171,Telephone instrument (landline)
+08.1.1.0,08.1.1,3,,0.00171,Telephone instrument (landline)
+08.1.1.0.1.01,08.1.1.0,5,good,0.00171,Telephone instrument (landline)
+08.1.2,08.1,2,,0.56186,Mobile handset
+08.1.2.0,08.1.2,3,,0.56186,Mobile handset
+08.1.2.0.1.01,08.1.2.0,5,good,0.56186,Mobile handset
+08.1.3,08.1,2,,0.03541,Information processing equipment
+08.1.3.1,08.1.3,3,,0.03541,"Computers, laptops and tablets including Software"
+08.1.3.1.1.01,08.1.3.1,5,good,0.03541,PC/ Laptop/ tablet and other peripherals incl. software
+08.1.4,08.1,2,,0.18185,Audio-visual devices
+08.1.4.0,08.1.4,3,,0.18185,Audio-visual devices
+08.1.4.0.1.01,08.1.4.0,5,good,0.11088,Television
+08.1.4.0.1.02,08.1.4.0,5,good,0.07097,"Headphone, earphone, ear pod, airpod and bluetooth devices"
+08.1.5,08.1,2,,0.01046,Unrecorded recording media
+08.1.5.0,08.1.5,3,,0.01046,Unrecorded recording media
+08.1.5.0.1.01,08.1.5.0,5,good,0.01046,Pen-drive and external hard disk
+08.3,08,1,,2.81871,Information and communication services
+08.3.3,08.3,2,,0.20947,Internet access provision services and online storage services
+08.3.3.0,08.3.3,3,,0.20947,Internet expenses
+08.3.3.0.2.01,08.3.3.0,5,service,0.20947,Internet expenses
+08.3.4,08.3,2,,1.92255,Telephone charges: mobile and landline
+08.3.4.0,08.3.4,3,,1.92255,Telephone charges: mobile and landline
+08.3.4.0.2.01,08.3.4.0,5,service,1.91948,Telephone charges: mobile
+08.3.4.0.2.02,08.3.4.0,5,service,0.00307,Telephone charges: landline
+08.3.9,08.3,2,,0.68669,Other information and communication services
+08.3.9.2,08.3.9,3,,0.68669,Subscriptions to streaming services
+08.3.9.2.1.01,08.3.9.2,5,good,0.64445,Cable TV/DTH/set top box
+08.3.9.2.2.02,08.3.9.2,5,service,0.04224,Online media service provider/streaming services
+09,,0,,1.52,"Recreation, sport and culture"
+09.1,09,1,,0.00613,Recreational durables
+09.1.1,09.1,2,,0.00613,Photographic and cinematographic equipment and optical instruments
+09.1.1.1,09.1.1,3,,0.00613,Camera and photographic equipment
+09.1.1.1.1.01,09.1.1.1,5,good,0.00613,Camera and photographic equipment
+09.2,09,1,,0.12465,Other recreational goods
+09.2.1,09.2,2,,0.0234,"Games, toys and hobby-related articles"
+09.2.1.1,09.2.1,3,,0.0234,Other goods for recreation
+09.2.1.1.1.01,09.2.1.1,5,good,0.0234,Other goods for recreation
+09.2.2,09.2,2,,0.10125,"Sporting, camping and open-air recreation equipment"
+09.2.2.1,09.2.2,3,,0.10125,Sporting equipment
+09.2.2.1.1.01,09.2.2.1,5,good,0.07856,Sports goods
+09.2.2.1.1.02,09.2.2.1,5,good,0.00468,Exercise equipment
+09.2.2.1.1.03,09.2.2.1,5,good,0.01802,Other sports goods
+09.3,09,1,,0.15874,Garden products and pets
+09.3.1,09.3,2,,0.11493,"Garden products, plants and flowers"
+09.3.1.2,09.3.1,3,,0.11493,"Plants, seeds and flowers"
+09.3.1.2.1.01,09.3.1.2,5,good,0.11493,Flower (fresh)
+09.3.2,09.3,2,,0.04381,Pets and pet products
+09.3.2.1,09.3.2,3,,0.04381,Pets
+09.3.2.1.1.01,09.3.2.1,5,good,0.04381,Pet animals
+09.4,09,1,,0.29465,Recreational services
+09.4.6,09.4,2,,0.29465,Recreational and sporting services
+09.4.6.1,09.4.6,3,,0.18257,Recreational and leisure services
+09.4.6.1.2.01,09.4.6.1,5,service,0.18257,"Other entertainment (mela, fair, picnic, etc.)"
+09.4.6.2,09.4.6,3,,0.11208,Services associated with the practice of sports
+09.4.6.2.2.01,09.4.6.2,5,service,0.11208,"Club, gym, swimming fees and other subscriptions"
+09.5,09,1,,0.01444,Cultural goods
+09.5.1,09.5,2,,0.01444,Musical instruments
+09.5.1.0,09.5.1,3,,0.01444,Musical instruments
+09.5.1.0.1.01,09.5.1.0,5,good,0.01444,Musical instruments
+09.6,09,1,,0.16633,Cultural services
+09.6.1,09.6,2,,0.12524,"Services provided by cinemas, theatres and concert venues"
+09.6.1.0,09.6.1,3,,0.12524,"Cinema, theatre"
+09.6.1.0.2.01,09.6.1.0,5,service,0.12524,"Cinema, theatre"
+09.6.3,09.6,2,,0.04109,Photographic services
+09.6.3.0,09.6.3,3,,0.04109,Photography
+09.6.3.0.1.01,09.6.3.0,5,good,0.04109,Photography
+09.7,09,1,,0.75507,"Newspapers, books and stationery"
+09.7.1,09.7,2,,0.45508,Books
+09.7.1.1,09.7.1,3,,0.45508,Educational books and textbooks
+09.7.1.1.1.01,09.7.1.1,5,good,0.45508,Books/ journals
+09.7.2,09.7,2,,0.08884,Newspapers and periodicals
+09.7.2.1,09.7.2,3,,0.08884,Newspapers and periodicals
+09.7.2.1.1.01,09.7.2.1,5,good,0.08884,Newspapers and periodicals
+09.7.4,09.7,2,,0.21114,Stationery and drawing materials
+09.7.4.0,09.7.4,3,,0.21114,Stationery and drawing materials
+09.7.4.0.1.01,09.7.4.0,5,good,0.21114,Stationery
+10,,0,,3.33,Education services
+10.1,10,1,,1.57814,Early childhood and primary education
+10.1.0,10.1,2,,1.57814,Early childhood and primary education
+10.1.0.2,10.1.0,3,,1.57814,Primary education
+10.1.0.2.2.01,10.1.0.2,5,service,1.57814,Tuition fees (Primary/Upper Primary class)
+10.2,10,1,,0.60829,Secondary education
+10.2.0,10.2,2,,0.60829,Secondary education
+10.2.0.0,10.2.0,3,,0.60829,Secondary education
+10.2.0.0.2.01,10.2.0.0,5,service,0.60829,Tuition fees (Secondary/Upper Secondary class)
+10.4,10,1,,0.50463,Higher education
+10.4.0,10.4,2,,0.50463,Higher education
+10.4.0.0,10.4.0,3,,0.50463,Higher education
+10.4.0.0.2.01,10.4.0.0,5,service,0.50463,Tuition fees (Higher education)
+10.5,10,1,,0.63894,Education not defined by level
+10.5.0,10.5,2,,0.63894,Education not defined by level
+10.5.0.1,10.5.0,3,,0.63894,Private tutor/ coaching centre and other educational expenses
+10.5.0.1.2.01,10.5.0.1,5,service,0.53899,Private tutor/ coaching centre
+10.5.0.1.2.02,10.5.0.1,5,service,0.09995,Other educational expenses
+11,,0,,3.35,Restaurants and accommodation services
+11.1,11,1,,3.33167,Food and beverage serving services
+11.1.1,11.1,2,,3.33167,"Restaurants, cafés and the like"
+11.1.1.1,11.1.1,3,,1.19677,"Restaurants, cafés and the like – with full service"
+11.1.1.1.1.01,11.1.1.1,5,good,1.19677,Cooked meals
+11.1.1.2,11.1.1,3,,2.13491,"Restaurants, cafés and the like – with limited service"
+11.1.1.2.1.01,11.1.1.2,5,good,2.13491,Cooked snacks
+11.2,11,1,,0.01833,Accommodation services
+11.2.0,11.2,2,,0.01833,Accommodation services
+11.2.0.1,11.2.0,3,,0.01833,"Hotels, motels, inns and similar accommodation services"
+11.2.0.1.2.01,11.2.0.1,5,service,0.01833,Hotel lodging charges
+13,,0,,5.04,"Personal care, social protection and miscellaneous goods and services"
+13.1,13,1,,3.45687,Personal care
+13.1.1,13.1,2,,0.01874,Appliances for personal care
+13.1.1.1,13.1.1,3,,0.01874,Purchase of appliances for personal care
+13.1.1.1.1.01,13.1.1.1,5,good,0.01874,Other personal goods
+13.1.2,13.1,2,,2.72771,"Other appliances, articles and products for personal care"
+13.1.2.0,13.1.2,3,,2.72771,"Other appliances, articles and products for personal care"
+13.1.2.0.1.01,13.1.2.0,5,good,0.43052,"Toilet soap, body-wash, hand-wash, shower gel and face-wash"
+13.1.2.0.1.02,13.1.2.0,5,good,0.28161,"Perfume, body spray, deodorant and roll-ons"
+13.1.2.0.1.03,13.1.2.0,5,good,0.27167,"Powder, cream, body lotion and moisturizers"
+13.1.2.0.1.04,13.1.2.0,5,good,0.29153,"Toothpaste, mouthwash and toothbrush"
+13.1.2.0.1.05,13.1.2.0,5,good,0.25789,Hair oil and hair colour
+13.1.2.0.1.06,13.1.2.0,5,good,0.22678,"Shampoo, conditioner, hair serum/gel and hair cream"
+13.1.2.0.1.07,13.1.2.0,5,good,0.19653,Sanitary napkins
+13.1.2.0.1.08,13.1.2.0,5,good,0.15617,Baby products
+13.1.2.0.1.09,13.1.2.0,5,good,0.12481,"Shaving blades, shaving stick and razor"
+13.1.2.0.1.10,13.1.2.0,5,good,0.08801,"Shaving cream, shaving foam, aftershave lotion and aftershave balm"
+13.1.2.0.1.11,13.1.2.0,5,good,0.04328,Sanitizer
+13.1.2.0.1.12,13.1.2.0,5,good,0.0,Weighing machine
+13.1.2.0.1.13,13.1.2.0,5,good,0.23483,Other beauty products
+13.1.2.0.1.14,13.1.2.0,5,good,0.12408,Other toilet articles
+13.1.2.0.1.15,13.1.2.0,5,good,0.0,Other hair products
+13.1.3,13.1,2,,0.71042,Hairdressing salons and personal grooming establishments
+13.1.3.2,13.1.3,3,,0.71042,Personal grooming treatments
+13.1.3.2.2.01,13.1.3.2,5,service,0.71042,"Barber, beautician and spas"
+13.2,13,1,,1.39474,Other personal effects
+13.2.1,13.2,2,,1.20243,Jewellery and watches
+13.2.1.1,13.2.1,3,,1.20243,Purchase of jewellery and watches
+13.2.1.1.1.01,13.2.1.1,5,good,0.62362,Gold /diamond /platinum jewellery
+13.2.1.1.1.02,13.2.1.1,5,good,0.31292,Silver jewellery
+13.2.1.1.1.03,13.2.1.1,5,good,0.07266,"Clock, watch, smartwatch and fitness tracker"
+13.2.1.1.1.04,13.2.1.1,5,good,0.01064,"Jewels, pearls, precious stones"
+13.2.1.1.1.05,13.2.1.1,5,good,0.1826,Other jewellery and ornaments
+13.2.9,13.2,2,,0.19231,Other personal effects n.e.c.
+13.2.9.1,13.2.9,3,,0.19231,"Travel goods, baby articles and other personal effects n.e.c."
+13.2.9.1.1.01,13.2.9.1,5,good,0.09402,"Back-pack, handbags, vanity bags, purse and clutch"
+13.2.9.1.1.02,13.2.9.1,5,good,0.06493,"Suitcase, trolley bag, duffle bag and trunk"
+13.2.9.1.1.03,13.2.9.1,5,good,0.03336,Umbrella and Raincoat
+13.9,13,1,,0.18839,Other services
+13.9.0,13.9,2,,0.18839,Other services
+13.9.0.2,13.9.0,3,,0.09928,Religious services
+13.9.0.2.2.01,13.9.0.2,5,service,0.09928,Priest
+13.9.0.9,13.9.0,3,,0.08911,Other services n.e.c.
+13.9.0.9.2.01,13.9.0.9,5,service,0.05544,Photocopying charges
+13.9.0.9.2.02,13.9.0.9,5,service,0.03367,Legal expenses
