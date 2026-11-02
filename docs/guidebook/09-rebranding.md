@@ -39,8 +39,9 @@ Renamed from "IndiaTracker" to the current name (site.name), at the maintainer's
   deploy.yml creates the project on first run).
 - Both old projects, `indiatracker` and `econvitalsindia`, were pointed straight at the new
   address with `redirect-old-pages.yml`, so neither takes two hops.
-- Repo renamed `indiatrackerorg/indiatracker` → `indiatrackerorg/indiamacrofinance`; the maintainer
-  renames the organisation afterwards. The local folder is now `~/indiamacrofinance`.
+- Repo renamed `indiatrackerorg/indiatracker` → `indiatrackerorg/indiamacrofinance`, then the
+  maintainer renamed the organisation, so it is now `indiamacrofinance/indiamacrofinance`.
+  Secrets and the `CF_PAGES_PROJECT` variable moved with it. The local folder is now `~/indiamacrofinance`.
 - `scripts/check_name.py --also IndiaTracker --also "Econvitals India"` found no leftovers.
 - Unchanged: the Buttondown username `econvitalsindia` and the newsletter's display name
   (Buttondown settings), and archived emails.
