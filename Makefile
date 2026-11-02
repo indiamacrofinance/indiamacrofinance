@@ -1,7 +1,7 @@
 # See AGENTS.md → Commands.
 PY ?= uv run python
 
-.PHONY: setup check test update update-auto india-update build dev archive-raw briefings morning-pack morning-check
+.PHONY: setup check test update update-auto india-update build dev archive-raw briefings morning morning-pack morning-check
 
 setup:
 	uv sync
@@ -49,7 +49,14 @@ archive-raw:
 briefings:
 	$(PY) -m pipelines.briefings.draft
 
-# Morning newsletter (runbook "Newsletter"): pull the latest data, write today's fact pack,
+# Send today's morning email now (the same GitHub workflow that runs at 07:30 IST): fetches fresh
+# data, writes it with AI, checks it and sends it to every subscriber. One email a day: a second
+# run on the same day sends nothing.
+morning:
+	gh workflow run newsletter-morning.yml --ref main
+	@echo "Started. The email arrives in about 2-3 minutes; progress: gh run list --workflow newsletter-morning.yml"
+
+# Morning newsletter by hand (runbook "Newsletter"): pull the latest data, write today's fact pack,
 # then check the AI's draft in newsletter/drafts/<date>.md. Pushing the draft sends it.
 morning-pack:
 	git pull --rebase --autostash -q
