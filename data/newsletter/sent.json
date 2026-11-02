@@ -18,5 +18,11 @@
     "id": "em_7920dmy4se9veah7tj0zp0ad8w",
     "subject": "India this morning, 1 Nov 2026",
     "drafted_by": "AI (claude-opus-5-5), checked"
+  },
+  "2026-11-02": {
+    "id": "em_79xw17t7h58a4r6730g3w27akz",
+    "subject": "Rupee strengthened 0.06% to \u20b995.15 per US dollar and is firmer again today",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-10-30"
   }
 }
