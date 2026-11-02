@@ -17,13 +17,13 @@
   "last_period": "2026-09-01",
   "last_value": 74.2734,
   "observations": 40,
-  "updated_at": "2026-11-01T14:43:48+00:00",
+  "updated_at": "2026-11-02T13:06:51+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/content/docs/SIBC30092026ENG.xlsx",
     "https://rbidocs.rbi.org.in/rdocs/content/docs/SIBC30102026E.xlsx"
   ],
   "raw_files": [
-    "data/raw/rbi_sectoral_credit/20261101T144346-a8fe240d52.xlsx",
-    "data/raw/rbi_sectoral_credit/20261101T144348-3ff4c10c13.xlsx"
+    "data/raw/rbi_sectoral_credit/20261102T130648-a8fe240d52.xlsx",
+    "data/raw/rbi_sectoral_credit/20261102T130651-3ff4c10c13.xlsx"
   ]
 }
