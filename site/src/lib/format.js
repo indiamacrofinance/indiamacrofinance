@@ -14,6 +14,7 @@ export function signed(v, digits = 1, suffix = "") {
 }
 
 export function byFmt(v, fmt) {
+  if (v === null || v === undefined || Number.isNaN(v)) return "–";
   // Currency amounts: sign before the symbol, unit attached ("−$30.2bn") so tiles don't wrap.
   const sign = v < 0 ? MINUS : "";
   if (fmt === "usd_bn1") return `${sign}$${num(Math.abs(v), 1)}bn`;

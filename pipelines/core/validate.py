@@ -6,8 +6,17 @@ is left as it was (AGENTS.md hard rule 3).
 from __future__ import annotations
 
 import numbers
+from datetime import date
 
 import pandas as pd
+
+
+def _valid_period(value: object) -> bool:
+    """Accept real calendar dates written exactly as YYYY-MM-DD."""
+    try:
+        return date.fromisoformat(value).isoformat() == value
+    except (TypeError, ValueError):
+        return False
 
 
 def validate(series_id: str, new: pd.DataFrame, spec: dict, *, panel: bool = False) -> list[str]:
@@ -25,7 +34,13 @@ def validate(series_id: str, new: pd.DataFrame, spec: dict, *, panel: bool = Fal
     for key in keys:
         if (new[key].isna() | new[key].astype(str).str.strip().eq("")).any():
             problems.append(f"{series_id}: missing {key}")
+    invalid_periods = ~new["period"].map(_valid_period)
+    if invalid_periods.any():
+        sample = new.loc[invalid_periods, "period"].astype(str).head(3).tolist()
+        problems.append(f"{series_id}: invalid periods (expected YYYY-MM-DD), e.g. {sample}")
     values = new["value"]
+    if pd.api.types.is_bool_dtype(values):
+        return problems + [f"{series_id}: boolean values are not numeric observations"]
     if not pd.api.types.is_numeric_dtype(values):
         # An object column is fine if every entry is a real number (e.g. ints mixed with floats
         # or Decimals); text, including numbers written as text ("5.2"), is not.

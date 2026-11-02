@@ -20,6 +20,7 @@ site/ (Astro, static, Observable Plot) → Cloudflare Pages (private preview beh
 ## Why this stack (details in `decisions/`)
 
 - **Static site.** Free, fast, nothing to keep alive. All computation happens at build time.
+- **Generated JSON reads.** The site caches parsed JSON within a production build. Development reads stay fresh; callers copy cached arrays before sorting them.
 - **Astro.** Markdown content collections handle briefings and blog posts. Components are simple enough for RAs.
 - **Observable Plot.** Economist-style charts with very little code.
 - **CSV per series in git.** Revisions show up as diffs in PRs and history is free. Raw files stay out of git.
@@ -53,6 +54,7 @@ Both series and panels reject missing or nonnumeric values, missing keys, duplic
 keys and values outside the registry range before publishing. Panel keys are
 `(entity, period)`, so different entities can share a period. Missing parser columns
 mark every series in that source stale and enter the normal failure report.
+Boolean columns are rejected explicitly, since pandas otherwise classifies them as numeric.
 
 Revisions that move a past value by more than the series' `revision_alert` threshold also open an issue, labelled `large-revision`. They do not block publishing.
 

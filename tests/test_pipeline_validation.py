@@ -11,6 +11,36 @@ from pipelines.core.validate import validate
 SPEC = {"validation": {"range": [0, 100]}}
 
 
+@pytest.mark.parametrize("period", ["2026-99-99", "2026-02-29", "2026-04-31",
+                                    "20260101", "2026-1-1", "2026-01-01T00:00:00"])
+@pytest.mark.parametrize("panel", [False, True])
+def test_invalid_dates_preserve_stored_data(tmp_path, monkeypatch, period, panel):
+    monkeypatch.setattr(store, "SERIES", tmp_path)
+    monkeypatch.setattr(store, "PANELS", tmp_path)
+    monkeypatch.setattr(store, "STATUS", tmp_path / "status.json")
+    monkeypatch.setattr(store, "archive_raw", lambda *args: [])
+    monkeypatch.setattr(run.registry, "all_series", lambda: {"x": SPEC})
+    path = tmp_path / "x.csv"
+    original = "entity,period,value,vintage,note\nGoa,2026-01-01,2.0,2026-02-01,\n"
+    path.write_text(original)
+    rows = pd.DataFrame({"series_id": ["x"], "entity": ["Goa"],
+                         "period": [period], "value": [2.0]})
+    src = SimpleNamespace(name="test", series_ids=("x",), panel=panel,
+                          fetch=list, parse=lambda raws: rows)
+
+    failures = run.run_source(src)
+
+    assert len(failures) == 1 and "invalid periods" in failures[0]["error"]
+    assert path.read_text() == original
+    assert store.load_status()["x"]["stale"]
+
+
+@pytest.mark.parametrize("period", ["2024-02-29", "2026-01-01", "2026-12-31"])
+def test_valid_iso_dates_are_accepted(period):
+    rows = pd.DataFrame({"period": [period], "value": [2.0]})
+    assert validate("x", rows, SPEC) == []
+
+
 @pytest.mark.parametrize("value", [float("nan"), float("inf"), -1, "bad"])
 def test_invalid_panel_preserves_data(tmp_path, monkeypatch, value):
     monkeypatch.setattr(store, "PANELS", tmp_path)
@@ -70,6 +100,12 @@ def test_object_column_of_numbers_is_accepted():
     rows = pd.DataFrame({"period": ["2026-01-01", "2026-02-01", "2026-03-01"],
                          "value": pd.Series([2, 3.5, Decimal("4.25")], dtype=object)})
     assert validate("x", rows, SPEC) == []
+
+
+@pytest.mark.parametrize("panel", [False, True])
+def test_boolean_column_is_rejected(panel):
+    rows = pd.DataFrame({"entity": ["Goa"], "period": ["2026-01-01"], "value": [True]})
+    assert "boolean values" in validate("x", rows, SPEC, panel=panel)[0]
 
 
 @pytest.mark.parametrize("value", ["5.2", "bad", True])
