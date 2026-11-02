@@ -21,6 +21,7 @@ const spec = yaml.load(fs.readFileSync("../registry/pages/home.yaml", "utf8"));
 <Base current="home">
   <h1>{config.site.tagline}</h1>
   <p class="lede">{config.site.description}</p>
+  <Signup />
 
   <h2>{t("home.key_indicators")}</h2>
   <div class="tiles">{tiles.map((tile) => <Tile tile={tile} />)}</div>
@@ -89,7 +90,7 @@ const spec = yaml.load(fs.readFileSync("../registry/pages/home.yaml", "utf8"));
     <section>
       <h2>{t("home.rupee_heading")}</h2>
       <LineChart title="USD/INR reference rate" subtitle="Rupees per US dollar, FBIL 1 pm fixing" lines={[{ id: "usdinr_ref" }]} years={1} />
+      <p class="chart-sub">What is moving it: <a href="/rupee/">the rupee page</a>.</p>
     </section>
   </div>
-  <Signup />
 </Base>

@@ -57,7 +57,7 @@ newsletter:
   # runbook 06-operations-runbook.md ("Newsletter").
   provider: "buttondown"
   enabled: true           # resumed 2026-11-02, refocused on the rupee (false = on hold: nothing drafted or sent)
-  public: false           # sign-up box, About section and privacy note on the site (hidden for now, 2026-11-01)
+  public: true            # sign-up box (home page, under the intro), About section and privacy note (shown again 2026-11-02)
   buttondown_username: "indiamacrofinance"
   writer: "api"           # "api": the 07:30 IST workflow writes and sends it (Anthropic API, paid)
                           # "manual": you write with any AI from the fact pack (no API cost)

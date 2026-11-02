@@ -14,7 +14,7 @@ const show = Boolean(n.public && n.buttondown_username);
 {show && (
   <div class="signup-wrap" data-signup={id}>
     <form class="signup" action="/api/subscribe" method="post" novalidate>
-      <label for={`${id}-email`}>Every morning: a short email on India's economy, written by AI from the data on this site, with every number checked against the source.</label>
+      <label for={`${id}-email`}><b>Why did the rupee move?</b> Every morning, a short email on what moved the rupee against the dollar and why, written by AI from the data on this site, with every number checked against the source.</label>
       <input id={`${id}-email`} type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
       <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="signup-hp" />
       <button type="submit">Subscribe</button>
