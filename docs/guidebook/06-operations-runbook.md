@@ -45,6 +45,21 @@ When an agency rebases (as in 2026 for GDP, CPI and IIP):
 - Archive `data/raw/` from the month as a GitHub Release asset (`make archive-raw`).
 - Refresh `registry/calendar/` from the official calendars (MoSPI ARC, OEA ICI/WPI ARC, RBI MPC schedule, Commerce SDDS calendar). Check the coming month's dates for public holidays (the build only shifts weekends) and confirm any `estimated: true` dates you can. Extend each file so it always covers at least the next three months. At the start of each financial year, add the new ARC files and MPC schedule.
 
+## Scheduling
+
+GitHub's own cron starts jobs hours late and sometimes skips them (measured Oct-Nov 2026: the
+07:30 email ran at 13:45-15:30 IST, evening bots 3-6 hours late). Since 2026-11-02 a Cloudflare
+Worker (`scheduler/`, deployed by `.github/workflows/scheduler.yml`) fires every 5 minutes and
+starts whichever workflows are due at that IST time (table `SCHEDULE` in `scheduler/worker.js`),
+through the GitHub API with a fine-grained token (`GITHUB_TOKEN` secret on the Worker:
+this repo only, Actions read and write; set by the maintainer in the Cloudflare dashboard; it
+expires, so renew it and paste the new one in the same place). The workflows keep their
+`schedule:` lines as a backup; a duplicate run is harmless. To change a time, edit both.
+
+See the schedule, the next run of each job and whether the token works:
+https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev. Past runs: GitHub → Actions
+(runs started by the Worker show as "workflow_dispatch"; late backups as "schedule").
+
 ## Secrets
 
 Kept in GitHub Actions secrets only: `LLM_API_KEY`, `NEWSLETTER_API_KEY`, `CLOUDFLARE_API_TOKEN`. Never in code, the registry, issues or chat logs.
