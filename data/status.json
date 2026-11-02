@@ -49,70 +49,70 @@
     "last_period": "2026-09-01"
   },
   "bop_cab_monthly": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
-    "last_success": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
+    "last_success": "2026-11-02T22:17:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-08-01"
   },
   "bop_cab_pct_gdp": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_cab_pct_gdp: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_current_account": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_current_account: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_fdi_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_fdi_net: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_goods_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_goods_net: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_portfolio_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_portfolio_net: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_primary_income_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_primary_income_net: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_remittances": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_remittances: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_secondary_income_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_secondary_income_net: parser returned no rows",
     "last_period": "2026-04-01"
   },
   "bop_services_net": {
-    "last_attempt": "2026-11-02T13:07:04+00:00",
+    "last_attempt": "2026-11-02T22:17:11+00:00",
     "last_success": "2026-10-30T18:31:16+00:00",
     "stale": true,
     "last_error": "bop_services_net: parser returned no rows",
@@ -175,29 +175,29 @@
     "last_period": "2025-04-01"
   },
   "cd_outstanding": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "cd_rate_high": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "cd_rate_low": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "centre_debt_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:19:00+00:00",
+    "last_success": "2026-11-02T22:19:00+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
@@ -539,24 +539,24 @@
     "last_period": "2026-09-01"
   },
   "cp_outstanding": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "cp_rate_high": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "cp_rate_low": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-15"
   },
   "cpi_clothing_index": {
@@ -847,234 +847,234 @@
     "last_period": "2026-09-01"
   },
   "credit_agri_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_cards_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_industry": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_personal": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_sectors": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_services": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_deposit_gap": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "credit_deposit_ratio": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "credit_gold_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_housing_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_industry_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_agri": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_cards": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_cre": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_gold": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_housing": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_industry": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_large": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_medium": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_mse": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_nbfc": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_other_personal": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_personal": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_services": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_trade": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_level_vehicle": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_nbfc_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_nonfood_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_personal_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_services_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_vehicle_growth": {
-    "last_attempt": "2026-11-02T13:06:51+00:00",
-    "last_success": "2026-11-02T13:06:51+00:00",
+    "last_attempt": "2026-11-02T22:16:58+00:00",
+    "last_success": "2026-11-02T22:16:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "crr": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
   },
   "currency_public_growth": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "last_period": "2026-10-15"
   },
   "diesel_consumption": {
@@ -1092,8 +1092,8 @@
     "last_period": "2026-11-02"
   },
   "ecb_registrations": {
-    "last_attempt": "2026-11-02T13:07:24+00:00",
-    "last_success": "2026-11-02T13:07:24+00:00",
+    "last_attempt": "2026-11-02T22:17:28+00:00",
+    "last_success": "2026-11-02T22:17:28+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-08-01"
@@ -1127,17 +1127,17 @@
     "last_period": "2026-04-01"
   },
   "external_debt": {
-    "last_attempt": "2026-11-02T13:07:11+00:00",
+    "last_attempt": "2026-11-02T22:17:17+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:07:11+00:00",
+    "last_success": "2026-11-02T22:17:17+00:00",
     "last_period": "2026-04-01"
   },
   "external_debt_pct_gdp": {
-    "last_attempt": "2026-11-02T13:07:11+00:00",
+    "last_attempt": "2026-11-02T22:17:17+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:07:11+00:00",
+    "last_success": "2026-11-02T22:17:17+00:00",
     "last_period": "2026-04-01"
   },
   "fpi_daily_debt_usd": {
@@ -1190,22 +1190,22 @@
     "last_period": "2026-09-01"
   },
   "fx_reserves_fca": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-23"
   },
   "fx_reserves_gold": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-23"
   },
   "fx_reserves_total": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-23"
@@ -1274,29 +1274,29 @@
     "last_period": "2026-04-01"
   },
   "gg_debt_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:19:00+00:00",
+    "last_success": "2026-11-02T22:19:00+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
   },
   "gg_gfd_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:18:59+00:00",
+    "last_success": "2026-11-02T22:18:59+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
   },
   "gg_primary_deficit_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:19:00+00:00",
+    "last_success": "2026-11-02T22:19:00+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
   },
   "gg_revenue_deficit_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:19:00+00:00",
+    "last_success": "2026-11-02T22:19:00+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
@@ -1309,8 +1309,8 @@
     "last_period": "2026-11-02"
   },
   "gsec_10y_par_fbil": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-23"
@@ -1449,22 +1449,22 @@
     "last_period": "2026-04-01"
   },
   "iesh_1y_ahead": {
-    "last_attempt": "2026-11-02T13:08:33+00:00",
-    "last_success": "2026-11-02T13:08:33+00:00",
+    "last_attempt": "2026-11-02T22:18:37+00:00",
+    "last_success": "2026-11-02T22:18:37+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "iesh_3m_ahead": {
-    "last_attempt": "2026-11-02T13:08:33+00:00",
-    "last_success": "2026-11-02T13:08:33+00:00",
+    "last_attempt": "2026-11-02T22:18:37+00:00",
+    "last_success": "2026-11-02T22:18:37+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "iesh_current_perception": {
-    "last_attempt": "2026-11-02T13:08:33+00:00",
-    "last_success": "2026-11-02T13:08:33+00:00",
+    "last_attempt": "2026-11-02T22:18:37+00:00",
+    "last_success": "2026-11-02T22:18:37+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1554,8 +1554,8 @@
     "last_period": "2026-04-01"
   },
   "incremental_credit_deposit_ratio": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
@@ -1568,15 +1568,15 @@
     "last_period": "2026-11-02"
   },
   "liquidity_surplus": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:12+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:12+00:00",
     "last_period": "2026-10-25"
   },
   "loan_benchmark_share": {
-    "last_attempt": "2026-11-02T13:07:00+00:00",
-    "last_success": "2026-11-02T13:07:00+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-06-01"
@@ -1589,22 +1589,22 @@
     "last_period": "2026-09-01"
   },
   "m3": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "last_period": "2026-10-15"
   },
   "m3_growth": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "last_period": "2026-10-15"
   },
   "mclr_1y_median": {
-    "last_attempt": "2026-11-02T13:07:00+00:00",
-    "last_success": "2026-11-02T13:07:00+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
@@ -1659,43 +1659,43 @@
     "last_period": "2026-09-01"
   },
   "mpc_cpi_projection": {
-    "last_attempt": "2026-11-02T13:08:42+00:00",
-    "last_success": "2026-11-02T13:08:42+00:00",
+    "last_attempt": "2026-11-02T22:18:47+00:00",
+    "last_success": "2026-11-02T22:18:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
   },
   "mpc_cpi_projection_q": {
-    "last_attempt": "2026-11-02T13:08:49+00:00",
-    "last_success": "2026-11-02T13:08:49+00:00",
+    "last_attempt": "2026-11-02T22:18:54+00:00",
+    "last_success": "2026-11-02T22:18:54+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
   },
   "mpc_gdp_projection": {
-    "last_attempt": "2026-11-02T13:08:42+00:00",
-    "last_success": "2026-11-02T13:08:42+00:00",
+    "last_attempt": "2026-11-02T22:18:47+00:00",
+    "last_success": "2026-11-02T22:18:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
   },
   "mpc_gdp_projection_q": {
-    "last_attempt": "2026-11-02T13:08:49+00:00",
-    "last_success": "2026-11-02T13:08:49+00:00",
+    "last_attempt": "2026-11-02T22:18:54+00:00",
+    "last_success": "2026-11-02T22:18:54+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
   },
   "mpc_repo_decision": {
-    "last_attempt": "2026-11-02T13:08:42+00:00",
-    "last_success": "2026-11-02T13:08:42+00:00",
+    "last_attempt": "2026-11-02T22:18:47+00:00",
+    "last_success": "2026-11-02T22:18:47+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-01"
   },
   "msf_rate": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -1876,17 +1876,17 @@
     "last_period": "2026-10-31"
   },
   "rccs_csi": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-09-01"
   },
   "rccs_fei": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-09-01"
   },
   "reer_bis_broad": {
@@ -1897,78 +1897,78 @@
     "last_period": "2026-09-01"
   },
   "repo_rate": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
   },
   "reserve_money": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "last_period": "2026-10-15"
   },
   "reserve_money_growth": {
-    "last_attempt": "2026-11-02T13:05:01+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:05:01+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "last_period": "2026-10-15"
   },
   "scb_credit": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_credit_growth": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_credit_yoy_change": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_deposits": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_deposits_growth": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_deposits_yoy_change": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "scb_nonfood_credit": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "sdf_rate": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -1981,108 +1981,108 @@
     "last_period": "2026-11-02"
   },
   "sensex_pb": {
-    "last_attempt": "2026-11-02T13:09:01+00:00",
-    "last_success": "2026-11-02T13:09:01+00:00",
+    "last_attempt": "2026-11-02T22:19:04+00:00",
+    "last_success": "2026-11-02T22:19:04+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-06-01"
   },
   "sensex_pe": {
-    "last_attempt": "2026-11-02T13:09:01+00:00",
-    "last_success": "2026-11-02T13:09:01+00:00",
+    "last_attempt": "2026-11-02T22:19:04+00:00",
+    "last_success": "2026-11-02T22:19:04+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-06-01"
   },
   "services_exports": {
-    "last_attempt": "2026-11-02T13:07:45+00:00",
-    "last_success": "2026-11-02T13:07:45+00:00",
+    "last_attempt": "2026-11-02T22:17:48+00:00",
+    "last_success": "2026-11-02T22:17:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "services_exports_growth": {
-    "last_attempt": "2026-11-02T13:07:45+00:00",
-    "last_success": "2026-11-02T13:07:45+00:00",
+    "last_attempt": "2026-11-02T22:17:49+00:00",
+    "last_success": "2026-11-02T22:17:49+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "services_imports": {
-    "last_attempt": "2026-11-02T13:07:45+00:00",
-    "last_success": "2026-11-02T13:07:45+00:00",
+    "last_attempt": "2026-11-02T22:17:48+00:00",
+    "last_success": "2026-11-02T22:17:48+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "services_imports_growth": {
-    "last_attempt": "2026-11-02T13:07:45+00:00",
-    "last_success": "2026-11-02T13:07:45+00:00",
+    "last_attempt": "2026-11-02T22:17:49+00:00",
+    "last_success": "2026-11-02T22:17:49+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "slr": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
   },
   "spf_core_cpi_cur_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_core_cpi_next_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_cpi_cur_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_cpi_next_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_fiscal_deficit_cur_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_fiscal_deficit_next_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_gdp_cur_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "spf_gdp_next_fy": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-10-01"
   },
   "state_cpi_index": {
@@ -2100,29 +2100,29 @@
     "last_period": "2026-09-01"
   },
   "state_debt_pct_gsdp": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "last_period": "2024-04-01"
   },
   "state_gfd": {
-    "last_attempt": "2026-11-02T13:09:12+00:00",
-    "last_success": "2026-11-02T13:09:12+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "state_gfd_pct_gsdp": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "state_gsdp_current": {
-    "last_attempt": "2026-11-02T13:09:12+00:00",
-    "last_success": "2026-11-02T13:09:12+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
@@ -2135,15 +2135,15 @@
     "last_period": "2025-04-01"
   },
   "state_interest": {
-    "last_attempt": "2026-11-02T13:09:12+00:00",
-    "last_success": "2026-11-02T13:09:12+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "state_interest_pct_gsdp": {
-    "last_attempt": "2026-11-02T13:09:13+00:00",
-    "last_success": "2026-11-02T13:09:13+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
@@ -2156,15 +2156,15 @@
     "last_period": "2025-01-01"
   },
   "state_liabilities": {
-    "last_attempt": "2026-11-02T13:09:12+00:00",
-    "last_success": "2026-11-02T13:09:12+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "state_revenue_deficit": {
-    "last_attempt": "2026-11-02T13:09:12+00:00",
-    "last_success": "2026-11-02T13:09:12+00:00",
+    "last_attempt": "2026-11-02T22:19:15+00:00",
+    "last_success": "2026-11-02T22:19:15+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
@@ -2177,22 +2177,22 @@
     "last_period": "2025-01-01"
   },
   "states_debt_pct_gdp": {
-    "last_attempt": "2026-11-02T13:08:56+00:00",
-    "last_success": "2026-11-02T13:08:56+00:00",
+    "last_attempt": "2026-11-02T22:19:00+00:00",
+    "last_success": "2026-11-02T22:19:00+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"
   },
   "tbill_182d_weekly": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-16"
   },
   "tbill_364d_weekly": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-16"
@@ -2205,8 +2205,8 @@
     "last_period": "2026-11-03"
   },
   "tbill_91d_weekly": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-16"
@@ -2219,29 +2219,29 @@
     "last_period": "2026-10-27"
   },
   "uccs_csi": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-09-01"
   },
   "uccs_fei": {
-    "last_attempt": "2026-11-02T13:08:20+00:00",
+    "last_attempt": "2026-11-02T22:18:24+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T13:08:20+00:00",
+    "last_success": "2026-11-02T22:18:24+00:00",
     "last_period": "2026-09-01"
   },
   "upi_value": {
-    "last_attempt": "2026-11-02T13:06:41+00:00",
-    "last_success": "2026-11-02T13:06:41+00:00",
+    "last_attempt": "2026-11-02T22:16:50+00:00",
+    "last_success": "2026-11-02T22:16:50+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "upi_volume": {
-    "last_attempt": "2026-11-02T13:06:41+00:00",
-    "last_success": "2026-11-02T13:06:41+00:00",
+    "last_attempt": "2026-11-02T22:16:49+00:00",
+    "last_success": "2026-11-02T22:16:49+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -2282,8 +2282,8 @@
     "last_period": "2026-11-02"
   },
   "usdinr_ref": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-02T22:18:55+00:00",
+    "last_success": "2026-11-02T22:18:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -2380,50 +2380,50 @@
     "last_period": "2026-09-01"
   },
   "wacr": {
-    "last_attempt": "2026-11-02T13:05:00+00:00",
-    "last_success": "2026-11-02T13:05:00+00:00",
+    "last_attempt": "2026-11-02T22:15:11+00:00",
+    "last_success": "2026-11-02T22:15:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-23"
   },
   "wadtdr_fresh": {
-    "last_attempt": "2026-11-02T13:06:59+00:00",
-    "last_success": "2026-11-02T13:06:59+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "wadtdr_outstanding": {
-    "last_attempt": "2026-11-02T13:06:59+00:00",
-    "last_success": "2026-11-02T13:06:59+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "walr_fresh": {
-    "last_attempt": "2026-11-02T13:06:59+00:00",
-    "last_success": "2026-11-02T13:06:59+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "walr_fresh_sector": {
-    "last_attempt": "2026-11-02T13:07:00+00:00",
-    "last_success": "2026-11-02T13:07:00+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "walr_outstanding": {
-    "last_attempt": "2026-11-02T13:06:59+00:00",
-    "last_success": "2026-11-02T13:06:59+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "walr_outstanding_sector": {
-    "last_attempt": "2026-11-02T13:07:00+00:00",
-    "last_success": "2026-11-02T13:07:00+00:00",
+    "last_attempt": "2026-11-02T22:17:07+00:00",
+    "last_success": "2026-11-02T22:17:07+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
