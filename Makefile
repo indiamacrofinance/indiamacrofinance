@@ -1,7 +1,7 @@
 # See AGENTS.md → Commands.
 PY ?= uv run python
 
-.PHONY: setup check test update update-auto india-update build dev archive-raw briefings morning morning-again morning-pack morning-check
+.PHONY: setup check test update update-auto india-update build dev archive-raw briefings morning morning-again morning-preview morning-pack morning-check
 
 setup:
 	uv sync
@@ -55,6 +55,14 @@ briefings:
 morning:
 	gh workflow run newsletter-morning.yml --ref main
 	@echo "Started. The email arrives in about 2-3 minutes; progress: gh run list --workflow newsletter-morning.yml"
+
+# Read today's email yourself without sending it: pulls the data the bots have committed, writes
+# the email with Claude (needs ANTHROPIC_API_KEY in your shell; a few cents), checks it, and opens
+# it in the browser. Nothing is sent or committed.
+morning-preview:
+	git pull --rebase --autostash -q
+	$(PY) -m pipelines.newsletter.morning auto --preview newsletter/packs/preview.md
+	open newsletter/packs/preview.html
 
 # Send another one today anyway (a test): `make morning-again`.
 morning-again:

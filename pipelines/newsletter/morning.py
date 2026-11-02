@@ -353,6 +353,20 @@ def deliver(on: date, email: dict, facts: dict, cfg: dict, sent: dict, again: bo
     return 0
 
 
+def preview_html(email: dict) -> str:
+    """The email as a web page, for reading it before (or instead of) sending."""
+    import html
+    import markdown
+
+    body = markdown.markdown(email["body"], extensions=["sane_lists"])
+    return (f"<!doctype html><meta charset='utf-8'><title>{html.escape(email['subject'])}</title>"
+            "<style>body{font:16px/1.55 Georgia,serif;max-width:680px;margin:40px auto;padding:0 16px;color:#1a1a1a}"
+            "h1{font:600 20px/1.3 system-ui,sans-serif}.meta{font:13px system-ui,sans-serif;color:#666}"
+            "li{margin:4px 0}hr{border:0;border-top:1px solid #ddd;margin:28px 0}</style>"
+            f"<p class='meta'>Preview only: not sent. Drafted by {html.escape(email['drafted_by'])}.</p>"
+            f"<h1>{html.escape(email['subject'])}</h1>{body}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("command", nargs="?", default="send", choices=["pack", "check", "send", "auto"])
@@ -413,6 +427,10 @@ def main() -> int:
     if args.preview:
         open(args.preview, "w").write(f"Subject: {email['subject']}\n\n{email['body']}\n")
         print(f"preview written to {args.preview}")
+        if args.preview.endswith(".md"):
+            html_path = args.preview[:-3] + ".html"
+            open(html_path, "w").write(preview_html(email))
+            print(f"formatted preview: {html_path}")
         return 0
     return deliver(on, email, facts, cfg, sent, again=args.again)
 
