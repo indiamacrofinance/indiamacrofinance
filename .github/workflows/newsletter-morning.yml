@@ -10,6 +10,11 @@ on:
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
+    inputs:
+      again:
+        description: "Send even if today's email already went out (a test)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency: newsletter
@@ -31,7 +36,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
-        run: uv run python -m pipelines.newsletter.morning auto --date "$(TZ=Asia/Kolkata date +%F)"
+        run: uv run python -m pipelines.newsletter.morning auto --date "$(TZ=Asia/Kolkata date +%F)" ${{ inputs.again && '--again' || '' }}
       - name: Archive the email (and record it as sent)
         run: |
           if [ -n "$(git status --porcelain data/newsletter)" ]; then

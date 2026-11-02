@@ -299,19 +299,26 @@ def send(subject: str, body: str, key: str) -> str:
     return r.json().get("id", "")
 
 
-def deliver(on: date, email: dict, facts: dict, cfg: dict, sent: dict) -> int:
+def deliver(on: date, email: dict, facts: dict, cfg: dict, sent: dict, again: bool = False) -> int:
     key = os.environ.get("BUTTONDOWN_API_KEY")
     if not (cfg["newsletter"].get("enabled") and key):
         print("newsletter disabled or BUTTONDOWN_API_KEY not set; nothing sent")
         return 0
     email_id = send(email["subject"], email["body"], key)
     ARCHIVE.mkdir(parents=True, exist_ok=True)
+    # An extra send the same day (--again) is archived and recorded as <date>-2, <date>-3, ...
+    name = on.isoformat()
+    if again:
+        n = 2
+        while f"{on}-{n}" in sent:
+            n += 1
+        name = f"{on}-{n}"
     meta = {"subject": email["subject"], "date": on.isoformat(), "drafted_by": email["drafted_by"],
             "buttondown_id": email_id, "usage": email.get("usage", [])}
-    (ARCHIVE / f"{on}.md").write_text("---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
+    (ARCHIVE / f"{name}.md").write_text("---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
                                       + "---\n" + email["body"] + "\n")
-    (ARCHIVE / f"{on}.facts.json").write_text(json.dumps(facts, indent=1, ensure_ascii=False))
-    sent[on.isoformat()] = {"id": email_id, "subject": email["subject"], "drafted_by": email["drafted_by"],
+    (ARCHIVE / f"{name}.facts.json").write_text(json.dumps(facts, indent=1, ensure_ascii=False))
+    sent[name] = {"id": email_id, "subject": email["subject"], "drafted_by": email["drafted_by"],
                             "rupee_as_of": facts.get("facts", facts).get("rupee.as_of", "")}
     SENT.parent.mkdir(parents=True, exist_ok=True)
     SENT.write_text(json.dumps(sent, indent=2))
@@ -325,6 +332,8 @@ def main() -> int:
     ap.add_argument("--date", default=today_ist().isoformat())
     ap.add_argument("--preview", help="write the email to this file; send nothing")
     ap.add_argument("--no-ai", action="store_true", help="auto: use the fallback template only")
+    ap.add_argument("--again", action="store_true",
+                    help="send even if today's email already went out (a test; asked for by the maintainer)")
     args = ap.parse_args()
     on, cfg = date.fromisoformat(args.date), config()
 
@@ -349,7 +358,7 @@ def main() -> int:
         print("newsletter.enabled is false (on hold): nothing drafted or sent")
         return 0
     sent = json.loads(SENT.read_text()) if SENT.exists() else {}
-    if not args.preview and on.isoformat() in sent:
+    if not args.preview and not args.again and on.isoformat() in sent:
         print(f"morning email for {on} already sent ({sent[on.isoformat()]['id']}); skipping")
         return 0
 
@@ -378,7 +387,7 @@ def main() -> int:
         open(args.preview, "w").write(f"Subject: {email['subject']}\n\n{email['body']}\n")
         print(f"preview written to {args.preview}")
         return 0
-    return deliver(on, email, facts, cfg, sent)
+    return deliver(on, email, facts, cfg, sent, again=args.again)
 
 
 if __name__ == "__main__":
