@@ -2,9 +2,11 @@ name: briefing
 # Each evening after the data bots, draft release notes for releases that arrived today and
 # open a pull request for review. Merging the PR is the human approval that publishes them
 # (docs/guidebook/07-editorial-policy.md). Agents never merge briefing PRs.
+# Schedule switched off 2026-11-02 at the maintainer's request (the Briefings tab is gone from
+# the site); run it by hand from Actions if needed. To restore: add back
+#   schedule:
+#     - cron: "0 15 * * 1-6"   # 20:30 IST
 on:
-  schedule:
-    - cron: "0 15 * * 1-6"   # 20:30 IST, after the day's data bots
   workflow_dispatch:
     inputs:
       force:
