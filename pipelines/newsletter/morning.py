@@ -36,6 +36,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 
@@ -105,6 +106,7 @@ Rules, all strict:
   **Background.** Flows, reserves, the India-US bond yield gap, valuation (REER) and trade,
   only where they help explain the trend.
   **What to watch.** The calendar tokens and the drivers that have mattered most lately.
+- Leave a blank line before and after every bulleted list.
 - No title, greeting or sign-off. You may start with front matter holding a subject line
   (`---` / `subject: ...` / `---`), using tokens only for numbers; otherwise output only the
   email body."""
@@ -205,6 +207,30 @@ def load_draft(on: date) -> tuple[str, dict[str, str]]:
     return draft_path.read_text().strip(), json.loads(facts_path.read_text())["facts"]
 
 
+LIST_ITEM = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s")
+
+
+def tidy_markdown(text: str) -> str:
+    """Blank lines around every list, so email Markdown renders bullets as bullets (a list
+    written straight under a sentence is otherwise read as part of that paragraph)."""
+    out: list[str] = []
+    in_list = False
+    for line in text.splitlines():
+        item = bool(LIST_ITEM.match(line))
+        continued = in_list and line.startswith((" ", "\t")) and line.strip()
+        if out and out[-1].strip() and line.strip():
+            if (item and not in_list) or (in_list and not item and not continued):
+                out.append("")
+        if not line.strip():
+            in_list = False
+        elif item:
+            in_list = True
+        elif not continued:
+            in_list = False
+        out.append(line)
+    return "\n".join(out)
+
+
 def finish(draft: str, facts: dict[str, str], drafted_by: str, cfg: dict) -> dict:
     """Render subject and body with the footer. `draft` may start with front matter
     holding `subject:` (tokens allowed); otherwise the template's subject is used."""
@@ -223,7 +249,8 @@ def finish(draft: str, facts: dict[str, str], drafted_by: str, cfg: dict) -> dic
               f"filled in from the stored series{typed}. Sources: [{site['url']}/data/]({site['url']}/data/). "
               f"Feedback: {cfg['contact'].get('feedback_email', '')}. "
               f"{' '.join(cfg['credit']['inspired_by_text'].split())}")
-    return {"subject": render(subject, facts), "body": render(draft, facts) + footer, "drafted_by": drafted_by}
+    return {"subject": render(subject, facts), "body": tidy_markdown(render(draft, facts)) + footer,
+            "drafted_by": drafted_by}
 
 
 def check_draft(on: date) -> list[str]:

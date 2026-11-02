@@ -173,3 +173,10 @@ def test_fresh_is_no_when_the_last_email_covered_the_same_day(monkeypatch, tmp_p
     ledger, _ = morning.build_ledger(front, date(2026, 10, 29))
     (tmp_path / "sent.json").write_text(json.dumps({"2026-10-28": {"id": "x", "rupee_as_of": ledger.facts["rupee.as_of"]}}))
     assert morning.build_ledger(front, date(2026, 10, 29))[0].facts["rupee.fresh"] == "no"
+
+
+def test_lists_get_blank_lines_so_bullets_render():
+    text = "**Why.** It explains little.\n- one\n- two\n  continued\nAfter the list.\n\n- already fine"
+    assert morning.tidy_markdown(text) == (
+        "**Why.** It explains little.\n\n- one\n- two\n  continued\n\nAfter the list.\n\n- already fine")
+    assert morning.tidy_markdown("No lists here.\nSecond line.") == "No lists here.\nSecond line."
