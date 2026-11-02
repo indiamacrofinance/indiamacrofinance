@@ -30,6 +30,21 @@ Still carrying the old spelling, on purpose or until the maintainer changes them
 - archived emails in `data/newsletter/morning/` (a record of what was sent),
 - credits to econvitals.org, the inspiration, which stay.
 
+## Rename of 2026-11-02
+
+Renamed from "IndiaTracker" to the current name (site.name), at the maintainer's request.
+- `site.config.yaml`: name, short name and `site.url` (now `https://indiamacrofinance.pages.dev`;
+  it had still said econvitalsindia.pages.dev after the first rename).
+- Deploys go to a new Pages project `indiamacrofinance` (repository variable `CF_PAGES_PROJECT`;
+  deploy.yml creates the project on first run).
+- Both old projects, `indiatracker` and `econvitalsindia`, were pointed straight at the new
+  address with `redirect-old-pages.yml`, so neither takes two hops.
+- Repo renamed `indiatrackerorg/indiatracker` → `indiatrackerorg/indiamacrofinance`; the maintainer
+  renames the organisation afterwards. The local folder is now `~/indiamacrofinance`.
+- `scripts/check_name.py --also IndiaTracker --also "Econvitals India"` found no leftovers.
+- Unchanged: the Buttondown username `econvitalsindia` and the newsletter's display name
+  (Buttondown settings), and archived emails.
+
 ## Newsletter visibility
 
 `newsletter.enabled` sends the morning email; `newsletter.public` shows the sign-up box, the

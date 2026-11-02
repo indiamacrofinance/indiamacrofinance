@@ -1,12 +1,12 @@
 <p align="center"><img src="assets/brand/mark.svg" alt="" width="72"></p>
 
-# IndiaTracker
+# India Macro-Finance Tracker
 
 **A free, daily-updated read on the Indian economy, straight from the official data.**
 
-**Live site: [indiatracker.pages.dev](https://indiatracker.pages.dev)**
+**Live site: [indiamacrofinance.pages.dev](https://indiamacrofinance.pages.dev)**
 
-IndiaTracker brings together what India's statistical agencies, the Reserve Bank and the ministries publish. That covers growth, prices, jobs, activity, money and banking, markets, public finances, the external sector and the states. It updates as new numbers come out. Every chart names its source, and every series has its own page with its history, method and a download where the licence allows.
+India Macro-Finance Tracker brings together what India's statistical agencies, the Reserve Bank and the ministries publish. That covers growth, prices, jobs, activity, money and banking, markets, public finances, the external sector and the states. It updates as new numbers come out. Every chart names its source, and every series has its own page with its history, method and a download where the licence allows.
 
 It is an independent project. It is not affiliated with the Reserve Bank of India, the Government of India or any data provider. It is inspired by [Econvitals](https://econvitals.org), Jason Furman's dashboard of the U.S. economy, and is not affiliated with it either.
 
@@ -29,7 +29,7 @@ As of November 2026 the site has 343 series from 56 sources and about 360 pages.
 
 ## Measures we build ourselves
 
-Some series are calculated here rather than published by an agency. They are marked **Original** on the site, and [Methods](https://indiatracker.pages.dev/methods/) explains each one and how it was checked. Examples:
+Some series are calculated here rather than published by an agency. They are marked **Original** on the site, and [Methods](https://indiamacrofinance.pages.dev/methods/) explains each one and how it was checked. Examples:
 
 - **Underlying inflation from the 358 CPI items:** trimmed means, the weighted median, CPI excluding food, fuel and precious metals, and diffusion indices. MoSPI does not publish item weights, so they are recovered from its own index tree. The results reproduce the values in RBI's Monetary Policy Report to rounding.
 - **Transmission:** how far bank lending and deposit rates moved in each easing or tightening cycle. It matches RBI's own table.

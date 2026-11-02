@@ -1,6 +1,6 @@
 name: redirect-old-pages
 # Manual, one-off: replaces an old Cloudflare Pages project (default econvitalsindia, from
-# before the rename) with a site that redirects every path to the same path on the current
+# before the first rename; indiatracker, from before the second) with a site that redirects every path to the same path on the current
 # address. Run again only if the current address changes. See docs/guidebook/09-rebranding.md.
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
         default: econvitalsindia
       target:
         description: Where to send visitors (no trailing slash)
-        default: https://indiatracker.pages.dev
+        default: https://indiamacrofinance.pages.dev
 permissions:
   contents: read
 jobs:

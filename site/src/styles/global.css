@@ -52,6 +52,11 @@ nav.main .sep { width: 1px; height: 20px; background: var(--rule); margin: 0 8px
   header.site .bar { position: relative; }
 }
 
+@media (max-width: 520px) {   /* the full name is long: let it shrink and wrap so the Menu button stays on screen */
+  .brand { flex: 0 1 auto; min-width: 0; }
+  .brand b { font-size: 1rem; line-height: 1.2; }
+}
+
 main { padding: 24px 0 48px; }
 h1 { font-size: 1.7rem; margin: 0 0 6px; }
 h2 { font-size: 1.2rem; margin: 36px 0 10px; padding-top: 10px; border-top: 1px solid var(--rule); }

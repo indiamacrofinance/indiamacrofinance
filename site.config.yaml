@@ -5,13 +5,13 @@
 # hard-coded anywhere else. To rename: see docs/guidebook/09-rebranding.md.
 # ---------------------------------------------------------------------------
 site:
-  name: "IndiaTracker"
-  short_name: "IndiaTracker"
+  name: "India Macro-Finance Tracker"
+  short_name: "Macro-Finance Tracker"
   tagline: "A running read on the health of the Indian economy"
   description: >-
     The latest data on India's growth, prices, jobs, money, markets, public
     finances and external sector, in one place, updated as the numbers come out.
-  url: "https://econvitalsindia.pages.dev"   # becomes https://indiatracker.org once the domain is connected
+  url: "https://indiamacrofinance.pages.dev"   # change if a custom domain is connected
   language: "en-IN"
   timezone: "Asia/Kolkata"
 
