@@ -20,7 +20,6 @@ site/ (Astro, static, Observable Plot) → Cloudflare Pages (private preview beh
 ## Why this stack (details in `decisions/`)
 
 - **Static site.** Free, fast, nothing to keep alive. All computation happens at build time.
-- **Generated JSON reads.** The site caches parsed JSON within a production build. Development reads stay fresh; callers copy cached arrays before sorting them.
 - **Astro.** Markdown content collections handle briefings and blog posts. Components are simple enough for RAs.
 - **Observable Plot.** Economist-style charts with very little code.
 - **CSV per series in git.** Revisions show up as diffs in PRs and history is free. Raw files stay out of git.
