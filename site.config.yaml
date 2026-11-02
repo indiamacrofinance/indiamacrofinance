@@ -58,7 +58,7 @@ newsletter:
   provider: "buttondown"
   enabled: true           # resumed 2026-11-02, refocused on the rupee (false = on hold: nothing drafted or sent)
   public: false           # sign-up box, About section and privacy note on the site (hidden for now, 2026-11-01)
-  buttondown_username: "econvitalsindia"
+  buttondown_username: "indiamacrofinance"
   writer: "api"           # "api": the 07:30 IST workflow writes and sends it (Anthropic API, paid)
                           # "manual": you write with any AI from the fact pack (no API cost)
   llm_model: "claude-opus-5-5"   # token usage of each email is logged in data/newsletter/morning/<date>.md

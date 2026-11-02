@@ -43,8 +43,9 @@ Renamed from "IndiaTracker" to the current name (site.name), at the maintainer's
   maintainer renamed the organisation, so it is now `indiamacrofinance/indiamacrofinance`.
   Secrets and the `CF_PAGES_PROJECT` variable moved with it. The local folder is now `~/indiamacrofinance`.
 - `scripts/check_name.py --also IndiaTracker --also "Econvitals India"` found no leftovers.
-- Unchanged: the Buttondown username `econvitalsindia` and the newsletter's display name
-  (Buttondown settings), and archived emails.
+- Buttondown username changed by the maintainer to `indiamacrofinance` (config
+  `newsletter.buttondown_username` updated the same day). The newsletter's display name is set
+  in Buttondown's settings. Archived emails keep the old name.
 
 ## Newsletter visibility
 
