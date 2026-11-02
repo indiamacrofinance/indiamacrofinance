@@ -87,9 +87,18 @@ export default {
     const now = Date.now();
     const rows = nextRuns(now).sort((a, b) => a.next - b.next)
       .map((j) => `${fmtIst(j.next)}  ${j.workflow.padEnd(24)} ${j.what}`);
+    // Read-only check that the token can see this repo's workflows (it never starts anything here).
+    let token = "NO: set GITHUB_TOKEN in Cloudflare; nothing is started until it is";
+    if (env.GITHUB_TOKEN) {
+      const r = await fetch(`https://api.github.com/repos/${env.REPO}/actions/workflows?per_page=1`, {
+        headers: { Authorization: `Bearer ${env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json",
+                   "User-Agent": "indiamacrofinance-scheduler", "X-GitHub-Api-Version": "2022-11-28" },
+      });
+      token = r.ok ? "set and working" : `set, but GitHub answered ${r.status}: check the token's repo and permissions`;
+    }
     const lines = [
       "indiamacrofinance scheduler: starts the GitHub workflows on time (Cloudflare Cron Trigger, every 5 minutes).",
-      `Now: ${fmtIst(new Date(now))}. Token set: ${env.GITHUB_TOKEN ? "yes" : "NO (nothing is started until it is)"}.`,
+      `Now: ${fmtIst(new Date(now))}. GitHub token: ${token}.`,
       "",
       "Next run of each job:",
       ...rows,
