@@ -7,6 +7,7 @@ Apply these everywhere: data files, charts, tables, briefings.
 - **Financial year** runs April–March. 2025-26 is labelled **FY26** in charts and **2025-26** in tables and prose where space allows.
 - **Quarters** are financial-year quarters: Apr–Jun 2026 = **Q1 FY27**, Jul–Sep = Q2, Oct–Dec = Q3, Jan–Mar = Q4.
 - **Storage**: `period` is the ISO date of the period start (`2026-07-01` for Q2 FY27 or for July 2026). `freq` (D/W/F/M/Q/A) is recorded in meta.
+- Validation requires a real calendar date written exactly as `YYYY-MM-DD` for both series and panels; invalid dates block the update before storage.
 - **Fortnightly** banking data uses the reporting Friday as `period`.
 - **Vintage**: every stored row carries `vintage` (the release date of that value), so revisions are traceable.
 - **Times** are IST. "As of" stamps show the date and, for markets, the time.
@@ -25,6 +26,7 @@ Apply these everywhere: data files, charts, tables, briefings.
 - Digit grouping is **international** (25,312,000), not Indian (2,53,12,000), because the audience is international economists. Prose may say "₹2.5 crore".
 - A **crore ↔ billion toggle** on money charts is a Phase 2 feature: 1 crore = 10 million; 1 lakh crore = 1 trillion.
 - Minus signs are the true minus `−` in display, never a hyphen.
+- Missing values display as `–`, including currency amounts; they must never display as zero.
 
 ## Transforms (names used in `registry/series/*.yaml`)
 

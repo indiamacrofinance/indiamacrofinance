@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { catalogue } from "../lib/data.js";
 import { period } from "../lib/format.js";
-const rows = catalogue().sort((a, b) => a.area.localeCompare(b.area) || a.id.localeCompare(b.id));
+const rows = [...catalogue()].sort((a, b) => a.area.localeCompare(b.area) || a.id.localeCompare(b.id));
 const licence = { GODL: "Open (NDSAP/GODL)", "show-only": "Shown with attribution, no download", unverified: "Terms under review, no download" };
 ---
 <Base current="data" title="Data">
