@@ -1,0 +1,36 @@
+id: usdidr_close
+title: Indonesian rupiah per US dollar (daily close)
+short_title: USD/IDR
+area: markets
+source:
+  agency: Yahoo Finance (market data)
+  dataset: IDR=X
+  url: https://finance.yahoo.com/
+  module: pipelines/sources/yahoo/markets.py
+licence: show-only
+downloadable: false
+fetch: auto
+frequency: D
+unit: idr_per_usd
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: live through the day; the day closes at 05:30 IST
+  lag_days: 5
+validation:
+  range:
+  - 8000
+  - 30000
+  revision_alert: 1
+pages:
+- page: rupee
+  section: drivers
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Yahoo's FX day runs 05:30-05:30 IST; today's value is a live quote, rewritten
+  on each run until the day closes.

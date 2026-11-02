@@ -1,0 +1,36 @@
+id: dxy_close
+title: US dollar index (DXY), daily close
+short_title: Dollar index (DXY)
+area: markets
+source:
+  agency: Yahoo Finance (market data)
+  dataset: DX-Y.NYB
+  url: https://finance.yahoo.com/
+  module: pipelines/sources/yahoo/markets.py
+licence: show-only
+downloadable: false
+fetch: auto
+frequency: D
+unit: index
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: previous trading day's close, read several times a day
+  lag_days: 5
+validation:
+  range:
+  - 60
+  - 160
+  revision_alert: 1
+pages:
+- page: rupee
+  section: drivers
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: 'ICE US dollar index: the dollar against six major currencies (mostly the euro).
+  US close, about 02:30 IST.'

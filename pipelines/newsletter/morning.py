@@ -1,4 +1,9 @@
-"""The morning newsletter: a daily email on India's economy, written with AI from our data.
+"""The morning newsletter: the rupee, and why it moved, written with AI from our data.
+
+Each morning: how the rupee moved on the last completed trading day (and over the week, month
+and quarter), how much of that each driver accounts for (pipelines/build/rupee.py: other Asian
+currencies, oil, Indian shares, the dollar, US yields, global risk), what is left unexplained,
+and the background (foreign portfolio flows, RBI's reserves, carry, valuation, trade).
 
 Default workflow (newsletter.writer: "manual", no API costs; runbook "Newsletter"):
 
@@ -12,7 +17,7 @@ Default workflow (newsletter.writer: "manual", no API costs; runbook "Newsletter
     python -m pipelines.newsletter.morning send            #    check, fill in, send, archive
 
 Optional API mode (newsletter.writer: "api"): `auto` asks Claude directly through the
-Anthropic API (paid; model newsletter.llm_model), one retry, then the fixed template.
+Anthropic API (paid; model newsletter.llm_model), two retries, then the fixed template.
 
 How it stays honest (07-editorial-policy.md, "Morning newsletter"):
   - The facts are tokens such as {{cpi_headline_inflation.latest}} -> "5.54%", built from the
@@ -40,6 +45,7 @@ import yaml
 from pipelines.briefings.check import body_of, problems, render
 from pipelines.briefings.draft import TEMPLATES as BRIEFING_TEMPLATES
 from pipelines.briefings.ledger import Ledger, fmt_period
+from pipelines.build import rupee
 from pipelines.core import registry, store
 
 TEMPLATE = store.ROOT / "registry" / "newsletter" / "morning.md"
@@ -51,25 +57,57 @@ API = "https://api.buttondown.com/v1/emails"
 # Models that accept the server-side refusal fallback ("default" form).
 FALLBACK_MODELS = {"claude-fable-5-1", "claude-opus-5-5", "claude-opus-5", "claude-sonnet-5-5"}
 
-RULES = """You write a short morning email about India's economy for economists and students.
+RULES = """You write a short morning email about the Indian rupee for an economist who wants to
+understand, every day, why the rupee moved and be able to explain it to anyone who asks.
 
 You are given a list of facts. Each fact is a token in double braces followed by its value,
-e.g. {{cpi_headline_inflation.latest}} = 5.54%.
+e.g. {{rupee.day.change}} = 0.32%. The rupee's moves are measured as the rupee's own value
+against the US dollar: "strengthened" means fewer rupees per dollar.
+
+How the explanation works (say so briefly when it helps): a regression over the window in
+{{rupee.model.window}} links the rupee's daily moves to its usual drivers. For each period
+(day, week, month, quarter) the facts give each driver's own move (`.move`), the part of the
+rupee's move the model attributes to it (`.effect`, with `.effect_word`), the rupee's usual
+drift, and the part the drivers do not explain (`other`). The model explains about
+{{rupee.model.share_daily}} of daily moves and {{rupee.model.share_weekly}} of weekly moves, so
+the unexplained part is often large: that is normal for a currency RBI manages.
 
 Rules, all strict:
-- Use only these facts. Do not add news, events, causes, forecasts, opinions about policy, or
-  anything you know from elsewhere. Comparisons between the given facts are fine (for
-  example, inflation above RBI's target, or a value higher than a year earlier).
+- Use only these facts. Do not add news, events, quotes, forecasts or anything you know from
+  elsewhere. Causes may be stated only as the model's attribution (for example: oil's rise
+  accounted for about the oil effect token's amount of the fall) or as the facts' own
+  readings (e.g. the reserves reading).
+  For the unexplained part, you may name candidates only from the facts: RBI's dealing (the
+  reserves facts, with the caveat that reserves also move with valuation), foreign portfolio
+  flows (the fpi facts), and otherwise importers' and exporters' dollar demand, in general
+  terms. Never present a candidate as certain.
+- Drivers listed in {{rupee.model.drivers_dropped}} had no reliable link with the rupee over
+  the window: you may report their moves but must not attribute any of the rupee's move to them.
 - Write every number, date, percentage or period by copying its token exactly, braces
   included. Never type a digit (0-9) anywhere in your text, not even in a year or a heading.
-  Words such as "ten-year" or "one" are fine. Values carry their sign; when your words
-  already say "outflow", "deficit" or "fell by", use the tokens ending in _abs (.latest_abs, .prev_abs, .year_ago_abs).
-- Choose what matters: lead with what is new since yesterday (listed for you), then markets,
-  then two or three points from the wider picture (prices, growth and jobs, money, external,
-  fiscal). Skip facts that add nothing.
-- Format: Markdown, about 200 to 300 words, three to five short paragraphs, each starting
-  with a bold lead-in such as **Markets.** End with what is due today and coming up, using
-  the calendar tokens. No title, greeting or sign-off; output only the email body."""
+  Words such as "ten-year", "one" or "four weeks" are fine.
+- Mind which tokens carry their own direction. `.move` already reads "up 0.45%" or "down 5
+  basis points": never put rose, fell, up or down next to it. To write your own verb, use
+  `.move_direction` ("rose"/"fell") with `.move_abs` ("0.45%"). `.effect` and `.change` are
+  sizes without direction: pair them with `.effect_word` or `.direction`. Read each sentence
+  with the values filled in and make sure it is grammatical and not repetitive.
+- If {{rupee.fresh}} is "no", there has been no new trading day since the last email: do not
+  repeat the daily story; lead with the week and month instead, and say so in one clause.
+- Structure, in Markdown, about four hundred to five hundred and fifty words of prose (bullets
+  only where a list is clearer, never more than one list), each section starting with a bold
+  lead-in:
+  **In one line.** One or two sentences the reader could say if asked why the rupee moved.
+  **What happened.** The move, the level, today's live quote if any, FBIL's reference rate,
+  and where it stands against its weakest close and the past year's range.
+  **Why.** The day's decomposition, largest effects first, with each driver's own move; then
+  the unexplained part and its candidates.
+  **The bigger picture.** Week, month and quarter: direction and the main drivers, and the drift.
+  **Background.** Flows, reserves, the India-US bond yield gap, valuation (REER) and trade,
+  only where they help explain the trend.
+  **What to watch.** The calendar tokens and the drivers that have mattered most lately.
+- No title, greeting or sign-off. You may start with front matter holding a subject line
+  (`---` / `subject: ...` / `---`), using tokens only for numbers; otherwise output only the
+  email body."""
 SYSTEM = RULES                      # the API mode's system prompt
 
 
@@ -120,6 +158,14 @@ def build_ledger(front: dict, on: date) -> tuple[Ledger, list[str]]:
     new = recent_releases(on, [v.partition(":")[0] for v in front["views"]])
     ledger.facts["new.recent"] = "; ".join(new) if new else "no new monthly or quarterly data"
     ledger.facts["today.date"] = fmt_period(on.isoformat(), "D")
+    analysis = rupee.analyse()
+    facts, receipts = rupee.rupee_facts(analysis)
+    ledger.facts.update(facts)
+    ledger.receipts.update(receipts)
+    sent = json.loads(SENT.read_text()) if SENT.exists() else {}
+    covered = [v.get("rupee_as_of", "") for d, v in sent.items() if d < on.isoformat()]
+    ledger.facts["rupee.fresh"] = "no" if covered and max(covered) >= analysis["as_of"] else "yes"
+    ledger.facts["rupee.as_of"] = analysis["as_of"]          # not for the text: recorded when sent
     return ledger, new
 
 
@@ -223,7 +269,7 @@ def compose(on: date, cfg: dict, use_ai: bool = True) -> dict:
     model = cfg["newsletter"].get("llm_model") or "claude-opus-5-5"
     draft, drafted_by, usage, issues = None, "template (no AI)", [], []
     if use_ai and os.environ.get("ANTHROPIC_API_KEY"):
-        for attempt in range(2):
+        for attempt in range(3):
             try:
                 candidate, info = ai_draft(ledger, new, model, issues or None)
             except Exception as e:                       # API trouble: fall back, never skip the email
@@ -265,7 +311,8 @@ def deliver(on: date, email: dict, facts: dict, cfg: dict, sent: dict) -> int:
     (ARCHIVE / f"{on}.md").write_text("---\n" + yaml.safe_dump(meta, sort_keys=False, allow_unicode=True)
                                       + "---\n" + email["body"] + "\n")
     (ARCHIVE / f"{on}.facts.json").write_text(json.dumps(facts, indent=1, ensure_ascii=False))
-    sent[on.isoformat()] = {"id": email_id, "subject": email["subject"], "drafted_by": email["drafted_by"]}
+    sent[on.isoformat()] = {"id": email_id, "subject": email["subject"], "drafted_by": email["drafted_by"],
+                            "rupee_as_of": facts.get("facts", facts).get("rupee.as_of", "")}
     SENT.parent.mkdir(parents=True, exist_ok=True)
     SENT.write_text(json.dumps(sent, indent=2))
     print(f"sent: {email['subject']} ({email_id})")

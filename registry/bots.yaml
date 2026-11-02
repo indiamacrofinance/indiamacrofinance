@@ -8,8 +8,8 @@
 # Bots share one queue (concurrency group "data-bots"), so their schedules are staggered.
 bots:
   markets:
-    when: "Mon-Fri 10:00, 12:00, 14:00, 16:00, 18:00"
-    sources: [rbi_home_rates, yahoo_markets, derived_brent_inr, fbil_gsec_curve, derived_term_spread, nsdl_fpi]
+    when: "Mon-Fri hourly 09:30-17:30, and Mon-Sat 07:00 (before the morning email)"
+    sources: [rbi_home_rates, yahoo_markets, derived_brent_inr, fbil_gsec_curve, derived_term_spread, nsdl_fpi, nsdl_fpi_daily]
   mospi:
     when: "Mon-Sat 17:00 (MoSPI releases at 16:00), catch-up 20:00"
     sources: [mospi_cpi, mospi_cpi_food, mospi_iip, mospi_nas, mospi_nas_oldbase, mospi_nas_annual, mospi_nas_annual_sectors, mospi_plfs, mospi_states, labourbureau_cpi_iw, mospi_cpi_items, derived_core_cpi, derived_cpi_underlying]

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import re
 
-TOKEN = re.compile(r"\{\{\s*([a-z0-9_]+(?::[a-z0-9_]+)?\.[a-z_]+)\s*\}\}")
+TOKEN = re.compile(r"\{\{\s*([a-z0-9_]+(?::[a-z0-9_]+)?(?:\.[a-z_]+)+)\s*\}\}")
 
 
 def body_of(text: str) -> str:
@@ -26,6 +26,8 @@ def problems(draft: str, facts: dict[str, str]) -> list[str]:
         if tok not in facts:
             out.append(f"token not in ledger: {{{{{tok}}}}}")
     bare = TOKEN.sub("", body)
+    if "{{" in bare or "}}" in bare:
+        out.append("malformed token: braces left after reading every token")
     for line_no, line in enumerate(bare.splitlines(), 1):
         if re.search(r"\d", line):
             out.append(f"line {line_no}: number typed outside a token: {line.strip()[:80]!r}")

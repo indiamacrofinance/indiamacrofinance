@@ -16,7 +16,7 @@ from datetime import date
 import pandas as pd
 import yaml
 
-from pipelines.build import calendar
+from pipelines.build import calendar, rupee
 from pipelines.core import registry, store
 
 OUT = store.ROOT / "site" / "src" / "data" / "generated"
@@ -839,6 +839,11 @@ def main() -> int:
     write_json(OUT / "cpi_momentum_base.json", cpi_momentum_base())
     write_json(OUT / "policy_rule.json", policy_rule_inputs())
     write_json(OUT / "reserves_change.json", reserves_change())
+    try:                       # the rupee page explains the latest move; never block the rest of the site
+        write_json(OUT / "rupee.json", rupee.analyse())
+    except Exception as e:     # noqa: BLE001
+        print(f"  rupee drivers: skipped ({type(e).__name__}: {e})")
+        write_json(OUT / "rupee.json", {"error": f"{type(e).__name__}: {e}"})
     write_json(OUT / "rbi_projections.json", rbi_projections())
     write_json(OUT / "base_bridge.json", base_bridge())
     PUBLIC.parent.mkdir(parents=True, exist_ok=True)

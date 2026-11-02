@@ -19,7 +19,7 @@
 
 ## Must NOT include
 - Download buttons for NSE/BSE index data (licensed, show-only)
-- Intraday "live" quotes (we are end-of-day only)
+- Intraday "live" quotes (we are end-of-day only), except the rupee and Asian currencies, which feed the rupee page (`rupee.md`, since 2026-11-02)
 - Stock tips, individual stocks, buy/sell language
 
 ## Series (planned)

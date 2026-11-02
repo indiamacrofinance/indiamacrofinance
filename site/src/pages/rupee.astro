@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+import LineChart from "../components/LineChart.astro";
+import StackedBars from "../components/StackedBars.astro";
+import { num, period, signed } from "../lib/format.js";
+import fs from "node:fs";
+
+// pipelines/build/rupee.py: the rupee's moves split into its usual drivers.
+const r = JSON.parse(fs.readFileSync("src/data/generated/rupee.json", "utf8"));
+const res = JSON.parse(fs.readFileSync("src/data/generated/reserves_change.json", "utf8"));
+const ok = !r.error;
+const H = [["d1", "Last day"], ["w1", "Past week"], ["m1", "Past month"], ["m3", "Past 3 months"]];
+const hs = ok ? H.filter(([h]) => r.horizons[h]) : [];
+const DRIVERS = ["dollar", "asia", "oil", "equities", "us_yields", "risk"];
+const unitOf = { dollar: "%", asia: "%", oil: "%", equities: "%", us_yields: " bp", risk: " pts" };
+const digitsOf = { us_yields: 0 };
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const pct = (v) => signed(v, 2, "%");
+const word = (v) => (Math.abs(v) < 0.005 ? "unchanged" : v > 0 ? "strengthened" : "weakened");
+const c = ok ? r.context : {};
+const r2 = ok ? r.model.r2 : {};
+const share = (v) => `${Math.max(0, Math.round(v * 100))}%`;
+---
+<Base current="markets" title="The rupee: what's moving it">
+  <h1>The rupee: what's moving it</h1>
+  <p class="lede">How the rupee moved against the US dollar, and how much of each move its usual drivers account for: other Asian currencies, oil, Indian shares, the dollar, US bond yields and global risk appetite. Updated through the trading day.</p>
+
+  {!ok ? <p class="chart-sub">The rupee analysis could not be built today ({r.error}). The charts below still show the latest data.</p> : (
+  <>
+  <div class="tiles">
+    <div class="tile"><div class="k">USD/INR, last close</div><div class="v">{num(r.latest, 2)}</div><div class="foot"><span class="p">{period(r.as_of, "D")}</span></div></div>
+    {r.live && <div class="tile"><div class="k">Latest quote</div><div class="v">{num(r.live.value, 2)}</div><div class="foot"><span class="p">{r.live.note.split("quote at ")[1]}, {period(r.live.period, "D")}</span></div></div>}
+    {c.fbil_ref && <div class="tile"><div class="k">FBIL reference rate</div><div class="v">{num(c.fbil_ref.value, 4)}</div><div class="foot"><span class="p">1 pm, {period(c.fbil_ref.period, "D")}</span></div></div>}
+    <div class="tile"><div class="k">Weakest close since {r.weakest.since.slice(0, 4)}</div><div class="v">{num(r.weakest.value, 2)}</div><div class="foot"><span class="p">{period(r.weakest.period, "D")}</span></div></div>
+  </div>
+  <p class="chart-sub">Rupees per US dollar: a higher number is a weaker rupee. Market rate from Yahoo Finance (onshore and offshore trading; its day ends at 05:30 IST); FBIL's reference rate is the official 1 pm fixing.</p>
+
+  <h2 id="why">Why it moved</h2>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Change in the rupee's value</th>{hs.map(([h, l]) => <th>{l}<br /><span class="chart-sub">{period(r.horizons[h].start, "D")} to {period(r.horizons[h].end, "D")}</span></th>)}</tr></thead>
+      <tbody>
+        <tr class="group"><td>The rupee</td>{hs.map(([h]) => <td><b>{pct(r.horizons[h].actual)}</b><br /><span class="chart-sub">{word(r.horizons[h].actual)}, {num(r.horizons[h].from, 2)} → {num(r.horizons[h].to, 2)}</span></td>)}</tr>
+        {r.model.kept.map((n) => <tr><td>{r.labels[n] && cap(r.labels[n])}</td>{hs.map(([h]) => <td>{pct(r.horizons[h].parts[n])}</td>)}</tr>)}
+        <tr><td>Usual drift</td>{hs.map(([h]) => <td>{pct(r.horizons[h].parts.drift)}</td>)}</tr>
+        <tr><td>Not explained by these factors</td>{hs.map(([h]) => <td>{pct(r.horizons[h].parts.other)}</td>)}</tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">Percentage change in the rupee's value against the dollar (+ = stronger rupee), split into the part each driver accounts for. The parts add up to the rupee's change. "Not explained" covers what these drivers miss: RBI's dealing in the market, importers' and exporters' dollar demand, flows not visible in share prices, and news.</p>
+
+  <h3>What the drivers did</h3>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Driver</th>{hs.map(([, l]) => <th>{l}</th>)}<th>Link with the rupee</th></tr></thead>
+      <tbody>
+        {DRIVERS.map((n) => <tr><td>{cap(r.labels[n])}</td>{hs.map(([h]) => <td>{signed(r.horizons[h].driver_moves[n], digitsOf[n] ?? 2, unitOf[n])}</td>)}<td>{r.model.kept.includes(n) ? "used" : "no reliable link (not used)"}</td></tr>)}
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">Asian currencies: the average of the yuan, won and rupiah against the dollar (+ = stronger). Dollar: the DXY index (+ = stronger dollar). US yields in basis points, VIX in points.</p>
+
+  <StackedBars title="What moved the rupee, week by week" subtitle="Weekly % change in the rupee's value against the dollar, split by driver; dots show the actual change (+ = stronger rupee)"
+    rows={r.weekly.rows} total={r.weekly.total} interval="week" yLabel="% change" source="Yahoo Finance; site calculation (pipelines/build/rupee.py)" />
+  </>
+  )}
+
+  <h2 id="trend">The trend</h2>
+  <div class="grid2">
+    <LineChart title="USD/INR, market rate" subtitle="Rupees per US dollar, daily close (a higher rate is a weaker rupee); the last point may be today's live quote" lines={[{ id: "usdinr_close", label: "USD/INR" }]} years={1} />
+    <LineChart title="USD/INR, ten years" subtitle="Rupees per US dollar, daily close" lines={[{ id: "usdinr_close", label: "USD/INR" }]} years={10} />
+    <LineChart title="Brent crude" subtitle="US$ a barrel, front-month future" lines={[{ id: "brent_usd" }]} years={1} />
+    <LineChart title="Nifty 50" subtitle="Index level, daily close" lines={[{ id: "nifty50_close" }]} years={1} />
+    <LineChart title="Asian currencies" subtitle="Yuan per US dollar (a higher rate is a weaker yuan)" lines={[{ id: "usdcny_close", label: "USD/CNY" }]} years={1} />
+    <LineChart title="US dollar index (DXY)" subtitle="The dollar against six major currencies" lines={[{ id: "dxy_close", label: "DXY" }]} years={1} />
+    <LineChart title="US ten-year Treasury yield" subtitle="%" lines={[{ id: "us10y_yield", label: "US 10-year" }]} years={1} />
+    <StackedBars title="Weekly change in RBI's reserves" subtitle="US$ billion, change on the previous week (includes valuation changes)" rows={res.rows}
+      interval="week" yLabel="US$ billion" legend={false} source="RBI Weekly Statistical Supplement; site calculation." />
+  </div>
+  <p class="chart-sub">Market prices from Yahoo Finance, shown with attribution only and not offered for download.</p>
+
+  {ok && (
+  <>
+  <h2 id="background">Background</h2>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Indicator</th><th>Latest</th><th>As of</th><th>What it tells you</th></tr></thead>
+      <tbody>
+        {c.fpi_day_total && <tr><td>Foreign portfolio investors, net, last reported day</td><td>{c.fpi_day_total.value < 0 ? "−" : "+"}${num(Math.abs(c.fpi_day_total.value), 1)} mn<br /><span class="chart-sub">equity {signed(c.fpi_day_equity.value, 1)}, debt {signed(c.fpi_day_debt.value, 1)}</span></td><td>{period(c.fpi_day_total.period, "D")}</td><td>Selling by foreign investors means dollars leaving: pressure on the rupee.</td></tr>}
+        {c.fpi_month_total && <tr><td>Foreign portfolio investors, net, month</td><td>{c.fpi_month_total.value < 0 ? "−" : "+"}₹{num(Math.abs(c.fpi_month_total.value), 0)} crore</td><td>{period(c.fpi_month_total.period, "M")} (to date)</td><td>The month's direction of portfolio flows.</td></tr>}
+        {c.reserves && <tr><td>RBI's foreign exchange reserves</td><td>${num(c.reserves.value, 1)} bn<br /><span class="chart-sub">week {signed(c.reserves.week_change, 1)}, four weeks {signed(c.reserves.four_week_change, 1)}</span></td><td>{period(c.reserves.period, "D")}</td><td>Falling reserves are consistent with RBI selling dollars to steady the rupee; rising, with buying. They also move with valuation (gold, other currencies).</td></tr>}
+        {c.spread_10y && <tr><td>India minus US ten-year yield</td><td>{num(c.spread_10y.value, 2)} pp</td><td>{period(c.spread_10y.period, "D")}</td><td>The carry: a wider gap makes rupee bonds more attractive to foreign investors.</td></tr>}
+        {c.reer && <tr><td>Real effective exchange rate (BIS, broad)</td><td>{num(c.reer.value, 1)}<br /><span class="chart-sub">{signed(c.reer.yoy, 1, "%")} on a year earlier; five-year average {num(c.reer.avg_5y, 1)}</span></td><td>{period(c.reer.period, "M")}</td><td>Below its average, the rupee is cheap against trading partners after inflation; above, expensive.</td></tr>}
+        {c.trade_balance && <tr><td>Merchandise trade balance</td><td>{c.trade_balance.value < 0 ? "−" : "+"}${num(Math.abs(c.trade_balance.value), 1)} bn</td><td>{period(c.trade_balance.period, "M")}</td><td>A wider deficit means more dollar demand from importers.</td></tr>}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="method">How this is worked out</h2>
+  <p>A regression of the rupee's daily % change on the daily changes in its drivers, over the {r.model.n} trading days from {period(r.model.start, "D")} to {period(r.model.end, "D")}, re-estimated every time the data update. Global drivers enter on the same day and the day before, because US markets close after India's. A driver is kept only if its effect has the expected sign and is statistically clear (t-statistic of at least 1.5); {Object.keys(r.model.dropped).length ? <>this time {Object.keys(r.model.dropped).map((n) => r.labels[n]).join(", ")} did not qualify and are left out</> : "all qualified"}. The rupee's average drift over the window ({signed(r.model.drift_monthly, 2, "%")} a month) is shown separately.</p>
+  <p>Over the window these drivers explain about {share(r2.daily)} of daily moves, {share(r2.weekly)} of weekly moves and {share(r2.monthly)} of monthly moves. A large unexplained part is normal for a currency the central bank manages: RBI buys and sells dollars to smooth moves, so much of what happens shows up there. The split is a statistical attribution, not proof of cause. Full method: <a href="/methods/">Methods</a>.</p>
+  </>
+  )}
+</Base>

@@ -58,7 +58,9 @@ The model is set in `site.config.yaml → briefings.llm_model`. Before choosing,
 
 ## Morning newsletter
 
-Written each day with AI from the day's facts. Since 2026-10-29 it is written and sent automatically by Claude Opus 5.5 through the API (`writer: "api"`, approved by the maintainer); the maintainer can still write a day's email by hand with `/morning` (one email a day either way). It may use only the ledger's facts, every number must be a token, and the checker must pass; otherwise the fixed template is sent. No news, causes, forecasts or outside facts. Each email is archived with its facts in `data/newsletter/morning/`. Details: 06-operations-runbook.md ("Newsletter").
+**Subject since 2026-11-02: the rupee.** Each morning: how the rupee moved against the dollar on the last completed trading day (and over the week, month and quarter), why, and the background, so the reader can explain any move. It is written and sent automatically by Claude Opus 5.5 through the API (`writer: "api"`); the maintainer can still write a day's email by hand with `/morning` (one email a day either way). On hold 2026-11-01 to 11-02, resumed with this focus at the maintainer's request.
+
+Rules: it may use only the ledger's facts (the `rupee.*` facts from `pipelines/build/rupee.py`, the template's `views` and the calendar); every number must be a token and the checker must pass, or the fixed template is sent. **Causes** may be stated only as the rupee-drivers model's attribution (08-original-measures.md, "Rupee drivers") or as the facts' own readings (e.g. falling reserves "consistent with RBI selling dollars"). Drivers the model dropped may be reported but not credited. Candidates for the unexplained part come only from the facts (RBI via reserves, portfolio flows) or, in general terms, importers' and exporters' dollar demand, never as certain. No news, quotes, forecasts or outside facts. When no trading day is new since the last email (weekends, holidays), it leads with the week and month. Each email is archived with its facts in `data/newsletter/morning/`. Details: 06-operations-runbook.md ("Newsletter").
 
 ## Corrections
 

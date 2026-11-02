@@ -1,5 +1,6 @@
 name: newsletter-morning
-# Every day at 07:30 IST (newsletter.writer: "api"): write the morning email with Claude
+# Every day at 07:30 IST (newsletter.writer: "api"): fetch the latest rupee and global market
+# data (not committed: the markets bot does that), then write the morning email on the rupee with Claude
 # through the Anthropic API, check it, fall back to the fixed template, and send it through
 # Buttondown. Skips quietly unless writer is "api", newsletter.enabled is true and the
 # BUTTONDOWN_API_KEY secret exists. A manual draft pushed the same day (newsletter-send.yml)
@@ -24,6 +25,8 @@ jobs:
         with:
           enable-cache: true
       - run: uv sync
+      - name: Latest rupee and market data (a late markets bot must not make the email stale)
+        run: uv run python -m pipelines.run yahoo_markets nsdl_fpi_daily || true
       - name: Write, check and send
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

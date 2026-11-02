@@ -52,11 +52,11 @@ def test_ai_draft_with_tokens_is_rendered(monkeypatch):
 
 def test_typed_number_is_rejected_then_retry_then_template(monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
-    # Both drafts type a number: the checker rejects them and the template is used.
-    monkeypatch.setattr(morning, "ai_draft", fake_ai(["Inflation was 5.5%.", "Still 5.5%."]))
+    # All three drafts type a number: the checker rejects them and the template is used.
+    monkeypatch.setattr(morning, "ai_draft", fake_ai(["Inflation was 5.5%.", "Still 5.5%.", "Again 5.5%."]))
     email = morning.compose(date(2026, 10, 29), morning.config())
     assert email["drafted_by"] == "template (no AI)"
-    assert email["body"].startswith("**Markets.**") and "{{" not in email["body"]
+    assert email["body"].startswith("**In one line.**") and "{{" not in email["body"]
 
 
 def test_retry_can_fix_the_draft(monkeypatch):
@@ -153,3 +153,23 @@ def test_fallback_template_passes_checker():
     ledger, _ = morning.build_ledger(front, date(2026, 10, 29))
     assert problems(body_of(text), ledger.facts) == []
     assert problems("---\n---\n" + front["subject"], ledger.facts) == []
+
+
+def test_rupee_tokens_render_and_malformed_braces_are_rejected():
+    from pipelines.briefings.check import TOKEN, problems, render
+    front, _ = morning.template()
+    ledger, _ = morning.build_ledger(front, date(2026, 10, 29))
+    assert ledger.facts["rupee.fresh"] in ("yes", "no")
+    assert all(TOKEN.fullmatch("{{" + k + "}}") for k in ledger.facts)      # every fact is writable
+    text = "The rupee {{rupee.day.direction}} {{rupee.day.change}}."
+    assert problems(text, ledger.facts) == [] and "{{" not in render(text, ledger.facts)
+    assert problems("The gap is {{rupee.spread.bad name}}.", ledger.facts)       # braces left over
+
+
+def test_fresh_is_no_when_the_last_email_covered_the_same_day(monkeypatch, tmp_path):
+    import json
+    front, _ = morning.template()
+    monkeypatch.setattr(morning, "SENT", tmp_path / "sent.json")
+    ledger, _ = morning.build_ledger(front, date(2026, 10, 29))
+    (tmp_path / "sent.json").write_text(json.dumps({"2026-10-28": {"id": "x", "rupee_as_of": ledger.facts["rupee.as_of"]}}))
+    assert morning.build_ledger(front, date(2026, 10, 29))[0].facts["rupee.fresh"] == "no"

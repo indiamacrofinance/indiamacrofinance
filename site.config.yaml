@@ -50,17 +50,18 @@ team:
   note: "This version of the site is built and maintained single-handedly by Bishmay Barik. The team section will be updated as others join."
 
 newsletter:
-  # The MORNING email, daily at 07:30 IST: written with AI (writer: "api" -> Claude through the
+  # The MORNING email, daily at 07:30 IST, on the rupee: how it moved and why (the analysis of
+  # pipelines/build/rupee.py, also on the site's /rupee/ page). Written with AI (writer: "api" -> Claude through the
   # Anthropic API; "manual" -> the maintainer's /morning draft), checked so every number comes
   # from the stored series, sent through Buttondown. pipelines/newsletter/morning.py;
   # runbook 06-operations-runbook.md ("Newsletter").
   provider: "buttondown"
-  enabled: false          # ON HOLD since 2026-11-02: no email is drafted or sent (true = the 07:30 IST job writes and sends)
+  enabled: true           # resumed 2026-11-02, refocused on the rupee (false = on hold: nothing drafted or sent)
   public: false           # sign-up box, About section and privacy note on the site (hidden for now, 2026-11-01)
   buttondown_username: "econvitalsindia"
   writer: "api"           # "api": the 07:30 IST workflow writes and sends it (Anthropic API, paid)
                           # "manual": you write with any AI from the fact pack (no API cost)
-  llm_model: "claude-opus-5-5"   # ~$2.50/month (measured); "claude-sonnet-5-5" ~half, "claude-haiku-5-5" ~$0.06
+  llm_model: "claude-opus-5-5"   # token usage of each email is logged in data/newsletter/morning/<date>.md
   # The old weekly digest (digest.py) is kept but no longer scheduled: Buttondown's free plan
   # allows one email a day, and the morning email uses it.
   products: [weekly-briefing, release-note]

@@ -51,7 +51,7 @@ Kept in GitHub Actions secrets only: `LLM_API_KEY`, `NEWSLETTER_API_KEY`, `CLOUD
 
 ## Newsletter
 
-**What goes out:** one short email a day on India's economy: what is new in the data, markets, the wider picture, what is due. It is written with AI by the maintainer, so there are **no API costs**: the AI is whatever they already use (Claude Code, claude.ai or any chat). Everything around the writing is automated.
+**What goes out (since 2026-11-02):** one email a day on the rupee: how it moved, which drivers account for the move (pipelines/build/rupee.py, the same analysis as the site's `/rupee/` page), what is left unexplained, and the background. Written automatically through the API (below). The manual routine still works for a day the maintainer wants to write it themselves.
 
 **The daily routine (about five minutes):**
 1. `make morning-pack`: pulls the latest data and writes `newsletter/packs/<date>.md` (the writing rules plus every fact as a token, e.g. `{{cpi_headline_inflation.latest}} = 5.54%`) and saves those exact facts to `newsletter/drafts/<date>.facts.json`.
@@ -67,7 +67,9 @@ No draft that day means no email. Optional subject: front matter `subject: "..."
 3. In `site.config.yaml`, set `newsletter.buttondown_username` and `newsletter.enabled: true`, then push. The signup box appears on the home and About pages; sign-ups confirm by email (double opt-in).
 4. Subscribe yourself, confirm, and do the routine above once.
 
-**API mode (in use since 2026-10-29):** with `newsletter.writer: "api"` and an `ANTHROPIC_API_KEY` secret, the 07:30 IST `newsletter-morning` workflow writes and sends the email by itself (`morning auto`: one retry on checker failure, then the fixed template in `registry/newsletter/morning.md`). Measured 2026-10-29: about 12,000 input + 1,800 output tokens per email, about $0.08 a day on `claude-opus-5-5`, about $0.002 on `claude-haiku-5-5` (`newsletter.llm_model`).
+**API mode (in use since 2026-10-29):** with `newsletter.writer: "api"` and an `ANTHROPIC_API_KEY` secret, the 07:30 IST `newsletter-morning` workflow first fetches the latest rupee and market data (`pipelines.run yahoo_markets nsdl_fpi_daily`, not committed), then writes and sends the email by itself (`morning auto`: two retries on checker failure, then the fixed template in `registry/newsletter/morning.md`). The rupee email (2 Nov 2026 preview): about 9,500 input + 4,000-8,000 output tokens per attempt on `claude-opus-5-5` (`newsletter.llm_model`); each email's usage is logged in its archive file. The markets bot also runs at 07:00 IST Mon-Sat and hourly on weekdays, so the site's rupee page stays current.
+
+**Send today's email by hand:** Actions → newsletter-morning → Run workflow (or `gh workflow run newsletter-morning.yml`). It sends only if no email went out today (`data/newsletter/sent.json`). Preview without sending: `uv run python -m pipelines.newsletter.morning auto --preview /tmp/email.md`.
 
 **Held sign-ups:** Buttondown's spam filter ("firewall", buttondown.com/settings/firewall, set to "Accept and mark as blocked") can hold a sign-up. The reader is told it is under review and that the maintainer will take care of it. Check Buttondown → Subscribers for anyone marked **Blocked** every few days and unblock real people; Buttondown then sends their confirmation email. `.github/workflows/newsletter-status.yml` lists subscribers (masked) with their status.
 

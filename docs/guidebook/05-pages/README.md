@@ -21,6 +21,7 @@ The machine-readable twin of each file is `registry/pages/<page>.yaml`. When the
 | Activity | activity.md | 2 |
 | Money & banking | money-banking.md | 2 |
 | Markets | markets.md | 2 |
+| The rupee: what's moving it | rupee.md | live |
 | Fiscal | fiscal.md | 2 |
 | External | external.md | 2 |
 | States | states.md | 4 |

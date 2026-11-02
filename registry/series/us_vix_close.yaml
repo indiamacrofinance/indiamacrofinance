@@ -1,0 +1,36 @@
+id: us_vix_close
+title: CBOE volatility index (VIX), daily close
+short_title: US VIX
+area: markets
+source:
+  agency: Yahoo Finance (market data)
+  dataset: ^VIX
+  url: https://finance.yahoo.com/
+  module: pipelines/sources/yahoo/markets.py
+licence: show-only
+downloadable: false
+fetch: auto
+frequency: D
+unit: index
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: previous trading day's close, read several times a day
+  lag_days: 5
+validation:
+  range:
+  - 5
+  - 100
+  revision_alert: 5
+pages:
+- page: rupee
+  section: drivers
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: Expected 30-day volatility of the S&P 500; a gauge of global risk appetite.
+  US close.

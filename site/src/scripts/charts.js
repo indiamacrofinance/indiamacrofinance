@@ -15,7 +15,7 @@ function drawStacked(el, spec) {
   if (spec.total) {
     const tot = spec.total.map(([d, v]) => ({ date: new Date(d), value: v }));
     // Centre the dots on the month bars.
-    const halfDays = spec.interval === "3 months" ? 45 : 15;
+    const halfDays = spec.interval === "3 months" ? 45 : spec.interval === "week" ? 2.5 : 15;
     const mid = tot.map((r) => ({ ...r, date: new Date(r.date.getTime() + halfDays * 864e5) }));
     marks.push(Plot.dot(mid, { x: "date", y: "value", fill: "currentColor", r: 3.5 }));
     marks.push(Plot.text(mid, { x: "date", y: "value", text: (d) => d.value.toFixed(2), dy: -9, fontSize: 10 }));

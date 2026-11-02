@@ -1,0 +1,37 @@
+id: fpi_daily_debt_usd
+title: FPI net investment in debt, daily (US$ million)
+short_title: FPI debt, daily
+area: markets
+source:
+  agency: NSDL (custodians' reports)
+  dataset: Daily Trends in FPI Investments
+  url: https://www.fpi.nsdl.co.in/web/Reports/Latest.aspx
+  module: pipelines/sources/nsdl/fpi_daily.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: D
+unit: usd_mn
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: each business morning, for the previous trading day
+  lag_days: 5
+validation:
+  range:
+  - -20000
+  - 20000
+  revision_alert: 5
+pages:
+- page: rupee
+  section: context
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: 'Debt: general limit, voluntary retention route and fully accessible route.
+  NSDL shows only the latest day, so the history starts on 2 Nov 2026 and builds up
+  each day.'

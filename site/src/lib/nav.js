@@ -63,6 +63,7 @@ export const topics = [
   ] },
   { key: "markets", label: "Markets", href: "/markets/", items: [
     ["Stocks, rupee, bonds, oil, gold", "/markets/"],
+    ["The rupee: what's moving it", "/rupee/"],
     ["Valuation: Sensex P/E and P/B", "/markets/#valuation"],
     ["Government bond yield curve", "/markets/#yield-curve"],
     ["Foreign portfolio flows", "/markets/#flows"],

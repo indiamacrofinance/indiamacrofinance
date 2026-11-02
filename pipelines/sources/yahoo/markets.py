@@ -1,4 +1,5 @@
-"""Daily closes from Yahoo Finance (via the yfinance library): Indian indices and commodities.
+"""Daily closes from Yahoo Finance (via the yfinance library): Indian indices, commodities,
+currencies and the US markets that move the rupee (the rupee page, pipelines/analysis/rupee.py).
 
 Licence: show-only. Exchange index data and futures prices are shown with attribution,
 never offered for download (AGENTS.md hard rule 6). Yahoo closes for the Nifty 50 and
@@ -7,7 +8,10 @@ and pipelines/sources/rbi/home_rates.py can both write those series.
 
 Backfills BACKFILL of history when a series is short, otherwise fetches RECENT.
 Today's bar is used only when it is final: Indian indices after 16:00 IST; never for
-commodity futures, which trade almost round the clock (yesterday's settle is used).
+commodity futures, which trade almost round the clock (yesterday's settle is used), or for
+US markets (their day ends after midnight IST). Currencies ("fx") keep today's bar as a live
+quote: Yahoo's FX day runs 05:30-05:30 IST, so it is rewritten on each run until it closes,
+and pipelines/analysis/rupee.py explains only completed days.
 """
 from __future__ import annotations
 
@@ -26,7 +30,11 @@ TICKERS = {
     "^NSEI": ("nifty50_close", "index"), "^BSESN": ("sensex_close", "index"),
     "^INDIAVIX": ("indiavix_close", "index"),
     "BZ=F": ("brent_usd", "commodity"), "GC=F": ("gold_usd_oz", "commodity"),
+    "INR=X": ("usdinr_close", "fx"), "CNY=X": ("usdcny_close", "fx"),
+    "KRW=X": ("usdkrw_close", "fx"), "IDR=X": ("usdidr_close", "fx"),
+    "DX-Y.NYB": ("dxy_close", "us"), "^TNX": ("us10y_yield", "us"), "^VIX": ("us_vix_close", "us"),
 }
+DECIMALS = {"fx": 4, "us": 3}
 BACKFILL, RECENT, MIN_HISTORY = "10y", "1mo", 100
 IST = ZoneInfo("Asia/Kolkata")
 
@@ -61,8 +69,12 @@ class YahooMarkets(Source):
             body = json.loads(raw.content)
             sid, kind = TICKERS[body["ticker"]]
             final_today = kind == "index" and now_ist.hour >= 16
-            out += [{"series_id": sid, "period": d, "value": round(v, 2), "note": "Yahoo Finance close"}
+            dec = DECIMALS.get(kind, 2)
+            out += [{"series_id": sid, "period": d, "value": round(v, dec), "note": "Yahoo Finance close"}
                     for d, v in body["rows"] if d < today or (d == today and final_today)]
+            live = [(d, v) for d, v in body["rows"] if d == today and kind == "fx"]
+            out += [{"series_id": sid, "period": d, "value": round(v, dec),
+                     "note": f"Yahoo Finance, live quote at {now_ist:%H:%M} IST"} for d, v in live]
         return pd.DataFrame(out)
 
 

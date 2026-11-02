@@ -1,27 +1,20 @@
 ---
-# The morning newsletter (pipelines/newsletter/morning.py).
-# `views` are the facts the AI writer may use (every number in the email is one of these
-# ledger tokens); the body below is the FALLBACK, sent as-is when the AI draft fails the
+# The morning newsletter (pipelines/newsletter/morning.py): the rupee, and why it moved.
+# Facts the AI writer may use: the `rupee.*` tokens from pipelines/build/rupee.py (the move,
+# its decomposition into drivers, flows, reserves and background), plus these `views` and the
+# release calendar. The body below is the FALLBACK, sent as-is when the AI draft fails the
 # checker twice or no ANTHROPIC_API_KEY is set. Same token rules as registry/briefings.
 name: morning
 product: morning-newsletter
-subject: "India this morning, {{today.date}}"
-views: [nifty50_close, sensex_close, indiavix_close, usdinr_ref, gsec_10y_yield, term_spread_10y_repo,
-        brent_usd, gold_usd_oz, repo_rate, liquidity_surplus, fpi_total_net, mf_net_inflow_equity,
-        cpi_headline_inflation, cpi_core_index:yoy, cpi_food_bev_index:yoy, wpi_headline_index:yoy,
-        gdp_real_growth, iip_general_growth, core_overall_index:yoy, plfs_ur_monthly,
-        gst_gross_collections, gst_gross_growth, upi_volume:yoy, ewaybills_count:yoy,
-        auto_pv_sales:yoy, fuel_consumption_total:yoy, scb_credit_growth, m3_growth,
-        merch_trade_balance, merch_exports:yoy, fx_reserves_total, bop_remittances,
-        cga_fiscal_deficit_pct_be]
+subject: "The rupee {{rupee.day.direction}} on {{rupee.day.end_date}}: what moved it"
+views: [usdinr_ref, fx_reserves_total, merch_trade_balance, bop_current_account, repo_rate,
+        cpi_headline_inflation, gsec_10y_yield, fpi_total_net]
 calendar: true
 ---
-**Markets.** The Nifty closed at {{nifty50_close.latest}} on {{nifty50_close.latest_period}} ({{nifty50_close.pct_phrase}} since {{nifty50_close.prev_period}}). The rupee's reference rate was {{usdinr_ref.latest}} per US dollar and the ten-year government bond yield {{gsec_10y_yield.latest}}. Brent crude was {{brent_usd.latest}}.
+**In one line.** The rupee {{rupee.day.direction}} {{rupee.day.change}} on {{rupee.day.end_date}}, closing at {{rupee.day.to}} per US dollar against {{rupee.day.from}} the day before.
 
-**Prices and policy.** CPI inflation was {{cpi_headline_inflation.latest}} in {{cpi_headline_inflation.latest_period}}, against RBI's target of {{const.rbi_inflation_target}}. The repo rate is {{repo_rate.latest}}.
+**Why.** Other Asian currencies were {{rupee.day.asia.move}}, Brent crude was {{rupee.day.oil.move}} and the Nifty was {{rupee.day.equities.move}}. The part of the move these drivers do not explain was {{rupee.day.other.effect}}, and it {{rupee.day.other.effect_word}}. Foreign portfolio investors' net flow on {{rupee.fpi.day_date}} was {{rupee.fpi.day_total_word}} of {{rupee.fpi.day_total}}.
 
-**Activity.** Real GDP grew {{gdp_real_growth.latest}} on a year earlier in {{gdp_real_growth.latest_period}}. Industrial production grew {{iip_general_growth.latest}} in {{iip_general_growth.latest_period}}, and GST collections were {{gst_gross_collections.latest}} in {{gst_gross_collections.latest_period}}.
-
-**New on the site since yesterday morning:** {{new.recent}}.
+**The bigger picture.** Over the past week the rupee {{rupee.week.direction}} {{rupee.week.change}}, and over the past month it {{rupee.month.direction}} {{rupee.month.change}}. Its weakest close since {{rupee.weakest_since}} was {{rupee.weakest}} on {{rupee.weakest_date}}. RBI's foreign exchange reserves {{rupee.reserves.four_week_direction}} {{rupee.reserves.four_week_change}} in the four weeks to {{rupee.reserves.date}}, {{rupee.reserves.reading}}.
 
 **Due today:** {{calendar.today}}. **Coming up:** {{calendar.next}}.

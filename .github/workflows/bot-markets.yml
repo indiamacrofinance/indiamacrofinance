@@ -1,8 +1,11 @@
 name: markets-bot
-# Markets and policy rates, Mon-Fri 10:00, 12:00, 14:00, 16:00 and 18:00 IST. Sources: registry/bots.yaml. Times are IST; cron is UTC.
+# Markets, the rupee and its drivers, policy rates: hourly Mon-Fri 09:30-17:30 IST, and 07:00 IST
+# Mon-Sat (overnight US moves, before the 07:30 morning email). Sources: registry/bots.yaml.
+# Times are IST; cron is UTC.
 on:
   schedule:
-    - cron: "30 4,6,8,10,12 * * 1-5"
+    - cron: "0 4-12 * * 1-5"
+    - cron: "30 1 * * 1-6"
   workflow_dispatch:
 permissions:
   contents: write

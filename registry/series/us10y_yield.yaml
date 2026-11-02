@@ -1,0 +1,35 @@
+id: us10y_yield
+title: US 10-year Treasury yield, daily close
+short_title: US 10-yr yield
+area: markets
+source:
+  agency: Yahoo Finance (market data)
+  dataset: ^TNX
+  url: https://finance.yahoo.com/
+  module: pipelines/sources/yahoo/markets.py
+licence: show-only
+downloadable: false
+fetch: auto
+frequency: D
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: previous trading day's close, read several times a day
+  lag_days: 5
+validation:
+  range:
+  - 0
+  - 15
+  revision_alert: 5
+pages:
+- page: rupee
+  section: drivers
+original: false
+discontinued: null
+owner: ''
+verified_against: []
+notes: CBOE 10-year Treasury yield index (^TNX), in percent. US close.
