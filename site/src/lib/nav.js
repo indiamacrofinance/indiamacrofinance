@@ -100,12 +100,6 @@ export const more = [
     ["Inflation by division", "/inflation/detail/"],
     ["Brent crude in rupees", "/markets/"],
   ] },
-  { key: "briefings", label: "Briefings", href: "/briefings/", items: [
-    ["All briefings", "/briefings/"],
-    ["RSS: all briefings", "/briefings/rss.xml"],
-    ["RSS: release notes", "/briefings/release-notes.xml"],
-    ["RSS: daily notes", "/briefings/daily.xml"],
-  ] },
   { key: "calendar", label: "Calendar", href: "/calendar/", items: null },
   { key: "about", label: "About", href: "/about/", items: [
     ["About this site", "/about/"],

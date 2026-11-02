@@ -2,6 +2,8 @@
 
 **Purpose:** Short, accurate written reads on the data, with AI drafts approved by a person, plus occasional human-written posts.
 
+**Status (2026-11-02):** taken out of the site menu at the maintainer's request (not useful for now). The pages and RSS feeds still build at `/briefings/`; put the entry back in `site/src/lib/nav.js` (`more`) only when asked.
+
 ## Must include
 - [x] Daily note (weekday evenings): market closes, today's releases, what's coming (table and chart still to add)
 - [x] Release notes for CPI, GDP, IIP, PLFS, trade and the MPC decision (calendar-triggered, so holds get a note too)
