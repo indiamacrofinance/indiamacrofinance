@@ -1,0 +1,36 @@
+---
+// Analysis: longer, original pieces built from the site's own series, each recomputed when new
+// data arrive. Checklist: docs/guidebook/05-pages/analysis.md. Add each new analysis here and in
+// site/src/lib/nav.js.
+import Base from "../../layouts/Base.astro";
+import fs from "node:fs";
+import { period } from "../../lib/format.js";
+const a = JSON.parse(fs.readFileSync("src/data/generated/bop_stress.json", "utf8"));
+const bop = a.error ? null : period(a.as_of.bop, "Q");
+const pieces = [
+  { href: "/analysis/bop-stress/", title: "Balance-of-payments stress: then and now",
+    text: "The current episode of rupee pressure against 2013, 2018 and 2022, item by item: current account, FDI and investment abroad, portfolio flows, derivatives, banks and reserves. With a tool to add up any run of quarters.",
+    meta: bop ? `Quarterly; data to ${bop}` : "Quarterly" },
+  { href: "/analysis/fx-intervention/", title: "Where RBI's dollar sales show up in the BoP",
+    text: "How a dollar sold by RBI moves through banks to importers and departing investors, what 25 years of data show, and an interactive model of how much rupee stability a dollar of intervention buys.",
+    meta: bop ? `Quarterly; data to ${bop}` : "Quarterly" },
+  { href: "/rupee/", title: "The rupee: what's moving it",
+    text: "Each move of the rupee split into its usual drivers: Asian currencies, oil, Indian shares, the dollar, US yields and risk appetite.", meta: "Daily" },
+  { href: "/inflation/#underlying", title: "Underlying inflation from the 358 CPI items",
+    text: "RBI's trimmed means, weighted median and diffusion indices, rebuilt from MoSPI's item-level CPI.", meta: "Monthly" },
+];
+---
+<Base current="analysis" title="Analysis">
+  <h1>Analysis</h1>
+  <p class="lede">Longer pieces that go beyond a single indicator. Each is computed from the official data on this site, says how it was built, and is recomputed when new data are released.</p>
+  <div class="questions">
+    {pieces.map((p) => (
+      <a class="question" href={p.href}>
+        <p class="qq">{p.title}</p>
+        <p class="chart-sub">{p.text}</p>
+        <p class="qt">{p.meta}</p>
+      </a>
+    ))}
+  </div>
+  <p class="chart-sub">How each measure is built: <a href="/methods/">Methods and original measures</a>.</p>
+</Base>

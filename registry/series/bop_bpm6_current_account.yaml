@@ -1,0 +1,48 @@
+id: bop_bpm6_current_account
+title: Current account balance, quarterly (BPM6)
+short_title: Current account
+area: external
+source:
+  agency: RBI
+  dataset: 'Balance of payments, quarterly: Handbook of Statistics (Tables ''Standard Presentation of
+    India''s BoP as per BPM6 - Quarterly'' and ''India''s Overall BoP - Quarterly'') and the Statements
+    I and II attached to each quarterly BoP release'
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/bop_quarterly.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: Q
+unit: usd_bn
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: quarterly BoP release, about 80-90 days after the quarter (Statements I and II); history from
+    the annual Handbook
+  lag_days: 100
+validation:
+  range:
+  - -60
+  - 40
+  revision_alert: 25
+pages:
+- page: analysis
+  section: episodes
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://rbidocs.rbi.org.in/rdocs/content/docs/BOPS01092026_1.xlsx
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: Apr-Jun 2026 and Jul-Sep 2025 read against Statement I of the 1 Sep 2026 release (credit, debit,
+    net); Apr-Jun 2013 against the Handbook 2014-15 PDF table. Every quarter 2013-2026 passes the BPM6
+    identity (CA + KA + FA + errors = 0, within US$ 6 mn). Current account matches the press-release series
+    (bop_current_account) within 0.05 bn except 2024Q2, 2025Q3-2026Q1, where that series still holds earlier
+    preliminary figures and this one has RBI's later revisions. Episode totals for 2013, 2018, 2022 pinned
+    in tests/test_bop_stress.py.
+notes: US$ billion, quarter = calendar quarter (2026-04-01 = April-June 2026). BPM6 item 1, net. From
+  Apr-Jun 2013.

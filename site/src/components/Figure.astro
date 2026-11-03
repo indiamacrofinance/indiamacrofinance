@@ -1,0 +1,15 @@
+---
+// A chart drawn from an inline spec built by a page (scatter, lines, ...), for analyses whose
+// data come from generated JSON rather than one registry series. Drawn by src/scripts/charts.js.
+import { t } from "../lib/i18n.js";
+const { title, subtitle, spec, source } = Astro.props;
+---
+<figure class="chart">
+  <p class="chart-title">{title}</p>
+  {subtitle && <p class="chart-sub">{subtitle}</p>}
+  <div class="plot" data-chart={JSON.stringify(spec)}></div>
+  {source && <figcaption><span>{t("chart.source")}: {source}</span></figcaption>}
+</figure>
+<script>
+  import "../scripts/charts.js";
+</script>

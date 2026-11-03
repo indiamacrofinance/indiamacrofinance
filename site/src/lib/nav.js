@@ -85,6 +85,7 @@ export const topics = [
     ["Effective exchange rates", "/external/#eer"],
     ["External debt", "/external/#debt"],
     ["External commercial borrowing", "/external/#ecb"],
+    ["BoP stress episodes (Analysis)", "/analysis/bop-stress/"],
   ] },
   { key: "states", label: "States", href: "/states/", items: [
     ["Prices, jobs and growth", "/states/"],
@@ -93,6 +94,19 @@ export const topics = [
 ];
 
 export const more = [
+  { key: "analysis", label: "Analysis", href: "/analysis/", items: [
+    ["All analyses", "/analysis/"],
+    ["BoP stress: then and now", "/analysis/bop-stress/"],
+    ["Components of BoP flows by episode", "/analysis/bop-stress/#episodes"],
+    ["Who financed the gap", "/analysis/bop-stress/#totals"],
+    ["Build your own episode", "/analysis/bop-stress/#custom"],
+    ["Derivative-related outflows", "/analysis/bop-stress/#derivatives"],
+    ["Latest quarters", "/analysis/bop-stress/#monitor"],
+    ["Where RBI's dollar sales show up", "/analysis/fx-intervention/"],
+    ["A dollar sale, step by step", "/analysis/fx-intervention/#mechanics"],
+    ["What the data show", "/analysis/fx-intervention/#evidence"],
+    ["How much stability a dollar buys (model)", "/analysis/fx-intervention/#model"],
+  ] },
   { key: "tools", label: "Tools", href: "/tools/policy-rule/", items: [
     ["Policy rule for RBI", "/tools/policy-rule/"],
     ["India and its peers", "/tools/peers/"],

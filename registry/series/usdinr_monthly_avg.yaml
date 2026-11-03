@@ -1,0 +1,43 @@
+id: usdinr_monthly_avg
+title: Rupee per US dollar, monthly average (RBI)
+short_title: USD/INR, monthly average
+area: external
+source:
+  agency: RBI
+  dataset: 'Exchange rate of the rupee, monthly average and end-month rates: Handbook of Statistics table'
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/fx_operations.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: inr_per_usd
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+- yoy
+release:
+  calendar: rbi
+  rule: annual Handbook of Statistics (about August); the analysis averages FBIL's daily rate for later
+    months
+  lag_days: 430
+validation:
+  range:
+  - 15
+  - 200
+  revision_alert: 0.5
+pages:
+- page: analysis
+  section: episodes
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: Jan 2022 and Jun 2026 read against Handbook 2025-26 Table 205; Nov 2025-Jun 2026 equal the monthly
+    mean of FBIL's daily reference rate (usdinr_ref) to 4 decimals. No missing months 1992-2026.
+notes: 'Monthly average of daily rates: FEDAI indicative rates to April 2012, RBI reference rate from
+  May 2012, FBIL reference rate from July 2018. From March 1992.'

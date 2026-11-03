@@ -13,6 +13,8 @@
 - [x] Chart: USD/INR with RBI reserve changes (weekly change bars, `reserves_change.json`)
 - [x] External debt, US$ bn and % of GDP (`external_debt`, `external_debt_pct_gdp`; only the end-March and end-June releases are in RBI's index)
 
+- [x] Pointer from the BoP section to the Analysis pages on stress episodes and forex intervention (`analysis.md`); their full-history BoP series (`bop_bpm6_*`, `bop_bpm5_*`) live there
+
 ## Must NOT include
 - Trade data in ₹ unless labelled (the default is US$)
 - Commerce Ministry preliminary numbers presented as BoP numbers (they differ; label them)

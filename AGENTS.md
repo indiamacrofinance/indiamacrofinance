@@ -32,10 +32,11 @@ See `docs/guidebook/00-start-here.md` → "Where we are". Phases: 0 foundations 
 | `registry/series/*.yaml` | One file per indicator: the single source of truth for metadata |
 | `registry/backlog.yaml` | Indicators planned but not yet built, by phase |
 | `registry/pages/*.yaml` | Machine-readable page specs (sections → series → chart) |
+| `registry/analysis/*.yaml` | Human choices behind Analysis pages (e.g. BoP stress episode dates) |
 | `registry/calendar/*.yaml` | Release calendars (MoSPI ARC, RBI MPC, CGA, Commerce) |
 | `pipelines/core/` | Shared code: Source base class, HTTP, archive, validate, transforms, status |
 | `pipelines/sources/<agency>/` | One module per dataset |
-| `pipelines/build/` | Turns registry + data into JSON for the site |
+| `pipelines/build/` | Turns registry + data into JSON for the site (incl. analyses: `rupee.py`, `bop_stress.py`) |
 | `pipelines/briefings/` | Number ledger, drafting, fact-checker |
 | `data/series/`, `data/meta/` | Tidy CSV per series + JSON metadata (committed) |
 | `data/status.json` | Freshness and health of every series |
@@ -43,6 +44,7 @@ See `docs/guidebook/00-start-here.md` → "Where we are". Phases: 0 foundations 
 | `docs/guidebook/` | **The guidebook.** Conventions, page checklists, runbook, playbooks |
 | `.claude/skills/`, `.claude/agents/` | Claude Code skills and subagents (wrap the playbooks) |
 | `.github/` | Workflows, issue templates, PR template |
+| `private/` | **Git-ignored.** Private reference material an analysis replicates (decision 0006). Never commit, quote or name it |
 
 ## Common tasks → which playbook
 
@@ -55,6 +57,7 @@ See `docs/guidebook/00-start-here.md` → "Where we are". Phases: 0 foundations 
 | Draft a briefing | `docs/guidebook/playbooks/draft-briefing.md` | `draft-briefing` |
 | QA the site before merging | `docs/guidebook/playbooks/qa-site.md` | `qa-site` |
 | Vet a new data source | `docs/guidebook/playbooks/scout-source.md` | subagent `source-scout` |
+| Add an analysis (or replicate a note) | `docs/guidebook/playbooks/add-analysis.md` | `add-analysis` |
 
 ## Commands
 

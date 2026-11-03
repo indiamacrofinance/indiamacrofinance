@@ -97,8 +97,59 @@ function drawFan(el, spec) {
   }));
 }
 
+function drawScatter(el, spec) {
+  // One x-y panel with an OLS line (slope/intercept from the build) and highlighted points
+  // (e.g. the quarters of the current episode). points: [x, y, highlight, period].
+  const pts = spec.points.map(([x, y, hl, period]) => ({ x, y, hl, period }));
+  const xs = pts.map((p) => p.x);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const width = el.clientWidth || 360;
+  el.replaceChildren(Plot.plot({
+    width, height: Math.max(240, Math.min(320, width * 0.85)), marginLeft: 40,
+    style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "11px", background: "transparent" },
+    x: { label: spec.xLabel ?? null, grid: true }, y: { label: spec.yLabel ?? null, grid: true },
+    marks: [
+      Plot.ruleX([0], { stroke: "currentColor", strokeOpacity: 0.3, strokeDasharray: "3,3" }),
+      Plot.ruleY([0], { stroke: "currentColor", strokeOpacity: 0.3, strokeDasharray: "3,3" }),
+      Plot.dot(pts.filter((p) => !p.hl), { x: "x", y: "y", r: 3, fill: palette[0], fillOpacity: 0.6 }),
+      Plot.dot(pts.filter((p) => p.hl), { x: "x", y: "y", r: 3.8, fill: palette[1] }),
+      Plot.line([[x0, spec.intercept + spec.slope * x0], [x1, spec.intercept + spec.slope * x1]], { stroke: "currentColor", strokeOpacity: 0.7, strokeWidth: 1.5 }),
+      Plot.tip(pts, Plot.pointer({ x: "x", y: "y", title: (p) => `${p.period.slice(0, 7)}\nRBI net sales ${p.x.toFixed(1)}\n${spec.yLabel}: ${p.y.toFixed(1)}` })),
+    ],
+  }));
+}
+
+function drawLines(el, spec) {
+  // Inline series (not from registry ids) with optional shaded bands, e.g. stress episodes.
+  // series: [{label, points: [[date, value]]}]; bands: [{start, end, label}] (end = last quarter start).
+  const rows = spec.series.flatMap((s) => s.points.filter(([, v]) => v !== null).map(([d, v]) => ({ date: new Date(d), value: v, label: s.label })));
+  const colour = Object.fromEntries(spec.series.map((s, i) => [s.label, palette[i % palette.length]]));
+  const addMonths = (d, n) => { const t = new Date(d); t.setUTCMonth(t.getUTCMonth() + n); return t; };
+  const bands = (spec.bands ?? []).map((b) => ({ x1: new Date(b.start), x2: addMonths(b.end, spec.bandMonths ?? 3), label: b.label }));
+  const marks = [
+    Plot.rect(bands, { x1: "x1", x2: "x2", fill: "currentColor", fillOpacity: 0.08 }),   // no y: spans the frame
+    Plot.ruleY([0], { stroke: "currentColor", strokeOpacity: 0.3 }),
+  ];
+  for (const s of spec.series) {
+    marks.push(Plot.lineY(rows.filter((r) => r.label === s.label), { x: "date", y: "value", stroke: colour[s.label], strokeWidth: 1.8 }));
+  }
+  marks.push(Plot.tip(rows, Plot.pointerX({ x: "date", y: "value", stroke: (d) => colour[d.label],
+    title: (d) => `${d.label}\n${d.date.toISOString().slice(0, 7)}: ${d.value.toLocaleString("en-US", { maximumFractionDigits: 1 })}` })));
+  const width = el.clientWidth || 600;
+  const plot = Plot.plot({
+    width, height: Math.max(240, Math.min(340, width * 0.5)), marginLeft: 40,
+    style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "11px", background: "transparent" },
+    x: { type: "utc" }, y: { grid: true, label: spec.yLabel ?? null }, marks,
+  });
+  const legend = Plot.legend({ color: { type: "categorical", domain: spec.series.map((s) => s.label), range: spec.series.map((s) => colour[s.label]) },
+    style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "11px", background: "transparent" } });
+  el.replaceChildren(legend, plot);
+}
+
 function draw(el) {
   const spec = JSON.parse(el.dataset.chart);
+  if (spec.kind === "scatter") return drawScatter(el, spec);
+  if (spec.kind === "lines") return drawLines(el, spec);
   if (spec.kind === "fan") return drawFan(el, spec);
   if (spec.kind === "stacked") return drawStacked(el, spec);
   if (spec.kind === "curve") return drawCurve(el, spec);

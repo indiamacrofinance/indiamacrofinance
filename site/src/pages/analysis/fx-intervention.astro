@@ -1,0 +1,159 @@
+---
+// Where RBI's dollar sales show up in the balance of payments, and a simple model of how much
+// rupee stability a dollar of intervention buys (Analysis). Data: bop_stress.json
+// (pipelines/build/bop_stress.py). Method: docs/guidebook/08-original-measures.md.
+// Page checklist: docs/guidebook/05-pages/analysis.md.
+import Base from "../../layouts/Base.astro";
+import Figure from "../../components/Figure.astro";
+import fs from "node:fs";
+import { num, period } from "../../lib/format.js";
+
+const a = JSON.parse(fs.readFileSync("src/data/generated/bop_stress.json", "utf8"));
+const ok = !a.error;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const qFrom = (iso) => `${MONTHS[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
+const qTo = (iso) => `${MONTHS[+iso.slice(5, 7) + 1]} ${iso.slice(0, 4)}`;
+const reg = ok ? a.regressions : null;
+const P = ok ? Object.fromEntries(reg.panels.map((p) => [p.key, p])) : {};
+const cents = (s) => Math.round(Math.abs(s) * 100);
+const sig = (p) => Math.abs(p.slope) > 1.96 * p.se;
+const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current account", fa_bpm5: "Financial account, net" };
+---
+<Base current="analysis" title="Where RBI's dollar sales show up">
+  <p class="chart-sub"><a href="/analysis/">Analysis</a> / Forex intervention and the BoP</p>
+  <h1>Where RBI's dollar sales show up in the balance of payments <span class="badge">Original</span></h1>
+  {!ok ? <p class="lede">This analysis could not be built today ({a.error}).</p> : (
+  <>
+  <p class="lede">RBI sells dollars through banks. Does the money stay with the banks, or does it flow on to importers and departing investors? This page traces a dollar sale through the BoP, tests it against {reg.panels[0].n} quarters of data, and lays out a simple model of how much rupee stability each dollar of intervention buys.</p>
+
+  <h2 id="mechanics">How a dollar sale moves through the BoP</h2>
+  <p class="prose">RBI deals through authorised dealer banks, so every intervention passes through banks' foreign-currency (nostro) accounts, which the BoP records under banking capital. Take a $1 sale by RBI to a bank, which sells the dollar on to a customer paying abroad, say a foreign portfolio investor leaving India:</p>
+  <div class="scroll">
+    <table class="data meta">
+      <thead><tr><th>Step</th><th>What happens</th><th>BoP entry</th></tr></thead>
+      <tbody>
+        <tr><td>1. RBI sells $1 to a domestic bank</td><td>$1 moves from RBI's foreign account to the bank's nostro account</td><td>Credit $1 to foreign exchange reserves; debit $1 to banking capital (assets)</td></tr>
+        <tr><td>2. The bank sells $1 to a customer (importer, investor, borrower)</td><td>$1 moves between residents' nostro accounts</td><td>None: a transaction between residents</td></tr>
+        <tr><td>3. The customer pays abroad</td><td>$1 leaves the nostro account for a foreign account</td><td>Credit $1 to banking capital (assets); debit $1 to the line that created the demand for dollars: imports, portfolio investment, loan repayment or non-resident deposits</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Net entries (customer = foreign portfolio investor)</th><th>Credit</th><th>Debit</th><th>Net</th></tr></thead>
+      <tbody>
+        <tr><td>Financial account: portfolio investment (step 3)</td><td></td><td>1.00</td><td>−1.00</td></tr>
+        <tr><td>Financial account: banking capital, commercial banks' assets (steps 1 and 3)</td><td>1.00</td><td>1.00</td><td>0.00</td></tr>
+        <tr><td>Errors and omissions</td><td>–</td><td>–</td><td>0.00</td></tr>
+        <tr><td><b>Overall balance</b></td><td></td><td></td><td><b>−1.00</b></td></tr>
+        <tr><td>Monetary movements: foreign exchange reserves (step 1)</td><td>1.00</td><td></td><td>+1.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prose">The bank's two entries cancel. The only net entries are the fall in reserves (shown as + under monetary movements) and the outflow on the line that created the demand for dollars. The intervention does not create an outflow of its own: it finances one recorded elsewhere, and the bank is only an intermediary. If the bank kept the dollar past the quarter's end (say, expecting customer demand later), step 3 would not happen within the quarter, and banking capital would show a $1 outflow. That position usually unwinds once customers draw on the dollars, so any effect on banking capital should be temporary. So, on average, intervention should leave banking capital unchanged and show up in the current and financial accounts.</p>
+
+  <h2 id="evidence">What the data show</h2>
+  <p class="lede">Each dot is a quarter from {qFrom(reg.start)} to {qTo(reg.end)}: RBI's net dollar sales (x) against the net flow in each account (y), US$ billion. Highlighted: the quarters of the current episode ({qFrom(reg.highlight[0])} – {qTo(reg.highlight[1])}).</p>
+  <div class="grid3">
+    {reg.panels.map((p) => (
+      <Figure title={p.label} subtitle={`Slope ${num(p.slope, 2)} (robust s.e. ${num(p.se, 2)}), R² = ${num(p.r2, 2)}, N = ${p.n}`}
+        spec={{ kind: "scatter", points: p.points, slope: p.slope, intercept: p.intercept, xLabel: "RBI net dollar sales (+) / purchases (−)", yLabel: yLabels[p.key] }} />
+    ))}
+  </div>
+  <p class="chart-sub">Source: RBI, quarterly BoP (BPM5 presentation; financial account = capital account excluding reserves) and RBI's monthly dollar sales and purchases (Handbook of Statistics; Bulletin Table 4), summed over each quarter; site calculation. Line: least-squares fit on all quarters. Robust (HC1) standard errors.</p>
+  <ul class="prose">
+    <li><b>The current and financial accounts move with intervention.</b> Each dollar of net sales comes with a {cents(P.ca_bpm5.slope)}-cent {P.ca_bpm5.slope < 0 ? "fall" : "rise"} in the current account and a {cents(P.fa_bpm5.slope)}-cent {P.fa_bpm5.slope < 0 ? "fall" : "rise"} in the financial account (R² {num(P.ca_bpm5.r2, 2)} and {num(P.fa_bpm5.r2, 2)}). Together they add up to {num(Math.abs(reg.slope_sum), 2)} of the dollar, close to the full dollar the BoP identity requires.</li>
+    <li><b>Banking capital does not.</b> Its slope is {num(P.bank_capital.slope, 2)} (robust s.e. {num(P.bank_capital.se, 2)}){sig(P.bank_capital) ? ", statistically different from zero" : ", not statistically different from zero"}, and intervention explains {num(P.bank_capital.r2 * 100, 0)}% of its variation. On average, interventions leave banking capital unchanged: the counterpart shows up in the current account and in non-bank capital flows.</li>
+  </ul>
+  <p class="chart-sub">These are correlations within the same quarter, not causal effects: RBI sells dollars because capital is leaving or import bills are rising, so the arrows run both ways.</p>
+
+  <h2 id="model">How much rupee stability does a dollar buy?</h2>
+  <div class="prose">
+    <p>The BoP must balance. Write the financial account as FA(e, X) and the current account as CA(e), where e is the exchange rate (rupees per dollar, so a rise is a weaker rupee) and X the fundamentals that drive capital flows (interest-rate differentials, expected depreciation). With FXI the dollars RBI sells (+ = sale), which counts all changes in reserve assets as intervention:</p>
+    <p class="formula">FA(e, X) + CA(e) + FXI = 0</p>
+    <p>Holding the fundamentals fixed, a change in intervention must be absorbed by the change in the exchange rate it causes:</p>
+    <p class="formula">(∂FA/∂e + ∂CA/∂e) × ∂e/∂FXI = −1, so ∂e/∂FXI = −1 / (∂FA/∂e + ∂CA/∂e)</p>
+    <p>Both slopes are taken as positive. A weaker rupee narrows the current-account deficit over a few quarters (in the very short run, dearer oil imports can widen it). A weaker rupee also cuts the dollar value of a foreign investor's rupee holdings, so investors who are not forced to sell have less reason to leave at that rate: the portfolio-balance channel. The rate at which the BoP clears with no intervention, e*, is simply the rate that balances the accounts, not necessarily the one consistent with fundamentals. To hold the rupee stronger, at a target rate below e*, RBI must supply the fall in financial inflows plus the wider current-account deficit. <b>The more sensitive capital flows are to the exchange rate (a steeper FA line), the less rupee stability each dollar buys.</b> Policies that make flows less sensitive to the rupee, such as stable rules and taxes for portfolio investors or a larger share of long-term capital like FDI, make each dollar of intervention go further.</p>
+  </div>
+  <div class="rule-controls">
+    <label>Financial account slope, US$ bn per ₹1 weaker <input type="number" id="m-fa" value="5" step="0.5" min="0" max="20" /></label>
+    <label>Current account slope, US$ bn per ₹1 weaker <input type="number" id="m-ca" value="1.5" step="0.5" min="0" max="20" /></label>
+    <label>Shift in financial flows at every rate, US$ bn <input type="number" id="m-shift" value="0" step="1" min="-40" max="40" /></label>
+    <label>Rate that clears the BoP (e*), ₹ per $ <input type="number" id="m-estar" value="96" step="0.5" min="60" max="130" /></label>
+    <label>Target rate, ₹ per $ <input type="number" id="m-target" value="94" step="0.5" min="60" max="130" /></label>
+  </div>
+  <p class="lede" id="m-out"></p>
+  <figure class="chart"><div id="m-plot" class="plot"></div>
+    <figcaption><span>A stylised model, computed in your browser from the values you choose; the lines are linear for simplicity. Not an estimate.</span></figcaption></figure>
+  <p class="chart-sub">Starting values are placeholders for illustration. A published cross-country estimate (Blanchard, Adler and de Carvalho Filho, 2015, NBER Working Paper 21427) has intervention of 1% of quarterly GDP strengthening the currency by about 1.5%; at about $10 billion and ₹1.4 per dollar for India, that implies the two slopes together are at most about $7 billion per ₹1. "Shift in financial flows" moves the FA line down (an outflow at every rate, e.g. global investors favouring other markets), which raises the rate that clears the BoP.</p>
+
+  <h2 id="limits">What public data cannot tell us</h2>
+  <ul class="prose">
+    <li>Because RBI intervenes in response to falling capital flows or rising import bills, quarterly BoP data cannot separate the effect of intervention from its causes, so the slopes above describe where the dollars went, not what intervention achieved. Credible estimates of its effect need transaction-level or time-stamped intervention data, which RBI does not publish.</li>
+    <li>Derivative flows are reported as a single line, so it is not possible to tell whether premiums, margins or settlements drive the rising outflows (<a href="/analysis/bop-stress/#derivatives">see the derivatives section</a>).</li>
+  </ul>
+  <p class="chart-sub">See also: <a href="/analysis/bop-stress/">BoP stress episodes, then and now</a>; <a href="/rupee/">what is moving the rupee day to day</a>; <a href="/external/">the External page</a>.</p>
+  </>
+  )}
+</Base>
+
+<style>
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9rem; padding: 6px 10px; background: color-mix(in srgb, var(--paper) 94%, var(--primary)); }
+  .rule-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 16px 0 8px; }
+  .rule-controls label { display: flex; flex-direction: column; font-size: 13px; gap: 4px; max-width: 220px; font-family: "Inter", system-ui, sans-serif; }
+  .rule-controls input { width: 110px; padding: 4px 6px; font: inherit; }
+</style>
+
+<script>
+  import * as Plot from "@observablehq/plot";
+  const plotEl = document.getElementById("m-plot");
+  if (plotEl) {
+    const css = getComputedStyle(document.documentElement);
+    const colours = [css.getPropertyValue("--primary").trim(), css.getPropertyValue("--accent").trim()];
+    const val = (id) => Number(document.getElementById(id).value);
+    const f = (v, d = 1) => (v < 0 ? "−" : "") + Math.abs(v).toFixed(d);
+    // Base model: at e* the financial account brings in F0 = 10 bn, which pays for a 10 bn
+    // current-account deficit. FA(e) = F0 + a(e - e*) - shift; CA(e) = -F0 + b(e - e*).
+    const F0 = 10;
+    function draw() {
+      const a = val("m-fa"), b = val("m-ca"), shift = val("m-shift"), e0 = val("m-estar"), et = val("m-target");
+      const FA = (e) => F0 + a * (e - e0) - shift;
+      const CA = (e) => -F0 + b * (e - e0);
+      const s = a + b;
+      const estar = s > 0 ? e0 + shift / s : NaN;          // where FA + CA = 0 after the shift
+      const fxi = s * (estar - et);                        // dollars RBI must supply at the target
+      const per10 = s > 0 ? 10 / s : NaN;
+      document.getElementById("m-out").textContent = !(s > 0)
+        ? "Set at least one slope above zero."
+        : `The BoP clears at ₹${f(estar, 2)} per dollar. ` + (et < estar
+          ? `Holding the rupee at ₹${f(et, 2)} needs about $${f(fxi, 1)} billion of dollar sales: $${f(a * (estar - et), 1)} billion for the lower financial inflows and $${f(b * (estar - et), 1)} billion for the wider current-account deficit. `
+          : `At a target of ₹${f(et, 2)} or weaker, no dollar sales are needed (RBI would be buying). `)
+          + `Each $10 billion of intervention strengthens the rupee by about ₹${f(per10, 2)}.`;
+      const lo = Math.min(et, estar) - 4, hi = Math.max(et, estar) + 4;
+      const xs = Array.from({ length: 41 }, (_, i) => lo + ((hi - lo) * i) / 40);
+      const rows = xs.flatMap((e) => [{ e, v: FA(e), line: "Financial account (FA)" }, { e, v: CA(e), line: "Current account (CA)" }]);
+      const width = plotEl.clientWidth || 700;
+      plotEl.replaceChildren(Plot.plot({
+        width, height: Math.max(260, Math.min(380, width * 0.5)), marginLeft: 44,
+        style: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "11px", background: "transparent" },
+        x: { label: "Rupees per dollar (higher = weaker rupee) →", grid: true }, y: { label: "US$ billion a quarter", grid: true },
+        color: { domain: ["Financial account (FA)", "Current account (CA)"], range: colours, legend: true },
+        marks: [
+          Plot.ruleY([0], { stroke: "currentColor", strokeOpacity: 0.4 }),
+          Plot.ruleX([estar], { stroke: "currentColor", strokeDasharray: "4,3", strokeOpacity: 0.6 }),
+          Plot.ruleX([et], { stroke: colours[1], strokeDasharray: "4,3" }),
+          Plot.text([estar], { x: (d) => d, frameAnchor: "top", dy: 4, text: () => "e*", fontSize: 12 }),
+          Plot.text([et], { x: (d) => d, frameAnchor: "top", dy: 4, text: () => "target", fontSize: 12, fill: colours[1] }),
+          Plot.lineY(rows, { x: "e", y: "v", stroke: "line", strokeWidth: 2 }),
+          Plot.arrow(et < estar ? [{ x: et, y1: FA(estar), y2: FA(et) }, { x: et, y1: CA(estar), y2: CA(et) }] : [],
+            { x1: "x", x2: "x", y1: "y1", y2: "y2", stroke: "currentColor", strokeWidth: 1.5 }),
+          Plot.tip(rows, Plot.pointerX({ x: "e", y: "v", stroke: "line", title: (d) => `${d.line}\n₹${d.e.toFixed(2)}: $${d.v.toFixed(1)} bn` })),
+        ],
+      }));
+    }
+    document.querySelectorAll(".rule-controls input").forEach((i) => i.addEventListener("input", draw));
+    window.addEventListener("resize", draw);
+    draw();
+  }
+</script>

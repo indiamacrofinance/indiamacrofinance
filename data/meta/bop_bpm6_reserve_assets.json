@@ -1,0 +1,33 @@
+{
+  "id": "bop_bpm6_reserve_assets",
+  "title": "Reserve assets, quarterly (BPM6)",
+  "short_title": "Reserve assets",
+  "unit": "usd_bn",
+  "frequency": "Q",
+  "base_year": null,
+  "source": {
+    "agency": "RBI",
+    "dataset": "Balance of payments, quarterly: Handbook of Statistics (Tables 'Standard Presentation of India's BoP as per BPM6 - Quarterly' and 'India's Overall BoP - Quarterly') and the Statements I and II attached to each quarterly BoP release",
+    "url": "https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy",
+    "module": "pipelines/sources/rbi/bop_quarterly.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2013-04-01",
+  "last_period": "2026-04-01",
+  "last_value": 8.1,
+  "observations": 53,
+  "updated_at": "2026-11-03T06:34:40+00:00",
+  "fetched_from": [
+    "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/195T_HBIE310720267C502CDA0EB74E848B3723F55968004A.XLSX",
+    "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/197T_HBIE3107202602251BCC4CCF42298769F21195413D8C.XLSX",
+    "https://rbidocs.rbi.org.in/rdocs/content/docs/BOPS01092026_1.xlsx",
+    "https://rbidocs.rbi.org.in/rdocs/content/docs/BOPS01092026_2.xlsx"
+  ],
+  "raw_files": [
+    "data/raw/rbi_bop_quarterly/20261103T063432-b418229dde.xlsx",
+    "data/raw/rbi_bop_quarterly/20261103T063433-f000fb77d9.xlsx",
+    "data/raw/rbi_bop_quarterly/20261103T063438-5dd8760922.xlsx",
+    "data/raw/rbi_bop_quarterly/20261103T063439-277c0d7c24.xlsx"
+  ]
+}
