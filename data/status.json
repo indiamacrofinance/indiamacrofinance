@@ -119,15 +119,15 @@
     "last_period": "2026-04-01"
   },
   "brent_inr": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "brent_usd": {
-    "last_attempt": "2026-11-02T19:13:51+00:00",
-    "last_success": "2026-11-02T19:13:51+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -1064,8 +1064,8 @@
     "last_period": "2026-09-01"
   },
   "crr": {
-    "last_attempt": "2026-11-02T22:15:11+00:00",
-    "last_success": "2026-11-02T22:15:11+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -1085,8 +1085,8 @@
     "last_period": "2026-09-01"
   },
   "dxy_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -1141,43 +1141,43 @@
     "last_period": "2026-04-01"
   },
   "fpi_daily_debt_usd": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "last_period": "2026-11-02"
   },
   "fpi_daily_equity_usd": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "last_period": "2026-11-02"
   },
   "fpi_daily_total_usd": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "last_period": "2026-11-02"
   },
   "fpi_debt_net": {
-    "last_attempt": "2026-11-02T19:13:59+00:00",
-    "last_success": "2026-11-02T19:13:59+00:00",
+    "last_attempt": "2026-11-03T01:31:06+00:00",
+    "last_success": "2026-11-03T01:31:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-01"
   },
   "fpi_equity_net": {
-    "last_attempt": "2026-11-02T19:13:59+00:00",
-    "last_success": "2026-11-02T19:13:59+00:00",
+    "last_attempt": "2026-11-03T01:31:06+00:00",
+    "last_success": "2026-11-03T01:31:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-01"
   },
   "fpi_total_net": {
-    "last_attempt": "2026-11-02T19:13:59+00:00",
-    "last_success": "2026-11-02T19:13:59+00:00",
+    "last_attempt": "2026-11-03T01:31:06+00:00",
+    "last_success": "2026-11-03T01:31:06+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-01"
@@ -1302,8 +1302,8 @@
     "last_period": "2025-04-01"
   },
   "gold_usd_oz": {
-    "last_attempt": "2026-11-02T19:13:51+00:00",
-    "last_success": "2026-11-02T19:13:51+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -1316,22 +1316,22 @@
     "last_period": "2026-10-23"
   },
   "gsec_10y_yield": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-30"
   },
   "gsec_par_10y": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-27"
   },
   "gsec_par_yield": {
-    "last_attempt": "2026-11-02T19:13:55+00:00",
-    "last_success": "2026-11-02T19:13:55+00:00",
+    "last_attempt": "2026-11-03T01:31:01+00:00",
+    "last_success": "2026-11-03T01:31:01+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-27"
@@ -1561,8 +1561,8 @@
     "last_period": "2026-10-15"
   },
   "indiavix_close": {
-    "last_attempt": "2026-11-02T19:13:51+00:00",
-    "last_success": "2026-11-02T19:13:51+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -1694,8 +1694,8 @@
     "last_period": "2026-10-01"
   },
   "msf_rate": {
-    "last_attempt": "2026-11-02T22:15:11+00:00",
-    "last_success": "2026-11-02T22:15:11+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -1708,8 +1708,8 @@
     "last_period": "2026-09-01"
   },
   "nifty50_close": {
-    "last_attempt": "2026-11-02T19:13:51+00:00",
-    "last_success": "2026-11-02T19:13:51+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -1897,8 +1897,8 @@
     "last_period": "2026-09-01"
   },
   "repo_rate": {
-    "last_attempt": "2026-11-02T22:15:11+00:00",
-    "last_success": "2026-11-02T22:15:11+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -1967,15 +1967,15 @@
     "last_period": "2026-10-15"
   },
   "sdf_rate": {
-    "last_attempt": "2026-11-02T22:15:11+00:00",
-    "last_success": "2026-11-02T22:15:11+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
   },
   "sensex_close": {
-    "last_attempt": "2026-11-02T19:13:51+00:00",
-    "last_success": "2026-11-02T19:13:51+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
@@ -2023,8 +2023,8 @@
     "last_period": "2026-09-01"
   },
   "slr": {
-    "last_attempt": "2026-11-02T22:15:11+00:00",
-    "last_success": "2026-11-02T22:15:11+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -2198,8 +2198,8 @@
     "last_period": "2026-10-16"
   },
   "tbill_91d": {
-    "last_attempt": "2026-11-02T19:13:48+00:00",
-    "last_success": "2026-11-02T19:13:48+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-03"
@@ -2212,8 +2212,8 @@
     "last_period": "2026-10-16"
   },
   "term_spread_10y_repo": {
-    "last_attempt": "2026-11-02T19:14:00+00:00",
-    "last_success": "2026-11-02T19:14:00+00:00",
+    "last_attempt": "2026-11-03T01:31:09+00:00",
+    "last_success": "2026-11-03T01:31:09+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-27"
@@ -2247,53 +2247,53 @@
     "last_period": "2026-09-01"
   },
   "us10y_yield": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "us_vix_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "usdcny_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-03"
   },
   "usdidr_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "usdinr_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "usdinr_ref": {
-    "last_attempt": "2026-11-02T22:18:55+00:00",
-    "last_success": "2026-11-02T22:18:55+00:00",
+    "last_attempt": "2026-11-03T01:30:55+00:00",
+    "last_success": "2026-11-03T01:30:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-02"
   },
   "usdkrw_close": {
-    "last_attempt": "2026-11-02T19:13:52+00:00",
-    "last_success": "2026-11-02T19:13:52+00:00",
+    "last_attempt": "2026-11-03T01:30:58+00:00",
+    "last_success": "2026-11-03T01:30:58+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-03"
   },
   "vehicle_retail_2w": {
     "last_attempt": "2026-11-01T14:27:50+00:00",
