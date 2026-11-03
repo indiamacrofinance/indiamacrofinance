@@ -17,13 +17,13 @@
   "last_period": "2026-09-01",
   "last_value": 2463103.0,
   "observations": 66,
-  "updated_at": "2026-11-01T14:27:23+00:00",
+  "updated_at": "2026-11-03T14:02:21+00:00",
   "fetched_from": [
     "https://www.siam.in/news-&-updates/press-releases/x/620",
     "https://www.siam.in/news-&-updates/press-releases/x/622"
   ],
   "raw_files": [
-    "data/raw/siam_sales/20261101T142721-40a1d9561c.html",
-    "data/raw/siam_sales/20261101T142723-5eca1ba1e4.html"
+    "data/raw/siam_sales/20261103T140219-61f147c8c4.html",
+    "data/raw/siam_sales/20261103T140221-07c6f81eb9.html"
   ]
 }

@@ -17,11 +17,11 @@
   "last_period": "2026-09-01",
   "last_value": 2.0352,
   "observations": 29,
-  "updated_at": "2026-11-01T14:26:39+00:00",
+  "updated_at": "2026-11-03T14:01:36+00:00",
   "fetched_from": [
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/Gross_Net_Tax_collection.xlsx"
   ],
   "raw_files": [
-    "data/raw/gst_collections/20261101T142638-433922cc90.xlsx"
+    "data/raw/gst_collections/20261103T140135-433922cc90.xlsx"
   ]
 }
