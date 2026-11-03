@@ -122,5 +122,6 @@ export const more = [
     ["Data and downloads", "/data/"],
     ["Methods and original measures", "/methods/"],
     ["Data status", "/status/"],
+    ["Live status ↗", "https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/"],
   ] },
 ];

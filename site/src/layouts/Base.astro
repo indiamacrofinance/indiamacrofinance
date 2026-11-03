@@ -41,7 +41,7 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
             {group.map((m) => m.items ? (
               <div class="menu">
                 <a href={m.href} class="top" aria-current={active === m.key ? "page" : undefined} aria-haspopup="true">{m.label}<span class="caret">▾</span></a>
-                <div class="drop">{m.items.map(([label, href]) => <a href={href}>{label}</a>)}</div>
+                <div class="drop">{m.items.map(([label, href]) => href.startsWith("http") ? <a href={href} target="_blank" rel="noopener">{label}</a> : <a href={href}>{label}</a>)}</div>
               </div>
             ) : (
               <div class="menu"><a href={m.href} class="top" aria-current={active === m.key ? "page" : undefined}>{m.label}</a></div>
