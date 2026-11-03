@@ -1,0 +1,82 @@
+---
+// A tile map of India's states and UTs: one equal square per state, placed roughly where the
+// state lies, coloured by how far its value is from the all-India figure. Equal tiles keep small
+// states and UTs readable, and a tile map draws no boundaries (official maps of India have
+// boundary rules a hand-drawn outline could break). Rendered as SVG at build time; each tile
+// links to the state's page.
+import { num } from "../lib/format.js";
+
+const { title, subtitle, panel, period, reference, source, unit = "%", decimals = 1 } = Astro.props;
+
+// [code, column, row] by canonical name (registry/states.yaml).
+const GRID = {
+  "Jammu and Kashmir": ["JK", 2, 0], "Ladakh": ["LA", 3, 0],
+  "Punjab": ["PB", 2, 1], "Himachal Pradesh": ["HP", 3, 1],
+  "Chandigarh": ["CH", 1, 2], "Haryana": ["HR", 2, 2], "Uttarakhand": ["UK", 3, 2], "Arunachal Pradesh": ["AR", 8, 2],
+  "Rajasthan": ["RJ", 1, 3], "Delhi": ["DL", 2, 3], "Uttar Pradesh": ["UP", 3, 3], "Bihar": ["BR", 4, 3], "Sikkim": ["SK", 5, 3],
+  "Assam": ["AS", 7, 3], "Nagaland": ["NL", 8, 3],
+  "Gujarat": ["GJ", 0, 4], "Madhya Pradesh": ["MP", 2, 4], "Jharkhand": ["JH", 4, 4], "West Bengal": ["WB", 5, 4],
+  "Meghalaya": ["ML", 7, 4], "Manipur": ["MN", 8, 4],
+  "Dadra and Nagar Haveli and Daman and Diu": ["DD", 0, 5], "Maharashtra": ["MH", 1, 5], "Chhattisgarh": ["CG", 3, 5],
+  "Odisha": ["OD", 4, 5], "Tripura": ["TR", 7, 5], "Mizoram": ["MZ", 8, 5],
+  "Goa": ["GA", 1, 6], "Telangana": ["TS", 2, 6], "Andhra Pradesh": ["AP", 3, 6],
+  "Karnataka": ["KA", 2, 7],
+  "Lakshadweep": ["LD", 0, 8], "Kerala": ["KL", 1, 8], "Tamil Nadu": ["TN", 2, 8], "Puducherry": ["PY", 3, 8],
+  "Andaman and Nicobar Islands": ["AN", 5, 8],
+};
+// Gap from all India, percentage points -> fill and text colour (blue below, red above).
+const BINS = [
+  [-Infinity, -2, "#2c7bb6", "#fff", "2 pts or more below"],
+  [-2, -0.5, "#abd9e9", "#1a1a1a", "0.5-2 below"],
+  [-0.5, 0.5, "#f2f2f2", "#1a1a1a", "within 0.5"],
+  [0.5, 2, "#fdae61", "#1a1a1a", "0.5-2 above"],
+  [2, Infinity, "#d7191c", "#fff", "2 pts or more above"],
+];
+const bin = (v) => BINS.find(([lo, hi]) => v - reference >= lo && v - reference < hi);
+const slug = (n) => n.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+const S = 58, G = 4;   // tile size and gap
+const tiles = panel.rows.filter((r) => GRID[r.entity]).map((r) => {
+  const [code, c, row] = GRID[r.entity];
+  const v = r.values[period];
+  const b = v === null || v === undefined ? null : bin(v);
+  return { name: r.entity, code, x: c * (S + G), y: row * (S + G), v, fill: b ? b[2] : "#fff", ink: b ? b[3] : "#999" };
+});
+const missing = panel.rows.filter((r) => !GRID[r.entity]).map((r) => r.entity);
+const W = 9 * (S + G), H = 9 * (S + G);
+---
+<figure class="chart tilemap">
+  <p class="chart-title">{title}</p>
+  {subtitle && <p class="chart-sub">{subtitle}</p>}
+  <div class="tm-wrap">
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={title}>
+      {tiles.map((t) => (
+        <a href={`/states/${slug(t.name)}/`}>
+          <g>
+            <title>{`${t.name}: ${t.v === null || t.v === undefined ? "no data" : num(t.v, decimals) + unit}`}</title>
+            <rect x={t.x} y={t.y} width={S} height={S} rx="4" fill={t.fill} stroke={t.v === null || t.v === undefined ? "#ccc" : "none"} />
+            <text x={t.x + S / 2} y={t.y + 24} fill={t.ink} class="code">{t.code}</text>
+            <text x={t.x + S / 2} y={t.y + 42} fill={t.ink} class="val">{t.v === null || t.v === undefined ? "–" : num(t.v, decimals)}</text>
+          </g>
+        </a>
+      ))}
+    </svg>
+    <ul class="tm-key">
+      <li><b>All India: {num(reference, decimals)}{unit}</b></li>
+      {BINS.map(([, , fill, , label]) => <li><span style={`background:${fill}`}></span>{label}</li>)}
+      <li><span style="background:#fff;border:1px solid #ccc"></span>no data</li>
+    </ul>
+  </div>
+  <figcaption><span>Source: {source}</span>{missing.length > 0 && <span>Not on the map: {missing.join(", ")}</span>}<span>Tiles are placed roughly by location; sizes are equal. Click a tile for the state's page.</span></figcaption>
+</figure>
+<style>
+  .tm-wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: flex-start; }
+  .tm-wrap svg { width: 100%; max-width: 560px; height: auto; }
+  .tm-wrap text { text-anchor: middle; font-family: "Inter", system-ui, sans-serif; pointer-events: none; }
+  .tm-wrap .code { font-size: 13px; font-weight: 700; }
+  .tm-wrap .val { font-size: 13px; }
+  .tm-wrap a:hover rect { stroke: #1a1a1a; stroke-width: 2; }
+  .tm-key { list-style: none; padding: 0; margin: 0; font: 0.8rem "Inter", system-ui, sans-serif; color: var(--muted); }
+  .tm-key li { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  .tm-key span { display: inline-block; width: 14px; height: 14px; border-radius: 2px; }
+</style>

@@ -31,6 +31,8 @@ validation:
 pages:
 - page: analysis
   section: banks
+- page: external
+  section: nri
 original: false
 discontinued: null
 owner: ''

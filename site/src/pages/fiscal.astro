@@ -9,6 +9,22 @@ const fdPrev = latest(series("cga_fiscal_deficit_pct_be_prev"));
 const gst = latest(series("gst_gross_collections"));
 import fs from "node:fs";
 const budget = JSON.parse(fs.readFileSync("src/data/generated/budget.json", "utf8"));
+const record = budget.record ?? {};
+// Twin deficits: both shown as deficits (positive = deficit), so the current account is flipped.
+const pts = (id, sign = 1) => series(id).data.map((d) => [d[0], Math.round(sign * d[1] * 100) / 100]);
+const twin = { years: 40, reference: { target: 0 }, series: [
+  { label: "Centre's fiscal deficit", curve: "linear", points: pts("centre_gfd_pct_gdp") },
+  { label: "Current account deficit", curve: "linear", points: pts("cab_pct_gdp_fy", -1) },
+] };
+const fdAt = (y) => series("centre_gfd_pct_gdp").data.find((d) => d[0] === `${y}-04-01`)?.[1];
+const cadAt = (y) => -series("cab_pct_gdp_fy").data.find((d) => d[0] === `${y}-04-01`)?.[1];
+const fdRec = record["Fiscal deficit, % of GDP"] ?? [];
+const fdChart = { years: 12, series: [["be", "Budget Estimate"], ["re", "Revised Estimate"], ["actual", "Actual"]].map(([k, label]) => (
+  { label, curve: "linear", points: fdRec.filter((r) => r[k] !== null).map((r) => [r.period, r[k]]) })) };
+const recYears = (record["Capital expenditure"] ?? []).map((r) => r.fy);
+const recAt = (item, fy) => (record[item] ?? []).find((r) => r.fy === fy) ?? {};
+const miss = (r) => (r.actual == null || r.be == null ? null : 100 * (r.actual / r.be - 1));
+const signed = (v, d = 1) => (v === null ? "" : `${v > 0 ? "+" : ""}${num(v, d)}`);
 // Progress against the Budget, as CGA prints it (no calculation here).
 const vsBE = [["Revenue receipts", "cga_revenue_receipts"], ["Tax revenue (net to Centre)", "cga_net_tax"],
   ["Non-tax revenue", "cga_nontax"], ["Other receipts", "cga_other_receipts"], ["Total receipts", "cga_total_receipts"],
@@ -38,6 +54,30 @@ const vsPeriod = vsBE[0].pct.period;
     </tbody>
   </table></div>
   <p class="chart-sub">BE: Budget Estimates, presented with the Budget; RE: Revised Estimates for the year then ending; Actuals: the outturn as printed in the Budget. "BE vs last RE" is the planned change on the year before's revised figure (site calculation). Effective capital expenditure is capital expenditure plus grants-in-aid for creating capital assets, as defined in the Budget. Deficit ratios are % of GDP as printed. Source: Ministry of Finance, Budget at a Glance. Spending by ministry: <a href="/tools/budget/">Budget explorer →</a></p>
+  </>}
+
+  {fdRec.length > 2 && <>
+  <h2 id="budget-record">What was budgeted, and what happened</h2>
+  <figure class="chart">
+    <p class="chart-title">Union fiscal deficit: budgeted, revised and actual</p>
+    <p class="chart-sub">% of GDP, by financial year (2020 = 2020-21)</p>
+    <div class="plot" data-chart={JSON.stringify(fdChart)}></div>
+    <figcaption><span>Source: Ministry of Finance, Budget at a Glance (each year's Budget, from 2019-20).</span></figcaption>
+  </figure>
+  <div class="scroll"><table class="data">
+    <thead><tr><th rowspan="2">Year</th><th colspan="3">Fiscal deficit, % of GDP</th><th colspan="3">Capital expenditure, ₹ lakh crore</th><th colspan="3">Net tax revenue, ₹ lakh crore</th></tr>
+      <tr><th>BE</th><th>RE</th><th>Actual</th><th>BE</th><th>Actual</th><th>vs BE</th><th>BE</th><th>Actual</th><th>vs BE</th></tr></thead>
+    <tbody>
+      {recYears.map((fy) => {
+        const f = recAt("Fiscal deficit, % of GDP", fy), c = recAt("Capital expenditure", fy), t = recAt("Tax revenue (net to Centre)", fy);
+        const cell = (v, d) => (v == null ? "–" : num(v, d));
+        return <tr><td>{fy}</td><td>{cell(f.be, 1)}</td><td>{cell(f.re, 1)}</td><td><b>{cell(f.actual, 1)}</b></td>
+          <td>{cell(c.be, 2)}</td><td><b>{cell(c.actual, 2)}</b></td><td class={miss(c) < 0 ? "neg" : ""}>{miss(c) === null ? "" : `${signed(miss(c))}%`}</td>
+          <td>{cell(t.be, 2)}</td><td><b>{cell(t.actual, 2)}</b></td><td class={miss(t) < 0 ? "neg" : ""}>{miss(t) === null ? "" : `${signed(miss(t))}%`}</td></tr>;
+      })}
+    </tbody>
+  </table></div>
+  <p class="chart-sub">Each Budget prints the Budget Estimate (BE) for the coming year, the Revised Estimate (RE) for the year ending, and the Actual for two years back; we read every Budget from 2019-20 (archived PDFs) and the current one, so Actuals start in 2017-18 and each new Budget adds a year. "vs BE" is how far the outturn was from the plan (site calculation). In the two election years (2019-20, 2024-25) the BE is from the full Budget presented in July, not the interim Budget of February. Source: Ministry of Finance, Budget at a Glance.</p>
   </>}
 
   <h2 id="accounts">Union government accounts, year to date</h2>
@@ -87,8 +127,15 @@ const vsPeriod = vsBE[0].pct.period;
     <LineChart title="Government debt" subtitle="Liabilities at end-March, % of GDP"
       lines={[{ id: "gg_debt_pct_gdp", label: "Centre and states combined" }, { id: "centre_debt_pct_gdp", label: "Centre" }, { id: "states_debt_pct_gdp", label: "States" }]} years={41} />
   </div>
-  <p class="chart-sub">RBI's Handbook of Statistics on the Indian Economy (tables 239 and 240). The latest two years are Revised and Budget Estimates. Combined debt nets out what one level of government owes the other, so it is less than the Centre's and the states' debt added together.</p>
+  <p class="chart-sub">RBI's Handbook of Statistics on the Indian Economy (tables 239 and 240). The latest two years are Revised and Budget Estimates. Combined debt nets out what one level of government owes the other, so it is less than the Centre's and the states' debt added together. Each state's finances are on the <a href="/states/#finances">States</a> page.</p>
 
-  <h2>Still to come on this page</h2>
-  <p class="chart-sub">A longer history of Budget numbers (each Budget adds a year). State government finances are on the <a href="/states/#finances">States</a> page. Checklist: docs/guidebook/05-pages/fiscal.md.</p>
+  <h2 id="twin-deficits">Twin deficits</h2>
+  <figure class="chart">
+    <p class="chart-title">The Centre's fiscal deficit and the current account deficit</p>
+    <p class="chart-sub">% of GDP, financial year (1990 = 1990-91); both drawn as deficits, so below zero is a current account surplus</p>
+    <div class="plot" data-chart={JSON.stringify(twin)}></div>
+    <figcaption><span>Source: RBI, Handbook of Statistics on the Indian Economy (Tables 237 and 241).</span></figcaption>
+  </figure>
+  <p class="chart-sub">When the government borrows heavily and the country as a whole spends more than it earns abroad, the gap is financed by foreign capital, which can leave. Both deficits were large before the 1991 balance-of-payments crisis (1990-91: fiscal {num(fdAt(1990), 1)}%, current account {num(cadAt(1990), 1)}%) and again before the 2013 "taper tantrum" (2012-13: {num(fdAt(2012), 1)}% and {num(cadAt(2012), 1)}%). In 2020-21 they moved apart: the fiscal deficit jumped to {num(fdAt(2020), 1)}% while the current account was in surplus. The latest fiscal years are Revised and Budget Estimates; RBI computes both ratios against GDP on the base then current.</p>
+
 </Base>

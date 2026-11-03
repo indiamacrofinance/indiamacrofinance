@@ -30,6 +30,7 @@ export const topics = [
     ["Wholesale prices (WPI)", "/inflation/#wpi"],
     ["Households' inflation expectations", "/inflation/#expectations"],
     ["CPI for industrial workers", "/inflation/#cpi-iw"],
+    ["Inflation by state (map)", "/inflation/#states"],
     ["CPI by division, detail", "/inflation/detail/"],
   ] },
   { key: "jobs", label: "Jobs", href: "/jobs/", items: [
@@ -53,6 +54,7 @@ export const topics = [
     ["Policy rates and the call rate", "/money/"],
     ["RBI's outlook: assumptions and risks", "/money/#rbi-outlook"],
     ["MPC decisions and votes", "/money/#decisions"],
+    ["The real policy rate", "/money/#real-rate"],
     ["Transmission to bank rates", "/money/#transmission"],
     ["Liquidity", "/money/#liquidity"],
     ["Bank credit and deposits", "/money/#credit"],
@@ -72,12 +74,15 @@ export const topics = [
   { key: "fiscal", label: "Fiscal", href: "/fiscal/", items: [
     ["Fiscal deficit and capex", "/fiscal/"],
     ["Union Budget at a glance", "/fiscal/#budget"],
+    ["Budgeted vs what happened", "/fiscal/#budget-record"],
     ["Union government accounts", "/fiscal/#accounts"],
     ["GST collections", "/fiscal/#gst"],
     ["Direct taxes and other tax heads", "/fiscal/#taxes"],
     ["Centre and states together", "/fiscal/#general-government"],
+    ["Twin deficits", "/fiscal/#twin-deficits"],
   ] },
   { key: "external", label: "External", href: "/external/", items: [
+    ["Import cover", "/external/#import-cover"],
     ["Merchandise trade", "/external/#merchandise"],
     ["Services trade", "/external/#services"],
     ["Balance of payments", "/external/#bop"],
@@ -85,6 +90,7 @@ export const topics = [
     ["Effective exchange rates", "/external/#eer"],
     ["External debt", "/external/#debt"],
     ["External commercial borrowing", "/external/#ecb"],
+    ["NRI deposits", "/external/#nri"],
     ["BoP stress episodes (Analysis)", "/analysis/bop-stress/"],
   ] },
   { key: "states", label: "States", href: "/states/", items: [
@@ -121,6 +127,7 @@ export const more = [
     ["Terms and privacy", "/privacy/"],
     ["Data and downloads", "/data/"],
     ["Methods and original measures", "/methods/"],
+    ["What changed, day by day", "/updates/"],
     ["Data status", "/status/"],
     ["Live status ↗", "https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/"],
   ] },

@@ -7,6 +7,7 @@ import PeriodTable from "../components/PeriodTable.astro";
 import { series, latest } from "../lib/data.js";
 import { num, period } from "../lib/format.js";
 const fx = latest(series("fx_reserves_total"));
+const cover = latest(series("import_cover_months"));
 const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change.json", "utf8"));
 ---
 <Base current="external" title="External">
@@ -28,6 +29,15 @@ const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change
     <LineChart title="USD/INR reference rate" subtitle="Rupees per US dollar (a higher rate is a weaker rupee)" lines={[{ id: "usdinr_ref" }]} years={1} />
   </div>
   <p class="chart-sub">RBI Weekly Statistical Supplement. Changes in reserves reflect RBI's market operations and valuation changes in currencies and gold, which the weekly data do not separate, so a fall is not the same as RBI selling dollars.</p>
+
+  <h2 id="import-cover">Import cover</h2>
+  <div class="grid2">
+    <LineChart title="How many months of imports the reserves would pay for" subtitle="Months, at end-March (RBI)"
+      lines={[{ id: "reserves_import_cover", label: "Import cover (RBI)" }]} years={40} />
+    <LineChart title="Import cover, month by month" subtitle="Months: reserves at month end ÷ average monthly goods imports, last 12 months"
+      lines={[{ id: "import_cover_months", label: "Import cover" }]} years={2} />
+  </div>
+  <p class="chart-sub">In {period(cover.period, "M")} reserves covered {num(cover.value, 1)} months of goods imports. The usual rule of thumb is at least three months. Before the 1991 balance-of-payments crisis cover was 1.9 months (end-March 1990) and 2.5 (end-March 1991). Left: RBI's own measure, from the Handbook of Statistics (balance-of-payments imports). Right: a site calculation from RBI's weekly reserves and the Commerce Department's monthly merchandise imports, so it differs a little from RBI's.</p>
 
   <h2 id="merchandise">Merchandise trade</h2>
   <div class="grid2">
@@ -88,6 +98,16 @@ const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change
     lines={[{ id: "ecb_registrations", label: "Registered" }]} years={3} />
   <p class="chart-sub">Indian companies' borrowing from abroad as registered with RBI each month, all routes. Registration comes before any money is drawn, so this measures plans rather than inflows. Source: RBI, monthly ECB/FCCB data; totals as printed.</p>
 
-  <h2>Still to come on this page</h2>
-  <p class="chart-sub">ECB drawdowns (money actually received) and NRI deposits. Checklist: docs/guidebook/05-pages/external.md.</p>
+  <div class="grid2">
+    <LineChart title="ECB money drawn and repaid" subtitle="US$ billion a quarter, gross: commercial borrowings, medium and long term"
+      lines={[{ id: "bop_bpm5_ecb_drawdowns", label: "Drawn (inflow)" }, { id: "bop_bpm5_ecb_repayments", label: "Repaid (outflow)" }]} years={8} />
+    <LineChart title="Net ECB flow" subtitle="US$ billion a quarter: drawn minus repaid"
+      lines={[{ id: "bop_bpm5_commercial_borrowings", label: "Net ECB" }]} reference={{ target: 0 }} years={8} />
+  </div>
+  <p class="chart-sub">Money actually received and paid back, from the balance of payments (RBI's BPM5 presentation, Statement II of each quarterly release; history from 2000 in the Handbook). Registrations above lead drawdowns by months. Caution: RBI printed unusually large gross flows for Jan-Mar 2025 (US$ 39 bn drawn, 31 bn repaid); a later release revised similar figures for 2025-26 down to US$ 10-14 bn a quarter but left that quarter as it was. The net flow is unaffected.</p>
+
+  <h2 id="nri">NRI deposits</h2>
+  <LineChart title="Non-resident deposits, net inflow" subtitle="US$ billion a quarter: money Indians abroad add to (or take out of) NRI accounts in Indian banks"
+    lines={[{ id: "bop_bpm5_nri_deposits", label: "NRI deposits, net" }]} reference={{ target: 0 }} years={14} />
+  <p class="chart-sub">Net flows into FCNR(B), NRE and NRO accounts, from the balance of payments (RBI's BPM5 presentation, part of banking capital). They jump when banks or RBI offer special terms: RBI's FCNR(B) swap window during the 2013 rupee crisis brought in a record US$ 21.4 bn in Oct-Dec 2013, and those three-year deposits flowed out (US$ 18.5 bn) when they matured in Oct-Dec 2016. Source: RBI, quarterly BoP releases and Handbook of Statistics.</p>
 </Base>

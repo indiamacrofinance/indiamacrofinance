@@ -66,6 +66,15 @@ const mpr = yaml.load(fs.readFileSync(`../registry/mpr/${mprFiles.at(-1)}`, "utf
   </details>
   <p class="chart-sub">From the resolution in each set of MPC minutes. Vote: members for and against the rate resolution; since 2025 the minutes also record the size of move each member voted for, and members who backed a different size are noted. The stance is as worded in the minutes; when the minutes don't restate it, the previous meeting's stance is shown. Source: RBI, minutes of the MPC meetings.</p>
 
+  <h2 id="real-rate">The real policy rate</h2>
+  <div class="grid2">
+    <LineChart title="Repo rate and CPI inflation" subtitle="Per cent"
+      lines={[{ id: "repo_rate", label: "Repo rate" }, { id: "cpi_headline_inflation", label: "CPI inflation (y/y)" }]} years={4} />
+    <LineChart title="Real policy rate" subtitle="Repo rate minus CPI inflation, percentage points; above zero = policy rate above inflation"
+      lines={[{ id: "real_repo_rate", label: "Real repo rate" }]} reference={{ target: 0 }} years={4} />
+  </div>
+  <p class="chart-sub">The repo rate in force at the end of each month minus that month's CPI inflation (site calculation). This is the ex post real rate: it uses inflation as measured, while policy looks at where inflation is expected to go (see RBI's projections above and households' expectations on the <a href="/inflation/#expectations">Inflation</a> page). Sources: RBI, MoSPI.</p>
+
   <h2 id="transmission">Transmission: from the repo rate to bank rates</h2>
   <div class="scroll"><table class="data">
     <thead><tr><th>Cycle</th><th>Repo rate</th><th>Deposit rate, new deposits</th><th>Deposit rate, outstanding</th><th>1-year MCLR (median)</th><th>Lending rate, new loans</th><th>Lending rate, outstanding loans</th></tr></thead>

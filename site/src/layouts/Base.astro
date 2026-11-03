@@ -110,7 +110,7 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
     <script>
       // "On this page": a contents line under the first heading, built from the h2 headings.
       const main = document.querySelector("main");
-      const heads = [...main.querySelectorAll("h2")].filter((h) => !/^Still to come/.test(h.textContent));
+      const heads = [...main.querySelectorAll("h2")].filter((h) => !/^Still to come/.test(h.textContent) && !h.closest("[data-no-toc]"));
       if (heads.length >= 3) {
         const toc = document.createElement("nav");
         toc.className = "toc";

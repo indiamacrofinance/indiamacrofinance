@@ -9,6 +9,8 @@
 - [x] GST gross collections (monthly, y/y)
 - [x] Tax collections by head (CGA DTL3, from FY 2015-16): gross, direct (corporate + income), STT, customs, excise
 - [x] Union Budget headline numbers (BE, RE, Actuals) for the current and last FY (panels `budget_be`, `budget_re`, `budget_actuals` from Budget at a Glance; table built into `budget.json`)
+- [x] Budget record: each year's BE, RE and Actual for the fiscal deficit (% of GDP), capital expenditure and net tax, from every Budget since 2019-20 (archived PDFs, read once by `budget/glance.py`; Actuals from 2017-18). Chart and table in `#budget-record`, data in `budget.json` → `record`
+- [x] Twin deficits: the Centre's gross fiscal deficit (`centre_gfd_pct_gdp`, Handbook Table 237, from 1984-85) and the current account deficit (`cab_pct_gdp_fy`, Table 241, from 1987-88), % of GDP, both drawn as deficits (`#twin-deficits`)
 - [x] General government (Centre + states) deficit and debt, % of GDP (annual; RBI Handbook tables 239/240, `rbi/general_government.py`)
 - [x] States: link to the States page for state fiscal ratios
 

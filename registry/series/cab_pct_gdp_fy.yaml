@@ -1,0 +1,40 @@
+id: cab_pct_gdp_fy
+title: Current account balance, % of GDP, financial year
+short_title: Current account, % of GDP (FY)
+area: external
+source:
+  agency: RBI
+  dataset: Handbook of Statistics on the Indian Economy, Table 241 (Balance of Payments Indicators)
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/general_government.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: A
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: Handbook published each year (around August)
+  lag_days: 150
+validation:
+  range:
+  - -8
+  - 5
+  revision_alert: 0.5
+pages:
+- page: fiscal
+  section: twin-deficits
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: 'Handbook 2025-26 Table 241 column ''CAD / GDP'': 1987-88 -1.74, 2012-13 -4.81, 2025-26 -0.61.'
+notes: '% of GDP, financial year (period = 1 April); negative = deficit. RBI''s ratio (US$ current account over
+  GDP), from 1987-88. Quarterly ratios are in bop_cab_pct_gdp.'

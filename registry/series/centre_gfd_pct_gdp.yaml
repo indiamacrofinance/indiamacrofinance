@@ -1,0 +1,41 @@
+id: centre_gfd_pct_gdp
+title: Central government gross fiscal deficit, % of GDP
+short_title: Centre fiscal deficit
+area: fiscal
+source:
+  agency: RBI
+  dataset: Handbook of Statistics on the Indian Economy, Table 237 (Select Fiscal Indicators of the Central Government)
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/general_government.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: A
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: Handbook published each year (around August)
+  lag_days: 150
+validation:
+  range:
+  - 0
+  - 15
+  revision_alert: 0.5
+pages:
+- page: fiscal
+  section: twin-deficits
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: 'Handbook 2025-26 Table 237: 1984-85 6.79, 2020-21 9.16, 2024-25 4.76 (RE 2025-26 4.36, BE 2026-27 4.31)
+    read as printed.'
+notes: '% of GDP, financial year (period = 1 April). Gross fiscal deficit of the Union government, from 1984-85.
+  The latest years are Revised and Budget Estimates (in the note). GDP base changes over time (the Handbook''s footnote).'

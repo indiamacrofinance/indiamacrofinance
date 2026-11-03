@@ -1,4 +1,6 @@
 """Budget at a Glance (Budget 2026-27)."""
+import pytest
+
 from pipelines.sources.budget.glance import ORDER, SOURCE
 
 
@@ -27,3 +29,27 @@ def test_demands_add_up(raw_from):
     assert round(be.value.sum(), 3) == 53.473                       # Grand Total, Rs 53,47,315 crore
     rail = be[be.entity == "Ministry of Railways"].iloc[0]
     assert (rail.value, rail.note) == (2.81377, "Demand No. 85")
+
+
+def test_archived_pdf_editions(raw_from):
+    """Archived Budgets (PDF, headline page only). 2019-20: a row whose label we do not keep
+    ('Capital Receipts') must not inherit the label above it; no Effective capex yet."""
+    old = SOURCE.parse([raw_from("budget/budget_at_a_glance_2019-20.pdf")])
+    assert at(old, "budget_actuals", "Non-tax revenue", "2017-04-01") == 1.9275      # Rs 1,92,745 crore
+    assert at(old, "budget_actuals", "Interest payments", "2017-04-01") == 5.2895
+    assert at(old, "budget_actuals", "Fiscal deficit, % of GDP", "2017-04-01") == 3.5
+    assert "Effective capital expenditure" not in set(old.entity)
+    # 2024-25 (full Budget after the election): five columns; Provisional Actuals 2023-24 skipped.
+    mid = SOURCE.parse([raw_from("budget/budget_at_a_glance_2024-25.pdf")])
+    assert at(mid, "budget_actuals", "Fiscal deficit", "2022-04-01") == pytest.approx(17.37755, abs=1e-4)
+    assert at(mid, "budget_re", "Fiscal deficit", "2023-04-01") == pytest.approx(17.34773, abs=1e-4)
+    assert at(mid, "budget_be", "Fiscal deficit", "2024-04-01") == pytest.approx(16.13312, abs=1e-4)
+    assert at(mid, "budget_be", "Fiscal deficit, % of GDP", "2024-04-01") == 4.9
+    assert not ((mid.series_id == "budget_actuals") & (mid.period == "2023-04-01")).any()
+    # 2025-26 shortens labels ("13. On Capital", "14. Effective Capital", "Non-Tax Revenue").
+    new = SOURCE.parse([raw_from("budget/budget_at_a_glance_2025-26.pdf")])
+    assert at(new, "budget_be", "Capital expenditure", "2025-04-01") == pytest.approx(11.2109, abs=1e-4)
+    assert at(new, "budget_be", "Effective capital expenditure", "2025-04-01") == pytest.approx(15.48282, abs=1e-4)
+    assert at(new, "budget_be", "Non-tax revenue", "2025-04-01") == 5.83
+    assert at(new, "budget_actuals", "Tax revenue (net to Centre)", "2023-04-01") == pytest.approx(23.27251, abs=1e-4)
+    assert set(new.entity) == set(ORDER)

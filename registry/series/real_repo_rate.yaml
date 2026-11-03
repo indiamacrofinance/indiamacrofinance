@@ -1,0 +1,37 @@
+id: real_repo_rate
+title: 'Real policy rate: repo rate minus CPI inflation (site calculation)'
+short_title: Real repo rate
+area: money
+source:
+  agency: RBI; MoSPI; site calculation
+  dataset: Policy repo rate and CPI inflation
+  url: https://www.rbi.org.in/
+  module: pipelines/sources/derived/real_rate.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: percent
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: monthly, with CPI
+  lag_days: 15
+validation:
+  range:
+  - -6
+  - 8
+  revision_alert: 0.5
+pages:
+- page: money-banking
+  section: real-rate
+original: true
+discontinued: null
+owner: ''
+verified_against: []
+notes: 'Percentage points. Site calculation: the repo rate in force at the end of the month minus CPI inflation
+  (y/y, as published) for that month. Ex post: uses measured, not expected, inflation. From September 2022 (the
+  start of our stored repo series).'
