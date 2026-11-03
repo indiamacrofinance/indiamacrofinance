@@ -1,0 +1,37 @@
+# Balance-of-payments stress episodes, for the analysis "Forex intervention and the balance of
+# payments" (pipelines/build/bop_stress.py; pages /analysis/bop-stress/ and /analysis/fx-intervention/).
+# Method: docs/guidebook/08-original-measures.md -> "BoP stress episodes".
+#
+# How episodes are chosen: runs of calendar quarters in which the rupee weakened against the US
+# dollar (quarterly average rate) while RBI was a net seller of dollars, from the first quarter of
+# sustained depreciation to the last quarter before the rupee stabilised. A brief pause can be
+# kept inside an episode (the current one includes Apr-Jun 2025); say so in `note`.
+#
+# Dates are quarter starts (2024-10-01 = Oct-Dec 2024). `open: true` marks an episode that may still
+# be running: the build extends its end, one quarter at a time, while each new quarter with
+# published BoP data still has a weaker rupee AND net dollar sales by RBI; the page says when it
+# stopped. Close an episode by removing `open` (and fixing `end`) once it is clearly over.
+# Add a new episode at the top; keep `id` stable (the page and tests use it).
+episodes:
+  - id: current
+    label: Current episode
+    short: Current
+    start: "2024-10-01"
+    end: "2026-04-01"
+    open: true
+    note: Includes a brief pause in Apr-Jun 2025, when the rupee strengthened.
+  - id: "2022"
+    label: Fed tightening and the Ukraine war
+    short: "2022"
+    start: "2021-10-01"
+    end: "2022-10-01"
+  - id: "2018"
+    label: Emerging-market sell-off
+    short: "2018"
+    start: "2018-04-01"
+    end: "2018-10-01"
+  - id: "2013"
+    label: Taper tantrum
+    short: "2013"
+    start: "2013-04-01"
+    end: "2013-07-01"

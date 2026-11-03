@@ -30,7 +30,7 @@ The model is econvitals.org (U.S.). We credit it and do some things differently:
 | 1 | Pipeline core + ~25 core series + home dashboard + calendar + logo v1 | **in progress**: 112 series from 16 sources (prices, activity, GDP, jobs, RBI WSS, markets, trade, GST, CGA accounts); 11 pages; daily workflow. Left: MGNREGA, power demand, UPI, release calendar |
 | 2 | All topic pages, detail pages, Data & Methods, downloads, status page, base-year bridge | not started |
 | 3 | Briefings (ledger, drafts, approval PRs), newsletter, RSS | **in progress**: ledger, checker, 7 templates (CPI, IIP, GDP, PLFS, trade, MPC, daily note), review-PR workflow, briefings pages, RSS feeds. Left: newsletter (provider), weekly/monthly briefings, optional LLM step |
-| 4 | Originals and tools: surprise composites, States, monsoon watch, RBI policy rule, Budget explorer | not started |
+| 4 | Originals and tools: surprise composites, States, monsoon watch, RBI policy rule, Budget explorer | **in progress**: Analysis section (`/analysis/`, 2026-11-03): BoP stress episodes and forex intervention (`05-pages/analysis.md`); rupee drivers; policy rule and Budget explorer tools |
 | 5 | Go public: name and domain, legal pages, analytics, permission from Econvitals | not started |
 
 Update this table when a phase closes. A phase closes only when its checklist in `10-launch-checklist.md` (for Phase 5) or the relevant page checklists (for Phases 1–4) are ticked, and the healthcheck shows zero overdue series.
@@ -44,7 +44,8 @@ Update this table when a phase closes. A phase closes only when its checklist in
 - `05-pages/`: one checklist per page (must include / must not include / done when)
 - `06-operations-runbook.md`: daily routine, release days, breakages, revisions
 - `07-editorial-policy.md`: briefings, the number ledger, corrections
-- `08-original-measures.md`: methods for our own constructed measures
+- `08-original-measures.md`: methods for our own constructed measures and analyses
+- `decisions/`: why things are the way they are (e.g. 0006: replicating private reference material)
 - `09-rebranding.md`: renaming the site or switching the domain
 - `10-launch-checklist.md`: going public
 - `playbooks/`: task recipes for agents and RAs

@@ -1,0 +1,24 @@
+# Machine-readable twin of docs/guidebook/05-pages/analysis.md
+page: analysis
+sections:
+  - id: episodes
+    kind: table
+    note: "Components of BoP flows by stress episode (pipelines/build/bop_stress.py -> bop_stress.json)"
+    series: [bop_bpm6_goods_services, bop_bpm6_primary_income, bop_bpm6_secondary_income, bop_bpm6_current_account,
+             bop_bpm6_capital_account, bop_bpm6_fdi_in_india, bop_bpm6_odi, bop_bpm6_portfolio, bop_bpm6_derivatives,
+             bop_bpm6_other_investment, bop_bpm6_reserve_assets, bop_bpm6_errors_omissions, usdinr_monthly_avg, usdinr_ref]
+  - id: totals
+    kind: table
+    series: [bop_bpm6_current_account, bop_bpm5_banking_capital, bop_bpm6_reserve_assets, bop_bpm6_errors_omissions]
+  - id: derivatives
+    kind: line
+    series: [bop_bpm5_banking_capital, bop_bpm6_derivatives, bop_bpm6_derivatives_receipts, bop_bpm6_derivatives_payments]
+  - id: monitor
+    kind: table
+    series: [rbi_fx_net_purchase, bop_bpm5_banking_capital, bop_bpm6_reserve_assets]
+  - id: banks
+    kind: scatter
+    note: "/analysis/fx-intervention/#evidence"
+    series: [bop_bpm5_banking_capital, bop_bpm5_current_account, bop_bpm5_capital_account, rbi_fx_net_purchase,
+             rbi_fx_purchases, rbi_fx_sales, rbi_fx_forward_book, bop_bpm5_bank_assets, bop_bpm5_nri_deposits,
+             bop_bpm5_errors_omissions, bop_bpm5_reserves_change]

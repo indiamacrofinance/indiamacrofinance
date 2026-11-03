@@ -16,7 +16,7 @@ from datetime import date
 import pandas as pd
 import yaml
 
-from pipelines.build import calendar, rupee
+from pipelines.build import bop_stress, calendar, rupee
 from pipelines.core import registry, store
 
 OUT = store.ROOT / "site" / "src" / "data" / "generated"
@@ -317,7 +317,7 @@ def cpi_fan(min_errors: int = 12) -> dict | None:
         if a is not None:
             errs.append({"h": horizon(r.entity, r.period), "err": a - r.value})
     e = pd.DataFrame(errs)
-    stats = {int(h): {"n": int(len(g)), "rmse": float((g.err ** 2).mean() ** 0.5), "bias": float(g.err.mean())}
+    stats = {int(h): {"n": len(g), "rmse": float((g.err ** 2).mean() ** 0.5), "bias": float(g.err.mean())}
              for h, g in e.groupby("h")}
     usable = sorted(h for h, st in stats.items() if st["n"] >= min_errors)
     latest = d[d["period"] == d["period"].max()]
@@ -844,6 +844,11 @@ def main() -> int:
     except Exception as e:     # noqa: BLE001
         print(f"  rupee drivers: skipped ({type(e).__name__}: {e})")
         write_json(OUT / "rupee.json", {"error": f"{type(e).__name__}: {e}"})
+    try:                       # Analysis: BoP stress episodes and forex intervention (same rule)
+        write_json(OUT / "bop_stress.json", bop_stress.analyse())
+    except Exception as e:     # noqa: BLE001
+        print(f"  BoP stress analysis: skipped ({type(e).__name__}: {e})")
+        write_json(OUT / "bop_stress.json", {"error": f"{type(e).__name__}: {e}"})
     write_json(OUT / "rbi_projections.json", rbi_projections())
     write_json(OUT / "base_bridge.json", base_bridge())
     PUBLIC.parent.mkdir(parents=True, exist_ok=True)

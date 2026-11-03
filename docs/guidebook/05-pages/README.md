@@ -31,6 +31,7 @@ The machine-readable twin of each file is `registry/pages/<page>.yaml`. When the
 | About | about.md | 1 |
 | Status (internal) | status.md | 2 |
 | Tools (index) | tools.md | 4 |
+| Analysis (hub and pieces) | analysis.md | live |
 
 ## The menu
 Every page and every `<h2>` section a reader might look for is in the header menu, defined in `site/src/lib/nav.js`. When you add a page or section, add it there. Give the `<h2>` a fixed `id` (e.g. `<h2 id="fuel">`) and link to `/page/#id`. Never link to an id derived from heading text that changes with the data (e.g. "Consumer prices, Sep 2026"). Search (Pagefind) indexes everything inside `<main>` automatically on `make build`.

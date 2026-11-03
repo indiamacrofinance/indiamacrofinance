@@ -1,0 +1,245 @@
+---
+// Balance-of-payments stress episodes compared (Analysis). Data: bop_stress.json, built by
+// pipelines/build/bop_stress.py from RBI's quarterly BoP (BPM6 and BPM5), RBI's dollar sales and
+// purchases, and the rupee's monthly average. Method: docs/guidebook/08-original-measures.md.
+// Page checklist: docs/guidebook/05-pages/analysis.md.
+import Base from "../../layouts/Base.astro";
+import Figure from "../../components/Figure.astro";
+import fs from "node:fs";
+import { num, period, byFmt } from "../../lib/format.js";
+
+const a = JSON.parse(fs.readFileSync("src/data/generated/bop_stress.json", "utf8"));
+const ok = !a.error;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const qFrom = (iso) => `${MONTHS[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
+const qTo = (iso) => `${MONTHS[+iso.slice(5, 7) + 1]} ${iso.slice(0, 4)}`;
+const span = (e) => `${qFrom(e.start)} – ${qTo(e.end)}`;
+const fy = (e) => `${period(e.start, "Q")} to ${period(e.end, "Q")}`;
+const usd = (v) => byFmt(v, "usd_bn1");
+const eps = ok ? a.episodes : [];
+const cur = eps.find((e) => e.id === "current");
+const past = eps.filter((e) => e.id !== "current");
+const range = (vals, f = (x) => x) => {
+  const xs = vals.filter((x) => x !== null && x !== undefined);
+  return xs.length ? [f(Math.min(...xs)), f(Math.max(...xs))] : ["–", "–"];
+};
+const cv = cur?.values ?? {};
+const finRange = range(past.map((e) => e.shares.kfa_financing_ca));
+const kfaRange = range(past.map((e) => e.values.kfa), (x) => num(x, 0));
+const bankRange = range(past.map((e) => e.values.bank_capital), (x) => num(x, 1));
+const bankShare = range(past.map((e) => e.shares.bank_of_kfa));
+const res2022 = past.find((e) => e.id === "2022")?.values.reserves_drawn;
+const caRank = past.filter((e) => e.values.current_account < cv.current_account).length;
+// Table 3 cell: totals by default; the toggle switches to an average per quarter.
+const cell = (e, key) => {
+  const v = e.values[key];
+  if (key === "rupee_fall") return { total: v === null ? "–" : `${num(v, 0)}%`, avg: v === null ? "–" : `${num(v, 0)}%` };
+  return { total: num(v, 1), avg: v === null ? "–" : num(v / e.quarters, 1) };
+};
+const quarters = ok ? a.quarters : [];
+const bands = eps.map((e) => ({ start: e.start, end: e.end, label: e.short }));
+const fromIso = "2010-01-01";
+const fig2 = {
+  kind: "lines", yLabel: "US$ billion", bands,
+  series: [
+    { label: "Banking capital (BPM5)", points: quarters.filter((r) => r.period >= fromIso).map((r) => [r.period, r.bank_capital]) },
+    { label: "Financial derivatives, net (BPM6)", points: quarters.filter((r) => r.period >= a.as_of?.bpm6_from).map((r) => [r.period, r.derivatives]) },
+  ],
+};
+const gross = {
+  kind: "lines", yLabel: "US$ billion a quarter", bands: bands.filter((b) => b.start >= (a.as_of?.bpm6_from ?? "")),
+  series: [
+    { label: "Payments to non-residents", points: quarters.filter((r) => r.period >= a.as_of?.bpm6_from).map((r) => [r.period, r.derivatives_payments]) },
+    { label: "Receipts from non-residents", points: quarters.filter((r) => r.period >= a.as_of?.bpm6_from).map((r) => [r.period, r.derivatives_receipts]) },
+  ],
+};
+const derivQ = quarters.filter((r) => r.derivatives_payments !== null);
+const firstDeriv = derivQ.find((r) => r.period >= "2023-01-01");
+const lastDeriv = derivQ.at(-1);
+const bpm6Quarters = quarters.filter((r) => r.current_account !== null).map((r) => r.period);
+const monitor = ok ? [...a.monitor].reverse() : [];
+const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
+---
+<Base current="analysis" title="Balance-of-payments stress: then and now">
+  <p class="chart-sub"><a href="/analysis/">Analysis</a> / BoP stress episodes</p>
+  <h1>Balance-of-payments stress: then and now <span class="badge">Original</span></h1>
+  {!ok ? <p class="lede">This analysis could not be built today ({a.error}).</p> : (
+  <>
+  <p class="lede">When the rupee is under pressure, who pays for India's external gap: the current account, foreign capital, banks, or RBI's reserves? This page adds up RBI's balance-of-payments data over the current episode and three earlier ones (2013, 2018, 2022), item by item, and lets you build your own. Data to {period(a.as_of.bop, "Q")} ({qFrom(a.as_of.bop)} – {qTo(a.as_of.bop)}); it updates when RBI publishes the next quarter.</p>
+
+  <p class="cite">Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026, which compares these four episodes. This page rebuilds its analysis from RBI's public data and recomputes it with each release; the numbers shown are our own computation.</p>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Current account, {cur.quarters} quarters</div><div class="v">{usd(cv.current_account)}</div><div class="foot"><span class="p">{span(cur)}</span></div></div>
+    <div class="tile"><div class="k">Capital and financial accounts</div><div class="v">{usd(cv.kfa)}</div><div class="foot"><span class="p">net {cv.kfa < 0 ? "outflow" : "inflow"}</span></div></div>
+    <div class="tile"><div class="k">Reserves drawn down</div><div class="v">{usd(cv.reserves_drawn)}</div><div class="foot"><span class="p">BoP basis, excl. valuation</span></div></div>
+    <div class="tile"><div class="k">Rupee fall against the dollar</div><div class="v">{num(cv.rupee_fall, 1)}%</div><div class="foot"><span class="p">₹{num(cur.rupee.before, 2)} → ₹{num(cur.rupee.end, 2)}</span></div></div>
+  </div>
+
+  <h2 id="episodes">Components of BoP flows in stress episodes</h2>
+  <p class="chart-sub">US$ billion, totals over each episode; + = net inflow. <label><input type="checkbox" id="per-quarter" /> Show the average per quarter instead (episodes differ in length)</label></p>
+  <div class="scroll">
+    <table class="data" id="table3">
+      <thead><tr><th>Component</th>{eps.map((e) => <th>{e.short} ({e.quarters})<br /><span class="chart-sub">{span(e)}</span></th>)}</tr></thead>
+      <tbody>
+        {a.table3.map((row) => (
+          <tr class={row.kind === "total" ? "total" : row.kind === "memo" ? "memo" : ""}>
+            <td class={row.kind === "sub" ? "indent" : ""}>{row.kind === "total" ? <b>{row.label}</b> : row.label}</td>
+            {eps.map((e) => { const c = cell(e, row.key); return <td data-total={c.total} data-avg={c.avg}>{row.kind === "total" ? <b>{c.total}</b> : c.total}</td>; })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">Table after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 3; data: RBI's BPM6 presentation. Capital and financial accounts = capital account plus the financial account excluding reserve assets (the capital account is under $1 billion in every episode). FDI into India is item 3.1.A; ODI is direct investment abroad by Indian residents (item 3.1.B), negative when residents invest abroad; together they are net direct investment. Reserves drawn down = BoP reserve assets, which exclude valuation changes. Rupee fall = change in the quarterly average rupee-dollar rate from the quarter before the episode to its last quarter. In each episode, current account + capital and financial accounts − reserves drawn down + errors and omissions = 0. Episodes are runs of quarters in which the rupee weakened while RBI was a net seller of dollars (<a href="#method">how they are chosen</a>).</p>
+
+  <h3>What sets the current episode apart</h3>
+  <ul class="prose">
+    <li><b>The current account is not the main driver.</b> Its deficit over {cur.quarters} quarters was {usd(-cv.current_account)}, {caRank === past.length ? "smaller than in any earlier episode" : caRank === 0 ? "larger than in any earlier episode" : "within the range of earlier episodes"} (2022: {usd(-past.find((e) => e.id === "2022").values.current_account)}), even though the episode is longer.</li>
+    <li><b>Capital has reversed.</b> In the earlier episodes the capital and financial accounts brought in net ${kfaRange[0]}–{kfaRange[1]} billion, paying for {finRange[0]}–{finRange[1]}% of the current-account deficit. This time they recorded net {cv.kfa < 0 ? "outflows" : "inflows"} of {usd(Math.abs(cv.kfa))}.</li>
+    <li><b>Banks have been a net drain.</b> Banking capital (in RBI's older BPM5 presentation, the only one that separates it) brought in ${bankRange[0]}–{bankRange[1]} billion in earlier episodes, {bankShare[0]}–{bankShare[1]}% of net capital inflows. This time it was {usd(cv.bank_capital)}{cur.shares.bank_of_kfa !== null && <>, about {cur.shares.bank_of_kfa}% of the net capital outflow</>}: non-resident deposits brought in {usd(cv.nri_deposits)}, but banks added {usd(-cv.bank_assets)} to their foreign assets.</li>
+    <li><b>Reserves made up the difference.</b> RBI's reserves were drawn down by {usd(cv.reserves_drawn)}{res2022 ? <>, {num(cv.reserves_drawn / res2022, 1)} times the 2022 drawdown</> : null}. {cur.shares.reserves_for_capital !== null && <>About {cur.shares.reserves_for_capital}% of it paid for capital outflows rather than the current-account deficit.</>}</li>
+    <li><b>Remittances shield the current account.</b> The goods and services deficit ({usd(-cv.goods_services)}) and net primary income payments ({usd(-cv.primary_income)}) were {cur.shares.secondary_covers}% covered by secondary income, mostly remittances ({usd(cv.secondary_income)}).</li>
+    <li><b>Two outflows, one partial offset.</b> Net payments on financial derivatives ({usd(-cv.derivatives)}) {Math.abs(cv.derivatives) > Math.abs(cv.portfolio) ? "exceeded" : "were close to"} net portfolio outflows ({usd(-cv.portfolio)}). Net direct investment was only {usd(cv.direct_investment)}, because investment abroad by Indian residents ({usd(-cv.odi)}) offset most of FDI into India ({usd(cv.fdi_in_india)}). Other investment (loans, deposits, trade credit) brought in {usd(cv.other_investment)}.</li>
+  </ul>
+  {cur.open && (cur.stopped
+    ? <p class="upnext">The current episode is treated as open. It stops at {period(cur.end, "Q")}: in {period(cur.stopped.period, "Q")} {cur.stopped.reason}{cur.extended.length ? `, after ${cur.extended.length} more quarter(s) were added` : ""}.</p>
+    : <p class="upnext">The current episode is treated as open: when RBI publishes the next quarter, it is added if the rupee weakened again and RBI was again a net seller of dollars{cur.extended.length ? ` (${cur.extended.length} quarter(s) added so far)` : ""}.</p>)}
+  {cur.note && <p class="chart-sub">{cur.note}</p>}
+
+  <h2 id="totals">Who financed the gap</h2>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Episode</th><th>Quarters</th><th>Current account</th><th>Capital and financial accounts</th><th>of which bank capital</th><th>Reserves drawn down</th><th>Errors and omissions</th></tr></thead>
+      <tbody>
+        {eps.map((e) => (
+          <tr><td>{e.label}</td><td>{fy(e)} ({e.quarters})</td><td>{usd(e.values.current_account)}</td><td>{usd(e.values.kfa)}</td>
+            <td>{usd(e.values.bank_capital)}</td><td>{usd(e.values.reserves_drawn)}</td><td>{usd(e.values.errors_omissions)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">After Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 2. Totals over each episode; + = net inflow. Bank capital is banking capital in RBI's BPM5 presentation (commercial banks' foreign assets and liabilities, including non-resident deposits), a part of the capital and financial accounts. A fall in reserves is shown as + (it finances the other lines).</p>
+
+  <h2 id="custom">Build your own episode</h2>
+  <p class="lede">Pick any run of quarters to add up the same items. BPM6 detail starts in {qFrom(a.as_of.bpm6_from)}; banking capital and RBI's dollar sales go back to 2000.</p>
+  <div class="rule-controls">
+    <label>From <select id="ep-start">{quarters.map((r) => <option value={r.period} selected={r.period === cur.start}>{qFrom(r.period)} – {qTo(r.period)} ({period(r.period, "Q")})</option>)}</select></label>
+    <label>To <select id="ep-end">{quarters.map((r) => <option value={r.period} selected={r.period === cur.end}>{qFrom(r.period)} – {qTo(r.period)} ({period(r.period, "Q")})</option>)}</select></label>
+  </div>
+  <div class="scroll"><table class="data" id="custom-table"></table></div>
+  <p class="chart-sub" id="custom-note"></p>
+
+  <h2 id="derivatives">Derivative-related outflows</h2>
+  <p class="lede">Net payments on financial derivatives were {usd(-cv.derivatives)} over the current episode{past.find((e) => e.id === "2022") && <>, against {usd(-past.find((e) => e.id === "2022").values.derivatives)} in 2022</>}. Gross payments to non-residents rose from {usd(firstDeriv?.derivatives_payments)} in {period(firstDeriv?.period, "Q")} to {usd(lastDeriv?.derivatives_payments)} in {period(lastDeriv?.period, "Q")}, while receipts rose from {usd(firstDeriv?.derivatives_receipts)} to {usd(lastDeriv?.derivatives_receipts)}. Banking capital shows no comparable trend.</p>
+  <div class="grid2">
+    <Figure title="Banking capital and financial derivatives" subtitle="US$ billion per quarter, net (+ = inflow); shaded: stress episodes" spec={fig2}
+      source="RBI, quarterly BoP (BPM5 for banking capital, BPM6 for derivatives, which start in Apr-Jun 2013); site calculation, after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Figure 2." />
+    <Figure title="Financial derivatives: gross flows" subtitle="US$ billion per quarter" spec={gross}
+      source="RBI, quarterly BoP (BPM6 item 3.3, credit and debit)." />
+  </div>
+  <h3 id="derivatives-accounting">Which derivative flows land in this line</h3>
+  <p class="prose">Under the IMF's sixth Balance of Payments Manual (BPM6), only some of the money that moves on a derivative contract between a resident and a non-resident is recorded as "financial derivatives". A rising net outflow in this line therefore points to option premiums, non-repayable margins or final settlements, not to repayable margins or brokers' fees.</p>
+  <div class="scroll">
+    <table class="data meta deriv">
+      <thead><tr><th>Flow</th><th>Where BPM6 records it</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Premium on options</td><td>Financial derivatives</td><td>The premium is the price of the option: the buyer acquires a financial asset and the writer incurs a liability. The service charge in it usually cannot be separated, so the whole premium is a derivative transaction.</td></tr>
+        <tr><td>Initial margin, non-repayable</td><td>Financial derivatives</td><td>The payer has no claim to get it back, so it is part of the contract itself.</td></tr>
+        <tr><td>Variation margin, non-repayable</td><td>Financial derivatives</td><td>It settles changes in the contract's value as they happen (daily marking to market): a partial settlement.</td></tr>
+        <tr><td>Cash settlement of options or futures</td><td>Financial derivatives</td><td>Settlement extinguishes the derivative asset or liability. Derivatives earn no property income, so gains and losses are not investment income in the current account.</td></tr>
+        <tr><td>Initial margin, repayable</td><td>Financial account: other investment (currency and deposits, or other accounts receivable/payable)</td><td>The payer keeps a claim to get it back, so it is a deposit-like asset, not a derivative transaction.</td></tr>
+        <tr><td>Variation margin, repayable</td><td>Financial account: other investment (currency and deposits)</td><td>The payer keeps a claim to get it back.</td></tr>
+        <tr><td>Fees and commissions to non-resident brokers or dealers</td><td>Current account: services (financial services)</td><td>Explicit fees pay for a service and are not part of the value of the derivative.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">Table after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 4. Source: IMF, Balance of Payments and International Investment Position Manual, sixth edition (BPM6), chapters on financial derivatives and margins. RBI reports derivative flows as one line, so the published data cannot say which of these flows has grown.</p>
+
+  <h2 id="monitor">Latest quarters</h2>
+  <div class="scroll">
+    <table class="data">
+      <thead><tr><th>Quarter</th><th>Current account</th><th>Capital and financial accounts</th><th>of which bank capital</th><th>Reserves drawn down</th><th>RBI net dollar sales</th><th>Rupee per $ (avg.)</th><th>Rupee change</th><th>Weaker rupee and net sales?</th></tr></thead>
+      <tbody>
+        {monitor.map((r) => (
+          <tr><td>{period(r.period, "Q")}<br /><span class="chart-sub">{qFrom(r.period)} – {qTo(r.period)}</span></td>
+            <td>{num(r.current_account, 1)}</td><td>{num(r.kfa, 1)}</td><td>{num(r.bank_capital, 1)}</td><td>{num(r.reserves_drawn, 1)}</td>
+            <td>{num(r.fx_net_sales, 1)}</td><td>{num(r.usdinr_avg, 2)}</td><td>{r.rupee_change === null ? "–" : `${num(r.rupee_change, 1)}%`}</td><td>{yes(r.stressed)}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="chart-sub">US$ billion unless stated; + = net inflow, and + for reserves = a fall. RBI net dollar sales = sales minus purchases in the OTC market over the quarter's three months (spot and forward deliveries; RBI Bulletin Table 4); these differ from the BoP change in reserves, which also reflects interest earned, government transactions and timing. Rupee change: quarterly average rate on the previous quarter; + = a weaker rupee. "Weaker rupee and net sales?" is the rule used to extend an open episode. RBI's dollar dealing is published to {qFrom(a.as_of.fx)}.</p>
+
+  <h2 id="method">How this is built</h2>
+  <div class="prose">
+    <p><b>Data.</b> RBI's quarterly balance of payments in its two standard presentations: BPM6 (Statement I) for the current account, direct investment in India and abroad, portfolio, derivatives, other investment, reserves and errors; and RBI's older BPM5 presentation (Statement II) for banking capital, which BPM6 spreads across other lines. History comes from successive editions of RBI's Handbook of Statistics on the Indian Economy, and the latest five quarters from the statements attached to each quarterly BoP release. RBI's dollar sales and purchases come from the Handbook and RBI Bulletin Table 4, and the rupee's monthly average from the Handbook, extended with FBIL's daily reference rate. All values are US$ billion, net, in calendar quarters.</p>
+    <p><b>Credit.</b> The question, the episodes and the decomposition follow Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026. We rebuild it from RBI's public data only (the note took derivative flows from CEIC; we use RBI's own BPM6 statements, which give the same figures) and keep it up to date; any errors in this version are ours.</p>
+    <p><b>Episodes</b> are runs of quarters in which the rupee weakened against the dollar (quarterly average) while RBI sold more dollars than it bought, from the first quarter of sustained depreciation to the last before the rupee stabilised. A brief pause can sit inside an episode. The four episodes, with their exact quarters, are listed in <code>registry/analysis/bop_stress_episodes.yaml</code>. When RBI publishes a new quarter, every number on this page is recomputed, and the current episode is extended if the new quarter meets the rule.</p>
+    <p><b>Checks.</b> In every quarter, the current account + capital account + financial account + errors and omissions add up to zero (BPM6), as do the current account + capital account + errors + monetary movements (BPM5). A file that fails is not used.</p>
+    <p><b>Limits.</b> BPM6 detail starts in Apr-Jun 2013, so earlier episodes can be compared on BPM5 totals only. The latest quarter is preliminary and RBI revises it in the next release; this page always uses the latest figures. RBI publishes derivative flows as one line, so the drivers of the rise (option premiums, margins, settlements) cannot be separated with public data.</p>
+    <p><b>Series used</b> (each links to its data page): {a.inputs.map((id, i) => <><a href={`/data/${id}/`}>{id}</a>{i < a.inputs.length - 1 ? ", " : "."}</>)}</p>
+    <p>See also: <a href="/analysis/fx-intervention/">where RBI's dollar sales show up in the BoP</a>, and the <a href="/external/#bop">balance of payments on the External page</a>.</p>
+  </div>
+
+  <script id="bop-data" type="application/json" set:html={JSON.stringify({ quarters, table3: a.table3, episodes: eps.map((e) => ({ short: e.short, values: e.values, quarters: e.quarters })) })}></script>
+  </>
+  )}
+</Base>
+
+<style>
+  #table3 tr.total td { border-top: 1px solid currentColor; }
+  #table3 tr.memo td { color: var(--muted); }
+  td.indent { padding-left: 22px !important; }
+  table.deriv td { white-space: normal !important; }
+  table.deriv td:first-child { width: 22%; }
+  table.deriv td:nth-child(2) { width: 30%; }
+  table.deriv th { text-align: left !important; }
+  .rule-controls { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 12px 0; }
+  .rule-controls label { display: flex; flex-direction: column; font-size: 13px; gap: 4px; font-family: "Inter", system-ui, sans-serif; }
+  .rule-controls select { padding: 4px 6px; font: inherit; }
+</style>
+
+<script>
+  const el = document.getElementById("bop-data");
+  if (el) {
+    const data = JSON.parse(el.textContent);
+    const MINUS = "−";
+    const fmt = (v, d = 1) => (v === null || v === undefined || Number.isNaN(v) ? "–" : (v < 0 ? MINUS : "") + Math.abs(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d }));
+    // Totals / per-quarter toggle for Table 3.
+    document.getElementById("per-quarter")?.addEventListener("change", (ev) => {
+      const key = ev.target.checked ? "avg" : "total";
+      document.querySelectorAll("#table3 td[data-total]").forEach((td) => {
+        const b = td.querySelector("b");
+        (b ?? td).textContent = td.dataset[key];
+      });
+    });
+    // Custom episode: the same sums as pipelines/build/bop_stress.py, in the browser.
+    const byPeriod = Object.fromEntries(data.quarters.map((r, i) => [r.period, i]));
+    const sum = (rows, k) => (rows.some((r) => r[k] === null || r[k] === undefined) ? null : rows.reduce((s, r) => s + r[k], 0));
+    function draw() {
+      let i = byPeriod[document.getElementById("ep-start").value], j = byPeriod[document.getElementById("ep-end").value];
+      if (j < i) [i, j] = [j, i];
+      const rows = data.quarters.slice(i, j + 1);
+      const before = data.quarters[i - 1];
+      const fall = before?.usdinr_avg && rows.at(-1).usdinr_avg ? 100 * (rows.at(-1).usdinr_avg / before.usdinr_avg - 1) : null;
+      const val = (k) => (k === "rupee_fall" ? fall : sum(rows, k));
+      const head = `<thead><tr><th>Component</th><th>Your episode (${rows.length})</th>${data.episodes.map((e) => `<th>${e.short} (${e.quarters})</th>`).join("")}</tr></thead>`;
+      const body = data.table3.map((t) => {
+        const mine = val(t.key);
+        const show = (v) => (t.key === "rupee_fall" ? (v === null ? "–" : `${fmt(v, 0)}%`) : fmt(v, 1));
+        const lab = t.kind === "total" ? `<b>${t.label}</b>` : t.label;
+        return `<tr><td${t.kind === "sub" ? ' class="indent"' : ""}>${lab}</td><td><b>${show(mine)}</b></td>${data.episodes.map((e) => `<td>${show(e.values[t.key])}</td>`).join("")}</tr>`;
+      });
+      const extra = [["bank_capital", "Banking capital (BPM5)"], ["fx_net_sales", "RBI net dollar sales"]].map(([k, l]) =>
+        `<tr><td>${l}</td><td><b>${fmt(sum(rows, k), 1)}</b></td>${data.episodes.map((e) => `<td>${fmt(e.values[k], 1)}</td>`).join("")}</tr>`);
+      document.getElementById("custom-table").innerHTML = head + "<tbody>" + body.join("") + extra.join("") + "</tbody>";
+      const missing = rows.some((r) => r.current_account === null);
+      document.getElementById("custom-note").textContent = missing
+        ? "Some of these quarters are before BPM6 detail starts, so those rows show –; banking capital and RBI's dollar sales are available from 2000."
+        : "US$ billion, totals; + = net inflow. Computed in your browser from the same quarterly data as the table above.";
+    }
+    ["ep-start", "ep-end"].forEach((id) => document.getElementById(id)?.addEventListener("change", draw));
+    draw();
+  }
+</script>

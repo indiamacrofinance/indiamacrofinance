@@ -1,0 +1,45 @@
+id: bop_bpm5_errors_omissions
+title: Errors and omissions, quarterly (RBI's BPM5 presentation)
+short_title: Errors and omissions (BPM5)
+area: external
+source:
+  agency: RBI
+  dataset: 'Balance of payments, quarterly: Handbook of Statistics (Tables ''Standard Presentation of
+    India''s BoP as per BPM6 - Quarterly'' and ''India''s Overall BoP - Quarterly'') and the Statements
+    I and II attached to each quarterly BoP release'
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/bop_quarterly.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: Q
+unit: usd_bn
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: rbi
+  rule: quarterly BoP release, about 80-90 days after the quarter (Statements I and II); history from
+    the annual Handbook
+  lag_days: 100
+validation:
+  range:
+  - -15
+  - 15
+  revision_alert: 25
+pages:
+- page: analysis
+  section: banks
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://rbidocs.rbi.org.in/rdocs/content/docs/BOPS01092026_2.xlsx
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: Apr-Jun 2025 read against Statement II of the 1 Sep 2026 release; Apr-Jun 2022 against Handbook
+    2025-26 Table 195; 2000-01:Q1 against Handbook 2012-13 Table 200. Every quarter 2000-2026 passes the
+    BPM5 identity (CA + capital account + errors + monetary movements = 0).
+notes: US$ billion, quarter = calendar quarter (2026-04-01 = April-June 2026). Item C, net. From Apr-Jun
+  2000.
