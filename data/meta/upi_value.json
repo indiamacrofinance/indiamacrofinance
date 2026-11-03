@@ -17,7 +17,7 @@
   "last_period": "2026-09-01",
   "last_value": 29.374,
   "observations": 24,
-  "updated_at": "2026-11-03T13:05:44+00:00",
+  "updated_at": "2026-11-03T20:03:58+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/PSI/DOCs/PSI0820267825F5CFF9B845FEA55D957BE4EFC323.XLSX",
     "https://rbidocs.rbi.org.in/rdocs/PSI/DOCs/PSI0920261A41E53EAAEF41EDA7FCB4049F0055DF.XLSX",
@@ -33,17 +33,17 @@
     "https://rbidocs.rbi.org.in/rdocs/PSI/DOCs/PSIOCTOBER20255937C762A8E04D62AB943A69170959ED.XLSX"
   ],
   "raw_files": [
-    "data/raw/rbi_payments/20261103T130426-95df8e48ee.xlsx",
-    "data/raw/rbi_payments/20261103T130430-9c180e48af.xlsx",
-    "data/raw/rbi_payments/20261103T130433-29a07f8f33.xlsx",
-    "data/raw/rbi_payments/20261103T130436-a118b38d93.xlsx",
-    "data/raw/rbi_payments/20261103T130440-706a7f275c.xlsx",
-    "data/raw/rbi_payments/20261103T130444-2d6cd43df4.xlsx",
-    "data/raw/rbi_payments/20261103T130447-196af11a2f.xlsx",
-    "data/raw/rbi_payments/20261103T130451-f93643928d.xlsx",
-    "data/raw/rbi_payments/20261103T130454-b9d09759a4.xlsx",
-    "data/raw/rbi_payments/20261103T130458-f206d6e994.xlsx",
-    "data/raw/rbi_payments/20261103T130501-4cf01c30d1.xlsx",
-    "data/raw/rbi_payments/20261103T130508-a19ff437b5.xlsx"
+    "data/raw/rbi_payments/20261103T200234-95df8e48ee.xlsx",
+    "data/raw/rbi_payments/20261103T200238-9c180e48af.xlsx",
+    "data/raw/rbi_payments/20261103T200241-29a07f8f33.xlsx",
+    "data/raw/rbi_payments/20261103T200244-a118b38d93.xlsx",
+    "data/raw/rbi_payments/20261103T200247-706a7f275c.xlsx",
+    "data/raw/rbi_payments/20261103T200251-2d6cd43df4.xlsx",
+    "data/raw/rbi_payments/20261103T200254-196af11a2f.xlsx",
+    "data/raw/rbi_payments/20261103T200258-f93643928d.xlsx",
+    "data/raw/rbi_payments/20261103T200301-b9d09759a4.xlsx",
+    "data/raw/rbi_payments/20261103T200305-f206d6e994.xlsx",
+    "data/raw/rbi_payments/20261103T200308-4cf01c30d1.xlsx",
+    "data/raw/rbi_payments/20261103T200311-a19ff437b5.xlsx"
   ]
 }
