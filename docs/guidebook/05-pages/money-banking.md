@@ -3,6 +3,7 @@
 **Purpose:** What is the RBI's policy stance, how tight is liquidity, and how fast are credit and deposits growing?
 
 ## Must include
+- [x] Real policy rate: repo rate at month end minus CPI inflation (`real_repo_rate`, `derived/real_rate.py`, from Sep 2022), with the repo rate and CPI alongside (`#real-rate`)
 - [x] Policy corridor chart: repo, SDF, MSF, with WACR overlaid (weekly from WSS; daily snapshots since 28 Oct 2026)
 - [x] Table of MPC decisions: date, decision, vote split, stance wording (from the resolution in the minutes; `mpc_repo_decision`, built into `mpc_decisions.json`). Size splits ("1 member voted for 25 bp") are shown where the minutes record them
 - [x] Next MPC date and countdown (from `registry/calendar/rbi.yaml`; the countdown is fixed at build time)
@@ -26,4 +27,3 @@ repo_rate, sdf_rate, msf_rate, wacr, liquidity_surplus, mpc_repo_decision, crr, 
 - [x] Credit-deposit gap; contributions to credit growth by sector, firm size, services and personal-loan type (2026-11-01)
 - [x] RBI's outlook: MPR assumptions, projections and risk scenarios (registry/mpr/, hand-entered twice a year)
 - [ ] Liquidity drivers (MPR Table II.1). Deferred 2026-11-01: the largest driver, RBI's net forex purchases, is published monthly in the Bulletin with a two-month lag; weekly RBI forex assets include revaluation, so they cannot stand in. A table without it would mislead.
-

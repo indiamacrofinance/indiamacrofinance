@@ -7,6 +7,7 @@ import PeriodTable from "../components/PeriodTable.astro";
 import { series, latest } from "../lib/data.js";
 import { num, period } from "../lib/format.js";
 const fx = latest(series("fx_reserves_total"));
+const cover = latest(series("import_cover_months"));
 const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change.json", "utf8"));
 ---
 <Base current="external" title="External">
@@ -28,6 +29,15 @@ const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change
     <LineChart title="USD/INR reference rate" subtitle="Rupees per US dollar (a higher rate is a weaker rupee)" lines={[{ id: "usdinr_ref" }]} years={1} />
   </div>
   <p class="chart-sub">RBI Weekly Statistical Supplement. Changes in reserves reflect RBI's market operations and valuation changes in currencies and gold, which the weekly data do not separate, so a fall is not the same as RBI selling dollars.</p>
+
+  <h2 id="import-cover">Import cover</h2>
+  <div class="grid2">
+    <LineChart title="How many months of imports the reserves would pay for" subtitle="Months, at end-March (RBI)"
+      lines={[{ id: "reserves_import_cover", label: "Import cover (RBI)" }]} years={40} />
+    <LineChart title="Import cover, month by month" subtitle="Months: reserves at month end ÷ average monthly goods imports, last 12 months"
+      lines={[{ id: "import_cover_months", label: "Import cover" }]} years={2} />
+  </div>
+  <p class="chart-sub">In {period(cover.period, "M")} reserves covered {num(cover.value, 1)} months of goods imports. The usual rule of thumb is at least three months. Before the 1991 balance-of-payments crisis cover was 1.9 months (end-March 1990) and 2.5 (end-March 1991). Left: RBI's own measure, from the Handbook of Statistics (balance-of-payments imports). Right: a site calculation from RBI's weekly reserves and the Commerce Department's monthly merchandise imports, so it differs a little from RBI's.</p>
 
   <h2 id="merchandise">Merchandise trade</h2>
   <div class="grid2">

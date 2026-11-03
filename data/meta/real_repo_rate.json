@@ -1,0 +1,25 @@
+{
+  "id": "real_repo_rate",
+  "title": "Real policy rate: repo rate minus CPI inflation (site calculation)",
+  "short_title": "Real repo rate",
+  "unit": "percent",
+  "frequency": "M",
+  "base_year": null,
+  "source": {
+    "agency": "RBI; MoSPI; site calculation",
+    "dataset": "Policy repo rate and CPI inflation",
+    "url": "https://www.rbi.org.in/",
+    "module": "pipelines/sources/derived/real_rate.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2022-09-01",
+  "last_period": "2026-09-01",
+  "last_value": -0.29,
+  "observations": 49,
+  "updated_at": "2026-11-03T12:20:57+00:00",
+  "fetched_from": [
+    "derived: derived_real_rate"
+  ],
+  "raw_files": []
+}

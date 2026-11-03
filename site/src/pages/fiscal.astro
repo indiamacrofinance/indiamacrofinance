@@ -10,6 +10,14 @@ const gst = latest(series("gst_gross_collections"));
 import fs from "node:fs";
 const budget = JSON.parse(fs.readFileSync("src/data/generated/budget.json", "utf8"));
 const record = budget.record ?? {};
+// Twin deficits: both shown as deficits (positive = deficit), so the current account is flipped.
+const pts = (id, sign = 1) => series(id).data.map((d) => [d[0], Math.round(sign * d[1] * 100) / 100]);
+const twin = { years: 40, reference: { target: 0 }, series: [
+  { label: "Centre's fiscal deficit", curve: "linear", points: pts("centre_gfd_pct_gdp") },
+  { label: "Current account deficit", curve: "linear", points: pts("cab_pct_gdp_fy", -1) },
+] };
+const fdAt = (y) => series("centre_gfd_pct_gdp").data.find((d) => d[0] === `${y}-04-01`)?.[1];
+const cadAt = (y) => -series("cab_pct_gdp_fy").data.find((d) => d[0] === `${y}-04-01`)?.[1];
 const fdRec = record["Fiscal deficit, % of GDP"] ?? [];
 const fdChart = { years: 12, series: [["be", "Budget Estimate"], ["re", "Revised Estimate"], ["actual", "Actual"]].map(([k, label]) => (
   { label, curve: "linear", points: fdRec.filter((r) => r[k] !== null).map((r) => [r.period, r[k]]) })) };
@@ -120,5 +128,14 @@ const vsPeriod = vsBE[0].pct.period;
       lines={[{ id: "gg_debt_pct_gdp", label: "Centre and states combined" }, { id: "centre_debt_pct_gdp", label: "Centre" }, { id: "states_debt_pct_gdp", label: "States" }]} years={41} />
   </div>
   <p class="chart-sub">RBI's Handbook of Statistics on the Indian Economy (tables 239 and 240). The latest two years are Revised and Budget Estimates. Combined debt nets out what one level of government owes the other, so it is less than the Centre's and the states' debt added together. Each state's finances are on the <a href="/states/#finances">States</a> page.</p>
+
+  <h2 id="twin-deficits">Twin deficits</h2>
+  <figure class="chart">
+    <p class="chart-title">The Centre's fiscal deficit and the current account deficit</p>
+    <p class="chart-sub">% of GDP, financial year (1990 = 1990-91); both drawn as deficits, so below zero is a current account surplus</p>
+    <div class="plot" data-chart={JSON.stringify(twin)}></div>
+    <figcaption><span>Source: RBI, Handbook of Statistics on the Indian Economy (Tables 237 and 241).</span></figcaption>
+  </figure>
+  <p class="chart-sub">When the government borrows heavily and the country as a whole spends more than it earns abroad, the gap is financed by foreign capital, which can leave. Both deficits were large before the 1991 balance-of-payments crisis (1990-91: fiscal {num(fdAt(1990), 1)}%, current account {num(cadAt(1990), 1)}%) and again before the 2013 "taper tantrum" (2012-13: {num(fdAt(2012), 1)}% and {num(cadAt(2012), 1)}%). In 2020-21 they moved apart: the fiscal deficit jumped to {num(fdAt(2020), 1)}% while the current account was in surplus. The latest fiscal years are Revised and Budget Estimates; RBI computes both ratios against GDP on the base then current.</p>
 
 </Base>

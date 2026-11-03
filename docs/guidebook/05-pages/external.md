@@ -15,6 +15,7 @@
 
 - [x] ECB drawdowns, repayments and net flow, quarterly from 2000 (`bop_bpm5_ecb_drawdowns`, `bop_bpm5_ecb_repayments`, `bop_bpm5_commercial_borrowings`: the BPM5 "Commercial borrowings (MT&LT)" line in `rbi/bop_quarterly.py`). Jan-Mar 2025 gross flows are as RBI last printed them, about three times normal (see the series notes)
 - [x] NRI deposits, net quarterly flow from 2000 (`bop_bpm5_nri_deposits`)
+- [x] Import cover of reserves: RBI's annual measure from 1987-88 (`reserves_import_cover`, Handbook Table 241) and a monthly site calculation (`import_cover_months`: month-end reserves ÷ average monthly goods imports, last 12 months; `derived/import_cover.py`)
 - [x] Pointer from the BoP section to the Analysis pages on stress episodes and forex intervention (`analysis.md`); their full-history BoP series (`bop_bpm6_*`, `bop_bpm5_*`) live there
 
 ## Must NOT include

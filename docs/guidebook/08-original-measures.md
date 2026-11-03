@@ -81,6 +81,10 @@ Every measure we construct, rather than copy from an agency, is listed here and 
 - **Replication check:** the method follows Agarwal, Kulkarni and Udupa (CAFRAL), "Forex Interventions and Balance of Payments" (June 2026), which is not public (decision 0006). The comparison with it (every episode figure reproduced to the printed rounding; the regression sample differs slightly) is recorded in `private/reference/README.md`, which is kept locally and not committed. Ask the maintainer for it.
 - **Limits:** BPM6 detail starts in Apr-Jun 2013 (earlier episodes: BPM5 totals only). The latest quarter is preliminary. Correlations within a quarter are not causal effects (RBI sells because capital leaves). Derivative flows are one line in RBI's data, so premiums, margins and settlements cannot be separated. RBI's dollar sales (value dates, spot and forward deliveries) differ from the BoP change in reserves (interest earned, government transactions, timing).
 
+### Import cover (monthly) and the real policy rate
+- **Import cover:** `import_cover_months` (`pipelines/sources/derived/import_cover.py`) = foreign exchange reserves at the end of the month (last weekly figure, RBI WSS) ÷ average monthly merchandise imports over the 12 months to that month (Department of Commerce, US$). A gap in imports blocks the average rather than shortening it. RBI's own annual measure (`reserves_import_cover`, Handbook Table 241, end-March, balance-of-payments imports) is shown beside it; Sep 2026 10.8 months vs RBI's 10.6 for end-March 2026.
+- **Real policy rate:** `real_repo_rate` (`pipelines/sources/derived/real_rate.py`) = repo rate in force at the end of the month − CPI inflation (y/y, as published) for that month. Ex post. Starts Sep 2022 (stored repo history). Check: Sep 2026 = 5.25 − 5.54 = −0.29.
+
 ## Planned
 
 ### Linked series across base years (Phase 2)

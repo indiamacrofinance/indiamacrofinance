@@ -1,0 +1,37 @@
+id: import_cover_months
+title: Import cover of foreign exchange reserves, monthly (site calculation)
+short_title: Import cover
+area: external
+source:
+  agency: RBI; Department of Commerce; site calculation
+  dataset: Foreign exchange reserves (WSS) and merchandise imports
+  url: https://www.rbi.org.in/Scripts/BS_viewWss.aspx
+  module: pipelines/sources/derived/import_cover.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: M
+unit: months
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: monthly, once both reserves and the month's imports are out
+  lag_days: 25
+validation:
+  range:
+  - 1
+  - 25
+  revision_alert: 1
+pages:
+- page: external
+  section: import-cover
+original: true
+discontinued: null
+owner: ''
+verified_against: []
+notes: 'Months. Site calculation: reserves at the end of the month (last weekly figure, RBI WSS) divided by average
+  monthly merchandise imports over the last 12 months (Department of Commerce). RBI''s annual measure (reserves_import_cover)
+  uses balance-of-payments imports.'

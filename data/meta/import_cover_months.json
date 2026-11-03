@@ -1,0 +1,25 @@
+{
+  "id": "import_cover_months",
+  "title": "Import cover of foreign exchange reserves, monthly (site calculation)",
+  "short_title": "Import cover",
+  "unit": "months",
+  "frequency": "M",
+  "base_year": null,
+  "source": {
+    "agency": "RBI; Department of Commerce; site calculation",
+    "dataset": "Foreign exchange reserves (WSS) and merchandise imports",
+    "url": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+    "module": "pipelines/sources/derived/import_cover.py"
+  },
+  "licence": "unverified",
+  "downloadable": false,
+  "first_period": "2025-05-01",
+  "last_period": "2026-09-01",
+  "last_value": 10.8,
+  "observations": 17,
+  "updated_at": "2026-11-03T12:26:05+00:00",
+  "fetched_from": [
+    "derived: derived_import_cover"
+  ],
+  "raw_files": []
+}

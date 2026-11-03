@@ -455,6 +455,33 @@ def budget_table() -> dict:
     return {"year": fy(year), "columns": [c[2] for c in cols], "rows": rows, "record": record}
 
 
+def what_changed(specs: dict, days: int = 30) -> dict:
+    """What changed, day by day: for each of the last `days` days on which data were stored,
+    every series and panel with values that first appeared that day (new periods, or a whole
+    history when the series was added) or were revised that day. Read from the `vintage` each
+    stored value carries (the date it first appeared or last changed) and data/revisions."""
+    by_day: dict[str, list[dict]] = {}
+    for sid, spec in specs.items():
+        panel = spec.get("panel")
+        df = store.load_panel(sid) if panel else store.load_series(sid)
+        if df.empty:
+            continue
+        rev_path = store.REVISIONS / f"{sid}.csv"
+        revised = pd.read_csv(rev_path, dtype=str)["new_vintage"].value_counts().to_dict() if rev_path.exists() else {}
+        first_day = df["vintage"].min()
+        last = df.sort_values("period").iloc[-1]
+        for day, rows in df.groupby("vintage"):
+            n_rev = min(int(revised.get(day, 0)), len(rows))
+            by_day.setdefault(day, []).append({
+                "id": sid, "title": spec["short_title"], "area": spec["area"], "frequency": spec["frequency"],
+                "panel": bool(panel), "added": day == first_day, "new": len(rows) - n_rev, "revised": n_rev,
+                "to": rows["period"].max(), "latest_period": last["period"],
+                "latest_value": None if panel else float(last["value"]), "unit": spec["unit"],
+            })
+    recent = sorted(by_day, reverse=True)[:days]
+    return {"days": [{"date": d, "series": sorted(by_day[d], key=lambda r: (r["area"], r["title"]))} for d in recent]}
+
+
 def yield_curve() -> dict:
     """FBIL par yield curve on the latest date, about a month earlier, and the last date of
     the previous financial year (31 March or the last business day before it)."""
@@ -842,6 +869,7 @@ def main() -> int:
     write_json(OUT / "calendar.json", cal)
     write_json(OUT / "mpc_decisions.json", mpc_decisions(cal))
     write_json(OUT / "budget.json", budget_table())
+    write_json(OUT / "changes.json", what_changed(specs))
     write_json(OUT / "budget_demands.json", budget_demands())
     write_json(OUT / "yield_curve.json", yield_curve())
     write_json(OUT / "cpi_momentum_base.json", cpi_momentum_base())

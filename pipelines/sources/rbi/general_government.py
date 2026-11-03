@@ -1,5 +1,5 @@
-"""Centre and states combined: deficits and debt as % of GDP, from RBI's Handbook of
-Statistics on the Indian Economy (annual).
+"""Government deficits and debt, and balance-of-payments ratios, as % of GDP, from RBI's
+Handbook of Statistics on the Indian Economy (annual).
 
 The Handbook page (AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy)
 lists "Table N : <title>" with XLSX links whose names change each edition; tables are found
@@ -7,13 +7,19 @@ by number:
   239 Combined deficits of the Central and State Governments (% of GDP): Gross Fiscal
       Deficit, Gross Primary Deficit, Revenue Deficit, from 1988-89
   240 Select debt indicators (% of GDP, end-March): Centre, States, combined total liabilities
-Columns are found by their header text. A footnote ("Data for 2024-25 are Revised Estimates
+  237 Select fiscal indicators of the Central Government (% of GDP): gross fiscal deficit,
+      from 1984-85
+  241 Balance of payments indicators: current account balance / GDP ("CAD / GDP", negative =
+      deficit) and import cover of reserves (months), from 1987-88
+Columns are found by their header text, in either of the two header rows (241 has a top row
+"Trade | Invisibles | Current Account | ..." over "Exports / GDP | ... | CAD / GDP"). A footnote ("Data for 2024-25 are Revised Estimates
 and data for 2025-26 are Budget Estimates") gives the stage of recent years, kept in the note.
 Combined liabilities net out intergovernmental holdings, so they are not Centre + States.
 
 Series (period = 1 April of the financial year; debt is at end-March of that year):
 gg_gfd_pct_gdp, gg_primary_deficit_pct_gdp, gg_revenue_deficit_pct_gdp,
-gg_debt_pct_gdp, centre_debt_pct_gdp, states_debt_pct_gdp.
+gg_debt_pct_gdp, centre_debt_pct_gdp, states_debt_pct_gdp, centre_gfd_pct_gdp,
+cab_pct_gdp_fy, reserves_import_cover.
 """
 from __future__ import annotations
 
@@ -32,6 +38,8 @@ COLUMNS = {
           "Revenue Deficit": "gg_revenue_deficit_pct_gdp"},
     240: {"Combined Total Liabilities": "gg_debt_pct_gdp", "Total Liabilities of the Centre": "centre_debt_pct_gdp",
           "Total Liabilities of the States": "states_debt_pct_gdp"},
+    237: {"Gross Fiscal Deficit": "centre_gfd_pct_gdp"},
+    241: {"CAD / GDP": "cab_pct_gdp_fy", "Import Cover": "reserves_import_cover"},
 }
 FY = re.compile(r"^(\d{4})-\d{2}$")
 
@@ -54,18 +62,20 @@ def stages(df: pd.DataFrame) -> dict[str, str]:
 
 
 def parse_table(content: bytes, n: int) -> list[dict]:
-    df = pd.read_excel(io.BytesIO(content), sheet_name=0, header=None)
+    book = pd.read_excel(io.BytesIO(content), sheet_name=None, header=None)
+    df = next(iter(book.values()))
+    notes = pd.concat(list(book.values()), ignore_index=True)   # 237's footnotes are on its second sheet
     head = next(i for i in range(10) if df.loc[i].astype(str).str.contains("Year").any())
     cols = {}
     for c in df.columns:
-        label = re.sub(r"\s+", " ", str(df.loc[head, c]))
-        sid = next((s for k, s in COLUMNS[n].items() if label.startswith(k)), None)
-        if sid:
+        labels = [re.sub(r"\s+", " ", str(df.loc[r, c])).strip() for r in (head, head + 1)]
+        sid = next((s for k, s in COLUMNS[n].items() if any(lb.startswith(k) for lb in labels)), None)
+        if sid and sid not in cols.values():
             cols[c] = sid
     if set(cols.values()) != set(COLUMNS[n].values()):
         raise ValueError(f"Handbook table {n}: columns not found ({sorted(set(COLUMNS[n].values()) - set(cols.values()))})")
     year_col = next(c for c in df.columns if "Year" in str(df.loc[head, c]))
-    stage = stages(df)
+    stage = stages(notes)
     rows = []
     for i in range(head + 1, len(df)):
         y = FY.match(str(df.loc[i, year_col]).strip())

@@ -1,0 +1,69 @@
+---
+// What changed, day by day: every series with new or revised values on each day data were
+// stored (pipelines/build/site_data.py -> changes()). Rebuilt with every deploy.
+import Base from "../layouts/Base.astro";
+import { num, period } from "../lib/format.js";
+import fs from "node:fs";
+
+const ch = JSON.parse(fs.readFileSync("src/data/generated/changes.json", "utf8"));
+const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const longDate = (iso) => { const d = new Date(`${iso}T00:00:00Z`); return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; };
+const shortDate = (iso) => { const d = new Date(`${iso}T00:00:00Z`); return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()].slice(0, 3)}`; };
+const per = (iso, f) => period(iso, f === "W" || f === "F" ? "D" : f);
+const MINUS = "−";
+const money = (pre, d, post) => (v) => `${v < 0 ? MINUS : ""}${pre}${num(Math.abs(v), d)}${post}`;   // "−$4.2bn"
+const UNITS = {
+  percent: (v) => `${num(v, 2)}%`, percentage_points: (v) => `${num(v, 2)} pts`, usd_bn: money("$", 1, "bn"),
+  usd_mn: money("$", 0, "mn"), inr_lakh_crore: money("₹", 2, " lakh cr"), inr_crore: money("₹", 0, " cr"),
+  index: (v) => num(v, 1), months: (v) => `${num(v, 1)} months`, inr_per_usd: money("₹", 2, ""),
+};
+const value = (r) => (r.latest_value === null ? "" : (UNITS[r.unit] ?? ((v) => num(v, 2)))(r.latest_value));
+const what = (r) => {
+  if (r.added) return `added, with ${r.new + r.revised} values of history to ${per(r.to, r.frequency)}`;
+  const parts = [];
+  if (r.new) parts.push(`${r.new} new ${r.new === 1 ? "value" : "values"}${r.panel ? "" : ` (newest: ${per(r.to, r.frequency)})`}`);
+  if (r.revised) parts.push(`${r.revised} revised`);
+  return parts.join(", ");
+};
+const AREA = { growth: "Growth", inflation: "Inflation", jobs: "Jobs", activity: "Activity", money: "Money", markets: "Markets",
+  fiscal: "Fiscal", external: "External", states: "States" };
+const total = (d) => d.series.length;
+---
+<Base title="What changed">
+  <h1>What changed</h1>
+  <p class="lede">Every series that got new or revised numbers, day by day, for the last {ch.days.length} days on which data came in. Updated each time the site is rebuilt, which happens after every data bot run. For what is due next, see the <a href="/calendar/">release calendar</a>; for whether the machinery is running, the <a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/" target="_blank" rel="noopener">live status ↗</a>.</p>
+
+  <p class="day-pick" data-no-toc>{ch.days.map((d) => <a href={`#d-${d.date}`}>{shortDate(d.date)} <span>{total(d)}</span></a>)}</p>
+
+  {ch.days.map((d, i) => (
+    <details class="day" id={`d-${d.date}`} open={i === 0} data-no-toc>
+      <summary><h2>{longDate(d.date)} <span class="count">{total(d)} series</span></h2></summary>
+      <div class="scroll"><table class="data">
+        <thead><tr><th>Series</th><th>Area</th><th>What changed</th><th>Latest</th></tr></thead>
+        <tbody>{d.series.map((r) => (
+          <tr><td><a href={`/data/${r.id}/`}>{r.title}</a></td><td>{AREA[r.area] ?? r.area}</td><td>{what(r)}</td>
+            <td>{r.panel ? <span class="chart-sub">by entity</span> : <>{value(r)} <span class="chart-sub">{per(r.latest_period, r.frequency)}</span></>}</td></tr>
+        ))}</tbody>
+      </table></div>
+    </details>
+  ))}
+  <p class="chart-sub">A value counts as new on the day it first entered our data and as revised on the day a publisher changed it (the old value is kept in the series' revision log). "Added" means the series itself was new that day, so its whole history arrived at once. Dates are when our bots stored the data, which can be a day after the publisher released it.</p>
+</Base>
+<style>
+  .day-pick { display: flex; flex-wrap: wrap; gap: 6px; font: 0.8rem "Inter", system-ui, sans-serif; }
+  .day-pick a { border: 1px solid var(--rule); border-radius: 999px; padding: 2px 10px; text-decoration: none; white-space: nowrap; }
+  .day-pick a span { color: var(--muted); margin-left: 4px; }
+  details.day summary { cursor: pointer; list-style: none; }
+  details.day summary::-webkit-details-marker { display: none; }
+  details.day summary h2 { display: inline; }
+  details.day summary::before { content: "▸ "; color: var(--muted); }
+  details.day[open] summary::before { content: "▾ "; }
+  details.day { margin: 18px 0 6px; }
+  h2 .count { font: 0.8rem "Inter", system-ui, sans-serif; color: var(--muted); margin-left: 8px; }
+</style>
+<script>
+  // A day chip (or a link to /updates/#d-YYYY-MM-DD) opens that day.
+  const openDay = () => { const d = location.hash && document.getElementById(location.hash.slice(1)); if (d && d.tagName === "DETAILS") d.open = true; };
+  window.addEventListener("hashchange", openDay); openDay();
+</script>

@@ -1,0 +1,41 @@
+id: reserves_import_cover
+title: Import cover of foreign exchange reserves (RBI), months, end-March
+short_title: Import cover (RBI)
+area: external
+source:
+  agency: RBI
+  dataset: Handbook of Statistics on the Indian Economy, Table 241 (Balance of Payments Indicators)
+  url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  module: pipelines/sources/rbi/general_government.py
+licence: unverified
+downloadable: false
+fetch: auto
+frequency: A
+unit: months
+base_year: null
+seasonal_adjustment: none
+transforms:
+- level
+release:
+  calendar: none
+  rule: Handbook published each year (around August)
+  lag_days: 150
+validation:
+  range:
+  - 1
+  - 25
+  revision_alert: 1
+pages:
+- page: external
+  section: import-cover
+original: false
+discontinued: null
+owner: ''
+verified_against:
+- url: https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy
+  checked_on: '2026-11-03'
+  by: claude (build session)
+  result: 'Handbook 2025-26 Table 241 column ''Import Cover of Reserves'': 1990-91 2.51, 2020-21 17.38, 2025-26
+    10.59.'
+notes: 'Months of imports that reserves at end-March would pay for, as RBI computes it (balance-of-payments imports),
+  from 1987-88. Period = 1 April of the financial year ending that March. Monthly site estimate: import_cover_months.'
