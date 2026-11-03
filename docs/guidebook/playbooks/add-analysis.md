@@ -25,10 +25,11 @@ Worked example: the forex-intervention / BoP stress analysis (`05-pages/analysis
    written as templates over the JSON (no typed numbers), method and limits, links to every input
    series. Inline charts: `components/Figure.astro` with kinds `scatter` and `lines` (bands) in
    `scripts/charts.js`. Interactive tools compute in the browser from embedded JSON.
-7. **Wire it up:** add the piece to `site/src/pages/analysis/index.astro`, the Analysis menu in
+7. **Credit:** ask the maintainer how to credit the reference; put the credit at the top of each page and under each table or figure that follows it (decision 0006).
+8. **Wire it up:** add the piece to `site/src/pages/analysis/index.astro`, the Analysis menu in
    `site/src/lib/nav.js` (page and each `<h2 id>`), and a pointer from the related topic page.
-8. **Guidebook:** checklist in `05-pages/analysis.md` (+ `registry/pages/analysis.yaml`), method and
+9. **Guidebook:** checklist in `05-pages/analysis.md` (+ `registry/pages/analysis.yaml`), method and
    results in `08-original-measures.md`, sources in `03-data-sources.md`, release steps in
    `release-day.md` if new data change the conclusions.
-9. **Tests:** pin results that will not be revised (old periods), identities, and the helper
+10. **Tests:** pin results that will not be revised (old periods), identities, and the helper
    functions. `make check`, then `qa-site.md` (screenshots at 1280 and 375 px).

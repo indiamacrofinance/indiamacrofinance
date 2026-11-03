@@ -67,6 +67,8 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
   <>
   <p class="lede">When the rupee is under pressure, who pays for India's external gap: the current account, foreign capital, banks, or RBI's reserves? This page adds up RBI's balance-of-payments data over the current episode and three earlier ones (2013, 2018, 2022), item by item, and lets you build your own. Data to {period(a.as_of.bop, "Q")} ({qFrom(a.as_of.bop)} – {qTo(a.as_of.bop)}); it updates when RBI publishes the next quarter.</p>
 
+  <p class="cite">Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026, which compares these four episodes. This page rebuilds its analysis from RBI's public data and recomputes it with each release; the numbers shown are our own computation.</p>
+
   <div class="tiles">
     <div class="tile"><div class="k">Current account, {cur.quarters} quarters</div><div class="v">{usd(cv.current_account)}</div><div class="foot"><span class="p">{span(cur)}</span></div></div>
     <div class="tile"><div class="k">Capital and financial accounts</div><div class="v">{usd(cv.kfa)}</div><div class="foot"><span class="p">net {cv.kfa < 0 ? "outflow" : "inflow"}</span></div></div>
@@ -89,7 +91,7 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
       </tbody>
     </table>
   </div>
-  <p class="chart-sub">RBI's BPM6 presentation. Capital and financial accounts = capital account plus the financial account excluding reserve assets (the capital account is under $1 billion in every episode). FDI into India is item 3.1.A; ODI is direct investment abroad by Indian residents (item 3.1.B), negative when residents invest abroad; together they are net direct investment. Reserves drawn down = BoP reserve assets, which exclude valuation changes. Rupee fall = change in the quarterly average rupee-dollar rate from the quarter before the episode to its last quarter. In each episode, current account + capital and financial accounts − reserves drawn down + errors and omissions = 0. Episodes are runs of quarters in which the rupee weakened while RBI was a net seller of dollars (<a href="#method">how they are chosen</a>).</p>
+  <p class="chart-sub">Table after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 3; data: RBI's BPM6 presentation. Capital and financial accounts = capital account plus the financial account excluding reserve assets (the capital account is under $1 billion in every episode). FDI into India is item 3.1.A; ODI is direct investment abroad by Indian residents (item 3.1.B), negative when residents invest abroad; together they are net direct investment. Reserves drawn down = BoP reserve assets, which exclude valuation changes. Rupee fall = change in the quarterly average rupee-dollar rate from the quarter before the episode to its last quarter. In each episode, current account + capital and financial accounts − reserves drawn down + errors and omissions = 0. Episodes are runs of quarters in which the rupee weakened while RBI was a net seller of dollars (<a href="#method">how they are chosen</a>).</p>
 
   <h3>What sets the current episode apart</h3>
   <ul class="prose">
@@ -117,7 +119,7 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
       </tbody>
     </table>
   </div>
-  <p class="chart-sub">Totals over each episode; + = net inflow. Bank capital is banking capital in RBI's BPM5 presentation (commercial banks' foreign assets and liabilities, including non-resident deposits), a part of the capital and financial accounts. A fall in reserves is shown as + (it finances the other lines).</p>
+  <p class="chart-sub">After Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 2. Totals over each episode; + = net inflow. Bank capital is banking capital in RBI's BPM5 presentation (commercial banks' foreign assets and liabilities, including non-resident deposits), a part of the capital and financial accounts. A fall in reserves is shown as + (it finances the other lines).</p>
 
   <h2 id="custom">Build your own episode</h2>
   <p class="lede">Pick any run of quarters to add up the same items. BPM6 detail starts in {qFrom(a.as_of.bpm6_from)}; banking capital and RBI's dollar sales go back to 2000.</p>
@@ -132,7 +134,7 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
   <p class="lede">Net payments on financial derivatives were {usd(-cv.derivatives)} over the current episode{past.find((e) => e.id === "2022") && <>, against {usd(-past.find((e) => e.id === "2022").values.derivatives)} in 2022</>}. Gross payments to non-residents rose from {usd(firstDeriv?.derivatives_payments)} in {period(firstDeriv?.period, "Q")} to {usd(lastDeriv?.derivatives_payments)} in {period(lastDeriv?.period, "Q")}, while receipts rose from {usd(firstDeriv?.derivatives_receipts)} to {usd(lastDeriv?.derivatives_receipts)}. Banking capital shows no comparable trend.</p>
   <div class="grid2">
     <Figure title="Banking capital and financial derivatives" subtitle="US$ billion per quarter, net (+ = inflow); shaded: stress episodes" spec={fig2}
-      source="RBI, quarterly BoP (BPM5 for banking capital, BPM6 for derivatives, which start in Apr-Jun 2013); site calculation." />
+      source="RBI, quarterly BoP (BPM5 for banking capital, BPM6 for derivatives, which start in Apr-Jun 2013); site calculation, after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Figure 2." />
     <Figure title="Financial derivatives: gross flows" subtitle="US$ billion per quarter" spec={gross}
       source="RBI, quarterly BoP (BPM6 item 3.3, credit and debit)." />
   </div>
@@ -152,7 +154,7 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
       </tbody>
     </table>
   </div>
-  <p class="chart-sub">Source: IMF, Balance of Payments and International Investment Position Manual, sixth edition (BPM6), chapters on financial derivatives and margins. RBI reports derivative flows as one line, so the published data cannot say which of these flows has grown.</p>
+  <p class="chart-sub">Table after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 4. Source: IMF, Balance of Payments and International Investment Position Manual, sixth edition (BPM6), chapters on financial derivatives and margins. RBI reports derivative flows as one line, so the published data cannot say which of these flows has grown.</p>
 
   <h2 id="monitor">Latest quarters</h2>
   <div class="scroll">
@@ -172,6 +174,7 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
   <h2 id="method">How this is built</h2>
   <div class="prose">
     <p><b>Data.</b> RBI's quarterly balance of payments in its two standard presentations: BPM6 (Statement I) for the current account, direct investment in India and abroad, portfolio, derivatives, other investment, reserves and errors; and RBI's older BPM5 presentation (Statement II) for banking capital, which BPM6 spreads across other lines. History comes from successive editions of RBI's Handbook of Statistics on the Indian Economy, and the latest five quarters from the statements attached to each quarterly BoP release. RBI's dollar sales and purchases come from the Handbook and RBI Bulletin Table 4, and the rupee's monthly average from the Handbook, extended with FBIL's daily reference rate. All values are US$ billion, net, in calendar quarters.</p>
+    <p><b>Credit.</b> The question, the episodes and the decomposition follow Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026. We rebuild it from RBI's public data only (the note took derivative flows from CEIC; we use RBI's own BPM6 statements, which give the same figures) and keep it up to date; any errors in this version are ours.</p>
     <p><b>Episodes</b> are runs of quarters in which the rupee weakened against the dollar (quarterly average) while RBI sold more dollars than it bought, from the first quarter of sustained depreciation to the last before the rupee stabilised. A brief pause can sit inside an episode. The four episodes, with their exact quarters, are listed in <code>registry/analysis/bop_stress_episodes.yaml</code>. When RBI publishes a new quarter, every number on this page is recomputed, and the current episode is extended if the new quarter meets the rule.</p>
     <p><b>Checks.</b> In every quarter, the current account + capital account + financial account + errors and omissions add up to zero (BPM6), as do the current account + capital account + errors + monetary movements (BPM5). A file that fails is not used.</p>
     <p><b>Limits.</b> BPM6 detail starts in Apr-Jun 2013, so earlier episodes can be compared on BPM5 totals only. The latest quarter is preliminary and RBI revises it in the next release; this page always uses the latest figures. RBI publishes derivative flows as one line, so the drivers of the rise (option premiums, margins, settlements) cannot be separated with public data.</p>

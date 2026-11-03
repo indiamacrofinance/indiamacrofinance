@@ -7,7 +7,9 @@ released. Added 2026-11-03 at the maintainer's request. Pages live under `/analy
 
 ## Analysis 1: Forex intervention and the balance of payments
 
-Two pages built from one analysis (`pipelines/build/bop_stress.py` → `bop_stress.json`; method in
+Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and
+Balance of Payments", June 2026; credited at the top of each page and under each table and figure
+that follows it (Tables 1-4, Figures 1-3). Two pages built from one analysis (`pipelines/build/bop_stress.py` → `bop_stress.json`; method in
 `08-original-measures.md`, "BoP stress episodes and forex intervention"; episodes in
 `registry/analysis/bop_stress_episodes.yaml`).
 
@@ -29,7 +31,7 @@ Two pages built from one analysis (`pipelines/build/bop_stress.py` → `bop_stre
 - [x] **What public data cannot tell us** (`#limits`)
 
 ## Must NOT include
-- The text, name, authors or framing of any private reference material an analysis replicates (decision 0006). Pages describe what *our* computation of public data shows
+- Quotes from, links to, or the circulation of private reference material an analysis replicates (decision 0006). Credit the authors and institution instead, and say the numbers are our own computation of public data
 - Facts from outside our series and official releases presented as findings (AGENTS.md rule 5). Published estimates used as model *assumptions* are fine if cited and labelled as such (e.g. the starting slopes of the intervention model)
 - Forecasts of the rupee or of RBI's intervention
 - Typed numbers in prose: every number comes from the generated JSON

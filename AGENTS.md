@@ -44,7 +44,7 @@ See `docs/guidebook/00-start-here.md` → "Where we are". Phases: 0 foundations 
 | `docs/guidebook/` | **The guidebook.** Conventions, page checklists, runbook, playbooks |
 | `.claude/skills/`, `.claude/agents/` | Claude Code skills and subagents (wrap the playbooks) |
 | `.github/` | Workflows, issue templates, PR template |
-| `private/` | **Git-ignored.** Private reference material an analysis replicates (decision 0006). Never commit, quote or name it |
+| `private/` | **Git-ignored.** Private reference material an analysis replicates (decision 0006). Never commit or quote it; credit authors as the maintainer agrees |
 
 ## Common tasks → which playbook
 

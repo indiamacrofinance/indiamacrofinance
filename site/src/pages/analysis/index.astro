@@ -9,10 +9,10 @@ const a = JSON.parse(fs.readFileSync("src/data/generated/bop_stress.json", "utf8
 const bop = a.error ? null : period(a.as_of.bop, "Q");
 const pieces = [
   { href: "/analysis/bop-stress/", title: "Balance-of-payments stress: then and now",
-    text: "The current episode of rupee pressure against 2013, 2018 and 2022, item by item: current account, FDI and investment abroad, portfolio flows, derivatives, banks and reserves. With a tool to add up any run of quarters.",
+    text: "The current episode of rupee pressure against 2013, 2018 and 2022, item by item: current account, FDI and investment abroad, portfolio flows, derivatives, banks and reserves. With a tool to add up any run of quarters. Based on Agarwal, Kulkarni and Udupa (CAFRAL, 2026).",
     meta: bop ? `Quarterly; data to ${bop}` : "Quarterly" },
   { href: "/analysis/fx-intervention/", title: "Where RBI's dollar sales show up in the BoP",
-    text: "How a dollar sold by RBI moves through banks to importers and departing investors, what 25 years of data show, and an interactive model of how much rupee stability a dollar of intervention buys.",
+    text: "How a dollar sold by RBI moves through banks to importers and departing investors, what 25 years of data show, and an interactive model of how much rupee stability a dollar of intervention buys. Based on Agarwal, Kulkarni and Udupa (CAFRAL, 2026).",
     meta: bop ? `Quarterly; data to ${bop}` : "Quarterly" },
   { href: "/rupee/", title: "The rupee: what's moving it",
     text: "Each move of the rupee split into its usual drivers: Asian currencies, oil, Indian shares, the dollar, US yields and risk appetite.", meta: "Daily" },

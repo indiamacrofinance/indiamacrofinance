@@ -26,6 +26,8 @@ const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current accoun
   <>
   <p class="lede">RBI sells dollars through banks. Does the money stay with the banks, or does it flow on to importers and departing investors? This page traces a dollar sale through the BoP, tests it against {reg.panels[0].n} quarters of data, and lays out a simple model of how much rupee stability each dollar of intervention buys.</p>
 
+  <p class="cite">Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026: the worked example, the evidence and the model below follow that note. The charts and numbers are our own computation from RBI's public data and update with each release.</p>
+
   <h2 id="mechanics">How a dollar sale moves through the BoP</h2>
   <p class="prose">RBI deals through authorised dealer banks, so every intervention passes through banks' foreign-currency (nostro) accounts, which the BoP records under banking capital. Take a $1 sale by RBI to a bank, which sells the dollar on to a customer paying abroad, say a foreign portfolio investor leaving India:</p>
   <div class="scroll">
@@ -50,6 +52,7 @@ const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current accoun
       </tbody>
     </table>
   </div>
+  <p class="chart-sub">After Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Table 1. Amounts in US$; a + under monetary movements is a fall in reserves.</p>
   <p class="prose">The bank's two entries cancel. The only net entries are the fall in reserves (shown as + under monetary movements) and the outflow on the line that created the demand for dollars. The intervention does not create an outflow of its own: it finances one recorded elsewhere, and the bank is only an intermediary. If the bank kept the dollar past the quarter's end (say, expecting customer demand later), step 3 would not happen within the quarter, and banking capital would show a $1 outflow. That position usually unwinds once customers draw on the dollars, so any effect on banking capital should be temporary. So, on average, intervention should leave banking capital unchanged and show up in the current and financial accounts.</p>
 
   <h2 id="evidence">What the data show</h2>
@@ -60,7 +63,7 @@ const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current accoun
         spec={{ kind: "scatter", points: p.points, slope: p.slope, intercept: p.intercept, xLabel: "RBI net dollar sales (+) / purchases (−)", yLabel: yLabels[p.key] }} />
     ))}
   </div>
-  <p class="chart-sub">Source: RBI, quarterly BoP (BPM5 presentation; financial account = capital account excluding reserves) and RBI's monthly dollar sales and purchases (Handbook of Statistics; Bulletin Table 4), summed over each quarter; site calculation. Line: least-squares fit on all quarters. Robust (HC1) standard errors.</p>
+  <p class="chart-sub">Source: RBI, quarterly BoP (BPM5 presentation; financial account = capital account excluding reserves) and RBI's monthly dollar sales and purchases (Handbook of Statistics; Bulletin Table 4), summed over each quarter; site calculation, after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Figure 1. Line: least-squares fit on all quarters. Robust (HC1) standard errors.</p>
   <ul class="prose">
     <li><b>The current and financial accounts move with intervention.</b> Each dollar of net sales comes with a {cents(P.ca_bpm5.slope)}-cent {P.ca_bpm5.slope < 0 ? "fall" : "rise"} in the current account and a {cents(P.fa_bpm5.slope)}-cent {P.fa_bpm5.slope < 0 ? "fall" : "rise"} in the financial account (R² {num(P.ca_bpm5.r2, 2)} and {num(P.fa_bpm5.r2, 2)}). Together they add up to {num(Math.abs(reg.slope_sum), 2)} of the dollar, close to the full dollar the BoP identity requires.</li>
     <li><b>Banking capital does not.</b> Its slope is {num(P.bank_capital.slope, 2)} (robust s.e. {num(P.bank_capital.se, 2)}){sig(P.bank_capital) ? ", statistically different from zero" : ", not statistically different from zero"}, and intervention explains {num(P.bank_capital.r2 * 100, 0)}% of its variation. On average, interventions leave banking capital unchanged: the counterpart shows up in the current account and in non-bank capital flows.</li>
@@ -84,7 +87,7 @@ const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current accoun
   </div>
   <p class="lede" id="m-out"></p>
   <figure class="chart"><div id="m-plot" class="plot"></div>
-    <figcaption><span>A stylised model, computed in your browser from the values you choose; the lines are linear for simplicity. Not an estimate.</span></figcaption></figure>
+    <figcaption><span>Model and figure after Agarwal, Kulkarni and Udupa (CAFRAL, 2026), Section III and Figure 3. A stylised model, computed in your browser from the values you choose; the lines are linear for simplicity. Not an estimate.</span></figcaption></figure>
   <p class="chart-sub">Starting values are placeholders for illustration. A published cross-country estimate (Blanchard, Adler and de Carvalho Filho, 2015, NBER Working Paper 21427) has intervention of 1% of quarterly GDP strengthening the currency by about 1.5%; at about $10 billion and ₹1.4 per dollar for India, that implies the two slopes together are at most about $7 billion per ₹1. "Shift in financial flows" moves the FA line down (an outflow at every rate, e.g. global investors favouring other markets), which raises the rate that clears the BoP.</p>
 
   <h2 id="limits">What public data cannot tell us</h2>
