@@ -22,3 +22,10 @@ def test_bop_layouts(raw_from):
 def test_quarter_start():
     assert quarter_start("April-June 2026") == "2026-04-01"
     assert quarter_start("July – September 2025") == "2025-07-01"
+
+
+def test_recent_window_spans_a_quarterly_release():
+    # Quarterly releases are ~3 months apart; a 2-month window held only a monthly
+    # release on 2026-11-02 and every quarterly series failed with no rows (#17).
+    from pipelines.sources.rbi.bop import RECENT_MONTHS
+    assert RECENT_MONTHS >= 4

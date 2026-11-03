@@ -3,7 +3,10 @@
 Releases are found by scanning RBI's press-release index month by month (an ASP.NET
 form: POST hdnYear/hdnMonth with the page's hidden fields) for titles starting
 "Developments in India's Balance of Payments". The first run scans BACKFILL_MONTHS;
-later runs scan the last RECENT_MONTHS.
+later runs scan the last RECENT_MONTHS. Quarterly releases come about three months
+apart (early Sep, Dec, late Mar, late Jun), so RECENT_MONTHS must reach back past the
+latest one; with only monthly releases in the window every quarterly series parses
+to no rows and the source is flagged broken.
 
 Quarterly releases ("... during the First Quarter (April-June) of 2026-27"): Table 1 has
 Credit/Debit/Net for the same quarter a year earlier and the latest quarter; we keep Net.
@@ -23,7 +26,7 @@ from pipelines.core.http import fetch_raw
 from pipelines.core.store import load_series
 from pipelines.sources.rbi._press import RELEASE, releases
 from pipelines.sources.rbi.services_trade import page_text
-BACKFILL_MONTHS, RECENT_MONTHS, MIN_HISTORY = 26, 2, 4
+BACKFILL_MONTHS, RECENT_MONTHS, MIN_HISTORY = 26, 4, 4
 MONTHS = ("January February March April May June July August September October "
           "November December").split()
 NUM = r"(-?\d+(?:\.\d+)?)"
