@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- Live status dashboard, served by the scheduler Worker at / (worker.js). Polls /api/status.
+     Read-only: it shows GitHub workflow runs, bot commits and the site's status-map.json. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>indiamacrofinance ▸ live status</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#000;--fg:#cdd6f4;--dim:#313244;--mut:#6c7086;--sub:#9399b2;
+  --blue:#89b4fa;--green:#a6e3a1;--teal:#94e2d5;--yellow:#f9e2af;--mauve:#cba6f7;--pink:#f5c2e7;--peach:#fab387;--red:#f38ba8;--sky:#89dceb}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--fg);font:13px/1.5 "JetBrains Mono","SF Mono",Menlo,ui-monospace,monospace}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+.win{margin:14px;border:1px solid #1e1e2e;border-radius:10px;overflow:hidden;box-shadow:0 0 60px #0009;background:#000}
+.bar{display:flex;align-items:center;gap:8px;background:#0a0a0f;padding:8px 12px;border-bottom:1px solid #1e1e2e}
+.bar i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.tabs{display:flex;gap:2px;margin-left:16px}
+.tab{padding:3px 14px;border-radius:6px 6px 0 0;color:var(--mut)}
+.tab.act{background:#11111b;color:var(--pink)}
+#conn{margin-left:auto;color:var(--mut);white-space:nowrap}
+#conn.live{color:var(--green)}
+#conn.bad{color:var(--red)}
+#conn .d{display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+#conn.live .d{animation:pulse 2s ease-in-out infinite;box-shadow:0 0 8px currentColor}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 440px;min-height:calc(100vh - 70px)}
+.left{padding:14px 18px;border-right:1px solid #1e1e2e;min-width:0}
+.right{display:flex;flex-direction:column;min-width:0}
+.hdr{color:var(--mut);margin:2px 0 6px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.hdr b{color:var(--pink);font-weight:600}
+.pill{padding:2px 10px;border:1px solid currentColor;border-radius:999px;font-weight:700;letter-spacing:.06em;font-size:11px}
+.pill.ok{color:var(--green);box-shadow:0 0 12px #a6e3a133}
+.pill.warn{color:var(--yellow);box-shadow:0 0 12px #f9e2af33}
+.pill.bad{color:var(--red);box-shadow:0 0 14px #f38ba855}
+.pill.run{color:var(--sky);box-shadow:0 0 14px #89dceb55;animation:pulse 1.6s ease-in-out infinite}
+svg{width:100%;height:auto;display:block}
+.node rect{fill:#07070b;stroke:var(--dim);stroke-width:1.5;transition:all .4s}
+.node text{font-family:inherit;fill:var(--mut);text-anchor:middle;transition:fill .4s}
+.node .ttl{font-size:14px;font-weight:700}
+.node .sub{font-size:10.5px}
+.node .dot{fill:var(--dim)}
+.node.ok .dot{fill:var(--green)}
+.node.fail .dot{fill:var(--red);filter:drop-shadow(0 0 4px var(--red))}
+.node.fail rect{stroke:var(--red)}
+.node.ok .ttl,.node.fail .ttl{fill:var(--sub)}
+.node.on rect{stroke:var(--c);fill:#0d0d14;filter:drop-shadow(0 0 9px var(--c));animation:glow 1.8s ease-in-out infinite}
+.node.on .ttl{fill:var(--c)}
+.node.on .sub{fill:var(--fg)}
+.node.on .dot{fill:var(--c);animation:pulse 1s ease-in-out infinite;filter:drop-shadow(0 0 5px var(--c))}
+.node.queued rect{stroke:var(--c);stroke-dasharray:4 4}
+.node.alive .dot{fill:var(--pink);animation:pulse 2.4s ease-in-out infinite;filter:drop-shadow(0 0 4px var(--pink))}
+.node.alive .ttl{fill:var(--pink)}
+.node{cursor:pointer}
+.wire{fill:none;stroke:#26263a;stroke-width:1.6;stroke-dasharray:2 6;stroke-linecap:round}
+.flow{fill:none;stroke:var(--c);stroke-width:6;stroke-linecap:round;stroke-dasharray:0 18;opacity:0;transition:opacity .4s}
+.flow.on{opacity:1;animation:mv .5s linear infinite;filter:drop-shadow(0 0 4px var(--c))}
+.lbl{font-size:10px;fill:#45475a;font-family:inherit}
+@keyframes mv{to{stroke-dashoffset:-18}}
+@keyframes pulse{50%{opacity:.35}}
+@keyframes glow{50%{filter:drop-shadow(0 0 3px var(--c))}}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:8px}
+.st{border:1px dashed #313244;border-radius:8px;padding:9px 11px;min-width:0}
+.st .k{font-size:10.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.st .v{font-size:22px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st .b{font-size:11px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sec{margin-top:16px;color:var(--mut)}
+.sec b{color:var(--teal)}
+.tree{margin-top:6px;overflow-x:auto}
+.tree details{margin:0 0 2px}
+.tree summary{cursor:pointer;list-style:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tree summary::-webkit-details-marker{display:none}
+.tree summary::before{content:"▸ ";color:var(--mut)}
+.tree details[open] summary::before{content:"▾ "}
+.tree .bn{font-weight:700}
+.tree .ln{white-space:pre;overflow:hidden;text-overflow:ellipsis;color:var(--sub)}
+.tree .ln .g{color:#45475a}
+.sd{letter-spacing:-1px}
+.c-ok{color:var(--green)}.c-warn{color:var(--yellow)}.c-bad{color:var(--red)}.c-mut{color:var(--mut)}.c-dim{color:#45475a}
+#log{flex:1;overflow:auto;padding:8px 14px;line-height:1.7;max-height:calc(100vh - 360px);min-height:240px}
+.row{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row.new{animation:flash 2.5s ease-out}
+@keyframes flash{0%{background:#89dceb30}100%{background:transparent}}
+.day{color:#45475a;margin:6px 0 2px}
+.ts{color:#45475a}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--pink);vertical-align:middle;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.panel{border-top:1px solid #1e1e2e;padding:8px 14px}
+.panel .ttl{color:var(--teal);margin-bottom:2px}
+.panel .row{color:var(--sub)}
+.foot{color:#45475a;padding:6px 18px 12px;font-size:11px}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}.left{border-right:0}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}#log{max-height:420px}}
+@media (max-width:560px){.win{margin:0;border-radius:0}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.tabs{display:none}}
+</style></head><body>
+<div class="win">
+  <div class="bar"><i style="background:#f38ba8"></i><i style="background:#f9e2af"></i><i style="background:#a6e3a1"></i>
+    <div class="tabs"><span class="tab act">❯ live</span><a class="tab" href="/schedule">schedule</a><a class="tab" id="sitelink" href="#">site ↗</a></div>
+    <span id="conn"><span class="d"></span>connecting</span></div>
+  <div class="grid">
+    <div class="left">
+      <div class="hdr"><span>~/indiamacrofinance <b>❯</b> watch -n 15 status</span><span class="pill" id="overall">…</span><span id="clock" class="c-mut"></span></div>
+      <svg id="tree" viewBox="0 0 1000 470" role="img" aria-label="Pipeline: scheduler, bots, deploy, site"></svg>
+      <div class="stats" id="stats"></div>
+      <div class="sec">~/sources <b>❯</b> tree -L 2 <span class="c-dim">· who fetches what, from where · click a bot to expand</span></div>
+      <div class="tree" id="sources"></div>
+    </div>
+    <div class="right">
+      <div class="bar" style="background:#000"><span style="color:var(--teal)">◆ activity</span><span style="margin-left:auto;color:var(--mut)" id="count"></span></div>
+      <div id="log"><span class="cursor"></span></div>
+      <div class="panel" id="next"></div>
+      <div class="panel" id="cal"></div>
+      <div class="panel" id="issues"></div>
+    </div>
+  </div>
+  <div class="foot" id="foot"></div>
+</div>
+<script>
+const POLL_MS = 15000;
+const $ = (id) => document.getElementById(id);
+const C = (n) => getComputedStyle(document.documentElement).getPropertyValue("--" + n).trim();
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const REPO = "indiamacrofinance/indiamacrofinance";
+const ACTIONS = `https://github.com/${REPO}/actions`;
+
+// ---- time helpers (all display in IST) ----
+const IST = { timeZone: "Asia/Kolkata", hour12: false };
+const hm = (t) => new Date(t).toLocaleTimeString("en-GB", { ...IST, hour: "2-digit", minute: "2-digit" });
+const hms = (t) => new Date(t).toLocaleTimeString("en-GB", { ...IST });
+const dayOf = (t) => new Date(t).toLocaleDateString("en-GB", { ...IST, weekday: "short", day: "numeric", month: "short" });
+let skew = 0;   // server clock minus browser clock
+const now = () => Date.now() + skew;
+function ago(t) {
+  if (!t) return "never";
+  const s = Math.max(0, Math.round((now() - new Date(t)) / 1000));
+  if (s < 60) return s + "s ago";
+  if (s < 3600) return Math.round(s / 60) + "m ago";
+  if (s < 86400 * 2) return Math.round(s / 3600) + "h ago";
+  return Math.round(s / 86400) + "d ago";
+}
+function until(t) {
+  const s = Math.max(0, Math.round((new Date(t) - now()) / 1000));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  return h ? `${h}h ${String(m).padStart(2, "0")}m` : `${m}m ${String(x).padStart(2, "0")}s`;
+}
+const dur = (a, b) => { const s = Math.max(0, Math.round((new Date(b) - new Date(a)) / 1000)); return s < 60 ? s + "s" : Math.floor(s / 60) + "m" + String(s % 60).padStart(2, "0") + "s"; };
+
+// ---- the pipeline graph ----
+const NODES = {
+  sched:   { x: 500, y: 42,  w: 290, h: 52, c: "pink",   t: "❯ SCHEDULER", wf: "scheduler.yml" },
+  markets: { x: 110, y: 168, w: 176, h: 64, c: "blue",   t: "markets-bot", wf: "bot-markets.yml" },
+  mospi:   { x: 305, y: 168, w: 176, h: 64, c: "green",  t: "mospi-bot", wf: "bot-mospi.yml" },
+  rbi:     { x: 500, y: 168, w: 176, h: 64, c: "yellow", t: "rbi-bot", wf: "bot-rbi.yml" },
+  minis:   { x: 695, y: 168, w: 176, h: 64, c: "teal",   t: "ministries-bot", wf: "bot-ministries.yml" },
+  email:   { x: 890, y: 168, w: 176, h: 64, c: "mauve",  t: "✉ morning email", wf: "newsletter-morning.yml" },
+  ci:      { x: 125, y: 305, w: 200, h: 54, c: "blue",   t: "ci · tests", wf: "ci.yml" },
+  deploy:  { x: 500, y: 305, w: 240, h: 58, c: "peach",  t: "⇪ BUILD + DEPLOY", wf: "deploy.yml" },
+  probes:  { x: 875, y: 305, w: 200, h: 54, c: "sky",    t: "source probes", wf: "probe-sources.yml" },
+  site:    { x: 500, y: 428, w: 330, h: 56, c: "green",  t: "● indiamacrofinance.pages.dev", wf: null, href: "https://indiamacrofinance.pages.dev/" },
+};
+const BOTS = ["markets", "mospi", "rbi", "minis", "email"];
+const WIRES = {};
+for (const b of BOTS) {
+  WIRES["s_" + b] = { d: `M500 68 V112 H${NODES[b].x} V136`, c: NODES[b].c, to: b };
+  WIRES[b + "_d"] = { d: `M${NODES[b].x} 200 V248 H500 V276`, c: NODES[b].c, to: "deploy" };
+}
+WIRES.d_site = { d: "M500 334 V400", c: "green", to: "site" };
+WIRES.ci_d = { d: "M225 305 H380", c: "blue", to: "deploy" };
+
+function drawGraph() {
+  let s = "";
+  for (const [k, w] of Object.entries(WIRES)) s += `<path class="wire" d="${w.d}"/>`;
+  for (const [k, w] of Object.entries(WIRES)) s += `<path class="flow" id="f_${k}" style="--c:${C(w.c)}" d="${w.d}"/>`;
+  s += `<text class="lbl" x="512" y="105">dispatch on time (IST)</text><text class="lbl" x="512" y="244">commit data → push → deploy</text>`;
+  s += `<text class="lbl" x="512" y="372">cloudflare pages</text>`;
+  for (const [k, n] of Object.entries(NODES)) {
+    const href = n.href || `${ACTIONS}/workflows/${n.wf}`;
+    s += `<a href="${href}" target="_blank" rel="noopener"><g class="node" id="n_${k}" style="--c:${C(n.c)}">
+      <rect x="${n.x - n.w / 2}" y="${n.y - n.h / 2}" width="${n.w}" height="${n.h}" rx="7"/>
+      <circle class="dot" cx="${n.x - n.w / 2 + 14}" cy="${n.y - n.h / 2 + 14}" r="4"/>
+      <text class="ttl" x="${n.x}" y="${n.y - (n.h > 55 ? 8 : 3)}">${esc(n.t)}</text>
+      <text class="sub" id="s_${k}" x="${n.x}" y="${n.y + 12}">—</text>
+      ${n.h > 60 ? `<text class="sub" id="s2_${k}" x="${n.x}" y="${n.y + 26}"></text>` : ""}
+    </g></a>`;
+  }
+  $("tree").innerHTML = s;
+}
+
+function setNode(k, cls, sub, sub2) {
+  const g = $("n_" + k);
+  g.classList.remove("on", "ok", "fail", "queued", "alive");
+  if (cls) for (const c of cls.split(" ")) g.classList.add(c);
+  $("s_" + k).textContent = sub;
+  if (sub2 !== undefined && $("s2_" + k)) $("s2_" + k).textContent = sub2;
+}
+const flow = (k, on) => $("f_" + k).classList.toggle("on", !!on);
+
+// ---- state ----
+let S = null, seen = new Set(), first = true, lastOk = 0;
+
+function label(wf, name) {
+  for (const [k, n] of Object.entries(NODES)) if (n.wf === wf) return n.t.replace(/^[^a-z]+/i, "").toLowerCase();
+  return (S && S.map && S.map.workflows && S.map.workflows[wf]) || name || wf;
+}
+const colorOf = (wf) => { for (const n of Object.values(NODES)) if (n.wf === wf) return C(n.c); return C("sub"); };
+const isBot = (a) => /-bot$/.test(a);
+
+function nodeState(wf) {
+  const a = S.active.find((r) => r.workflow === wf);
+  if (a) return { cls: a.status === "in_progress" ? "on" : "on queued", run: a };
+  const l = S.last[wf];
+  if (!l) return { cls: "", run: null };
+  return { cls: l.conclusion === "success" ? "ok" : (["failure", "timed_out", "startup_failure"].includes(l.conclusion) ? "fail" : ""), run: l };
+}
+
+function botHealth(wf) {
+  const b = S.map && S.map.bots.find((x) => x.workflow === wf);
+  if (!b) return null;
+  const f = b.sources.reduce((a, s) => a + s.failing, 0), o = b.sources.reduce((a, s) => a + s.overdue, 0);
+  return { n: b.sources.length, series: b.sources.reduce((a, s) => a + s.series, 0), f, o };
+}
+
+function renderGraph() {
+  const nextOf = (wf) => S.schedule.find((j) => j.workflow === wf);
+  // scheduler: alive while this page is being served; shows the next dispatch
+  const nx = S.schedule[0];
+  setNode("sched", "alive", nx ? `next: ${label(nx.workflow)} in ${until(nx.next)}` : "cloudflare cron · every 5 min");
+  for (const b of BOTS) {
+    const n = NODES[b], st = nodeState(n.wf);
+    let sub, sub2 = "";
+    if (st.cls.startsWith("on")) {
+      sub = st.cls.includes("queued") ? "queued…" : `▶ ${st.run.step || "starting"}`;
+      sub2 = st.run.started ? `running ${dur(st.run.started, now())}` : "";
+    } else {
+      sub = st.run ? `${st.cls === "fail" ? "✗ failed" : "✓"} ${ago(st.run.updated)}` : "no recent run";
+      const h = botHealth(n.wf), nr = nextOf(n.wf);
+      sub2 = h ? `${h.series} series${h.f ? ` · ${h.f} failing` : h.o ? ` · ${h.o} late` : " · all ok"}` : (nr ? `next ${hm(nr.next)}` : "");
+    }
+    setNode(b, st.cls, sub, sub2);
+    flow("s_" + b, st.cls.startsWith("on"));
+  }
+  const d = nodeState("deploy.yml");
+  setNode("deploy", d.cls, d.cls.startsWith("on") ? `▶ ${d.run.step || "building"} · ${dur(d.run.started, now())}` : (d.run ? `${d.cls === "fail" ? "✗ failed" : "✓ deployed"} ${ago(d.run.updated)}` : "—"));
+  // which bot fed the running deploy: the one that finished most recently before it started
+  let feeder = null;
+  if (d.cls.startsWith("on")) {
+    for (const b of BOTS) {
+      const l = S.last[NODES[b].wf];
+      if (l && new Date(l.updated) <= new Date(d.run.started) + 60000 && (!feeder || l.updated > S.last[NODES[feeder].wf].updated)) feeder = b;
+    }
+  }
+  for (const b of BOTS) flow(b + "_d", feeder === b);
+  flow("d_site", d.cls.startsWith("on"));
+  const ci = nodeState("ci.yml");
+  setNode("ci", ci.cls, ci.cls.startsWith("on") ? `▶ ${ci.run.step || "testing"}` : (ci.run ? `${ci.cls === "fail" ? "✗" : "✓"} ${ago(ci.run.updated)}` : "—"));
+  flow("ci_d", ci.cls.startsWith("on"));
+  const pr = nodeState("probe-sources.yml");
+  setNode("probes", pr.cls, pr.cls.startsWith("on") ? `▶ ${pr.run.step || "probing"}` : (pr.run ? `${pr.cls === "fail" ? "✗" : "✓"} ${ago(pr.run.updated)}` : "agency sites reachable?"));
+  const t = S.map && S.map.totals;
+  setNode("site", t && t.failing ? "fail" : "ok", t ? `${t.ok}/${t.series} series fresh · built ${ago(S.map.built_at)}` : "status map unavailable");
+}
+
+function renderStats() {
+  const t = S.map ? S.map.totals : null;
+  const d = S.last["deploy.yml"], nx = S.schedule[0];
+  const running = S.active.filter((r) => r.status === "in_progress").length, queued = S.active.length - running;
+  const pct = t ? Math.round(100 * t.ok / t.series) : 0;
+  const bar = (p) => "█".repeat(Math.round(p / 10)) + "░".repeat(10 - Math.round(p / 10));
+  const tiles = [
+    ["series fresh", t ? `${t.ok}<span class="c-mut">/${t.series}</span>` : "—", t ? `<span class="c-ok">${bar(pct)}</span> ${pct}%` : "", "green"],
+    ["overdue", t ? t.overdue : "—", "publisher late or release moved", t && t.overdue ? "yellow" : "mut"],
+    ["failing", t ? t.failing : "—", S.issues.length ? `${S.issues.length} open issue${S.issues.length > 1 ? "s" : ""}` : "no open issues", t && t.failing ? "red" : "mut"],
+    ["running now", running + (queued ? `<span class="c-mut">+${queued}q</span>` : ""), running ? S.active.map((r) => label(r.workflow, r.name)).join(", ") : "all idle", running ? "sky" : "mut"],
+    ["last deploy", d ? ago(d.updated).replace(" ago", "") : "—", d ? `${hm(d.updated)} IST · ${d.conclusion}` : "", "peach"],
+    ["next run", nx ? `<span class="tick" data-t="${nx.next}">${until(nx.next)}</span>` : "—", nx ? `${label(nx.workflow)} @ ${hm(nx.next)}` : "", "pink"],
+  ];
+  $("stats").innerHTML = tiles.map(([k, v, b, c]) => `<div class="st"><div class="k">${k}</div><div class="v" style="color:var(--${c})">${v}</div><div class="b">${b}</div></div>`).join("")
+;
+  // overall pill
+  const p = $("overall");
+  if (!t) { p.className = "pill warn"; p.textContent = "MAP UNAVAILABLE"; }
+  else if (t.failing) { p.className = "pill bad"; p.textContent = `DEGRADED · ${t.failing} FAILING`; }
+  else if (running) { p.className = "pill run"; p.textContent = `● ${running} WORKFLOW${running > 1 ? "S" : ""} RUNNING`; }
+  else if ([...BOTS.map((b) => NODES[b].wf), "deploy.yml"].some((wf) => nodeState(wf).cls === "fail")) { p.className = "pill warn"; p.textContent = "LAST RUN FAILED"; }
+  else { p.className = "pill ok"; p.textContent = "ALL SYSTEMS NOMINAL"; }
+}
+
+function srcLine(s, last) {
+  const st = s.failing ? ["●", "c-bad", `${s.failing} failing`] : s.overdue ? ["●", "c-warn", `${s.overdue} overdue`] : ["●", "c-ok", "ok"];
+  const name = s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name);
+  const pad = (x, n) => esc(x) + " ".repeat(Math.max(1, n - String(x).length));
+  return `<div class="ln"><span class="g">${last ? "└──" : "├──"}</span> <span class="${st[1]}">${st[0]}</span> ${name}${" ".repeat(Math.max(1, 30 - s.name.length))}${pad(s.agency.slice(0, 14), 15)}${pad(s.series + " series", 11)}<span class="${st[1]}">${pad(st[2], 11)}</span>${pad("✓ " + ago(s.last_success), 12)}<span class="c-dim">latest ${esc(s.last_period || "—")}</span></div>`;
+}
+
+function renderSources() {
+  if (!S.map) { $("sources").innerHTML = `<div class="c-mut">status map not reachable; showing runs only</div>`; return; }
+  const open = new Set([...document.querySelectorAll("#sources details[open]")].map((d) => d.dataset.k));
+  const group = (k, title, color, when, list, wf) => {
+    const dots = list.map((s) => `<span class="${s.failing ? "c-bad" : s.overdue ? "c-warn" : "c-ok"}">●</span>`).join("");
+    const st = wf ? nodeState(wf) : { cls: "" };
+    const live = st.cls.startsWith("on") ? ` <span class="pill run" style="font-size:10px;padding:0 6px">RUNNING</span>` : "";
+    return `<details data-k="${k}" ${open.has(k) ? "open" : ""}><summary><span class="bn" style="color:${color}">${esc(title)}/</span> <span class="c-mut">${list.length} sources · ${esc(when)}</span> <span class="sd">${dots}</span>${live}</summary>`
+      + list.map((s, i) => srcLine(s, i === list.length - 1)).join("") + `</details>`;
+  };
+  const names = { markets: "markets", mospi: "mospi", rbi: "rbi", ministries: "minis" };
+  let h = S.map.bots.map((b) => group(b.name, `bot-${b.name}`, C(NODES[names[b.name]] ? NODES[names[b.name]].c : "sub"), b.when, b.sources, b.workflow)).join("");
+  if (S.map.manual.length) h += group("manual", "manual", C("peach"), "blocked abroad; run from India (make india-update)", S.map.manual, null);
+  $("sources").innerHTML = h;
+}
+
+function events() {
+  const ev = [];
+  for (const r of S.runs) {
+    const lb = label(r.workflow, r.name), col = colorOf(r.workflow);
+    const by = { workflow_dispatch: "dispatched", schedule: "cron backup", push: "on push", pull_request: "on PR" }[r.event] || r.event;
+    if (r.started) ev.push({ k: "s" + r.id, t: r.started, url: r.url, h: `<span style="color:${col}">▶ ${esc(lb)}</span> <span class="c-mut">started · ${esc(by)}</span>` });
+    if (r.status === "completed") {
+      const ok = r.conclusion === "success", bad = ["failure", "timed_out", "startup_failure"].includes(r.conclusion);
+      ev.push({ k: "e" + r.id, t: r.updated, url: r.url, h: `<span class="${ok ? "c-ok" : bad ? "c-bad" : "c-mut"}">${ok ? "✓" : bad ? "✗" : "○"}</span> <span style="color:${col}">${esc(lb)}</span> <span class="c-mut">${esc(r.conclusion)} in ${dur(r.started, r.updated)}</span>` });
+    }
+  }
+  for (const c of S.commits) {
+    const bot = isBot(c.author);
+    ev.push({ k: "c" + c.sha, t: c.date, url: `https://github.com/${REPO}/commit/${c.sha}`,
+              h: `<span class="${bot ? "c-ok" : "c-mut"}">${bot ? "◆" : "✎"} ${esc(c.author)}</span> ${esc(c.message)}` });
+  }
+  return ev.sort((a, b) => new Date(b.t) - new Date(a.t)).slice(0, 80);
+}
+
+function renderLog() {
+  const ev = events();
+  let h = `<div class="row"><span class="ts">${hms(now())}</span> <span class="cursor"></span></div>`, day = "";
+  for (const e of ev) {
+    const d = dayOf(e.t);
+    if (d !== day) { h += `<div class="day">── ${d} ──</div>`; day = d; }
+    const fresh = !first && !seen.has(e.k);
+    h += `<div class="row${fresh ? " new" : ""}"><span class="ts">${hms(e.t)}</span> <a href="${esc(e.url)}" target="_blank" rel="noopener">${e.h}</a></div>`;
+  }
+  for (const e of ev) seen.add(e.k);
+  $("log").innerHTML = h;
+  $("count").textContent = `${ev.length} events · runs + commits`;
+}
+
+function renderPanels() {
+  $("next").innerHTML = `<div class="ttl">◆ next dispatches <span class="c-dim">(IST)</span></div>` + S.schedule.slice(0, 5).map((j) =>
+    `<div class="row"><span class="ts">${dayOf(j.next).split(" ")[0]} ${hm(j.next)}</span> <span style="color:${colorOf(j.workflow)}">${esc(label(j.workflow))}</span> <span class="c-mut">in <span class="tick" data-t="${j.next}">${until(j.next)}</span></span></div>`).join("");
+  const up = S.map ? S.map.upcoming : [];
+  $("cal").innerHTML = `<div class="ttl">◆ upcoming releases</div>` + (up.length ? up.slice(0, 5).map((c) =>
+    `<div class="row"><span class="ts">${esc(c.date.slice(5))} ${esc(c.time || "")}</span> <span class="c-mut">${esc(c.publisher)}</span> ${esc(c.title)} <span class="c-dim">${esc(c.period || "")}</span></div>`).join("") : `<div class="row c-mut">—</div>`);
+  $("issues").innerHTML = S.issues.length ? `<div class="ttl" style="color:var(--red)">◆ open issues</div>` + S.issues.slice(0, 5).map((i) =>
+    `<div class="row"><a href="${esc(i.url)}" target="_blank" rel="noopener"><span class="c-bad">#${i.number}</span> ${esc(i.title)}</a></div>`).join("")
+    : `<div class="ttl">◆ open issues</div><div class="row c-ok">none</div>`;
+  const a = S.map && S.map.actions;
+  $("foot").innerHTML = `polls every ${POLL_MS / 1000}s (paused while this tab is hidden) · GitHub snapshot shared by all viewers · status map built ${S.map ? esc(hm(S.map.built_at)) + " IST" : "—"}`
+    + (a ? ` · Actions this month: ${a.minutes} min over ${a.runs} runs` : "") + ` · <a href="${ACTIONS}" target="_blank" rel="noopener" class="c-mut">all runs ↗</a>`;
+}
+
+function render() {
+  renderGraph(); renderStats(); renderSources(); renderLog(); renderPanels();
+  first = false;
+}
+
+// second-by-second: clock, countdowns, "synced Xs ago"
+function tick() {
+  $("clock").textContent = hms(now()) + " IST";
+  for (const el of document.querySelectorAll(".tick")) el.textContent = until(el.dataset.t);
+  const c = $("conn");
+  if (lastOk) {
+    const s = Math.round((Date.now() - lastOk) / 1000);
+    if (s < POLL_MS / 1000 * 3) { c.className = "live"; c.innerHTML = `<span class="d"></span>live · synced ${s}s ago`; }
+    else { c.className = "bad"; c.innerHTML = `<span class="d"></span>stale · last sync ${Math.round(s / 60)}m ago`; }
+  }
+  if (S) renderGraph();   // the scheduler countdown and running timers
+}
+
+let timer = null;
+async function poll() {
+  clearTimeout(timer);
+  try {
+    const r = await fetch("/api/status", { cache: "no-store" });
+    const j = await r.json();
+    if (!r.ok || j.error) throw new Error(j.error || r.status);
+    skew = new Date(j.now) - Date.now();
+    S = j; lastOk = Date.now();
+    if (S.map) $("sitelink").href = "https://indiamacrofinance.pages.dev/";
+    render();
+  } catch (e) {
+    const c = $("conn"); c.className = "bad"; c.innerHTML = `<span class="d"></span>reconnecting · ${esc(e.message || e)}`;
+  }
+  if (!document.hidden) timer = setTimeout(poll, POLL_MS);
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); else clearTimeout(timer); });
+$("sitelink").href = "https://indiamacrofinance.pages.dev/";
+drawGraph(); poll(); setInterval(tick, 1000);
+</script>
+</body></html>

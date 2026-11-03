@@ -1,5 +1,5 @@
 {
-  "nav": {"home": "Home", "growth": "Growth", "jobs": "Jobs", "activity": "Activity", "money": "Money", "external": "External", "states": "States", "fiscal": "Fiscal", "calendar": "Calendar", "briefings": "Briefings", "inflation": "Inflation", "markets": "Markets", "data": "Data", "about": "About", "status": "Status"},
+  "nav": {"home": "Home", "growth": "Growth", "jobs": "Jobs", "activity": "Activity", "money": "Money", "external": "External", "states": "States", "fiscal": "Fiscal", "calendar": "Calendar", "briefings": "Briefings", "inflation": "Inflation", "markets": "Markets", "data": "Data", "about": "About", "status": "Status", "live_status": "Live status"},
   "home": {
     "key_indicators": "Key indicators",
     "questions": "India in four questions",

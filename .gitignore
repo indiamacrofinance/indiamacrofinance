@@ -25,6 +25,7 @@ data/raw/
 site/src/data/generated/
 site/public/data/
 site/public/calendar.ics
+site/public/status-map.json
 site/public/downloads/
 
 # Morning newsletter fact packs and previews (regenerated; drafts in newsletter/drafts are committed)
@@ -33,3 +34,6 @@ newsletter/packs/
 # Private reference material (e.g. internal notes we replicate from public data). Kept locally, never committed.
 private/
 site/screenshots/
+
+# Wrangler local dev state (scheduler/)
+.wrangler/

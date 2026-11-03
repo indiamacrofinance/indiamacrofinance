@@ -9,7 +9,9 @@
 # WHO STARTS THEM (since 2026-11-02): the Cloudflare Worker in scheduler/ (worker.js, SCHEDULE),
 # on time to the minute. The `schedule:` crons in the workflows are only a backup (GitHub runs
 # them hours late). Change a time in BOTH places. Live schedule and next runs:
-# https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev
+# https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/schedule
+# The same Worker's front page is the live status dashboard, which reads this file through
+# site/public/status-map.json (pipelines/build/status_map.py); see the operations runbook.
 bots:
   markets:
     when: "Mon-Fri hourly 09:30-17:30, and Mon-Sat 07:00 (before the morning email)"

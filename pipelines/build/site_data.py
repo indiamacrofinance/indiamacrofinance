@@ -16,7 +16,7 @@ from datetime import date
 import pandas as pd
 import yaml
 
-from pipelines.build import bop_stress, calendar, rupee
+from pipelines.build import bop_stress, calendar, rupee, status_map
 from pipelines.core import registry, store
 
 OUT = store.ROOT / "site" / "src" / "data" / "generated"
@@ -858,10 +858,13 @@ def main() -> int:
     status = store.load_status()
     today = pd.Timestamp(date.today())
     write_json(OUT / "site.json", {"built_on": date.today().isoformat(), "as_of": as_of, "status": status})
-    write_json(OUT / "health.json", {
-        "series": [health(spec, payloads.get(sid), status.get(sid, {}), today) for sid, spec in specs.items()],
-        "issues": open_issues(),
-        "actions": actions_minutes()})
+    health_rows = [health(spec, payloads.get(sid), status.get(sid, {}), today) for sid, spec in specs.items()]
+    actions = actions_minutes()
+    write_json(OUT / "health.json", {"series": health_rows, "issues": open_issues(), "actions": actions})
+    try:                       # the live status dashboard's map (scheduler/dashboard.js); never block the site
+        write_json(PUBLIC.parent / "status-map.json", status_map.build(specs, health_rows, cal, actions))
+    except Exception as e:     # noqa: BLE001
+        print(f"  status map: skipped ({type(e).__name__}: {e})")
 
     # Downloadable CSVs (licence permitting) are copied into the site's public folder.
     PUBLIC.mkdir(parents=True, exist_ok=True)

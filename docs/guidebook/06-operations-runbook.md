@@ -57,8 +57,37 @@ expires, so renew it and paste the new one in the same place). The workflows kee
 `schedule:` lines as a backup; a duplicate run is harmless. To change a time, edit both.
 
 See the schedule, the next run of each job and whether the token works:
-https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev. Past runs: GitHub → Actions
+https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/schedule. Past runs: GitHub → Actions
 (runs started by the Worker show as "workflow_dispatch"; late backups as "schedule").
+
+## Live status dashboard
+
+https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev (linked from the site's Status
+page). A terminal-style board, served by the same Worker, that shows at a glance whether
+everything is working: the pipeline (scheduler → bots → build + deploy → site) with running
+workflows glowing and their current step, every source under its bot with its agency, series
+count and freshness, an activity log of workflow runs and bot commits, the next dispatches,
+the upcoming releases and open issues. Read-only: it starts nothing.
+
+How it works (three files):
+- `pipelines/build/status_map.py` writes `site/public/status-map.json` on every site build:
+  bots → sources (from `registry/bots.yaml` and each source's series), agency, link and the
+  health of their series (same rules as the Status page). Served at
+  https://indiamacrofinance.pages.dev/status-map.json.
+- `scheduler/worker.js` → `GET /api/status` asks GitHub for the last 40 runs, 30 commits, open
+  issues and the steps of running jobs, adds the schedule and the status map, and caches the
+  answer for 15 s in memory so every viewer shares one GitHub snapshot (about 4 calls per 15 s
+  whatever the audience; the token allows 5,000 an hour). The map is re-read every 5 min.
+- `scheduler/dashboard.html` is the page. It polls `/api/status` every 15 s, stops while its tab
+  is hidden, and redraws; countdowns tick every second. Changes show within about 15-30 s.
+
+Changing it: a new bot or source appears by itself (it reads `bots.yaml`). A new bot also needs
+a box in `NODES`/`BOTS` at the top of the page's script. Test locally with
+`cd scheduler && npx wrangler@4 dev --var SITE:http://localhost:8765` while serving `site/public`
+on port 8765 (`python3 -m http.server 8765`); without a token it uses GitHub's anonymous limit
+(60 calls an hour, enough for a few minutes of testing). `node scheduler/test.mjs` checks the
+schedule maths and the status shaping. Deploys with the Worker (push to `scheduler/`).
+Limits: Workers' free tier is 100,000 requests a day (one tab open all day uses about 5,800).
 
 ## Secrets
 
