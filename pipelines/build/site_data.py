@@ -444,7 +444,15 @@ def budget_table() -> dict:
         re_, be = vals[2], vals[3]
         change = None if "% of GDP" in item or not re_ or be is None else round(100 * (be / re_ - 1), 1)
         rows.append({"item": item, "ratio": "% of GDP" in item, "values": vals, "change_pct": change})
-    return {"year": fy(year), "columns": [c[2] for c in cols], "rows": rows}
+    # The record: each year's Budget Estimate, Revised Estimate and Actual, from every Budget we
+    # hold (archived editions from 2019-20 give Actuals from 2017-18).
+    record = {}
+    for item in ("Fiscal deficit, % of GDP", "Capital expenditure", "Tax revenue (net to Centre)", "Total expenditure"):
+        years = sorted({p for sid in look for (e, p) in look[sid] if e == item})
+        record[item] = [{"fy": fy(int(p[:4])), "period": p, "be": look["budget_be"].get((item, p)),
+                         "re": look["budget_re"].get((item, p)), "actual": look["budget_actuals"].get((item, p))}
+                        for p in years]
+    return {"year": fy(year), "columns": [c[2] for c in cols], "rows": rows, "record": record}
 
 
 def yield_curve() -> dict:

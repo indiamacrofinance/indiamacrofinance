@@ -7,9 +7,13 @@ import FanChart from "../components/FanChart.astro";
 import StackedBars from "../components/StackedBars.astro";
 import RankedBars from "../components/RankedBars.astro";
 import PeriodTable from "../components/PeriodTable.astro";
+import StateTileMap from "../components/StateTileMap.astro";
 import { series, latest, valueAt } from "../lib/data.js";
 import { num, period } from "../lib/format.js";
 import fs from "node:fs";
+
+const stateCpi = JSON.parse(fs.readFileSync("src/data/generated/panels/state_cpi_inflation.json", "utf8"));
+const cpiAtStates = valueAt(series("cpi_headline_inflation"), "level", stateCpi.ref_period);
 
 const ids = ["cpi_headline_index", "cpi_food_bev_index", "cpi_fuel_index", "cpi_core_index",
   "cpi_elec_gas_fuels_index", "cpi_vehicle_fuels_index", "cpi_rural_index", "cpi_urban_index"];
@@ -177,6 +181,9 @@ const horizonLabel = (h) => (h < 0 ? "Quarter just ended" : h === 0 ? "Current q
   <h2 id="cpi-iw">CPI for industrial workers</h2>
   <p class="chart-sub">Labour Bureau's CPI-IW (2016=100): {num(latest(series("cpi_iw_inflation")).value, 2)}% in {period(latest(series("cpi_iw_inflation")).period, "M")}. History is built from each monthly press note (no archive is published), so the series is short. <a href="/data/cpi_iw_index/">Series page</a></p>
 
-  <h2>Still to come on this page</h2>
-  <p class="chart-sub">State-wise CPI is on the <a href="/states/">States</a> page; a state map will follow. Checklist: docs/guidebook/05-pages/inflation.md.</p>
+  <h2 id="states">Inflation by state</h2>
+  <StateTileMap title={`CPI inflation by state, ${period(stateCpi.ref_period, "M")}`}
+    subtitle="% change on a year earlier, as published; colour shows the gap from the all-India rate"
+    panel={stateCpi} period={stateCpi.ref_period} reference={cpiAtStates} decimals={1} source="MoSPI, CPI (base 2024), state indices." />
+  <p class="chart-sub">MoSPI publishes CPI inflation for each state and UT every month (on the 2024 base, from January 2026). Small states and UTs have small samples, so their rates move more from month to month. Ranked bars, unemployment and state finances are on the <a href="/states/">States</a> page.</p>
 </Base>

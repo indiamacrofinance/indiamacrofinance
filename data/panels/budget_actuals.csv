@@ -1,15 +1,110 @@
 entity,period,value,vintage,note
+Capital expenditure,2017-04-01,2.6314,2026-11-03,Budget at a Glance 2019-20
+Capital expenditure,2018-04-01,3.0771,2026-11-03,Budget at a Glance 2020-21
+Capital expenditure,2019-04-01,3.3573,2026-11-03,Budget at a Glance 2021-22
+Capital expenditure,2020-04-01,4.2632,2026-11-03,Budget at a Glance 2022-23
+Capital expenditure,2021-04-01,5.9287,2026-11-03,Budget at a Glance 2023-24
+Capital expenditure,2022-04-01,7.4002,2026-11-03,Budget at a Glance 2024-25
+Capital expenditure,2023-04-01,9.4919,2026-11-03,Budget at a Glance 2025-26
 Capital expenditure,2024-04-01,10.5195,2026-10-29,
+Effective capital expenditure,2020-04-01,6.5718,2026-11-03,Budget at a Glance 2022-23
+Effective capital expenditure,2021-04-01,8.3552,2026-11-03,Budget at a Glance 2023-24
+Effective capital expenditure,2022-04-01,10.4629,2026-11-03,Budget at a Glance 2024-25
+Effective capital expenditure,2023-04-01,12.5311,2026-11-03,Budget at a Glance 2025-26
 Effective capital expenditure,2024-04-01,13.2461,2026-10-29,
+Fiscal deficit,2017-04-01,5.9106,2026-11-03,Budget at a Glance 2019-20
+Fiscal deficit,2018-04-01,6.4942,2026-11-03,Budget at a Glance 2020-21
+Fiscal deficit,2019-04-01,9.3365,2026-11-03,Budget at a Glance 2021-22
+Fiscal deficit,2020-04-01,18.1829,2026-11-03,Budget at a Glance 2022-23
+Fiscal deficit,2021-04-01,15.8452,2026-11-03,Budget at a Glance 2023-24
+Fiscal deficit,2022-04-01,17.3775,2026-11-03,Budget at a Glance 2024-25
+Fiscal deficit,2023-04-01,16.5464,2026-11-03,Budget at a Glance 2025-26
 Fiscal deficit,2024-04-01,15.7443,2026-10-29,
+"Fiscal deficit, % of GDP",2017-04-01,3.5,2026-11-03,Budget at a Glance 2019-20
+"Fiscal deficit, % of GDP",2018-04-01,3.4,2026-11-03,Budget at a Glance 2020-21
+"Fiscal deficit, % of GDP",2019-04-01,4.6,2026-11-03,Budget at a Glance 2021-22
+"Fiscal deficit, % of GDP",2020-04-01,9.2,2026-11-03,Budget at a Glance 2022-23
+"Fiscal deficit, % of GDP",2021-04-01,6.7,2026-11-03,Budget at a Glance 2023-24
+"Fiscal deficit, % of GDP",2022-04-01,6.4,2026-11-03,Budget at a Glance 2024-25
+"Fiscal deficit, % of GDP",2023-04-01,5.6,2026-11-03,Budget at a Glance 2025-26
 "Fiscal deficit, % of GDP",2024-04-01,4.8,2026-10-29,
+Interest payments,2017-04-01,5.2895,2026-11-03,Budget at a Glance 2019-20
+Interest payments,2018-04-01,5.8265,2026-11-03,Budget at a Glance 2020-21
+Interest payments,2019-04-01,6.1207,2026-11-03,Budget at a Glance 2021-22
+Interest payments,2020-04-01,6.7987,2026-11-03,Budget at a Glance 2022-23
+Interest payments,2021-04-01,8.055,2026-11-03,Budget at a Glance 2023-24
+Interest payments,2022-04-01,9.2852,2026-11-03,Budget at a Glance 2024-25
+Interest payments,2023-04-01,10.6387,2026-11-03,Budget at a Glance 2025-26
 Interest payments,2024-04-01,11.1557,2026-10-29,
+Non-tax revenue,2017-04-01,1.9275,2026-11-03,Budget at a Glance 2019-20
+Non-tax revenue,2018-04-01,2.3571,2026-11-03,Budget at a Glance 2020-21
+Non-tax revenue,2019-04-01,3.2716,2026-11-03,Budget at a Glance 2021-22
+Non-tax revenue,2020-04-01,2.0763,2026-11-03,Budget at a Glance 2022-23
+Non-tax revenue,2021-04-01,3.6511,2026-11-03,Budget at a Glance 2023-24
+Non-tax revenue,2022-04-01,2.8542,2026-11-03,Budget at a Glance 2024-25
+Non-tax revenue,2023-04-01,4.0179,2026-11-03,Budget at a Glance 2025-26
 Non-tax revenue,2024-04-01,5.3658,2026-10-29,
+Primary deficit,2017-04-01,0.6211,2026-11-03,Budget at a Glance 2019-20
+Primary deficit,2018-04-01,0.6677,2026-11-03,Budget at a Glance 2020-21
+Primary deficit,2019-04-01,3.2158,2026-11-03,Budget at a Glance 2021-22
+Primary deficit,2020-04-01,11.3842,2026-11-03,Budget at a Glance 2022-23
+Primary deficit,2021-04-01,7.7902,2026-11-03,Budget at a Glance 2023-24
+Primary deficit,2022-04-01,8.0924,2026-11-03,Budget at a Glance 2024-25
+Primary deficit,2023-04-01,5.9077,2026-11-03,Budget at a Glance 2025-26
 Primary deficit,2024-04-01,4.5886,2026-10-29,
+"Primary deficit, % of GDP",2017-04-01,0.4,2026-11-03,Budget at a Glance 2019-20
+"Primary deficit, % of GDP",2018-04-01,0.4,2026-11-03,Budget at a Glance 2020-21
+"Primary deficit, % of GDP",2019-04-01,1.6,2026-11-03,Budget at a Glance 2021-22
+"Primary deficit, % of GDP",2020-04-01,5.8,2026-11-03,Budget at a Glance 2022-23
+"Primary deficit, % of GDP",2021-04-01,3.3,2026-11-03,Budget at a Glance 2023-24
+"Primary deficit, % of GDP",2022-04-01,3.0,2026-11-03,Budget at a Glance 2024-25
+"Primary deficit, % of GDP",2023-04-01,2.0,2026-11-03,Budget at a Glance 2025-26
 "Primary deficit, % of GDP",2024-04-01,1.4,2026-10-29,
+Revenue deficit,2017-04-01,4.436,2026-11-03,Budget at a Glance 2019-20
+Revenue deficit,2018-04-01,4.5448,2026-11-03,Budget at a Glance 2020-21
+Revenue deficit,2019-04-01,6.6654,2026-11-03,Budget at a Glance 2021-22
+Revenue deficit,2020-04-01,14.496,2026-11-03,Budget at a Glance 2022-23
+Revenue deficit,2021-04-01,10.3102,2026-11-03,Budget at a Glance 2023-24
+Revenue deficit,2022-04-01,10.6993,2026-11-03,Budget at a Glance 2024-25
+Revenue deficit,2023-04-01,7.6522,2026-11-03,Budget at a Glance 2025-26
 Revenue deficit,2024-04-01,5.643,2026-10-29,
+"Revenue deficit, % of GDP",2017-04-01,2.6,2026-11-03,Budget at a Glance 2019-20
+"Revenue deficit, % of GDP",2018-04-01,2.4,2026-11-03,Budget at a Glance 2020-21
+"Revenue deficit, % of GDP",2019-04-01,3.3,2026-11-03,Budget at a Glance 2021-22
+"Revenue deficit, % of GDP",2020-04-01,7.3,2026-11-03,Budget at a Glance 2022-23
+"Revenue deficit, % of GDP",2021-04-01,4.4,2026-11-03,Budget at a Glance 2023-24
+"Revenue deficit, % of GDP",2022-04-01,4.0,2026-11-03,Budget at a Glance 2024-25
+"Revenue deficit, % of GDP",2023-04-01,2.6,2026-11-03,Budget at a Glance 2025-26
 "Revenue deficit, % of GDP",2024-04-01,1.7,2026-10-29,
+Revenue expenditure,2017-04-01,18.7883,2026-11-03,Budget at a Glance 2019-20
+Revenue expenditure,2018-04-01,20.074,2026-11-03,Budget at a Glance 2020-21
+Revenue expenditure,2019-04-01,23.506,2026-11-03,Budget at a Glance 2021-22
+Revenue expenditure,2020-04-01,30.8352,2026-11-03,Budget at a Glance 2022-23
+Revenue expenditure,2021-04-01,32.0093,2026-11-03,Budget at a Glance 2023-24
+Revenue expenditure,2022-04-01,34.5313,2026-11-03,Budget at a Glance 2024-25
+Revenue expenditure,2023-04-01,34.9425,2026-11-03,Budget at a Glance 2025-26
 Revenue expenditure,2024-04-01,36.0091,2026-10-29,
+Revenue receipts,2017-04-01,14.3523,2026-11-03,Budget at a Glance 2019-20
+Revenue receipts,2018-04-01,15.5292,2026-11-03,Budget at a Glance 2020-21
+Revenue receipts,2019-04-01,16.8406,2026-11-03,Budget at a Glance 2021-22
+Revenue receipts,2020-04-01,16.3392,2026-11-03,Budget at a Glance 2022-23
+Revenue receipts,2021-04-01,21.699,2026-11-03,Budget at a Glance 2023-24
+Revenue receipts,2022-04-01,23.8321,2026-11-03,Budget at a Glance 2024-25
+Revenue receipts,2023-04-01,27.2904,2026-11-03,Budget at a Glance 2025-26
 Revenue receipts,2024-04-01,30.3661,2026-10-29,
+Tax revenue (net to Centre),2017-04-01,12.4249,2026-11-03,Budget at a Glance 2019-20
+Tax revenue (net to Centre),2018-04-01,13.1721,2026-11-03,Budget at a Glance 2020-21
+Tax revenue (net to Centre),2019-04-01,13.569,2026-11-03,Budget at a Glance 2021-22
+Tax revenue (net to Centre),2020-04-01,14.2629,2026-11-03,Budget at a Glance 2022-23
+Tax revenue (net to Centre),2021-04-01,18.0479,2026-11-03,Budget at a Glance 2023-24
+Tax revenue (net to Centre),2022-04-01,20.9779,2026-11-03,Budget at a Glance 2024-25
+Tax revenue (net to Centre),2023-04-01,23.2725,2026-11-03,Budget at a Glance 2025-26
 Tax revenue (net to Centre),2024-04-01,25.0004,2026-10-29,
+Total expenditure,2017-04-01,21.4197,2026-11-03,Budget at a Glance 2019-20
+Total expenditure,2018-04-01,23.1511,2026-11-03,Budget at a Glance 2020-21
+Total expenditure,2019-04-01,26.8633,2026-11-03,Budget at a Glance 2021-22
+Total expenditure,2020-04-01,35.0984,2026-11-03,Budget at a Glance 2022-23
+Total expenditure,2021-04-01,37.938,2026-11-03,Budget at a Glance 2023-24
+Total expenditure,2022-04-01,41.9316,2026-11-03,Budget at a Glance 2024-25
+Total expenditure,2023-04-01,44.4345,2026-11-03,Budget at a Glance 2025-26
 Total expenditure,2024-04-01,46.5287,2026-10-29,

@@ -137,8 +137,9 @@ figure.chart svg [aria-label="tip"] path { fill: #ffffff; stroke: #c8c8c8; }
 
 
 /* "On this page" contents line, filled from the page's h2 headings */
-nav.toc { font-family: "Inter", system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin: 0 0 18px; }
-nav.toc a { margin-right: 14px; white-space: nowrap; }
+nav.toc { font-family: "Inter", system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin: 0 0 18px;
+  display: flex; flex-wrap: wrap; gap: 2px 14px; }   /* links wrap onto further lines (they have no spaces between them) */
+nav.toc a { white-space: nowrap; }
 nav.toc:empty { display: none; }
 h2[id] { scroll-margin-top: 72px; }
 

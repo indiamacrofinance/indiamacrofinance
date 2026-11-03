@@ -41,7 +41,7 @@ const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projectio
     <tbody>{years.map((p) => <tr><td>{fyLabel(p)}</td><td>{annual.real[p][2]}</td><td>{num(annual.real[p][1], 1)}%</td>
       <td>{annual.nominal[p] ? `${num(annual.nominal[p][1], 1)}%` : "–"}</td><td>{annual.gva[p] ? `${num(annual.gva[p][1], 1)}%` : "–"}</td></tr>)}</tbody>
   </table></div>
-  <p class="chart-sub">% change on the previous financial year, base 2022-23. MoSPI revises each year's estimate several times (advance estimates before the year ends, then provisional, revised and final estimates over the following years); the column shows where each year stands now. Earlier estimates are kept in our revision log as MoSPI replaces them: see <a href="/data/gdp_real_growth_fy/">the series page</a>. Sector detail: <a href="/growth/detail/">Growth detail →</a></p>
+  <p class="chart-sub">% change on the previous financial year, base 2022-23. MoSPI revises each year's estimate several times (advance estimates before the year ends, then provisional, revised and final estimates over the following years); the column shows where each year stands now. Earlier estimates are kept in our revision log as MoSPI replaces them (the API serves only the latest), so a record of how each year was revised builds up from MoSPI's next annual release: see <a href="/data/gdp_real_growth_fy/">the series page</a>. Sector detail: <a href="/growth/detail/">Growth detail →</a></p>
 
   <h2 id="by-sector">Growth by sector</h2>
   <PeriodTable heading="Real GVA, % y/y" n={5} rows={[
@@ -88,6 +88,4 @@ const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projectio
   ]} />
   <p class="chart-sub">RBI's bi-monthly Survey of Professional Forecasters and Consumer Confidence Surveys, released with each MPC decision. They are respondents' views, not RBI's. Columns are the months the results were released; some older rounds are missing because their PDFs use a different layout.</p>
 
-  <h2>Still to come on this page</h2>
-  <p class="chart-sub">A longer record of how annual estimates were revised (it builds up as MoSPI publishes new estimates). Checklist: docs/guidebook/05-pages/growth.md.</p>
 </Base>

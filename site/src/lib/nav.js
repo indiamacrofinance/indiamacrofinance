@@ -30,6 +30,7 @@ export const topics = [
     ["Wholesale prices (WPI)", "/inflation/#wpi"],
     ["Households' inflation expectations", "/inflation/#expectations"],
     ["CPI for industrial workers", "/inflation/#cpi-iw"],
+    ["Inflation by state (map)", "/inflation/#states"],
     ["CPI by division, detail", "/inflation/detail/"],
   ] },
   { key: "jobs", label: "Jobs", href: "/jobs/", items: [
@@ -72,6 +73,7 @@ export const topics = [
   { key: "fiscal", label: "Fiscal", href: "/fiscal/", items: [
     ["Fiscal deficit and capex", "/fiscal/"],
     ["Union Budget at a glance", "/fiscal/#budget"],
+    ["Budgeted vs what happened", "/fiscal/#budget-record"],
     ["Union government accounts", "/fiscal/#accounts"],
     ["GST collections", "/fiscal/#gst"],
     ["Direct taxes and other tax heads", "/fiscal/#taxes"],
@@ -85,6 +87,7 @@ export const topics = [
     ["Effective exchange rates", "/external/#eer"],
     ["External debt", "/external/#debt"],
     ["External commercial borrowing", "/external/#ecb"],
+    ["NRI deposits", "/external/#nri"],
     ["BoP stress episodes (Analysis)", "/analysis/bop-stress/"],
   ] },
   { key: "states", label: "States", href: "/states/", items: [

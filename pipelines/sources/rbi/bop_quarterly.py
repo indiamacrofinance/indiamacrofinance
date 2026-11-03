@@ -9,7 +9,8 @@ and payments), other investment, reserve assets and errors and omissions. From A
 
 BPM5 (RBI's older "Overall Balance of Payments" presentation, still published as Statement II):
 the only place with banking capital (commercial banks' foreign assets and liabilities,
-including non-resident deposits). From Apr-Jun 2000.
+including non-resident deposits), and commercial borrowings (ECBs, medium and long term) with
+their gross drawdowns (credit) and repayments (debit). From Apr-Jun 2000.
 
 Where the files come from (pipelines/sources/rbi/_handbook.py):
   - Handbook tables "... BPM6 - Quarterly - US Dollar" and "Overall Balance of Payments -
@@ -53,6 +54,7 @@ BPM6 = {
     "3.4": "bop_bpm6_other_investment", "3.5": "bop_bpm6_reserve_assets", "5": "bop_bpm6_errors_omissions",
 }
 DERIVATIVES_GROSS = ("bop_bpm6_derivatives_receipts", "bop_bpm6_derivatives_payments")  # 3.3 credit, debit
+ECB_GROSS = ("bop_bpm5_ecb_drawdowns", "bop_bpm5_ecb_repayments")  # BPM5 commercial borrowings credit, debit
 # BPM5 series id -> label pattern (normalised label: lower case, single spaces), first match wins.
 # Block layout ("3. Banking capital (a+b)") and long layout ("B.3) Banking Capital") both covered.
 BPM5 = {
@@ -61,6 +63,7 @@ BPM5 = {
     "bop_bpm5_banking_capital": r"^3\. ?banking capital|^b\.3\) banking capital",
     "bop_bpm5_bank_assets": r"^i\) ?assets$|^b\.3\.a\.1\) assets of commercial banks",
     "bop_bpm5_nri_deposits": r"non-resident deposits",
+    "bop_bpm5_commercial_borrowings": r"^b\) commercial borrowings|^b\.2\.b\) commercial borrowings",
     "bop_bpm5_errors_omissions": r"^c\. ?errors|^c\) errors and omissions",
     "bop_bpm5_reserves_change": r"^ii\) ?foreign exchange reserves|^e\.2\) foreign exchange reserves",
     # Not published as a series: reserves plus IMF transactions, for the identity check.
@@ -193,9 +196,10 @@ def parse_blocks(df: pd.DataFrame) -> list[dict]:
                     continue
                 rows.append({"series_id": sid, "period": period,
                              "value": net if net is not None else (credit or 0) - (debit or 0)})
-                if bpm6 and code == "3.3":
-                    rows += [{"series_id": DERIVATIVES_GROSS[0], "period": period, "value": credit or 0.0},
-                             {"series_id": DERIVATIVES_GROSS[1], "period": period, "value": debit or 0.0}]
+                gross = DERIVATIVES_GROSS if bpm6 and code == "3.3" else ECB_GROSS if sid == "bop_bpm5_commercial_borrowings" else None
+                if gross:
+                    rows += [{"series_id": gross[0], "period": period, "value": credit or 0.0},
+                             {"series_id": gross[1], "period": period, "value": debit or 0.0}]
     return rows
 
 
@@ -214,11 +218,15 @@ def parse_long(df: pd.DataFrame) -> list[dict]:
     rows, period = [], None
     for i in range(head + 1, len(df)):
         period = fy_quarter(df.iat[i, 0]) or period
-        if period and norm(df.iat[i, 1]) == "net":
+        kind = norm(df.iat[i, 1])
+        if period and kind == "net":
             for sid, c in cols.items():
                 v = amount(df.iat[i, c])
                 if v is not None:
                     rows.append({"series_id": sid, "period": period, "value": v})
+        elif period and kind in ("credit", "debit"):
+            v = amount(df.iat[i, cols["bop_bpm5_commercial_borrowings"]])
+            rows.append({"series_id": ECB_GROSS[kind == "debit"], "period": period, "value": v or 0.0})
     return rows
 
 
@@ -297,10 +305,10 @@ def check_identity(df: pd.DataFrame, where: str) -> None:
 
 class RbiBopQuarterly(Source):
     name = "rbi_bop_quarterly"
-    series_ids = (*BPM6.values(), *DERIVATIVES_GROSS, *(s for s in BPM5 if not s.startswith("_")))
+    series_ids = (*BPM6.values(), *DERIVATIVES_GROSS, *(s for s in BPM5 if not s.startswith("_")), *ECB_GROSS)
 
     def fetch(self) -> list[Raw]:
-        backfill = len(load_series("bop_bpm5_banking_capital")) < MIN_HISTORY
+        backfill = min(len(load_series(s)) for s in ("bop_bpm5_banking_capital", "bop_bpm5_commercial_borrowings")) < MIN_HISTORY
         raws = []
         for page in _handbook.pages(BACKFILL_YEARS if backfill else None):
             for pattern in (BPM5_TITLE, BPM6_TITLE):

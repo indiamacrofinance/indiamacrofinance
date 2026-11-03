@@ -65,6 +65,12 @@ def test_bpm5_blocks_long_and_split_header(raw_from):
     assert at(rows, "bop_bpm5_reserves_change", "2022-04-01") == pytest.approx(-4595, abs=1)
     long = parse_file(raw_from("rbi/bop_quarterly/hbie_2012-13_bpm5_long.xls"))
     assert at(long, "bop_bpm5_current_account", "2000-04-01") == -2563          # 2000-01:Q1
+    # Commercial borrowings (MT&LT): net, and gross drawdowns (credit) / repayments (debit)
+    assert at(rows, "bop_bpm5_commercial_borrowings", "2022-04-01") == pytest.approx(-2809, abs=1)
+    assert at(rows, "bop_bpm5_ecb_drawdowns", "2022-04-01") == pytest.approx(3252, abs=1)
+    assert at(rows, "bop_bpm5_ecb_repayments", "2022-04-01") == pytest.approx(6062, abs=1)
+    assert at(long, "bop_bpm5_commercial_borrowings", "2000-04-01") == -281
+    assert at(long, "bop_bpm5_ecb_drawdowns", "2000-04-01") - at(long, "bop_bpm5_ecb_repayments", "2000-04-01") == -281
     assert {r["period"] for r in long} >= {"2000-04-01", "2013-01-01"}
     assert complete(pd.DataFrame(rows)) and complete(pd.DataFrame(long))
 

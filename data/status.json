@@ -49,148 +49,169 @@
     "last_period": "2026-09-01"
   },
   "bop_bpm5_bank_assets": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_banking_capital": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_capital_account": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-04-01"
+  },
+  "bop_bpm5_commercial_borrowings": {
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_current_account": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-04-01"
+  },
+  "bop_bpm5_ecb_drawdowns": {
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
+    "stale": false,
+    "last_error": null,
+    "last_period": "2026-04-01"
+  },
+  "bop_bpm5_ecb_repayments": {
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_errors_omissions": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_nri_deposits": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm5_reserves_change": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_capital_account": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_current_account": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_derivatives": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_derivatives_payments": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_derivatives_receipts": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_errors_omissions": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_fdi_in_india": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_goods_services": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_odi": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_other_investment": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_portfolio": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_primary_income": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_reserve_assets": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
   },
   "bop_bpm6_secondary_income": {
-    "last_attempt": "2026-11-03T06:34:40+00:00",
-    "last_success": "2026-11-03T06:34:40+00:00",
+    "last_attempt": "2026-11-03T11:30:22+00:00",
+    "last_success": "2026-11-03T11:30:22+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
@@ -280,15 +301,15 @@
     "last_period": "2026-11-02"
   },
   "budget_actuals": {
-    "last_attempt": "2026-11-01T14:28:50+00:00",
-    "last_success": "2026-11-01T14:28:50+00:00",
+    "last_attempt": "2026-11-03T11:36:41+00:00",
+    "last_success": "2026-11-03T11:36:41+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
   },
   "budget_be": {
-    "last_attempt": "2026-11-01T14:28:50+00:00",
-    "last_success": "2026-11-01T14:28:50+00:00",
+    "last_attempt": "2026-11-03T11:36:41+00:00",
+    "last_success": "2026-11-03T11:36:41+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-04-01"
@@ -315,8 +336,8 @@
     "last_period": "2025-04-01"
   },
   "budget_re": {
-    "last_attempt": "2026-11-01T14:28:50+00:00",
-    "last_success": "2026-11-01T14:28:50+00:00",
+    "last_attempt": "2026-11-03T11:36:41+00:00",
+    "last_success": "2026-11-03T11:36:41+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-04-01"

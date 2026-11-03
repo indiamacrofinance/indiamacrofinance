@@ -120,7 +120,7 @@ CMIE (paywalled), Bloomberg/Refinitiv/LSEG terminal data, any data behind a logi
 
 | Publisher | Data | URL | Fetch | Licence | Status | Notes |
 |---|---|---|---|---|---|---|
-| Ministry of Finance | Budget at a Glance (BE, RE, Actuals; deficits with % of GDP) | `indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.xlsx` | auto | GODL | **live** (`budget/glance.py`) | Replaced each Budget, so history accumulates from 2024-25. Sheets BAAG and Deficit Statistics; % of GDP in brackets on the row below each deficit. The per-table `bag1.xls` links on the home page return 404 |
+| Ministry of Finance | Budget at a Glance (BE, RE, Actuals; deficits with % of GDP) | `indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.xlsx` | auto | GODL | **live** (`budget/glance.py`) | Replaced each Budget. Earlier Budgets only as PDF at `indiabudget.gov.in/budget<YYYY-YY>/doc/Budget_at_Glance/budget_at_a_glance.pdf` (2019-20 to 2025-26; older editions not at that path), read once for history (Actuals from 2017-18). 2024-25 has a fifth column (Provisional Actuals), skipped; 2025-26 shortens labels. Sheets BAAG and Deficit Statistics; % of GDP in brackets on the row below each deficit. The per-table `bag1.xls` links on the home page return 404 |
 | Ministry of Finance | Spending by demand for grants (Actuals, BE, RE) | `indiabudget.gov.in/doc/eb/stat3a.xlsx` (Expenditure Profile, Statement 3) | auto | GODL | **live** (`budget/demands.py`) | Demand rows start "Demand No. N\\n<name>"; Total columns found from the header; demands must sum to Grand Total (checked) |
 
 ### International

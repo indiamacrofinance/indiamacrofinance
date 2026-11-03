@@ -88,6 +88,16 @@ const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change
     lines={[{ id: "ecb_registrations", label: "Registered" }]} years={3} />
   <p class="chart-sub">Indian companies' borrowing from abroad as registered with RBI each month, all routes. Registration comes before any money is drawn, so this measures plans rather than inflows. Source: RBI, monthly ECB/FCCB data; totals as printed.</p>
 
-  <h2>Still to come on this page</h2>
-  <p class="chart-sub">ECB drawdowns (money actually received) and NRI deposits. Checklist: docs/guidebook/05-pages/external.md.</p>
+  <div class="grid2">
+    <LineChart title="ECB money drawn and repaid" subtitle="US$ billion a quarter, gross: commercial borrowings, medium and long term"
+      lines={[{ id: "bop_bpm5_ecb_drawdowns", label: "Drawn (inflow)" }, { id: "bop_bpm5_ecb_repayments", label: "Repaid (outflow)" }]} years={8} />
+    <LineChart title="Net ECB flow" subtitle="US$ billion a quarter: drawn minus repaid"
+      lines={[{ id: "bop_bpm5_commercial_borrowings", label: "Net ECB" }]} reference={{ target: 0 }} years={8} />
+  </div>
+  <p class="chart-sub">Money actually received and paid back, from the balance of payments (RBI's BPM5 presentation, Statement II of each quarterly release; history from 2000 in the Handbook). Registrations above lead drawdowns by months. Caution: RBI printed unusually large gross flows for Jan-Mar 2025 (US$ 39 bn drawn, 31 bn repaid); a later release revised similar figures for 2025-26 down to US$ 10-14 bn a quarter but left that quarter as it was. The net flow is unaffected.</p>
+
+  <h2 id="nri">NRI deposits</h2>
+  <LineChart title="Non-resident deposits, net inflow" subtitle="US$ billion a quarter: money Indians abroad add to (or take out of) NRI accounts in Indian banks"
+    lines={[{ id: "bop_bpm5_nri_deposits", label: "NRI deposits, net" }]} reference={{ target: 0 }} years={14} />
+  <p class="chart-sub">Net flows into FCNR(B), NRE and NRO accounts, from the balance of payments (RBI's BPM5 presentation, part of banking capital). They jump when banks or RBI offer special terms: RBI's FCNR(B) swap window during the 2013 rupee crisis brought in a record US$ 21.4 bn in Oct-Dec 2013, and those three-year deposits flowed out (US$ 18.5 bn) when they matured in Oct-Dec 2016. Source: RBI, quarterly BoP releases and Handbook of Statistics.</p>
 </Base>

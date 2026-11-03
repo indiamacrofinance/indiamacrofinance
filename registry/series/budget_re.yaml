@@ -34,7 +34,6 @@ owner: ''
 verified_against: []
 notes: Revised Estimates for each financial year (period = 1 April of the year), by
   item. Amounts in ₹ lakh crore (₹ crore in the file); the "% of GDP" items are per
-  cent. Taken from Budget at a Glance, which each Budget replaces, so history builds
-  up one Budget at a time from 2024-25.
+  cent. Taken from Budget at a Glance, which each Budget replaces, so history builds up one Budget at a time; earlier Budgets (2019-20 to 2025-26, archived PDFs) were read once, so Actuals start in 2017-18.
 panel: true
 entity: budget_item
