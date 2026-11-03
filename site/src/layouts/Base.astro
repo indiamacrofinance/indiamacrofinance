@@ -132,7 +132,7 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
       <div class="wrap">
         <p>{config.site.tagline}. Every number is drawn from official public sources; see <a href="/data/">Data</a> for sources and licences.</p>
         <p>{config.credit.inspired_by_text} <a href={config.credit.inspired_by_url}>{config.credit.inspired_by_url.replace("https://", "")}</a></p>
-        <p>Private preview, built {period(s.built_on, "D")}. <a href="/status/">{t("nav.status")}</a> · <a href="/privacy/">Terms and privacy</a></p>
+        <p>Private preview, built {period(s.built_on, "D")}. <a href="/status/">{t("nav.status")}</a> · <a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/" rel="noopener">{t("nav.live_status")} ↗</a> · <a href="/privacy/">Terms and privacy</a></p>
       </div>
     </footer>
   </body>

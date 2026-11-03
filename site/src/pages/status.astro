@@ -15,6 +15,7 @@ const when = (s) => (s ? s.replace("T", " ").slice(0, 16) + " UTC" : "never");
 <Base title="Status">
   <h1>Status</h1>
   <p class="lede">Health of every series, for whoever is on duty (see the operations runbook). {rows.length} series: <b class="pos">{ok} up to date</b>, <b class="neg">{overdue.length} overdue</b>, <b class="neg">{failing.length} failing</b>.</p>
+  <p><a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/">Live status dashboard ↗</a>: what is running now, the latest runs and commits, and every source by bot. It refreshes every 15 seconds; this page is as of the last build.</p>
 
   <h2>Failing</h2>
   {failing.length ? (
