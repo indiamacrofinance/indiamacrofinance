@@ -14,28 +14,24 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2025-04-01",
-  "last_period": "2026-10-31",
-  "last_value": 124.72,
-  "observations": 578,
-  "updated_at": "2026-11-01T13:23:57+00:00",
+  "last_period": "2026-11-02",
+  "last_value": 126.86,
+  "observations": 580,
+  "updated_at": "2026-11-04T04:26:26+00:00",
   "fetched_from": [
-    "https://webcdn.grid-india.in/files/grdw/2026/10/24.10.26_NLDC_PSP_372.xls#date=2026-10-24",
-    "https://webcdn.grid-india.in/files/grdw/2026/10/25.10.26_NLDC_PSP_101.xls#date=2026-10-25",
-    "https://webcdn.grid-india.in/files/grdw/2026/10/26.10.26_NLDC_PSP_247.xls#date=2026-10-26",
-    "https://webcdn.grid-india.in/files/grdw/2026/10/27.10.26_NLDC_PSP_243.xls#date=2026-10-27",
     "https://webcdn.grid-india.in/files/grdw/2026/10/28.10.26_NLDC_PSP_918.xls#date=2026-10-28",
     "https://webcdn.grid-india.in/files/grdw/2026/10/29.10.26_NLDC_PSP_621.xls#date=2026-10-29",
     "https://webcdn.grid-india.in/files/grdw/2026/10/30.10.26_NLDC_PSP_520.xls#date=2026-10-30",
+    "https://webcdn.grid-india.in/files/grdw/2026/11/01.11.26_NLDC_PSP_491.xls#date=2026-11-01",
+    "https://webcdn.grid-india.in/files/grdw/2026/11/02.11.26_NLDC_PSP_993.xls#date=2026-11-02",
     "https://webcdn.grid-india.in/files/grdw/2026/11/31.10.26_NLDC_PSP_651.xls#date=2026-10-31"
   ],
   "raw_files": [
-    "data/raw/gridindia_psp/20261101T132324-8e8ec2c697.xls",
-    "data/raw/gridindia_psp/20261101T132329-f042e0ba9d.xls",
-    "data/raw/gridindia_psp/20261101T132334-85d23e346f.xls",
-    "data/raw/gridindia_psp/20261101T132339-cb95c03321.xls",
-    "data/raw/gridindia_psp/20261101T132343-f30071c6e5.xls",
-    "data/raw/gridindia_psp/20261101T132349-31eab9e759.xls",
-    "data/raw/gridindia_psp/20261101T132353-c9bef97a05.xls",
-    "data/raw/gridindia_psp/20261101T132357-029fa9ea9a.xls"
+    "data/raw/gridindia_psp/20261104T042614-f30071c6e5.xls",
+    "data/raw/gridindia_psp/20261104T042616-31eab9e759.xls",
+    "data/raw/gridindia_psp/20261104T042617-c9bef97a05.xls",
+    "data/raw/gridindia_psp/20261104T042622-029fa9ea9a.xls",
+    "data/raw/gridindia_psp/20261104T042624-111d27ca28.xls",
+    "data/raw/gridindia_psp/20261104T042626-42a418b581.xls"
   ]
 }
