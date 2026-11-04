@@ -17,11 +17,11 @@
   "last_period": "2026-04-01",
   "last_value": 20.8,
   "observations": 7,
-  "updated_at": "2026-11-03T20:05:04+00:00",
+  "updated_at": "2026-11-04T13:07:08+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63700"
   ],
   "raw_files": [
-    "data/raw/rbi_external_debt/20261103T200504-31c771cfc2.html"
+    "data/raw/rbi_external_debt/20261104T130708-d3e854ec34.html"
   ]
 }
