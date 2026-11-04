@@ -17,7 +17,7 @@
   "last_period": "2026-04-01",
   "last_value": 3.6,
   "observations": 57,
-  "updated_at": "2026-11-04T14:36:07+00:00",
+  "updated_at": "2026-11-04T18:49:21+00:00",
   "fetched_from": [
     "https://api.mospi.gov.in/api/nas/getNASData?series=Current&frequency_code=Quarterly&base_year=2011-12&indicator_code=21&limit=100&page=1&Format=JSON",
     "https://api.mospi.gov.in/api/nas/getNASData?series=Current&frequency_code=Quarterly&base_year=2011-12&indicator_code=21&limit=100&page=2&Format=JSON",
@@ -37,21 +37,21 @@
     "https://api.mospi.gov.in/api/nas/getNASData?series=Current&frequency_code=Quarterly&base_year=2022-23&indicator_code=9&limit=100&page=1&Format=JSON"
   ],
   "raw_files": [
-    "data/raw/mospi_nas/20261104T143530-c0e778ef03.json",
-    "data/raw/mospi_nas/20261104T143533-919dc3251b.json",
-    "data/raw/mospi_nas/20261104T143535-2606083ec4.json",
-    "data/raw/mospi_nas/20261104T143538-a2d99ddf6e.json",
-    "data/raw/mospi_nas/20261104T143540-11d19e4c63.json",
-    "data/raw/mospi_nas/20261104T143543-53a72f23b0.json",
-    "data/raw/mospi_nas/20261104T143546-0b0c938171.json",
-    "data/raw/mospi_nas/20261104T143548-3da1826e8a.json",
-    "data/raw/mospi_nas/20261104T143551-7f00d75f6b.json",
-    "data/raw/mospi_nas/20261104T143553-bc46b4f398.json",
-    "data/raw/mospi_nas/20261104T143555-528b1cd646.json",
-    "data/raw/mospi_nas/20261104T143558-2557a004d1.json",
-    "data/raw/mospi_nas/20261104T143600-3a10a5ca0f.json",
-    "data/raw/mospi_nas/20261104T143602-78498e7ebb.json",
-    "data/raw/mospi_nas/20261104T143604-7caadb1518.json",
-    "data/raw/mospi_nas/20261104T143607-d1c1729c00.json"
+    "data/raw/mospi_nas/20261104T184845-c0e778ef03.json",
+    "data/raw/mospi_nas/20261104T184848-919dc3251b.json",
+    "data/raw/mospi_nas/20261104T184850-2606083ec4.json",
+    "data/raw/mospi_nas/20261104T184852-a2d99ddf6e.json",
+    "data/raw/mospi_nas/20261104T184855-11d19e4c63.json",
+    "data/raw/mospi_nas/20261104T184858-53a72f23b0.json",
+    "data/raw/mospi_nas/20261104T184900-0b0c938171.json",
+    "data/raw/mospi_nas/20261104T184903-3da1826e8a.json",
+    "data/raw/mospi_nas/20261104T184905-7f00d75f6b.json",
+    "data/raw/mospi_nas/20261104T184907-bc46b4f398.json",
+    "data/raw/mospi_nas/20261104T184910-528b1cd646.json",
+    "data/raw/mospi_nas/20261104T184912-2557a004d1.json",
+    "data/raw/mospi_nas/20261104T184914-3a10a5ca0f.json",
+    "data/raw/mospi_nas/20261104T184916-78498e7ebb.json",
+    "data/raw/mospi_nas/20261104T184918-7caadb1518.json",
+    "data/raw/mospi_nas/20261104T184920-d1c1729c00.json"
   ]
 }

@@ -17,11 +17,11 @@
   "last_period": "2026-09-01",
   "last_value": 155.5,
   "observations": 3,
-  "updated_at": "2026-11-04T14:37:46+00:00",
+  "updated_at": "2026-11-04T18:51:03+00:00",
   "fetched_from": [
     "https://labourbureau.gov.in/uploads/public/notice/Press-ReleaseCPIIWSept-2026Epdf-daddd6a2961843720deae3c2b5f0a71d.pdf"
   ],
   "raw_files": [
-    "data/raw/labourbureau_cpi_iw/20261104T143746-24240c3e0d.pdf"
+    "data/raw/labourbureau_cpi_iw/20261104T185103-24240c3e0d.pdf"
   ]
 }
