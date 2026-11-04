@@ -27,7 +27,7 @@ const entities = [...new Set([...cpi.rows, ...ur.rows, ...gsdp.rows].map((r) => 
   <h1>States</h1>
   <p><label style="display:inline-flex;flex-wrap:wrap;gap:4px;max-width:100%">Go to a state: <select id="state-pick" style="font:inherit;padding:3px 6px;max-width:100%"><option value="">Choose…</option>
     {[...new Set([...entities, ...finStates])].sort().map((e) => <option value={`/states/${slug(e)}/`}>{e}</option>)}</select></label></p>
-  <p class="lede">How do India's states and union territories compare on prices, jobs and growth? Inflation from MoSPI's state CPI, unemployment and participation from the annual PLFS, and growth from state domestic product estimates.</p>
+  <p class="lede" data-pagefind-meta="summary">How do India's states and union territories compare on prices, jobs and growth? Inflation from MoSPI's state CPI, unemployment and participation from the annual PLFS, and growth from state domestic product estimates.</p>
 
   <StateTileMap title={`CPI inflation by state, ${period(cpi.ref_period, "M")}`}
     subtitle="% change on a year earlier, as published; colour shows the gap from the all-India rate"

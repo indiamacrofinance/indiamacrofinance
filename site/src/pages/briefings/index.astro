@@ -5,9 +5,9 @@ import { loadBriefings } from "../../lib/briefings.js";
 import { period } from "../../lib/format.js";
 const items = loadBriefings();
 ---
-<Base current="briefings" title="Briefings">
+<Base search={false} current="briefings" title="Briefings">
   <h1>Briefings</h1>
-  <p class="lede">Short notes on each major data release, plus daily, weekly and monthly round-ups. Each note is drafted automatically from the data on this site (every number comes from a stored series, never typed in) and reviewed by a person before it is published, except the short daily note, which is published automatically after the number check. Posts marked "From the editor" are written by a person.</p>
+  <p class="lede" data-pagefind-meta="summary">Short notes on each major data release, plus daily, weekly and monthly round-ups. Each note is drafted automatically from the data on this site (every number comes from a stored series, never typed in) and reviewed by a person before it is published, except the short daily note, which is published automatically after the number check. Posts marked "From the editor" are written by a person.</p>
   <p class="chart-sub">Follow by RSS: <a href="/briefings/rss.xml">all briefings</a> · <a href="/briefings/release-notes.xml">release notes</a> · <a href="/briefings/daily.xml">daily note</a></p>
   {items.length ? (
     <ul class="briefing-list">{items.map((b) => <li><span class="chart-sub">{period(b.date, "D")}</span> <a href={`/briefings/${b.slug}/`}>{b.title}</a>{b.product === "editor" ? <span class="badge">From the editor</span> : null}</li>)}</ul>

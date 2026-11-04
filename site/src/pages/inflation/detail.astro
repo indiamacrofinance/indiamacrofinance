@@ -23,7 +23,7 @@ const published = valueAt(series("cpi_headline_inflation"), "level", latestPerio
 <Base current="inflation" title="Inflation detail">
   <p class="chart-sub"><a href="/inflation/">← Inflation</a></p>
   <h1>Inflation by division</h1>
-  <p class="lede">Which parts of the consumer basket are driving inflation? The twelve COICOP divisions of the 2024-base CPI, their weights, and how much each adds to headline inflation ({period(latestPeriod, "M")}).</p>
+  <p class="lede" data-pagefind-meta="summary">Which parts of the consumer basket are driving inflation? The twelve COICOP divisions of the 2024-base CPI, their weights, and how much each adds to headline inflation ({period(latestPeriod, "M")}).</p>
 
   <StackedBars title="Contributions to CPI inflation by division" subtitle="Percentage points of the 12-month rate; dots show headline inflation as published"
     rows={contrib.map(({ period, component, pp }) => ({ period, component, pp }))}

@@ -32,14 +32,14 @@ const total = (d) => d.series.length;
 ---
 <Base title="What changed">
   <h1>What changed</h1>
-  <p class="lede">Every series that got new or revised numbers, day by day, for the last {ch.days.length} days on which data came in. Updated each time the site is rebuilt, which happens after every data bot run. For what is due next, see the <a href="/calendar/">release calendar</a>; for whether the machinery is running, the <a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/" target="_blank" rel="noopener">live status ↗</a>.</p>
+  <p class="lede" data-pagefind-meta="summary">Every series that got new or revised numbers, day by day, for the last {ch.days.length} days on which data came in. Updated each time the site is rebuilt, which happens after every data bot run. For what is due next, see the <a href="/calendar/">release calendar</a>; for whether the machinery is running, the <a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/" target="_blank" rel="noopener">live status ↗</a>.</p>
 
   <p class="day-pick" data-no-toc>{ch.days.map((d) => <a href={`#d-${d.date}`}>{shortDate(d.date)} <span>{total(d)}</span></a>)}</p>
 
   {ch.days.map((d, i) => (
     <details class="day" id={`d-${d.date}`} open={i === 0} data-no-toc>
       <summary><h2>{longDate(d.date)} <span class="count">{total(d)} series</span></h2></summary>
-      <div class="scroll"><table class="data">
+      <div class="scroll" data-pagefind-ignore><table class="data">
         <thead><tr><th>Series</th><th>Area</th><th>What changed</th><th>Latest</th></tr></thead>
         <tbody>{d.series.map((r) => (
           <tr><td><a href={`/data/${r.id}/`}>{r.title}</a></td><td>{AREA[r.area] ?? r.area}</td><td>{what(r)}</td>

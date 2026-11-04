@@ -27,7 +27,7 @@ const qproj = JSON.parse(fs.readFileSync("src/data/generated/quarterly_projectio
 ---
 <Base current="growth" title="Growth">
   <h1>Growth</h1>
-  <p class="lede">How fast is the economy growing, and which sectors and spending components drive it? Quarterly national accounts from MoSPI. Real GDP grew {num(last.value, 1)}% on a year earlier in {period(last.period, "Q")}; nominal GDP in that quarter was ₹{num(lastLevel.value, 1)} lakh crore.</p>
+  <p class="lede" data-pagefind-meta="summary">How fast is the economy growing, and which sectors and spending components drive it? Quarterly national accounts from MoSPI. Real GDP grew {num(last.value, 1)}% on a year earlier in {period(last.period, "Q")}; nominal GDP in that quarter was ₹{num(lastLevel.value, 1)} lakh crore.</p>
 
   <LineChart title="Real GDP and GVA growth, as published" subtitle="% change on the same quarter a year earlier, constant prices"
     lines={[{ id: "gdp_real_growth", label: "GDP" }, { id: "gva_real_growth", label: "GVA" }]} years={10} />

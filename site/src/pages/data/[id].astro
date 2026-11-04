@@ -5,6 +5,7 @@ import LineChart from "../../components/LineChart.astro";
 import { catalogue, series } from "../../lib/data.js";
 import { config } from "../../lib/config.js";
 import { num, period } from "../../lib/format.js";
+import { seriesTerms } from "../../lib/search.js";
 
 export function getStaticPaths() {
   return catalogue().filter((r) => r.observations > 0 && !r.panel).map((r) => ({ params: { id: r.id } }));
@@ -23,10 +24,10 @@ const recent = s.data.slice(-24).reverse();
 const today = new Date().toISOString().slice(0, 10);
 const citation = `${config.site.name} (${today.slice(0, 4)}). ${s.title} [${id}]. Retrieved ${period(today, "D")}. Original source: ${s.source.agency}.`;
 ---
-<Base current="data" title={s.short_title} description={s.title}>
+<Base current="data" title={s.short_title} description={s.title} searchTerms={seriesTerms({ ...s, id })}>
   <p class="chart-sub"><a href="/data/">← All series</a></p>
   <h1>{s.short_title} {s.original && <span class="badge">Original</span>}</h1>
-  <p class="lede">{s.title}. {freqLabel}, {unitLabel}{s.base_year && s.base_year !== "null" ? `, base ${s.base_year}` : ""}. Latest: {num(last[1], 2)} ({period(last[0], s.frequency)}).</p>
+  <p class="lede" data-pagefind-meta="summary">{s.title}. {freqLabel}, {unitLabel}{s.base_year && s.base_year !== "null" ? `, base ${s.base_year}` : ""}. Latest: {num(last[1], 2)} ({period(last[0], s.frequency)}).</p>
 
   <div class="grid2">
     <LineChart title="Level" subtitle={unitLabel} lines={[{ id }]} years={10} />
@@ -54,10 +55,10 @@ const citation = `${config.site.name} (${today.slice(0, 4)}). ${s.title} [${id}]
   <p>{s.downloadable
     ? <><a href={`/data/${id}.csv`} download>Download CSV</a> <span class="chart-sub">Columns: period, value, vintage (date we first recorded the value), note.</span></>
     : "Not available for download (see licence)."}</p>
-  <p class="cite"><b>Cite:</b> {citation}</p>
+  <p class="cite" data-pagefind-ignore><b>Cite:</b> {citation}</p>
 
   <h2>Latest observations</h2>
-  <div class="scroll">
+  <div class="scroll" data-pagefind-ignore>
     <table class="data">
       <thead><tr><th>Period</th><th>Value</th><th>Note</th></tr></thead>
       <tbody>{recent.map(([p, v, n]) => <tr><td>{period(p, s.frequency)}</td><td>{num(v, 2)}</td><td>{n}</td></tr>)}</tbody>
@@ -66,7 +67,7 @@ const citation = `${config.site.name} (${today.slice(0, 4)}). ${s.title} [${id}]
 
   <h2>Revisions</h2>
   {s.revisions.length ? (
-    <div class="scroll"><table class="data">
+    <div class="scroll" data-pagefind-ignore><table class="data">
       <thead><tr><th>Period</th><th>Old value</th><th>New value</th><th>Recorded</th></tr></thead>
       <tbody>{s.revisions.map((r) => <tr><td>{r.period}</td><td>{r.old_value}</td><td>{r.new_value}</td><td>{r.new_vintage}</td></tr>)}</tbody>
     </table></div>

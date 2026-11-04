@@ -29,7 +29,7 @@ const mpr = yaml.load(fs.readFileSync(`../registry/mpr/${mprFiles.at(-1)}`, "utf
 ---
 <Base current="money" title="Money & banking">
   <h1>Money &amp; banking</h1>
-  <p class="lede">What is RBI's policy stance, where are money-market rates, and how fast are bank credit and deposits growing? The policy repo rate is {num(repo.value, 2)}% ({period(repo.period, "D")}); bank credit grew {num(credit.value, 1)}% on a year earlier in the fortnight to {period(credit.period, "D")}. The banking system's liquidity was in {liquidity.value >= 0 ? "surplus" : "deficit"} by ₹{num(Math.abs(liquidity.value), 2)} lakh crore on {period(liquidity.period, "D")}, and broad money (M3) grew {num(m3.value, 1)}% on a year earlier.</p>
+  <p class="lede" data-pagefind-meta="summary">What is RBI's policy stance, where are money-market rates, and how fast are bank credit and deposits growing? The policy repo rate is {num(repo.value, 2)}% ({period(repo.period, "D")}); bank credit grew {num(credit.value, 1)}% on a year earlier in the fortnight to {period(credit.period, "D")}. The banking system's liquidity was in {liquidity.value >= 0 ? "surplus" : "deficit"} by ₹{num(Math.abs(liquidity.value), 2)} lakh crore on {period(liquidity.period, "D")}, and broad money (M3) grew {num(m3.value, 1)}% on a year earlier.</p>
   {mpc.next && <p class="chart-sub"><strong>Next MPC decision:</strong> {period(mpc.next.date, "D")} ({mpc.next.days} days). Last decision ({lastMpc.dates}): {move(lastMpc.change_bp)} to {num(lastMpc.rate, 2)}%, stance {lastMpc.stance}. <a href="/calendar/">Calendar →</a></p>}
 
   <LineChart title="Policy corridor and the call rate" subtitle="Per cent; the call rate (WACR) normally trades between the SDF floor and the MSF ceiling"
