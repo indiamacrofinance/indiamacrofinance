@@ -49,7 +49,7 @@ const horizonLabel = (h) => (h < 0 ? "Quarter just ended" : h === 0 ? "Current q
 ---
 <Base current="inflation" title="Inflation">
   <h1>Inflation</h1>
-  <p class="lede">Is inflation close to RBI's 4% target, and is it broad-based? Consumer prices from MoSPI on the 2024 base, linked to 2013 through MoSPI's official back series. Core CPI follows RBI's definition (excluding food and fuel).</p>
+  <p class="lede" data-pagefind-meta="summary">Is inflation close to RBI's 4% target, and is it broad-based? Consumer prices from MoSPI on the 2024 base, linked to 2013 through MoSPI's official back series. Core CPI follows RBI's definition (excluding food and fuel).</p>
 
   <LineChart title="CPI inflation, as published" subtitle="% change on a year earlier · RBI target 4% (dashed), tolerance band 2–6% (shaded)"
     lines={[{ id: "cpi_headline_inflation" }]} reference={{ target: 4, band: [2, 6] }} years={12} />

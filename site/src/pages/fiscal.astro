@@ -35,7 +35,7 @@ const vsPeriod = vsBE[0].pct.period;
 ---
 <Base current="fiscal" title="Fiscal">
   <h1>Fiscal</h1>
-  <p class="lede">Is the Union government on track for its budgeted deficit? By the end of {period(fd.period, "M")} the fiscal deficit had reached {num(fd.value, 1)}% of the year's Budget Estimate, against {num(fdPrev.value, 1)}% at the same point last year. Monthly accounts from the Controller General of Accounts; GST from the GST portal.</p>
+  <p class="lede" data-pagefind-meta="summary">Is the Union government on track for its budgeted deficit? By the end of {period(fd.period, "M")} the fiscal deficit had reached {num(fd.value, 1)}% of the year's Budget Estimate, against {num(fdPrev.value, 1)}% at the same point last year. Monthly accounts from the Controller General of Accounts; GST from the GST portal.</p>
 
   <div class="grid2">
     <LineChart title="Fiscal deficit, year to date, as % of the Budget Estimate" subtitle="Each financial year starts in April; March is the full year (% of Revised Estimates)"

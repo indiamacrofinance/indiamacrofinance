@@ -12,7 +12,7 @@ const resChange = JSON.parse(fs.readFileSync("src/data/generated/reserves_change
 ---
 <Base current="external" title="External">
   <h1>External sector</h1>
-  <p class="lede">How large are India's foreign exchange reserves, and how is the rupee doing? Reserves were ${num(fx.value, 1)} billion in the week to {period(fx.period, "D")}.</p>
+  <p class="lede" data-pagefind-meta="summary">How large are India's foreign exchange reserves, and how is the rupee doing? Reserves were ${num(fx.value, 1)} billion in the week to {period(fx.period, "D")}.</p>
 
   <div class="grid2">
     <LineChart title="Foreign exchange reserves" subtitle="US$ billion, week ending Friday"

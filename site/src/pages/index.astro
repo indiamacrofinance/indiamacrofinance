@@ -20,7 +20,7 @@ const spec = yaml.load(fs.readFileSync("../registry/pages/home.yaml", "utf8"));
 ---
 <Base current="home">
   <h1>{config.site.tagline}</h1>
-  <p class="lede">{config.site.description}</p>
+  <p class="lede" data-pagefind-meta="summary">{config.site.description}</p>
   <Signup />
 
   <h2>{t("home.key_indicators")}</h2>

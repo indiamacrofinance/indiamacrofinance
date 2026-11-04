@@ -14,7 +14,7 @@ const when = (s) => (s ? s.replace("T", " ").slice(0, 16) + " UTC" : "never");
 ---
 <Base title="Status">
   <h1>Status</h1>
-  <p class="lede">Health of every series, for whoever is on duty (see the operations runbook). {rows.length} series: <b class="pos">{ok} up to date</b>, <b class="neg">{overdue.length} overdue</b>, <b class="neg">{failing.length} failing</b>.</p>
+  <p class="lede" data-pagefind-meta="summary">Health of every series, for whoever is on duty (see the operations runbook). {rows.length} series: <b class="pos">{ok} up to date</b>, <b class="neg">{overdue.length} overdue</b>, <b class="neg">{failing.length} failing</b>.</p>
   <p><a href="https://indiamacrofinance-scheduler.bishmaykbarik.workers.dev/">Live status dashboard ↗</a>: what is running now, the latest runs and commits, and every source by bot. It refreshes every 15 seconds; this page is as of the last build.</p>
 
   <h2>Failing</h2>
@@ -61,7 +61,7 @@ const when = (s) => (s ? s.replace("T", " ").slice(0, 16) + " UTC" : "never");
   ) : <p>No open scraper-broken or large-revision issues.</p>}
 
   <h2>All series</h2>
-  <div class="scroll"><table class="data">
+  <div class="scroll" data-pagefind-ignore><table class="data">
     <thead><tr><th>Series</th><th>Freq.</th><th>Latest period</th><th>Expected next by</th><th>Last success</th><th>State</th></tr></thead>
     <tbody>{rows.map((r) => <tr><td><code>{r.id}</code></td><td>{r.frequency}</td><td>{r.last_period ?? "–"}</td><td>{r.due ?? "–"}</td><td>{when(r.last_success)}</td>
       <td class={r.stale || r.overdue_days > 0 ? "neg" : "pos"}>{r.stale ? "failing" : r.discontinued ? "discontinued" : r.overdue_days > 0 ? `overdue ${r.overdue_days}d` : "ok"}</td></tr>)}</tbody>

@@ -1,7 +1,7 @@
 # See AGENTS.md → Commands.
 PY ?= uv run python
 
-.PHONY: setup check test update update-auto india-update build dev archive-raw briefings morning morning-again morning-preview morning-pack morning-check
+.PHONY: setup check test update update-auto india-update build search-check dev archive-raw briefings morning morning-again morning-preview morning-pack morning-check
 
 setup:
 	uv sync
@@ -37,6 +37,10 @@ india-update:
 build:
 	$(PY) -m pipelines.build.site_data
 	cd site && npx astro build && npx pagefind --site dist
+
+# How well search ranks the pages people look for (run after build; see 05-pages/search.md).
+search-check:
+	node scripts/search_check.mjs site/dist
 
 dev:
 	$(PY) -m pipelines.build.site_data

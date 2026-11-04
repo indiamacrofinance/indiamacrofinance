@@ -5,8 +5,12 @@ import { site } from "../lib/data.js";
 import { t } from "../lib/i18n.js";
 import { period } from "../lib/format.js";
 import { topics, more } from "../lib/nav.js";
+import { pageTerms } from "../lib/search.js";
 
-const { title, description, current } = Astro.props;
+// searchTerms: [main words, other names] for the search index (lib/search.js); search={false}
+// keeps a page out of the index.
+const { title, description, current, searchTerms = ["", ""], search = true } = Astro.props;
+const mainTerms = [title, pageTerms(Astro.url.pathname), searchTerms[0]].filter(Boolean).join(", ");
 const s = site();
 const c = config.brand.colors;
 // Pages that live under another menu (Data, Methods and Status sit under About).
@@ -28,6 +32,24 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Literata:wght@400;600&display=swap" rel="stylesheet" />
     <style set:html={`:root{--primary:${c.primary};--accent:${c.accent};--ink:${c.ink};--paper:${c.paper};}`}></style>
+    <script is:inline>
+      // Options for both search boxes (header overlay and /search/). Ranking tuned on common
+      // queries (docs/guidebook/05-pages/search.md): less weight on repeated words and on short
+      // pages, more on exact matches. Each result shows its page's summary (the first .lede,
+      // tagged data-pagefind-meta="summary") rather than an excerpt, which could be the page's
+      // hidden search terms.
+      window.searchOptions = {
+        showSubResults: true, showImages: false, resetStyles: false,
+        ranking: { pageLength: 0.5, termSaturation: 2, termFrequency: 0.4, termSimilarity: 2 },
+        processResult: (r) => {
+          const s = r.meta.summary;
+          delete r.meta.summary;
+          if (s) r.excerpt = (s.length > 200 ? s.slice(0, 200).replace(/\s+\S*$/, "") + "…" : s)
+            .replace(/&/g, "&amp;").replace(/</g, "&lt;");
+          return r;
+        },
+      };
+    </script>
   </head>
   <body>
     <header class="site">
@@ -59,7 +81,16 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
         <p class="search-hint">Esc to close · <a href="/search/">full search page</a></p>
       </div>
     </div>
-    <main class="wrap" data-pagefind-body>
+    <main class="wrap" data-pagefind-body={search ? "" : undefined}>
+      {search && <>
+        {/* Search index only (Pagefind indexes hidden text): the result title, the page's own
+            names at the highest weight, and other names people use at a lower one. First in
+            <main>, so they belong to the page's top section, whose excerpt the search box
+            replaces with the page's summary (searchOptions below). */}
+        {title && <span hidden data-pagefind-meta="title">{title}</span>}
+        <p hidden data-pagefind-weight="10">{mainTerms}</p>
+        {searchTerms[1] && <p hidden data-pagefind-weight="5">{searchTerms[1]}</p>}
+      </>}
       <slot />
     </main>
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
@@ -75,7 +106,7 @@ const pageTitle = title ? `${title} · ${config.site.name}` : config.site.name;
             const sc = document.createElement("script");
             sc.src = "/pagefind/pagefind-ui.js";
             sc.onload = () => {
-              ui = new PagefindUI({ element: "#search-ui", showSubResults: true, showImages: false, resetStyles: false });
+              ui = new PagefindUI({ element: "#search-ui", ...window.searchOptions });
               modal.querySelector("input")?.focus();
             };
             document.head.append(sc);

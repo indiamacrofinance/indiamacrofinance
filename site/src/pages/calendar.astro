@@ -17,7 +17,7 @@ const weekday = (d) => new Date(d + "T00:00:00").toLocaleDateString("en-GB", { w
 ---
 <Base current="calendar" title="Calendar">
   <h1>Release calendar</h1>
-  <p class="lede">Upcoming Indian data releases from the publishers' own advance release calendars (MoSPI, RBI, OEA, Commerce, CGA), with the last published value. <a href="/calendar.ics">Add to your calendar (.ics)</a>.</p>
+  <p class="lede" data-pagefind-meta="summary">Upcoming Indian data releases from the publishers' own advance release calendars (MoSPI, RBI, OEA, Commerce, CGA), with the last published value. <a href="/calendar.ics">Add to your calendar (.ics)</a>.</p>
 
   {Object.entries(byMonth).map(([month, items]) => (
     <>

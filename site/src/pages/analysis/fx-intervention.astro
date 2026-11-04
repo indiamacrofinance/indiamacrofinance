@@ -22,9 +22,9 @@ const yLabels = { bank_capital: "Banking capital, net", ca_bpm5: "Current accoun
 <Base current="analysis" title="Where RBI's dollar sales show up">
   <p class="chart-sub"><a href="/analysis/">Analysis</a> / Forex intervention and the BoP</p>
   <h1>Where RBI's dollar sales show up in the balance of payments <span class="badge">Original</span></h1>
-  {!ok ? <p class="lede">This analysis could not be built today ({a.error}).</p> : (
+  {!ok ? <p class="lede" data-pagefind-meta="summary">This analysis could not be built today ({a.error}).</p> : (
   <>
-  <p class="lede">RBI sells dollars through banks. Does the money stay with the banks, or does it flow on to importers and departing investors? This page traces a dollar sale through the BoP, tests it against {reg.panels[0].n} quarters of data, and lays out a simple model of how much rupee stability each dollar of intervention buys.</p>
+  <p class="lede" data-pagefind-meta="summary">RBI sells dollars through banks. Does the money stay with the banks, or does it flow on to importers and departing investors? This page traces a dollar sale through the BoP, tests it against {reg.panels[0].n} quarters of data, and lays out a simple model of how much rupee stability each dollar of intervention buys.</p>
 
   <p class="cite">Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026: the worked example, the evidence and the model below follow that note. The charts and numbers are our own computation from RBI's public data and update with each release.</p>
 

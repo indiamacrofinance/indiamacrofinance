@@ -63,9 +63,9 @@ const yes = (s) => (s === null ? "–" : s ? "yes" : "no");
 <Base current="analysis" title="Balance-of-payments stress: then and now">
   <p class="chart-sub"><a href="/analysis/">Analysis</a> / BoP stress episodes</p>
   <h1>Balance-of-payments stress: then and now <span class="badge">Original</span></h1>
-  {!ok ? <p class="lede">This analysis could not be built today ({a.error}).</p> : (
+  {!ok ? <p class="lede" data-pagefind-meta="summary">This analysis could not be built today ({a.error}).</p> : (
   <>
-  <p class="lede">When the rupee is under pressure, who pays for India's external gap: the current account, foreign capital, banks, or RBI's reserves? This page adds up RBI's balance-of-payments data over the current episode and three earlier ones (2013, 2018, 2022), item by item, and lets you build your own. Data to {period(a.as_of.bop, "Q")} ({qFrom(a.as_of.bop)} – {qTo(a.as_of.bop)}); it updates when RBI publishes the next quarter.</p>
+  <p class="lede" data-pagefind-meta="summary">When the rupee is under pressure, who pays for India's external gap: the current account, foreign capital, banks, or RBI's reserves? This page adds up RBI's balance-of-payments data over the current episode and three earlier ones (2013, 2018, 2022), item by item, and lets you build your own. Data to {period(a.as_of.bop, "Q")} ({qFrom(a.as_of.bop)} – {qTo(a.as_of.bop)}); it updates when RBI publishes the next quarter.</p>
 
   <p class="cite">Based on Vedant Agarwal, Nirupama Kulkarni and Gautham Udupa (CAFRAL), "Forex Interventions and Balance of Payments", June 2026, which compares these four episodes. This page rebuilds its analysis from RBI's public data and recomputes it with each release; the numbers shown are our own computation.</p>
 

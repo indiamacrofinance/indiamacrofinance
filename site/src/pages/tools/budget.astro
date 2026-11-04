@@ -11,7 +11,7 @@ const cell = (v) => (v === null || v === undefined ? "–" : num(v * 100, 0));  
 <Base current="tools" title="Budget explorer">
   <p class="chart-sub">Tools / Budget explorer</p>
   <h1>Union Budget {d.year}: who spends what</h1>
-  <p class="lede">Spending by each ministry and department (each "demand for grants") in the Union Budget, with last year's estimates and the latest actuals. Total spending in {d.year}: ₹{num(d.total, 2)} lakh crore.</p>
+  <p class="lede" data-pagefind-meta="summary">Spending by each ministry and department (each "demand for grants") in the Union Budget, with last year's estimates and the latest actuals. Total spending in {d.year}: ₹{num(d.total, 2)} lakh crore.</p>
 
   <RankedBars title="The fifteen largest demands" subtitle={`₹ lakh crore, ${d.year} Budget Estimates`} rows={top} decimals={2} source="Ministry of Finance, Expenditure Profile, Statement 3." />
 

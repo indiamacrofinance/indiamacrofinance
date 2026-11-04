@@ -9,7 +9,7 @@ export function getStaticPaths() {
 }
 const { b } = Astro.props;
 ---
-<Base current="briefings" title={b.title}>
+<Base search={false} current="briefings" title={b.title}>
   <p class="chart-sub"><a href="/briefings/">← Briefings</a> · {period(b.date, "D")}</p>
   <h1>{b.title}</h1>
   <article class="prose" set:html={marked.parse(b.body)} />
