@@ -9,7 +9,7 @@ sources (MoSPI, RBI, CGA, Commerce, NSDL, AMFI, Grid-India, NPCI, Yahoo, …)
 pipelines/sources/<agency>/<dataset>.py
    fetch()    → raw bytes + receipt (url, fetched_at, sha256)  → data/raw/ (git-ignored) → Release asset
    parse()    → tidy frame: period, value, series_id, vintage
-   validate() → schema, plausible range, no silent gaps, revision diff vs stored series
+   validate() → schema, plausible range, no daily/weekly dates after today, no silent gaps, revision diff vs stored series
    publish()  → data/series/<id>.csv + data/meta/<id>.json + data/status.json
    ▼
 pipelines/build/  → site/src/data/*.json (per page, per chart)

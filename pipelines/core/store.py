@@ -38,8 +38,62 @@ def archive_raw(source_name: str, raws: list[Raw]) -> list[str]:
     return paths
 
 
-def load_series(series_id: str) -> pd.DataFrame:
-    """Stored rows for a series (empty frame with the right columns if none yet)."""
+def _excludes(series_id: str) -> list[dict]:
+    from pipelines.core import registry
+    return (registry.all_series().get(series_id) or {}).get("exclude") or []
+
+
+def excluded_periods(series_id: str) -> set[str]:
+    """Periods a person has left out of a series (registry `exclude` entries without a vintage):
+    never taken in, never shown."""
+    return {str(e["period"]) for e in _excludes(series_id) if not e.get("vintage")}
+
+
+def vintage_match(df: pd.DataFrame, entry: dict) -> pd.Series:
+    """Rows a vintage `exclude` entry names: its period, stored on its vintage."""
+    return (df["period"] == str(entry["period"])) & (df["vintage"] == str(entry["vintage"]))
+
+
+def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
+    """Mask of stored rows left out: a whole excluded period, or an entry with a `vintage` that
+    matches only the row stored that day (a value dated in the future: when the real value for
+    that period arrives it is stored as an ordinary revision, so the old row is kept in the
+    revision log, and the entry no longer matches)."""
+    hide = df["period"].isin(excluded_periods(series_id))
+    for e in _excludes(series_id):
+        if e.get("vintage"):
+            hide |= vintage_match(df, e)
+    return hide
+
+
+def published(series_id: str, df: pd.DataFrame) -> pd.DataFrame:
+    """The stored rows readers see (site, downloads, derived measures, sources, bot messages)."""
+    return df[~excluded_rows(series_id, df)].reset_index(drop=True)
+
+
+def published_csv(series_id: str) -> bytes:
+    """The stored CSV as readers see it: the file itself, less any excluded rows."""
+    path = SERIES / f"{series_id}.csv"
+    if not _excludes(series_id):
+        return path.read_bytes()
+    raw = pd.read_csv(path, dtype=str, keep_default_na=False)
+    return raw[~excluded_rows(series_id, raw)].to_csv(index=False).encode()
+
+
+def active_excludes(series_id: str) -> list[dict]:
+    """Exclude entries that leave something out now: whole periods, and vintage entries whose
+    row is still stored (once a real value replaces it, logged as a revision, they lapse)."""
+    if not any(e.get("vintage") for e in _excludes(series_id)):
+        return _excludes(series_id)
+    stored = load_series(series_id, stored=True)
+    return [e for e in _excludes(series_id) if not e.get("vintage")
+            or vintage_match(stored, e).any()]
+
+
+def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
+    """Rows for a series (empty frame with the right columns if none yet) as readers see them
+    (`published`). stored=True gives the CSV as it is, for writing it back, since history is
+    never deleted (AGENTS.md rule 8)."""
     path = SERIES / f"{series_id}.csv"
     if not path.exists():
         return pd.DataFrame(columns=COLUMNS)
@@ -48,7 +102,8 @@ def load_series(series_id: str) -> pd.DataFrame:
     for col in COLUMNS:
         if col not in df:
             df[col] = ""
-    return df[COLUMNS]
+    df = df[COLUMNS]
+    return df if stored else published(series_id, df)
 
 
 def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -57,7 +112,7 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     New periods are added; existing periods whose value changed are updated and
     logged; stored periods absent from `new` are kept untouched.
     """
-    old = load_series(series_id)
+    old = load_series(series_id, stored=True)
     new = new.copy()
     new["vintage"] = vintage
     if "note" not in new:
@@ -70,6 +125,10 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     common = merged.index.intersection(incoming.index)
     changed = common[merged.loc[common, "value"].astype(float).round(10).values
                      != incoming.loc[common, "value"].astype(float).round(10).values]
+    # A row hidden by a vintage `exclude` is re-stated when its period comes in again, even at
+    # the same value, so it takes today's vintage and the entry lapses (else it stays hidden).
+    restated = common.intersection(old["period"][excluded_rows(series_id, old)]).difference(changed)
+    changed = changed.append(restated)
     revised = pd.DataFrame({
         "period": changed,
         "old_value": merged.loc[changed, "value"].values,

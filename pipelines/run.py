@@ -67,6 +67,11 @@ def fetch_mode(src: Source) -> str:
     return "manual" if "manual" in modes else "auto"
 
 
+# Revisions above a series' revision_alert in this run, for scripts/report_failures.py to open
+# `large-revision` issues (written to last_run.json). They do not block publishing.
+ALERTS: list[dict] = []
+
+
 def run_source(src: Source) -> list[dict]:
     """Run one source end to end; returns one failure dict per failed series."""
     specs = registry.all_series()
@@ -97,8 +102,9 @@ def run_source(src: Source) -> list[dict]:
     for sid in src.series_ids:
         spec = specs[sid]
         new = parsed[parsed["series_id"] == sid].drop(columns="series_id").sort_values("period")
-        # Periods a person has excluded (registry `exclude`, with a reason) are never published.
-        excluded = {str(e["period"]) for e in spec.get("exclude") or []}
+        # Periods a person has excluded (registry `exclude`, with a reason) are never published:
+        # not taken in, and left out of what readers see if an earlier run already stored them.
+        excluded = store.excluded_periods(sid)
         if excluded:
             new = new[~new["period"].isin(excluded)]
         problems = validate(sid, new, spec)
@@ -113,14 +119,24 @@ def run_source(src: Source) -> list[dict]:
         big = revisions(old[["period", "value"]].astype({"value": float}),
                         new[["period", "value"]], spec["validation"]["revision_alert"])
         store.write_series(sid, merged, revised)
+        shown = store.published(sid, merged)
+        if shown.empty:   # every row excluded: nothing to publish
+            err = "every stored row is excluded in the registry"
+            store.update_status(sid, ok=False, error=err)
+            failures.append({"series_id": sid, "source": src.name, "error": err})
+            print(f"  FAIL {sid}: {err}")
+            continue
         urls = sorted({r.url for r in raws}) or [f"derived: {src.name}"]
-        store.write_meta(sid, spec, merged, raw_paths, urls)
-        store.update_status(sid, ok=True, last_period=merged["period"].iloc[-1])
-        added = len(merged) - len(old)
-        print(f"  ok   {sid}: {len(merged)} obs (+{added} new, {len(revised)} revised), "
-              f"latest {merged['period'].iloc[-1]} = {merged['value'].iloc[-1]}")
+        store.write_meta(sid, spec, shown, raw_paths, urls)
+        store.update_status(sid, ok=True, last_period=shown["period"].iloc[-1])
+        added = len(set(shown["period"]) - set(old["period"]) - set(revised["period"]))
+        print(f"  ok   {sid}: {len(shown)} obs (+{added} new, {len(revised)} revised), "
+              f"latest {shown['period'].iloc[-1]} = {shown['value'].iloc[-1]}")
         if not big.empty:
             print(f"  NOTE {sid}: {len(big)} revisions above {spec['validation']['revision_alert']}%")
+            ALERTS.append({"series_id": sid, "source": src.name, "threshold": spec["validation"]["revision_alert"],
+                           "rows": [{"period": r.period, "old": r.value_old, "new": r.value_new, "pct": round(r.pct, 3)}
+                                    for r in big.itertuples()]})
     return failures
 
 
@@ -188,6 +204,7 @@ def main() -> int:
     # Downloads first, then derived measures, so they compute from fresh inputs.
     chosen.sort(key=lambda s: s.derived)
 
+    ALERTS.clear()
     failures = []
     for src in chosen:
         print(f"[{src.name}]")
@@ -195,7 +212,8 @@ def main() -> int:
 
     store.RAW.mkdir(parents=True, exist_ok=True)
     (store.RAW / "last_run.json").write_text(json.dumps(
-        {"at": store.now_iso(), "sources": [s.name for s in chosen], "failures": failures}, indent=2))
+        {"at": store.now_iso(), "sources": [s.name for s in chosen], "failures": failures,
+         "revisions": ALERTS}, indent=2, default=float))
     print(f"done: {len(chosen)} source(s), {len(failures)} failure(s)")
     return 1 if failures else 0
 

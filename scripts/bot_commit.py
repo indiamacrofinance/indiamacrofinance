@@ -19,6 +19,9 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))   # run as `python scripts/bot_commit.py`: make `pipelines` importable
+from pipelines.core import store
+
 MEANINGFUL = ("data/series/", "data/panels/", "data/revisions/", "data/briefings/", "data/newsletter/")
 
 
@@ -35,12 +38,11 @@ def latest(path: str) -> tuple[str, str, float] | None:
     sid = Path(path).stem
     spec_file = ROOT / "registry" / "series" / f"{sid}.yaml"
     title = yaml.safe_load(spec_file.read_text())["short_title"] if spec_file.exists() else sid
-    lines = (ROOT / path).read_text().strip().splitlines()
-    if len(lines) < 2:
+    df = store.load_series(sid)
+    if df.empty:
         return None
-    rows = sorted(l.split(",") for l in lines[1:])            # period first, ISO dates sort
-    period, value = rows[-1][0], rows[-1][1]
-    return title, period, float(value)
+    last = df.sort_values("period").iloc[-1]
+    return title, last["period"], float(last["value"])
 
 
 def recovered() -> list[str]:
