@@ -29,9 +29,10 @@ pages:
 - page: data-methods
   section: base-year-bridge
 original: false
-discontinued: null
+discontinued: '2025-09-30'   # end of the last old-base quarter MoSPI published (Jul-Sep 2025)
 owner: ''
 verified_against: []
 notes: '% change on a year earlier, constant 2011-12 prices, as MoSPI published it
   on the old base. Kept in full so it can be compared with the 2022-23 base where
-  both exist.'
+  both exist. Discontinued: MoSPI published no old-base quarter after Jul-Sep 2025;
+  Oct-Dec 2025 onwards are on the 2022-23 base only (checked 2026-11-05).'
