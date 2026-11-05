@@ -17,11 +17,11 @@
   "last_period": "2025-07-01",
   "last_value": 8.2,
   "observations": 54,
-  "updated_at": "2026-11-04T20:58:13+00:00",
+  "updated_at": "2026-11-05T05:44:15+00:00",
   "fetched_from": [
     "https://api.mospi.gov.in/api/nas/getNASData?frequency_code=Quarterly&base_year=2011-12&indicator_code=22&limit=100&page=1&Format=JSON"
   ],
   "raw_files": [
-    "data/raw/mospi_nas_oldbase/20261104T205813-a2d99ddf6e.json"
+    "data/raw/mospi_nas_oldbase/20261105T054415-a2d99ddf6e.json"
   ]
 }

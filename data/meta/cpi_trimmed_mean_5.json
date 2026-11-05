@@ -17,7 +17,7 @@
   "last_period": "2026-09-01",
   "last_value": 4.52,
   "observations": 9,
-  "updated_at": "2026-11-04T21:00:39+00:00",
+  "updated_at": "2026-11-05T05:47:53+00:00",
   "fetched_from": [
     "derived: derived_cpi_underlying"
   ],
