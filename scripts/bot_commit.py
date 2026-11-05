@@ -3,8 +3,8 @@
     python scripts/bot_commit.py <bot>        # e.g. markets; author "markets-bot"
 
 Commits only when series or panels changed (a run that only touched timestamps in
-data/meta or data/status.json is not worth a commit), or when a source failed (so the
-Status page shows it). Pushes with a rebase-and-retry loop in case another bot pushed
+data/meta or data/status.json is not worth a commit), when a source failed, or when a
+failing series recovered (so the Status page and the live dashboard show either). Pushes with a rebase-and-retry loop in case another bot pushed
 first. Writes `pushed=true|false` to $GITHUB_OUTPUT so the workflow can trigger a deploy.
 """
 from __future__ import annotations
@@ -43,6 +43,16 @@ def latest(path: str) -> tuple[str, str, float] | None:
     return title, period, float(value)
 
 
+def recovered() -> list[str]:
+    """Series failing in the committed data/status.json that this run marked healthy."""
+    before = git("show", "HEAD:data/status.json", check=False)
+    now = ROOT / "data" / "status.json"
+    if not before or not now.exists():
+        return []
+    old, new = json.loads(before), json.loads(now.read_text())
+    return sorted(s for s, st in new.items() if old.get(s, {}).get("stale") and not st.get("stale"))
+
+
 def output(pushed: bool) -> None:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -54,7 +64,8 @@ def main(bot: str) -> int:
     changed = [p for p in git("diff", "--cached", "--name-only").splitlines()]
     last_run = ROOT / "data" / "raw" / "last_run.json"
     failures = json.loads(last_run.read_text())["failures"] if last_run.exists() else []
-    if not any(p.startswith(MEANINGFUL) for p in changed) and not failures:
+    back = recovered()
+    if not any(p.startswith(MEANINGFUL) for p in changed) and not failures and not back:
         git("reset", "-q")
         print(f"{bot}-bot: no new data")
         output(False)
@@ -64,9 +75,11 @@ def main(bot: str) -> int:
     panels = [Path(p).stem for p in changed if p.startswith("data/panels/")]
     items = [f"{t} {fmt(v)}" for t, _, v in series] + panels
     subject = f"{bot}: " + (", ".join(items[:4]) + (f" (+{len(items) - 4} more)" if len(items) > 4 else "")
-                            if items else f"{len(failures)} source failure(s) recorded")
+                            if items else f"{len(failures)} source failure(s) recorded" if failures
+                            else f"{len(back)} series working again")
     body = "\n".join([f"- {t}: {fmt(v)} ({p})" for t, p, v in series] + [f"- panel {n}" for n in panels]
-                     + [f"- FAILED {f['series_id']}: {f['error'][:120]}" for f in failures])
+                     + [f"- FAILED {f['series_id']}: {f['error'][:120]}" for f in failures]
+                     + [f"- recovered {s}" for s in back])
     name = f"{bot}-bot"
     git("-c", f"user.name={name}", "-c", f"user.email={name}@users.noreply.github.com",
         "commit", "-q", "-m", subject, "-m", body)

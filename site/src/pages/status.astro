@@ -35,7 +35,7 @@ const when = (s) => (s ? s.replace("T", " ").slice(0, 16) + " UTC" : "never");
   ) : <p>None.</p>}
 
   <h2>Manual queue</h2>
-  <p class="chart-sub">These sources block servers outside India, so they update only when someone runs <code>make india-update</code> from India (it opens a pull request).</p>
+  <p class="chart-sub">These sources block servers outside India, so they update only when someone runs <code>make india-update</code> from India (it pushes the new data straight to <code>main</code>).</p>
   <div class="scroll"><table class="data">
     <thead><tr><th>Series</th><th>Latest period</th><th>Last run</th></tr></thead>
     <tbody>{manual.map((r) => <tr><td><a href={`/data/${r.id}/`}>{r.title}</a></td><td>{r.last_period}</td><td>{when(r.last_success)}</td></tr>)}</tbody>

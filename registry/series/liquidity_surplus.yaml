@@ -19,7 +19,7 @@ transforms:
 release:
   calendar: rbi
   rule: WSS released Friday evening
-  lag_days: 7
+  lag_days: 14   # Friday's WSS carries daily values to the previous Sunday, so a day's value arrives up to 11 days later
 validation:
   range:
   - -10
