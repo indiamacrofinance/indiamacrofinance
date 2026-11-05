@@ -17,15 +17,15 @@
   "last_period": "2026-08-01",
   "last_value": 8.129,
   "observations": 29,
-  "updated_at": "2026-11-05T13:08:31+00:00",
+  "updated_at": "2026-11-05T20:37:35+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/Scripts/ECBUserView.aspx?Id=273",
     "https://www.rbi.org.in/Scripts/ECBUserView.aspx?Id=274",
     "https://www.rbi.org.in/Scripts/ECBUserView.aspx?Id=275"
   ],
   "raw_files": [
-    "data/raw/rbi_ecb/20261105T130826-80394d1e48.html",
-    "data/raw/rbi_ecb/20261105T130828-34be3cf5b5.html",
-    "data/raw/rbi_ecb/20261105T130831-5a20ff5d71.html"
+    "data/raw/rbi_ecb/20261105T203731-4339ae84e9.html",
+    "data/raw/rbi_ecb/20261105T203733-354b6d7d51.html",
+    "data/raw/rbi_ecb/20261105T203735-ca8f31c0ef.html"
   ]
 }
