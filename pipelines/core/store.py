@@ -38,8 +38,18 @@ def archive_raw(source_name: str, raws: list[Raw]) -> list[str]:
     return paths
 
 
-def load_series(series_id: str) -> pd.DataFrame:
-    """Stored rows for a series (empty frame with the right columns if none yet)."""
+def excluded_periods(series_id: str) -> set[str]:
+    """Periods a person has left out of a series (registry `exclude`, each with a reason)."""
+    from pipelines.core import registry
+    spec = registry.all_series().get(series_id) or {}
+    return {str(e["period"]) for e in spec.get("exclude") or []}
+
+
+def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
+    """Rows for a series (empty frame with the right columns if none yet), without the periods
+    excluded in the registry, so no reader (site, derived measures, sources) sees them.
+    stored=True gives the CSV as it is, excluded rows included: for writing it back, since
+    history is never deleted (AGENTS.md rule 8)."""
     path = SERIES / f"{series_id}.csv"
     if not path.exists():
         return pd.DataFrame(columns=COLUMNS)
@@ -48,6 +58,8 @@ def load_series(series_id: str) -> pd.DataFrame:
     for col in COLUMNS:
         if col not in df:
             df[col] = ""
+    if not stored and (excluded := excluded_periods(series_id)):
+        df = df[~df["period"].isin(excluded)].reset_index(drop=True)
     return df[COLUMNS]
 
 
@@ -57,7 +69,7 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     New periods are added; existing periods whose value changed are updated and
     logged; stored periods absent from `new` are kept untouched.
     """
-    old = load_series(series_id)
+    old = load_series(series_id, stored=True)
     new = new.copy()
     new["vintage"] = vintage
     if "note" not in new:

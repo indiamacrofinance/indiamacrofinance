@@ -97,8 +97,9 @@ def run_source(src: Source) -> list[dict]:
     for sid in src.series_ids:
         spec = specs[sid]
         new = parsed[parsed["series_id"] == sid].drop(columns="series_id").sort_values("period")
-        # Periods a person has excluded (registry `exclude`, with a reason) are never published.
-        excluded = {str(e["period"]) for e in spec.get("exclude") or []}
+        # Periods a person has excluded (registry `exclude`, with a reason) are never published:
+        # not taken in, and left out of what readers see if an earlier run already stored them.
+        excluded = store.excluded_periods(sid)
         if excluded:
             new = new[~new["period"].isin(excluded)]
         problems = validate(sid, new, spec)
@@ -113,12 +114,13 @@ def run_source(src: Source) -> list[dict]:
         big = revisions(old[["period", "value"]].astype({"value": float}),
                         new[["period", "value"]], spec["validation"]["revision_alert"])
         store.write_series(sid, merged, revised)
+        shown = merged[~merged["period"].isin(excluded)]
         urls = sorted({r.url for r in raws}) or [f"derived: {src.name}"]
-        store.write_meta(sid, spec, merged, raw_paths, urls)
-        store.update_status(sid, ok=True, last_period=merged["period"].iloc[-1])
-        added = len(merged) - len(old)
-        print(f"  ok   {sid}: {len(merged)} obs (+{added} new, {len(revised)} revised), "
-              f"latest {merged['period'].iloc[-1]} = {merged['value'].iloc[-1]}")
+        store.write_meta(sid, spec, shown, raw_paths, urls)
+        store.update_status(sid, ok=True, last_period=shown["period"].iloc[-1])
+        added = len(shown) - len(old)
+        print(f"  ok   {sid}: {len(shown)} obs (+{added} new, {len(revised)} revised), "
+              f"latest {shown['period'].iloc[-1]} = {shown['value'].iloc[-1]}")
         if not big.empty:
             print(f"  NOTE {sid}: {len(big)} revisions above {spec['validation']['revision_alert']}%")
     return failures

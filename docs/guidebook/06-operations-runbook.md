@@ -22,7 +22,7 @@ Revisions are normal (GDP, IIP, EPFO revise often). The pipeline stores every vi
 
 ## A published value looks wrong
 
-Sometimes a publisher's feed carries an obvious error, e.g. a value attached to the wrong period. Don't edit the CSV. Add an `exclude` entry to the series yaml: `{period, added, reason}`, with the evidence in `reason`. The value is then never published, and the series page shows it under "Values left out". Report it to the publisher if possible, and remove the entry once they fix the feed. Example: `plfs_ur_quarterly_urban`, April–June 2019.
+Sometimes a publisher's feed carries an obvious error, e.g. a value attached to the wrong period. Don't edit the CSV. Add an `exclude` entry to the series yaml: `{period, added, reason}`, with the evidence in `reason`. The value is then never published, and the series page shows it under "Values left out". If a run already stored it, the row stays in the CSV as a record, but every reader (the site, downloads, derived measures, the latest period in meta and status) skips it (`store.load_series`; `stored=True` gives the full CSV). Validation also rejects daily, weekly and fortnightly values dated after today, which catches most wrong dates before they are stored. Report it to the publisher if possible, and remove the entry once they fix the feed. Examples: `plfs_ur_quarterly_urban`, April–June 2019; `gsec_10y_yield`, "30 November 2026" (RBI's home page misdated the 30 October yield).
 
 ## Base-year changes
 

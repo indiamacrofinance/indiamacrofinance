@@ -113,3 +113,42 @@ def test_text_and_bools_are_rejected(value):
     rows = pd.DataFrame({"period": ["2026-01-01", "2026-02-01"],
                          "value": pd.Series([2.0, value], dtype=object)})
     assert "non-numeric" in validate("x", rows, SPEC)[0]
+
+
+@pytest.mark.parametrize(("frequency", "days_ahead", "ok"),
+                         [("D", 0, True), ("D", 1, True), ("D", 25, False), ("W", 25, False),
+                          ("M", 25, True), ("Q", 400, True)])
+def test_future_periods(frequency, days_ahead, ok):
+    # A daily-to-fortnightly observation dated weeks ahead is a wrong date at the source (RBI's
+    # home page once said "as on November 30" on 3 November). Forecasts (Q, A) and the current
+    # month (M) are fine; one day ahead is allowed for IST dates read on UTC runners.
+    from datetime import date, timedelta
+    period = (date.today() + timedelta(days=days_ahead)).isoformat()
+    problems = validate("x", pd.DataFrame({"period": [period], "value": [1.0]}), {**SPEC, "frequency": frequency})
+    assert (problems == []) is ok, problems
+
+
+def test_excluded_stored_row_is_kept_but_not_shown(tmp_path, monkeypatch):
+    # A wrong value already stored, then excluded in the registry: the CSV keeps it (history is
+    # never deleted), but readers, the meta file and the status's latest period do not see it.
+    monkeypatch.setattr(store, "SERIES", tmp_path)
+    monkeypatch.setattr(store, "META", tmp_path)
+    monkeypatch.setattr(store, "REVISIONS", tmp_path)
+    monkeypatch.setattr(store, "STATUS", tmp_path / "status.json")
+    monkeypatch.setattr(store, "archive_raw", lambda *args: [])
+    spec = {"validation": {"range": [0, 100], "revision_alert": 5}, "id": "x", "title": "x", "short_title": "x", "unit": "percent", "frequency": "D",
+            "base_year": None, "licence": "GODL", "downloadable": True,
+            "source": {"agency": "a", "dataset": "d", "url": "", "module": "m"},
+            "exclude": [{"period": "2026-01-30", "added": "2026-01-05", "reason": "wrong date at source"}]}
+    monkeypatch.setattr(run.registry, "all_series", lambda: {"x": spec})
+    (tmp_path / "x.csv").write_text("period,value,vintage,note\n2026-01-02,7.0,2026-01-03,\n"
+                                    "2026-01-30,7.4,2026-01-03,\n")
+    rows = pd.DataFrame({"series_id": ["x", "x"], "period": ["2026-01-05", "2026-01-30"], "value": [7.2, 9.9]})
+    src = SimpleNamespace(name="test", series_ids=("x",), panel=False, derived=False,
+                          fetch=list, parse=lambda raws: rows)
+
+    assert run.run_source(src) == []
+    assert store.load_series("x", stored=True).period.tolist() == ["2026-01-02", "2026-01-05", "2026-01-30"]
+    assert store.load_series("x", stored=True).set_index("period").loc["2026-01-30", "value"] == 7.4
+    assert store.load_series("x").period.tolist() == ["2026-01-02", "2026-01-05"]
+    assert store.load_status()["x"]["last_period"] == "2026-01-05"
