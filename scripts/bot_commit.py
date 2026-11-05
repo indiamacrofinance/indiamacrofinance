@@ -20,7 +20,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))   # run as `python scripts/bot_commit.py`: make `pipelines` importable
-from pipelines.core import store  # noqa: E402
+from pipelines.core import store
 
 MEANINGFUL = ("data/series/", "data/panels/", "data/revisions/", "data/briefings/", "data/newsletter/")
 

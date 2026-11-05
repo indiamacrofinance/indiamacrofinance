@@ -45,6 +45,6 @@ def test_runs_as_a_script():
     root = Path(__file__).resolve().parents[1]
     code = ("import runpy, sys; sys.path[:] = [p for p in sys.path if p not in ('', '.')]; "
             "m = runpy.run_path('scripts/bot_commit.py'); print(m['latest']('data/series/repo_rate.csv')[0])")
-    out = subprocess.run([sys.executable, "-c", code], cwd=root, capture_output=True, text=True)
+    out = subprocess.run([sys.executable, "-c", code], cwd=root, capture_output=True, text=True, check=False)
     assert out.returncode == 0, out.stderr
     assert out.stdout.strip() == "Repo rate"
