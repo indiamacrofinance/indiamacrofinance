@@ -19,6 +19,9 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))   # run as `python scripts/bot_commit.py`: make `pipelines` importable
+from pipelines.core import store  # noqa: E402
+
 MEANINGFUL = ("data/series/", "data/panels/", "data/revisions/", "data/briefings/", "data/newsletter/")
 
 
@@ -35,8 +38,6 @@ def latest(path: str) -> tuple[str, str, float] | None:
     sid = Path(path).stem
     spec_file = ROOT / "registry" / "series" / f"{sid}.yaml"
     title = yaml.safe_load(spec_file.read_text())["short_title"] if spec_file.exists() else sid
-    # As readers see it: no excluded or misdated rows.
-    from pipelines.core import store
     df = store.load_series(sid)
     if df.empty:
         return None

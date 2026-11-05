@@ -38,38 +38,36 @@ def archive_raw(source_name: str, raws: list[Raw]) -> list[str]:
     return paths
 
 
+def _excludes(series_id: str) -> list[dict]:
+    from pipelines.core import registry
+    return (registry.all_series().get(series_id) or {}).get("exclude") or []
+
+
 def excluded_periods(series_id: str) -> set[str]:
-    """Periods a person has left out of a series (registry `exclude`, each with a reason)."""
-    from pipelines.core import registry
-    spec = registry.all_series().get(series_id) or {}
-    return {str(e["period"]) for e in spec.get("exclude") or []}
+    """Periods a person has left out of a series (registry `exclude` entries without a vintage):
+    never taken in, never shown."""
+    return {str(e["period"]) for e in _excludes(series_id) if not e.get("vintage")}
 
 
-# Daily to fortnightly series: a row dated more than a day after it was stored (the slack is for
-# IST dates on UTC runners) cannot be an observation. RBI's home page once dated the 30 October
-# G-sec yields "November 30" on 3 November. Monthly and slower series are exempt: forecasts.
-EARLY_CHECKED = ("D", "W", "F")
-
-
-def recorded_early(series_id: str, df: pd.DataFrame) -> pd.Series:
-    """Mask of rows stored before their own date (daily to fortnightly series only)."""
-    from pipelines.core import registry
-    if (registry.all_series().get(series_id) or {}).get("frequency") not in EARLY_CHECKED or df.empty:
-        return pd.Series(False, index=df.index)
-    gap = pd.to_datetime(df["period"], errors="coerce") - pd.to_datetime(df["vintage"], errors="coerce")
-    return gap > pd.Timedelta(days=1)
+def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
+    """Mask of stored rows left out: a whole excluded period, or an entry with a `vintage` that
+    matches only the row stored that day (a wrong value whose period may later get a real one)."""
+    hide = df["period"].isin(excluded_periods(series_id))
+    for e in _excludes(series_id):
+        if e.get("vintage"):
+            hide |= (df["period"] == str(e["period"])) & (df["vintage"] == str(e["vintage"]))
+    return hide
 
 
 def published(series_id: str, df: pd.DataFrame) -> pd.DataFrame:
-    """The stored rows readers see: without registry-excluded periods and rows recorded early."""
-    hidden = df["period"].isin(excluded_periods(series_id)) | recorded_early(series_id, df)
-    return df[~hidden].reset_index(drop=True)
+    """The stored rows readers see (site, downloads, derived measures, sources, bot messages)."""
+    return df[~excluded_rows(series_id, df)].reset_index(drop=True)
 
 
 def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
     """Rows for a series (empty frame with the right columns if none yet) as readers see them
-    (`published`): the site, downloads, derived measures and sources. stored=True gives the CSV
-    as it is, for writing it back, since history is never deleted (AGENTS.md rule 8)."""
+    (`published`). stored=True gives the CSV as it is, for writing it back, since history is
+    never deleted (AGENTS.md rule 8)."""
     path = SERIES / f"{series_id}.csv"
     if not path.exists():
         return pd.DataFrame(columns=COLUMNS)
@@ -89,10 +87,10 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     logged; stored periods absent from `new` are kept untouched.
     """
     old = load_series(series_id, stored=True)
-    # A row recorded before its own date is replaced by a real value for that period, not
-    # logged as a revision of it; until then it stays in the CSV as a record.
-    early = old["period"][recorded_early(series_id, old)]
-    old = old[~old["period"].isin(set(early) & set(new["period"]))]
+    # A stored row left out by a vintage `exclude` entry is replaced by a real value for its
+    # period, not logged as a revision of it; until then it stays in the CSV as a record.
+    wrong = old["period"][excluded_rows(series_id, old)]
+    old = old[~old["period"].isin(set(wrong) & set(new["period"]))]
     new = new.copy()
     new["vintage"] = vintage
     if "note" not in new:
