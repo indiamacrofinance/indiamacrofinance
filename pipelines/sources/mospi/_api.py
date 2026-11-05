@@ -33,31 +33,44 @@ def pages(endpoint: str, params: dict) -> list[Raw]:
         body = json.loads(raw.content)
         if "data" not in body:
             raise RuntimeError(f"unexpected MoSPI {endpoint} response: {str(body)[:200]}")
+        if "meta_data" not in body:   # "No Data Found": an empty list and no page count
+            raise RuntimeError(f"MoSPI {endpoint} returned no data for {params}: {body.get('msg')!r}")
         raws.append(raw)
-        meta = body.get("meta_data")
-        if meta is None:   # "No Data Found" is an empty list with no meta_data
-            if body["data"]:
-                raise RuntimeError(f"MoSPI {endpoint} response has data but no meta_data")
-            return raws
-        if page >= meta["totalPages"]:
+        if page >= body["meta_data"]["totalPages"]:
             return raws
         page += 1
 
 
-# PLFS cuts by religion, social group and education. Until 2026-11-04 the all-categories rows
-# said "all" in each; the calendar-year tables now leave a field empty when a row is not cut by
-# it, so the all-India total appears once per breakdown, all with the same value.
+# PLFS cuts by religion, social group and education. Until 2026-11-04 every row filled all
+# three, the all-categories total saying "all" in each. The calendar-year tables now fill only
+# the field a row is cut by: the national total appears once per breakdown (religion "all",
+# social group "all", ...) plus once with all three empty, and state rows have all three empty.
 PLFS_BREAKDOWNS = ("religion", "socialGroup", "General_Education")
 
 
-def plfs_total(r: dict) -> bool:
-    """True for a PLFS row covering all religions, social groups and education levels."""
-    return all(r.get(k) in (None, "", "all") for k in PLFS_BREAKDOWNS)
+def plfs_total_rank(r: dict) -> int | None:
+    """Which PLFS rows are all-categories totals, best first: 0 = religion "all" and the others
+    "all" or empty (both layouts); 1 = all three empty (state rows now); None = a breakdown.
+    Parsers keep one row per period, the best-ranked, so repeated totals never conflict."""
+    rel, soc, edu = (r.get(k) or None for k in PLFS_BREAKDOWNS)
+    if rel == "all" and soc in ("all", None) and edu in ("all", None):
+        return 0
+    if rel is soc is edu is None:
+        return 1
+    return None
+
+
+def keep_best_total(df, keys: list[str]):
+    """Per keys, the rows with the lowest plfs_total_rank (column 'rank', dropped). Repeated
+    totals of lower rank go; real duplicates (same rank) stay for validation to report."""
+    if df.empty:
+        return df
+    return df[df["rank"] == df.groupby(keys)["rank"].transform("min")].drop(columns="rank")
 
 
 def plfs_year(label: str) -> str:
     """'PLFS 2024' (calendar-year tables since 2026-11-04) or '2024' -> '2024'; '2023-24' -> '2023-24'."""
-    m = re.search(r"\d{4}(-\d{2})?", label)
+    m = re.search(r"\d{4}(?:-\d{2}(?!\d))?", label)
     if not m:
         raise ValueError(f"unrecognised PLFS year: {label!r}")
     return m.group(0)

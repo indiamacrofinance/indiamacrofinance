@@ -5,7 +5,8 @@ API: GET https://api.mospi.gov.in/api/plfs/getData; indicator_code takes ONE val
 - Quarterly bulletin (frequency_code=2, from 2018): CWS, urban (rural + urban from 2025).
 - Annual (frequency_code=1): usual status (PS+SS), by agricultural year (July-June,
   2017-18 onwards; year_type_code=1) and calendar year (2022 onwards; year_type_code=2),
-  narrowed to all-India headline rows by ANNUAL_FILTER.
+  narrowed to all-India rows by ANNUAL_FILTER. The calendar-year response still carries every
+  religion/caste/education cut; parse keeps the all-categories total (plfs_total_rank).
 Values are percentages as published. CWS and usual status are different concepts and
 are kept in separate series.
 """
@@ -14,7 +15,14 @@ from __future__ import annotations
 import pandas as pd
 
 from pipelines.core import Raw, Source
-from pipelines.sources.mospi._api import month_period, pages, plfs_total, plfs_year, rows
+from pipelines.sources.mospi._api import (
+    keep_best_total,
+    month_period,
+    pages,
+    plfs_total_rank,
+    plfs_year,
+    rows,
+)
 
 ENDPOINT = "plfs/getData"
 INDICATORS = {1: "lfpr", 2: "wpr", 3: "ur"}
@@ -43,7 +51,7 @@ ANNUAL = {("ur", "person", "Agriculture Year"): "plfs_ur_usual_ay",
 # Annual queries return every state/religion/caste/education cut (~26k rows) unless narrowed:
 # all-India, usual status (PS+SS), rural + urban, 15+. The agricultural-year tables also take
 # "all categories" codes. The calendar-year tables return nothing with them since 2026-11-04
-# (their total rows leave those fields empty), so they are narrowed in parse (plfs_total).
+# (their total rows leave those fields empty), so they are narrowed in parse (plfs_total_rank).
 ANNUAL_FILTER = {"state_code": 99, "weekly_status_code": 1, "sector_code": 3, "age_code": 1, "gender_code": "2,3"}
 ALL_CATEGORIES = {"religion_code": 1, "social_category_code": 1, "education_code": 0}
 QUARTER_START = {"Jan-Mar": 1, "Apr-Jun": 4, "Jul-Sep": 7, "Oct-Dec": 10}
@@ -87,21 +95,18 @@ class MospiPLFS(Source):
                 period = f"{int(r['year']):04d}-{QUARTER_START[r['quarter']]:02d}-01" if sid else None
                 note = "CWS, quarterly bulletin"
             elif (freq == "Annually" and r["AgeGroup"] == "15 years and above" and r["sector"] == "rural + urban"
-                  and r.get("weekly_status") == "PS+SS" and plfs_total(r)):
+                  and r.get("weekly_status") == "PS+SS" and plfs_total_rank(r) is not None):
                 sid = ANNUAL.get((ind, r["gender"], r.get("year_type")))
-                year = plfs_year(r["year"]) if sid else None
-                period = annual_period(year, r["year_type"]) if sid else None
-                note = f"usual status (PS+SS), {r['year_type'].lower()} {year}"
+                if sid:
+                    year = plfs_year(r["year"])
+                    period = annual_period(year, r["year_type"])
+                    note = f"usual status (PS+SS), {r['year_type'].lower()} {year}"
             else:
                 continue
             if sid:
-                out.append({"series_id": sid, "period": period, "value": float(r["value"]), "note": note})
-        # Calendar-year totals repeat once per breakdown (see plfs_total); they must agree.
-        df = pd.DataFrame(out).drop_duplicates()
-        clash = df[df.duplicated(["series_id", "period"], keep=False)] if not df.empty else df
-        if not clash.empty:
-            raise ValueError(f"conflicting PLFS totals: {clash.to_dict('records')[:4]}")
-        return df
+                out.append({"series_id": sid, "period": period, "value": float(r["value"]), "note": note,
+                            "rank": plfs_total_rank(r) if freq == "Annually" else 0})
+        return keep_best_total(pd.DataFrame(out), ["series_id", "period"])
 
 
 SOURCE = MospiPLFS()

@@ -25,11 +25,9 @@ import json
 import pandas as pd
 
 from pipelines.core import Raw, Source
-from pipelines.core.http import fetch_raw
 from pipelines.core.store import load_series
+from pipelines.sources.mospi._api import pages
 
-URL = "https://api.mospi.gov.in/api/cpi/getCPIData"
-PAGE = 100
 MONTHS = {m: i for i, m in enumerate(
     ["January", "February", "March", "April", "May", "June", "July", "August",
      "September", "October", "November", "December"], start=1)}
@@ -91,28 +89,10 @@ class MospiCPI(Source):
     name = "mospi_cpi"
     series_ids = (*INDEX_SERIES.values(), *COMPONENT_SERIES.values(), "cpi_headline_inflation")
 
-    def _pages(self, params: dict) -> list[Raw]:
-        """Fetch every page of one query."""
-        raws, page = [], 1
-        while True:
-            raw = fetch_raw(URL, params={**params, "limit": PAGE, "page": page, "Format": "JSON"})
-            body = json.loads(raw.content)
-            if "data" not in body:
-                raise RuntimeError(f"unexpected CPI API response: {str(body)[:200]}")
-            raws.append(raw)
-            meta = body.get("meta_data")
-            if meta is None:   # "No Data Found" is an empty list with no meta_data (see _api.pages)
-                if body["data"]:
-                    raise RuntimeError("CPI API response has data but no meta_data")
-                return raws
-            if page >= meta["totalPages"]:
-                return raws
-            page += 1
-
     def fetch(self) -> list[Raw]:
         base24 = {"base_year": "2024", "state_code": "1", "sector_code": "1,2,3"}
-        raws = (self._pages({**base24, "division_code": "0", "series": "Back"})
-                + self._pages({**base24, "division_code": "0", "series": "Current"}))
+        raws = (pages("cpi/getCPIData", {**base24, "division_code": "0", "series": "Back"})
+                + pages("cpi/getCPIData", {**base24, "division_code": "0", "series": "Current"}))
         # Component divisions return every item too (~20k rows), so after the first full
         # load fetch only the months from two before the oldest last-stored component.
         lasts = [load_series(s)["period"].max() for s in COMPONENT_SERIES.values()]
@@ -120,12 +100,12 @@ class MospiCPI(Source):
         comp = {"base_year": "2024", "state_code": "1", "sector_code": "3",
                 "division_code": COMPONENT_DIVISIONS, "series": "Current"}
         if recent is None:
-            raws += self._pages(comp)
+            raws += pages("cpi/getCPIData", comp)
         else:
             for year, months in recent.items():
-                raws += self._pages({**comp, "year": str(year), "month_code": ",".join(map(str, months))})
+                raws += pages("cpi/getCPIData", {**comp, "year": str(year), "month_code": ",".join(map(str, months))})
         # Official 2025 headline inflation, published on the 2012 base.
-        return raws + self._pages({"base_year": "2012", "level": "Group", "series": "Current",
+        return raws + pages("cpi/getCPIData", {"base_year": "2012", "level": "Group", "series": "Current",
                                    "year": "2025", "state_code": "99", "sector_code": "3"})
 
     def parse(self, raws: list[Raw]) -> pd.DataFrame:

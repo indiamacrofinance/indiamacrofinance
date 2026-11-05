@@ -75,8 +75,26 @@ def test_plfs_year():
 
 
 def test_pages_no_data(monkeypatch, raw_from):
-    # "No Data Found" has no meta_data: zero rows, not a KeyError.
+    # "No Data Found" (no meta_data) is a clear error, not a KeyError and not a silent empty result.
+    import pytest
+
     from pipelines.sources.mospi import _api
     monkeypatch.setattr(_api, "fetch_raw", lambda url, params: raw_from("mospi/plfs/annual_ur_cy_nodata_2026-11-05.json"))
-    raws = _api.pages("plfs/getData", {})
-    assert len(raws) == 1 and _api.rows(raws) == []
+    with pytest.raises(RuntimeError, match="No Data Found"):
+        _api.pages("plfs/getData", {})
+
+
+def test_plfs_total_rank():
+    from pipelines.sources.mospi._api import plfs_total_rank
+    row = lambda rel, soc, edu: {"religion": rel, "socialGroup": soc, "General_Education": edu}
+    assert plfs_total_rank(row("all", "all", "all")) == 0        # old layout
+    assert plfs_total_rank(row("all", None, None)) == 0          # new layout, religion cut
+    assert plfs_total_rank(row(None, None, None)) == 1           # new layout, uncut (state rows)
+    assert plfs_total_rank(row(None, "all", None)) is None       # social-group cut: a duplicate total
+    assert plfs_total_rank(row("Hinduism", None, None)) is None
+    assert plfs_total_rank(row("all", "scheduled caste", "all")) is None
+
+
+def test_plfs_year_edge_cases():
+    from pipelines.sources.mospi._api import plfs_year
+    assert plfs_year("PLFS 2023-2024") == "2023"

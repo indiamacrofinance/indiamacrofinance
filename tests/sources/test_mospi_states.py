@@ -25,3 +25,17 @@ def test_empty_parse_is_empty():
     from pipelines.sources.mospi.plfs import SOURCE as PLFS
     assert PLFS.parse([]).empty
     assert STATES.parse([]).empty
+
+
+def test_keep_best_total_keeps_real_duplicates():
+    # Repeated totals of lower rank are dropped; two rows of the same rank both stay, so the
+    # store's validation reports the duplicate period instead of one being picked silently.
+    import pandas as pd
+
+    from pipelines.sources.mospi._api import keep_best_total
+    df = pd.DataFrame([{"series_id": "a", "period": "2025-01-01", "value": 3.1, "rank": 0},
+                       {"series_id": "a", "period": "2025-01-01", "value": 3.1, "rank": 1},
+                       {"series_id": "b", "period": "2025-01-01", "value": 1.0, "rank": 0},
+                       {"series_id": "b", "period": "2025-01-01", "value": 2.0, "rank": 0}])
+    out = keep_best_total(df, ["series_id", "period"])
+    assert list(out.value) == [3.1, 1.0, 2.0] and "rank" not in out
