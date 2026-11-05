@@ -67,6 +67,11 @@ def fetch_mode(src: Source) -> str:
     return "manual" if "manual" in modes else "auto"
 
 
+# Revisions above a series' revision_alert in this run, for scripts/report_failures.py to open
+# `large-revision` issues (written to last_run.json). They do not block publishing.
+ALERTS: list[dict] = []
+
+
 def run_source(src: Source) -> list[dict]:
     """Run one source end to end; returns one failure dict per failed series."""
     specs = registry.all_series()
@@ -129,6 +134,9 @@ def run_source(src: Source) -> list[dict]:
               f"latest {shown['period'].iloc[-1]} = {shown['value'].iloc[-1]}")
         if not big.empty:
             print(f"  NOTE {sid}: {len(big)} revisions above {spec['validation']['revision_alert']}%")
+            ALERTS.append({"series_id": sid, "source": src.name, "threshold": spec["validation"]["revision_alert"],
+                           "rows": [{"period": r.period, "old": r.value_old, "new": r.value_new, "pct": round(r.pct, 3)}
+                                    for r in big.itertuples()]})
     return failures
 
 
@@ -203,7 +211,8 @@ def main() -> int:
 
     store.RAW.mkdir(parents=True, exist_ok=True)
     (store.RAW / "last_run.json").write_text(json.dumps(
-        {"at": store.now_iso(), "sources": [s.name for s in chosen], "failures": failures}, indent=2))
+        {"at": store.now_iso(), "sources": [s.name for s in chosen], "failures": failures,
+         "revisions": ALERTS}, indent=2, default=float))
     print(f"done: {len(chosen)} source(s), {len(failures)} failure(s)")
     return 1 if failures else 0
 

@@ -25,7 +25,7 @@ validation:
   range:
   - 2
   - 15
-  revision_alert: 0.5
+  revision_alert: 0   # a closing yield for a date should never change: any change is a misread page, so flag it
 pages:
 - page: home
   section: key-indicators
@@ -38,6 +38,13 @@ verified_against: []
 notes: The listed security whose maturity is closest to 10 years; the security name
   is in the note column (it changes when the benchmark rolls).
 exclude:
+- period: '2026-11-02'
+  added: '2026-11-05'
+  reason: Stored as 7.3250% (RBI home page "as on November 02, 2026", read 3 Nov 12:30 IST and
+    still so on 4 Nov 09:30 IST), then overwritten with 7.3102% at 10:30 IST on 4 Nov, when RBI
+    had updated some yields to 3 November's closes but not yet the date (by 11:30 IST the page
+    said November 03 with 7.3102%). The stored value is 3 November's; 7.3250% is in the revision
+    log. Pages archived in the markets-bot run artifacts of those hours (kept 30 days).
 - period: '2026-11-30'
   vintage: '2026-11-03'
   added: '2026-11-05'

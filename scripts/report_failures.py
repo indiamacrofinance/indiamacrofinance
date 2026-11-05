@@ -9,6 +9,8 @@ comment on the same issue.
   runner, so they open an issue only when the source has not succeeded for MIN_OUTAGE.
 - A source that ran cleanly closes its open issue (and any older per-series issues for its
   series, titled "scraper-broken: <series_id>") with a "recovered" comment.
+- Revisions above a series' `revision_alert` open (or comment on) "large-revision: <series_id>",
+  labelled `large-revision`. A person checks them against the release and closes them.
 """
 import json
 import os
@@ -29,10 +31,19 @@ def gh(*args: str) -> str:
     return subprocess.run(["gh", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout
 
 
-def open_issues() -> dict[str, int]:
-    rows = json.loads(gh("issue", "list", "--state", "open", "--label", "scraper-broken",
+def open_issues(label: str = "scraper-broken") -> dict[str, int]:
+    rows = json.loads(gh("issue", "list", "--state", "open", "--label", label,
                          "--limit", "200", "--json", "number,title"))
-    return {i["title"].removeprefix("scraper-broken: "): i["number"] for i in rows}
+    return {i["title"].removeprefix(f"{label}: "): i["number"] for i in rows}
+
+
+def revision_body(alert: dict, at: str, run_url: str) -> str:
+    rows = "\n".join(f"| {r['period']} | {r['old']} | {r['new']} | {r['pct']}% |" for r in alert["rows"][:30])
+    return (f"`{alert['series_id']}` (source `{alert['source']}`): {len(alert['rows'])} stored value(s) changed by more "
+            f"than its `revision_alert` of {alert['threshold']}% at {at}.\n\n| Period | Old | New | Change |\n|---|---|---|---|\n"
+            f"{rows}\n\n{run_url}\n\nRevisions are normal for many series; check the new values against the "
+            "publisher's release, then close this issue. If a value is wrong at the source, add an `exclude` entry "
+            "(runbook: \"A published value looks wrong\"). The old values are in `data/revisions/`.")
 
 
 def last_success(series: list[str], status: dict) -> datetime | None:
@@ -83,6 +94,16 @@ def main() -> None:
                 gh("issue", "close", str(issues[key]), "--comment",
                    f"Recovered: `{name}` ran cleanly at {report['at']}. {run_url}")
                 print(f"closed #{issues[key]} ({key})")
+
+    revised = open_issues("large-revision")
+    for alert in report.get("revisions") or []:
+        sid, body = alert["series_id"], revision_body(alert, report["at"], run_url)
+        if sid in revised:
+            gh("issue", "comment", str(revised[sid]), "--body", body)
+            print(f"commented on #{revised[sid]} large-revision {sid}")
+        else:
+            gh("issue", "create", "--title", f"large-revision: {sid}", "--label", "large-revision", "--body", body)
+            print(f"opened issue: large-revision {sid}")
 
 
 if __name__ == "__main__":
