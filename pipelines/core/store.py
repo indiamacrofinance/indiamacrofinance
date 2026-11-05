@@ -45,11 +45,31 @@ def excluded_periods(series_id: str) -> set[str]:
     return {str(e["period"]) for e in spec.get("exclude") or []}
 
 
+# Daily to fortnightly series: a row dated more than a day after it was stored (the slack is for
+# IST dates on UTC runners) cannot be an observation. RBI's home page once dated the 30 October
+# G-sec yields "November 30" on 3 November. Monthly and slower series are exempt: forecasts.
+EARLY_CHECKED = ("D", "W", "F")
+
+
+def recorded_early(series_id: str, df: pd.DataFrame) -> pd.Series:
+    """Mask of rows stored before their own date (daily to fortnightly series only)."""
+    from pipelines.core import registry
+    if (registry.all_series().get(series_id) or {}).get("frequency") not in EARLY_CHECKED or df.empty:
+        return pd.Series(False, index=df.index)
+    gap = pd.to_datetime(df["period"], errors="coerce") - pd.to_datetime(df["vintage"], errors="coerce")
+    return gap > pd.Timedelta(days=1)
+
+
+def published(series_id: str, df: pd.DataFrame) -> pd.DataFrame:
+    """The stored rows readers see: without registry-excluded periods and rows recorded early."""
+    hidden = df["period"].isin(excluded_periods(series_id)) | recorded_early(series_id, df)
+    return df[~hidden].reset_index(drop=True)
+
+
 def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
-    """Rows for a series (empty frame with the right columns if none yet), without the periods
-    excluded in the registry, so no reader (site, derived measures, sources) sees them.
-    stored=True gives the CSV as it is, excluded rows included: for writing it back, since
-    history is never deleted (AGENTS.md rule 8)."""
+    """Rows for a series (empty frame with the right columns if none yet) as readers see them
+    (`published`): the site, downloads, derived measures and sources. stored=True gives the CSV
+    as it is, for writing it back, since history is never deleted (AGENTS.md rule 8)."""
     path = SERIES / f"{series_id}.csv"
     if not path.exists():
         return pd.DataFrame(columns=COLUMNS)
@@ -58,9 +78,8 @@ def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
     for col in COLUMNS:
         if col not in df:
             df[col] = ""
-    if not stored and (excluded := excluded_periods(series_id)):
-        df = df[~df["period"].isin(excluded)].reset_index(drop=True)
-    return df[COLUMNS]
+    df = df[COLUMNS]
+    return df if stored else published(series_id, df)
 
 
 def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -70,6 +89,10 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     logged; stored periods absent from `new` are kept untouched.
     """
     old = load_series(series_id, stored=True)
+    # A row recorded before its own date is replaced by a real value for that period, not
+    # logged as a revision of it; until then it stays in the CSV as a record.
+    early = old["period"][recorded_early(series_id, old)]
+    old = old[~old["period"].isin(set(early) & set(new["period"]))]
     new = new.copy()
     new["vintage"] = vintage
     if "note" not in new:

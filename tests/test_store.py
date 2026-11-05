@@ -45,3 +45,27 @@ def test_upsert_panel_unchanged_value_takes_new_note(tmp_path, monkeypatch):
     new = pd.DataFrame({"entity": ["Mining"], "period": ["2025-04-01"], "value": [3.0], "note": ["Final Estimates"]})
     merged = store.upsert_panel("p", new, "2027-02-27")
     assert (merged.iloc[0].note, merged.iloc[0].vintage) == ("Final Estimates", "2026-05-30")
+
+
+def test_row_recorded_before_its_date(tmp_path, monkeypatch):
+    # RBI's home page dated the 30 Oct yields "November 30" on 3 Nov. Daily rows stored more than
+    # a day before their own date are hidden from readers but kept in the CSV; when the real value
+    # for that day arrives it replaces the row without being logged as a revision.
+    from pipelines.core import registry
+    monkeypatch.setattr(store, "SERIES", tmp_path)
+    monkeypatch.setattr(registry, "all_series", lambda: {"x": {"frequency": "D"}, "m": {"frequency": "M"}})
+    csv = ("period,value,vintage,note\n2026-11-02,7.31,2026-11-04,\n2026-11-03,7.31,2026-11-04,\n"
+           "2026-11-30,7.42,2026-11-03,\n")
+    (tmp_path / "x.csv").write_text(csv)
+    assert store.load_series("x").period.tolist() == ["2026-11-02", "2026-11-03"]
+    assert store.load_series("x", stored=True).period.tolist()[-1] == "2026-11-30"
+
+    merged, revised = store.upsert("x", pd.DataFrame({"period": ["2026-11-04"], "value": [7.21]}), "2026-11-05")
+    assert merged.period.tolist() == ["2026-11-02", "2026-11-03", "2026-11-04", "2026-11-30"]   # kept
+    merged, revised = store.upsert("x", pd.DataFrame({"period": ["2026-11-30"], "value": [7.05]}), "2026-12-01")
+    row = merged.set_index("period").loc["2026-11-30"]
+    assert (row.value, row.vintage) == (7.05, "2026-12-01") and revised.empty
+
+    # Monthly and slower series are not checked (forecasts carry future periods).
+    (tmp_path / "m.csv").write_text("period,value,vintage,note\n2027-04-01,4.0,2026-11-03,\n")
+    assert len(store.load_series("m")) == 1

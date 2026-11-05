@@ -114,7 +114,7 @@ def run_source(src: Source) -> list[dict]:
         big = revisions(old[["period", "value"]].astype({"value": float}),
                         new[["period", "value"]], spec["validation"]["revision_alert"])
         store.write_series(sid, merged, revised)
-        shown = merged[~merged["period"].isin(excluded)]
+        shown = store.published(sid, merged)
         urls = sorted({r.url for r in raws}) or [f"derived: {src.name}"]
         store.write_meta(sid, spec, shown, raw_paths, urls)
         store.update_status(sid, ok=True, last_period=shown["period"].iloc[-1])

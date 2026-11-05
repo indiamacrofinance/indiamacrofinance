@@ -38,7 +38,7 @@ def validate(series_id: str, new: pd.DataFrame, spec: dict, *, panel: bool = Fal
     if invalid_periods.any():
         sample = new.loc[invalid_periods, "period"].astype(str).head(3).tolist()
         problems.append(f"{series_id}: invalid periods (expected YYYY-MM-DD), e.g. {sample}")
-    if spec.get("frequency") in ("D", "W", "F") and not invalid_periods.all():
+    if spec.get("frequency") in ("D", "W", "F"):
         # Observed daily-to-fortnightly data cannot be dated after today; a day's slack because
         # bots run on UTC and some periods are IST dates. (Forecast series are Q or A.)
         latest_ok = (date.today() + timedelta(days=1)).isoformat()

@@ -35,12 +35,12 @@ def latest(path: str) -> tuple[str, str, float] | None:
     sid = Path(path).stem
     spec_file = ROOT / "registry" / "series" / f"{sid}.yaml"
     title = yaml.safe_load(spec_file.read_text())["short_title"] if spec_file.exists() else sid
-    lines = (ROOT / path).read_text().strip().splitlines()
-    if len(lines) < 2:
+    from pipelines.core import store   # as readers see it: no excluded or misdated rows
+    df = store.load_series(sid)
+    if df.empty:
         return None
-    rows = sorted(l.split(",") for l in lines[1:])            # period first, ISO dates sort
-    period, value = rows[-1][0], rows[-1][1]
-    return title, period, float(value)
+    last = df.sort_values("period").iloc[-1]
+    return title, last["period"], float(last["value"])
 
 
 def recovered() -> list[str]:

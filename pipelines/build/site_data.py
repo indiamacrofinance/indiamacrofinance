@@ -906,7 +906,10 @@ def main() -> int:
     PUBLIC.mkdir(parents=True, exist_ok=True)
     for sid, spec in specs.items():
         if spec["downloadable"] and sid in payloads:
-            (PUBLIC / f"{sid}.csv").write_bytes((store.SERIES / f"{sid}.csv").read_bytes())
+            # The stored file, less rows readers don't see (store.published), lines kept as stored.
+            lines = (store.SERIES / f"{sid}.csv").read_text().splitlines(keepends=True)
+            hidden = set(store.load_series(sid, stored=True)["period"]) - set(store.load_series(sid)["period"])
+            (PUBLIC / f"{sid}.csv").write_text("".join(lines[:1] + [l for l in lines[1:] if l.split(",", 1)[0] not in hidden]))
         elif spec["downloadable"] and panels.get(sid):
             (PUBLIC / f"{sid}.csv").write_bytes((store.PANELS / f"{sid}.csv").read_bytes())
     leaked = [f.name for f in PUBLIC.glob("*.csv")
