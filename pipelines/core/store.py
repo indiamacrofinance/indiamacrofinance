@@ -49,6 +49,11 @@ def excluded_periods(series_id: str) -> set[str]:
     return {str(e["period"]) for e in _excludes(series_id) if not e.get("vintage")}
 
 
+def vintage_match(df: pd.DataFrame, entry: dict) -> pd.Series:
+    """Rows a vintage `exclude` entry names: its period, stored on its vintage."""
+    return (df["period"] == str(entry["period"])) & (df["vintage"] == str(entry["vintage"]))
+
+
 def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
     """Mask of stored rows left out: a whole excluded period, or an entry with a `vintage` that
     matches only the row stored that day (a value dated in the future: when the real value for
@@ -57,7 +62,7 @@ def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
     hide = df["period"].isin(excluded_periods(series_id))
     for e in _excludes(series_id):
         if e.get("vintage"):
-            hide |= (df["period"] == str(e["period"])) & (df["vintage"] == str(e["vintage"]))
+            hide |= vintage_match(df, e)
     return hide
 
 
@@ -82,7 +87,7 @@ def active_excludes(series_id: str) -> list[dict]:
         return _excludes(series_id)
     stored = load_series(series_id, stored=True)
     return [e for e in _excludes(series_id) if not e.get("vintage")
-            or ((stored["period"] == str(e["period"])) & (stored["vintage"] == str(e["vintage"]))).any()]
+            or vintage_match(stored, e).any()]
 
 
 def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
@@ -120,6 +125,10 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     common = merged.index.intersection(incoming.index)
     changed = common[merged.loc[common, "value"].astype(float).round(10).values
                      != incoming.loc[common, "value"].astype(float).round(10).values]
+    # A row hidden by a vintage `exclude` is re-stated when its period comes in again, even at
+    # the same value, so it takes today's vintage and the entry lapses (else it stays hidden).
+    restated = common.intersection(old["period"][excluded_rows(series_id, old)]).difference(changed)
+    changed = changed.append(restated)
     revised = pd.DataFrame({
         "period": changed,
         "old_value": merged.loc[changed, "value"].values,

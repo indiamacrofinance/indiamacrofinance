@@ -72,3 +72,17 @@ def test_exclude_with_vintage(tmp_path, monkeypatch):
     (tmp_path / "x.csv").write_text(merged.to_csv(index=False))
     assert store.load_series("x").period.tolist()[-1] == "2026-11-30"   # the real value is shown
     assert store.active_excludes("x") == []
+
+
+def test_vintage_exclude_lapses_even_at_the_same_value(tmp_path, monkeypatch):
+    # The real 30 Nov close could equal the misdated 7.4243: it must still replace the hidden
+    # row (taking today's vintage), or it would stay hidden for good.
+    from pipelines.core import registry
+    monkeypatch.setattr(store, "SERIES", tmp_path)
+    entry = {"period": "2026-11-30", "vintage": "2026-11-03", "added": "2026-11-05", "reason": "misdated"}
+    monkeypatch.setattr(registry, "all_series", lambda: {"x": {"frequency": "D", "exclude": [entry]}})
+    (tmp_path / "x.csv").write_text("period,value,vintage,note\n2026-11-30,7.4243,2026-11-03,\n")
+    merged, revised = store.upsert("x", pd.DataFrame({"period": ["2026-11-30"], "value": [7.4243]}), "2026-12-01")
+    assert merged.vintage.tolist() == ["2026-12-01"] and revised.period.tolist() == ["2026-11-30"]
+    (tmp_path / "x.csv").write_text(merged.to_csv(index=False))
+    assert store.load_series("x").period.tolist() == ["2026-11-30"] and store.active_excludes("x") == []

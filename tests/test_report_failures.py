@@ -74,3 +74,24 @@ def test_run_records_large_revisions(tmp_path, monkeypatch):
                           fetch=list, parse=lambda raws: rows)
     assert run.run_source(src) == []
     assert [(a["series_id"], a["rows"][0]["old"], a["rows"][0]["new"]) for a in run.ALERTS] == [("x", 7.325, 7.3102)]
+
+
+def test_one_issue_per_series_and_errors_do_not_raise(monkeypatch):
+    import subprocess
+    alerts = [{"series_id": "repo_rate", "source": s, "threshold": 0.1,
+               "rows": [{"period": "2026-11-04", "old": 5.5, "new": 5.25, "pct": 4.5}]} for s in ("a", "b")]
+    calls = []
+
+    def fake_gh(*args):
+        calls.append(args[:2])
+        if args[:2] == ("issue", "list"):
+            return "[]"
+        return "https://github.com/o/r/issues/31\n" if args[:2] == ("issue", "create") else ""
+    monkeypatch.setattr(rf, "gh", fake_gh)
+    rf.report_revisions(alerts, "2026-11-05T00:00:00+00:00", "")
+    assert calls.count(("issue", "create")) == 1 and calls.count(("issue", "comment")) == 1
+
+    def broken_gh(*args):
+        raise subprocess.CalledProcessError(1, "gh")
+    monkeypatch.setattr(rf, "gh", broken_gh)
+    rf.report_revisions(alerts, "2026-11-05T00:00:00+00:00", "")   # printed, not raised

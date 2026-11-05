@@ -95,15 +95,26 @@ def main() -> None:
                    f"Recovered: `{name}` ran cleanly at {report['at']}. {run_url}")
                 print(f"closed #{issues[key]} ({key})")
 
-    revised = open_issues("large-revision")
-    for alert in report.get("revisions") or []:
-        sid, body = alert["series_id"], revision_body(alert, report["at"], run_url)
-        if sid in revised:
-            gh("issue", "comment", str(revised[sid]), "--body", body)
-            print(f"commented on #{revised[sid]} large-revision {sid}")
-        else:
-            gh("issue", "create", "--title", f"large-revision: {sid}", "--label", "large-revision", "--body", body)
-            print(f"opened issue: large-revision {sid}")
+    report_revisions(report.get("revisions") or [], report["at"], run_url)
+
+
+def report_revisions(alerts: list[dict], at: str, run_url: str) -> None:
+    """One `large-revision` issue per series (a comment if it is open). Revisions don't block
+    publishing, so a GitHub error here is printed, never raised: the bot must still commit."""
+    try:
+        revised = open_issues("large-revision")
+        for alert in alerts:
+            sid, body = alert["series_id"], revision_body(alert, at, run_url)
+            if sid in revised:
+                gh("issue", "comment", str(revised[sid]), "--body", body)
+                print(f"commented on #{revised[sid]} large-revision {sid}")
+            else:
+                url = gh("issue", "create", "--title", f"large-revision: {sid}", "--label", "large-revision",
+                         "--body", body).strip()
+                revised[sid] = url.rsplit("/", 1)[-1] or url   # a second alert this run comments on it
+                print(f"opened issue: large-revision {sid}")
+    except (subprocess.CalledProcessError, OSError, ValueError) as e:
+        print(f"large-revision issues not updated: {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -63,11 +63,13 @@ def vintage_found(sid: str, period: str, vintage: str) -> bool:
     data = ROOT / "data"
     series = data / "series" / f"{sid}.csv"
     revisions = data / "revisions" / f"{sid}.csv"
-    stored = series.exists() and any(r["period"] == period and r["vintage"] == vintage
-                                     for r in csv.DictReader(series.open()))
-    replaced = revisions.exists() and any(r["period"] == period and r["old_vintage"] == vintage
-                                          for r in csv.DictReader(revisions.open()))
-    return stored or replaced
+    def rows(path: Path) -> list[dict]:
+        if not path.exists():
+            return []
+        with path.open() as f:
+            return list(csv.DictReader(f))
+    return (any(r["period"] == period and r["vintage"] == vintage for r in rows(series))
+            or any(r["period"] == period and r["old_vintage"] == vintage for r in rows(revisions)))
 
 
 def main() -> int:

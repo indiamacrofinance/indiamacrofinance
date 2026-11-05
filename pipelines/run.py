@@ -129,7 +129,7 @@ def run_source(src: Source) -> list[dict]:
         urls = sorted({r.url for r in raws}) or [f"derived: {src.name}"]
         store.write_meta(sid, spec, shown, raw_paths, urls)
         store.update_status(sid, ok=True, last_period=shown["period"].iloc[-1])
-        added = len(shown) - len(old)
+        added = len(set(shown["period"]) - set(old["period"]) - set(revised["period"]))
         print(f"  ok   {sid}: {len(shown)} obs (+{added} new, {len(revised)} revised), "
               f"latest {shown['period'].iloc[-1]} = {shown['value'].iloc[-1]}")
         if not big.empty:
@@ -204,6 +204,7 @@ def main() -> int:
     # Downloads first, then derived measures, so they compute from fresh inputs.
     chosen.sort(key=lambda s: s.derived)
 
+    ALERTS.clear()
     failures = []
     for src in chosen:
         print(f"[{src.name}]")
