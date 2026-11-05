@@ -13,11 +13,11 @@
   },
   "licence": "unverified",
   "downloadable": false,
-  "first_period": "2021-10-01",
+  "first_period": "2021-07-01",
   "last_period": "2026-09-01",
   "last_value": -0.29,
-  "observations": 60,
-  "updated_at": "2026-11-04T20:27:42+00:00",
+  "observations": 63,
+  "updated_at": "2026-11-05T13:10:35+00:00",
   "fetched_from": [
     "derived: derived_real_rate"
   ],
