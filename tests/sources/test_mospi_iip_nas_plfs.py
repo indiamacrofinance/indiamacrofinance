@@ -1,6 +1,9 @@
 """IIP, national accounts and PLFS parsers, pinned to values MoSPI published (API, 2026-10-28)."""
+import pandas as pd
+
 from pipelines.sources.mospi.iip import SOURCE as IIP
-from pipelines.sources.mospi.nas import SOURCE as NAS, quarter_period
+from pipelines.sources.mospi.nas import SOURCE as NAS
+from pipelines.sources.mospi.nas import quarter_period
 from pipelines.sources.mospi.plfs import SOURCE as PLFS
 
 
@@ -46,3 +49,34 @@ def test_plfs_annual_period():
     from pipelines.sources.mospi.plfs import annual_period
     assert annual_period("2023-24", "Agriculture Year") == "2023-07-01"
     assert annual_period("2025", "Calendar Year") == "2025-01-01"
+
+
+def test_plfs_annual_both_layouts(raw_from):
+    # MoSPI changed the calendar-year tables on 2026-11-04: years read "PLFS 2024" and the
+    # all-India total repeats once per breakdown with the category fields left empty.
+    old = PLFS.parse([raw_from("mospi/plfs/annual_ur_ay_2026-11-04.json"),
+                      raw_from("mospi/plfs/annual_ur_cy_2026-11-04.json")])
+    new = PLFS.parse([raw_from("mospi/plfs/annual_ur_cy_2026-11-05.json")])
+    assert at(old, "plfs_ur_usual_ay", "2023-07-01").value == 3.2
+    for df in (old, new):
+        assert at(df, "plfs_ur_usual_cy", "2022-01-01").value == 3.6
+        assert at(df, "plfs_ur_usual_cy", "2025-01-01").value == 3.1
+        assert at(df, "plfs_ur_usual_cy", "2025-01-01").note == "usual status (PS+SS), calendar year 2025"
+    cols = ["series_id", "period", "value", "note"]
+    pd.testing.assert_frame_equal(old[old.series_id == "plfs_ur_usual_cy"][cols].reset_index(drop=True),
+                                  new[cols].reset_index(drop=True))
+
+
+def test_plfs_year():
+    from pipelines.sources.mospi._api import plfs_year
+    assert plfs_year("PLFS 2024") == "2024"
+    assert plfs_year("2024") == "2024"
+    assert plfs_year("2023-24") == "2023-24"
+
+
+def test_pages_no_data(monkeypatch, raw_from):
+    # "No Data Found" has no meta_data: zero rows, not a KeyError.
+    from pipelines.sources.mospi import _api
+    monkeypatch.setattr(_api, "fetch_raw", lambda url, params: raw_from("mospi/plfs/annual_ur_cy_nodata_2026-11-05.json"))
+    raws = _api.pages("plfs/getData", {})
+    assert len(raws) == 1 and _api.rows(raws) == []

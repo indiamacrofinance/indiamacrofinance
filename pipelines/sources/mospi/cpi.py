@@ -100,7 +100,12 @@ class MospiCPI(Source):
             if "data" not in body:
                 raise RuntimeError(f"unexpected CPI API response: {str(body)[:200]}")
             raws.append(raw)
-            if page >= body["meta_data"]["totalPages"]:
+            meta = body.get("meta_data")
+            if meta is None:   # "No Data Found" is an empty list with no meta_data (see _api.pages)
+                if body["data"]:
+                    raise RuntimeError("CPI API response has data but no meta_data")
+                return raws
+            if page >= meta["totalPages"]:
                 return raws
             page += 1
 
