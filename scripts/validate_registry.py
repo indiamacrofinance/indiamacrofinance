@@ -1,4 +1,5 @@
 """Validate registry/series/*.yaml against registry/series/_schema.md."""
+import csv
 import re
 import sys
 from pathlib import Path
@@ -47,10 +48,26 @@ def check_series(path: Path, pages: set[str]) -> list[str]:
     for e in s.get("exclude") or []:
         if not (e.get("period") and len(str(e.get("reason", ""))) >= 30):
             errs.append("each exclude entry needs a period and a reason giving the evidence")
+        if e.get("vintage") and not vintage_found(s["id"], str(e["period"]), str(e["vintage"])):
+            errs.append(f"exclude {e['period']}: no row stored on {e['vintage']} for that period "
+                        "(in the CSV or, once replaced, in the revision log); check the vintage")
     rng = s["validation"].get("range")
     if not (isinstance(rng, list) and len(rng) == 2 and rng[0] < rng[1]):
         errs.append("validation.range must be [min, max]")
     return errs
+
+
+def vintage_found(sid: str, period: str, vintage: str) -> bool:
+    """A vintage exclude must name a row that exists: still stored, or replaced by a later
+    value (then the revision log has it as the old vintage). A typo would hide nothing."""
+    data = ROOT / "data"
+    series = data / "series" / f"{sid}.csv"
+    revisions = data / "revisions" / f"{sid}.csv"
+    stored = series.exists() and any(r["period"] == period and r["vintage"] == vintage
+                                     for r in csv.DictReader(series.open()))
+    replaced = revisions.exists() and any(r["period"] == period and r["old_vintage"] == vintage
+                                          for r in csv.DictReader(revisions.open()))
+    return stored or replaced
 
 
 def main() -> int:

@@ -126,7 +126,7 @@ def series_payload(series_id: str, spec: dict, df: pd.DataFrame) -> dict:
         "fetch": spec["fetch"],
         "release_rule": spec.get("release", {}).get("rule", ""),
         "verified_against": spec.get("verified_against") or [],
-        "exclude": spec.get("exclude") or [],
+        "exclude": store.active_excludes(series_id),
         "revisions": revisions_of(series_id),
         "data": [[p.strftime("%Y-%m-%d"), v, n] for p, v, n in
                  zip(df["period"], df["value"], df["note"].fillna(""))],
@@ -906,13 +906,7 @@ def main() -> int:
     PUBLIC.mkdir(parents=True, exist_ok=True)
     for sid, spec in specs.items():
         if spec["downloadable"] and sid in payloads:
-            # The stored file, less any rows readers don't see (store.published, e.g. `exclude`).
-            path = store.SERIES / f"{sid}.csv"
-            if not spec.get("exclude"):
-                (PUBLIC / f"{sid}.csv").write_bytes(path.read_bytes())
-            else:
-                raw = pd.read_csv(path, dtype=str, keep_default_na=False)
-                raw[~store.excluded_rows(sid, raw)].to_csv(PUBLIC / f"{sid}.csv", index=False)
+            (PUBLIC / f"{sid}.csv").write_bytes(store.published_csv(sid))   # less excluded rows
         elif spec["downloadable"] and panels.get(sid):
             (PUBLIC / f"{sid}.csv").write_bytes((store.PANELS / f"{sid}.csv").read_bytes())
     leaked = [f.name for f in PUBLIC.glob("*.csv")

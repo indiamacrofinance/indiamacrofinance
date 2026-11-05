@@ -33,3 +33,17 @@ def test_every_auto_source_has_exactly_one_bot():
     auto = {n for n, s in sources.items() if fetch_mode(s) == "auto"}
     assert auto - set(assigned) == set(), f"auto sources without a bot: {auto - set(assigned)}"
     assert not set(assigned) - auto, f"manual sources listed in a bot: {set(assigned) - auto}"
+
+
+def test_vintage_exclude_must_name_a_stored_row(tmp_path, monkeypatch):
+    from scripts import validate_registry as vr
+    monkeypatch.setattr(vr, "ROOT", tmp_path)
+    (tmp_path / "data" / "series").mkdir(parents=True)
+    (tmp_path / "data" / "revisions").mkdir(parents=True)
+    (tmp_path / "data" / "series" / "x.csv").write_text("period,value,vintage,note\n2026-11-30,7.4,2026-11-03,\n")
+    assert vr.vintage_found("x", "2026-11-30", "2026-11-03")
+    assert not vr.vintage_found("x", "2026-11-30", "2026-11-02")          # a typo hides nothing
+    (tmp_path / "data" / "series" / "x.csv").write_text("period,value,vintage,note\n2026-11-30,7.0,2026-12-01,\n")
+    (tmp_path / "data" / "revisions" / "x.csv").write_text(
+        "period,old_value,new_value,old_vintage,new_vintage\n2026-11-30,7.4,7.0,2026-11-03,2026-12-01\n")
+    assert vr.vintage_found("x", "2026-11-30", "2026-11-03")              # replaced, in the log

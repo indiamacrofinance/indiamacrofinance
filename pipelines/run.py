@@ -115,6 +115,12 @@ def run_source(src: Source) -> list[dict]:
                         new[["period", "value"]], spec["validation"]["revision_alert"])
         store.write_series(sid, merged, revised)
         shown = store.published(sid, merged)
+        if shown.empty:   # every row excluded: nothing to publish
+            err = "every stored row is excluded in the registry"
+            store.update_status(sid, ok=False, error=err)
+            failures.append({"series_id": sid, "source": src.name, "error": err})
+            print(f"  FAIL {sid}: {err}")
+            continue
         urls = sorted({r.url for r in raws}) or [f"derived: {src.name}"]
         store.write_meta(sid, spec, shown, raw_paths, urls)
         store.update_status(sid, ok=True, last_period=shown["period"].iloc[-1])

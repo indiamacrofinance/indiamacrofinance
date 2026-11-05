@@ -51,7 +51,9 @@ def excluded_periods(series_id: str) -> set[str]:
 
 def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
     """Mask of stored rows left out: a whole excluded period, or an entry with a `vintage` that
-    matches only the row stored that day (a wrong value whose period may later get a real one)."""
+    matches only the row stored that day (a value dated in the future: when the real value for
+    that period arrives it is stored as an ordinary revision, so the old row is kept in the
+    revision log, and the entry no longer matches)."""
     hide = df["period"].isin(excluded_periods(series_id))
     for e in _excludes(series_id):
         if e.get("vintage"):
@@ -62,6 +64,25 @@ def excluded_rows(series_id: str, df: pd.DataFrame) -> pd.Series:
 def published(series_id: str, df: pd.DataFrame) -> pd.DataFrame:
     """The stored rows readers see (site, downloads, derived measures, sources, bot messages)."""
     return df[~excluded_rows(series_id, df)].reset_index(drop=True)
+
+
+def published_csv(series_id: str) -> bytes:
+    """The stored CSV as readers see it: the file itself, less any excluded rows."""
+    path = SERIES / f"{series_id}.csv"
+    if not _excludes(series_id):
+        return path.read_bytes()
+    raw = pd.read_csv(path, dtype=str, keep_default_na=False)
+    return raw[~excluded_rows(series_id, raw)].to_csv(index=False).encode()
+
+
+def active_excludes(series_id: str) -> list[dict]:
+    """Exclude entries that leave something out now: whole periods, and vintage entries whose
+    row is still stored (once a real value replaces it, logged as a revision, they lapse)."""
+    if not any(e.get("vintage") for e in _excludes(series_id)):
+        return _excludes(series_id)
+    stored = load_series(series_id, stored=True)
+    return [e for e in _excludes(series_id) if not e.get("vintage")
+            or ((stored["period"] == str(e["period"])) & (stored["vintage"] == str(e["vintage"]))).any()]
 
 
 def load_series(series_id: str, *, stored: bool = False) -> pd.DataFrame:
@@ -87,10 +108,6 @@ def upsert(series_id: str, new: pd.DataFrame, vintage: str) -> tuple[pd.DataFram
     logged; stored periods absent from `new` are kept untouched.
     """
     old = load_series(series_id, stored=True)
-    # A stored row left out by a vintage `exclude` entry is replaced by a real value for its
-    # period, not logged as a revision of it; until then it stays in the CSV as a record.
-    wrong = old["period"][excluded_rows(series_id, old)]
-    old = old[~old["period"].isin(set(wrong) & set(new["period"]))]
     new = new.copy()
     new["vintage"] = vintage
     if "note" not in new:

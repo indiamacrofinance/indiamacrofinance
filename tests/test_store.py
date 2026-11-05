@@ -49,8 +49,7 @@ def test_upsert_panel_unchanged_value_takes_new_note(tmp_path, monkeypatch):
 
 def test_exclude_with_vintage(tmp_path, monkeypatch):
     # RBI's home page dated the 30 Oct yields "November 30" on 3 Nov. An exclude entry with a
-    # vintage hides only the row stored that day: kept in the CSV, hidden from readers, and
-    # replaced (not logged as a revision) when the real value for 30 Nov arrives.
+    # vintage hides only the row stored that day: kept in the CSV and hidden from readers.
     from pipelines.core import registry
     monkeypatch.setattr(store, "SERIES", tmp_path)
     entry = {"period": "2026-11-30", "vintage": "2026-11-03", "added": "2026-11-05", "reason": "misdated"}
@@ -63,8 +62,13 @@ def test_exclude_with_vintage(tmp_path, monkeypatch):
 
     merged, _ = store.upsert("x", pd.DataFrame({"period": ["2026-11-04"], "value": [7.21]}), "2026-11-05")
     assert merged.period.tolist() == ["2026-11-03", "2026-11-04", "2026-11-30"]   # kept as a record
+    assert [e["period"] for e in store.active_excludes("x")] == ["2026-11-30"]
+    # The real value arrives: an ordinary revision, so the misdated row is kept in the revision
+    # log (history is never deleted); the entry then matches nothing and lapses.
     merged, revised = store.upsert("x", pd.DataFrame({"period": ["2026-11-30"], "value": [7.05]}), "2026-12-01")
     row = merged.set_index("period").loc["2026-11-30"]
-    assert (row.value, row.vintage) == (7.05, "2026-12-01") and revised.empty
+    assert (row.value, row.vintage) == (7.05, "2026-12-01")
+    assert revised[["period", "old_value", "old_vintage"]].values.tolist() == [["2026-11-30", 7.42, "2026-11-03"]]
     (tmp_path / "x.csv").write_text(merged.to_csv(index=False))
     assert store.load_series("x").period.tolist()[-1] == "2026-11-30"   # the real value is shown
+    assert store.active_excludes("x") == []

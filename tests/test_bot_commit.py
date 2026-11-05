@@ -39,12 +39,14 @@ def test_subject():
 def test_runs_as_a_script():
     # bot.yml runs `python scripts/bot_commit.py`: only scripts/ is on sys.path, so the script
     # must make `pipelines` importable itself (latest() reads series through the store).
+    import os
     import subprocess
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parents[1]
+    env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"}
     code = ("import runpy, sys; sys.path[:] = [p for p in sys.path if p not in ('', '.')]; "
-            "m = runpy.run_path('scripts/bot_commit.py'); print(m['latest']('data/series/repo_rate.csv')[0])")
-    out = subprocess.run([sys.executable, "-c", code], cwd=root, capture_output=True, text=True, check=False)
+            "m = runpy.run_path('scripts/bot_commit.py'); print(m['latest']('data/series/no_such_series.csv'))")
+    out = subprocess.run([sys.executable, "-c", code], cwd=root, env=env, capture_output=True, text=True, check=False)
     assert out.returncode == 0, out.stderr
-    assert out.stdout.strip() == "Repo rate"
+    assert out.stdout.strip() == "None"

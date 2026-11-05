@@ -152,3 +152,19 @@ def test_excluded_stored_row_is_kept_but_not_shown(tmp_path, monkeypatch):
     assert store.load_series("x", stored=True).set_index("period").loc["2026-01-30", "value"] == 7.4
     assert store.load_series("x").period.tolist() == ["2026-01-02", "2026-01-05"]
     assert store.load_status()["x"]["last_period"] == "2026-01-05"
+
+
+def test_every_row_excluded_fails_the_series_not_the_run(tmp_path, monkeypatch):
+    monkeypatch.setattr(store, "SERIES", tmp_path)
+    monkeypatch.setattr(store, "META", tmp_path)
+    monkeypatch.setattr(store, "REVISIONS", tmp_path)
+    monkeypatch.setattr(store, "STATUS", tmp_path / "status.json")
+    monkeypatch.setattr(store, "archive_raw", lambda *args: [])
+    spec = {"validation": {"range": [0, 100], "revision_alert": 5}, "frequency": "D",
+            "exclude": [{"period": "2026-01-02", "vintage": "2026-01-03", "added": "x", "reason": "r"}]}
+    monkeypatch.setattr(run.registry, "all_series", lambda: {"x": spec})
+    (tmp_path / "x.csv").write_text("period,value,vintage,note\n2026-01-02,7.0,2026-01-03,\n")
+    rows = pd.DataFrame({"series_id": ["x"], "period": ["2026-01-02"], "value": [7.0]})
+    src = SimpleNamespace(name="test", series_ids=("x",), panel=False, derived=False, fetch=list, parse=lambda raws: rows)
+    failures = run.run_source(src)
+    assert len(failures) == 1 and "excluded" in failures[0]["error"]
