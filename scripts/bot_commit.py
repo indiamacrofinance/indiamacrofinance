@@ -35,7 +35,8 @@ def latest(path: str) -> tuple[str, str, float] | None:
     sid = Path(path).stem
     spec_file = ROOT / "registry" / "series" / f"{sid}.yaml"
     title = yaml.safe_load(spec_file.read_text())["short_title"] if spec_file.exists() else sid
-    from pipelines.core import store   # as readers see it: no excluded or misdated rows
+    # As readers see it: no excluded or misdated rows.
+    from pipelines.core import store
     df = store.load_series(sid)
     if df.empty:
         return None
