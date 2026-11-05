@@ -53,6 +53,19 @@ def recovered() -> list[str]:
     return sorted(s for s, st in new.items() if old.get(s, {}).get("stale") and not st.get("stale"))
 
 
+def worth_committing(changed: list[str], failures: list, back: list[str]) -> bool:
+    """New or revised numbers, a failure, or a recovery; not a run that only moved timestamps."""
+    return any(p.startswith(MEANINGFUL) for p in changed) or bool(failures) or bool(back)
+
+
+def subject(bot: str, items: list[str], failures: list, back: list[str]) -> str:
+    """'markets: USD/INR 95.23, Nifty 50 22,699 (+3 more)', else what happened to the sources."""
+    if items:
+        return f"{bot}: " + ", ".join(items[:4]) + (f" (+{len(items) - 4} more)" if len(items) > 4 else "")
+    return f"{bot}: " + "; ".join([f"{len(failures)} source failure(s) recorded"] * bool(failures)
+                                   + [f"{len(back)} series working again"] * bool(back))
+
+
 def output(pushed: bool) -> None:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -65,7 +78,7 @@ def main(bot: str) -> int:
     last_run = ROOT / "data" / "raw" / "last_run.json"
     failures = json.loads(last_run.read_text())["failures"] if last_run.exists() else []
     back = recovered()
-    if not any(p.startswith(MEANINGFUL) for p in changed) and not failures and not back:
+    if not worth_committing(changed, failures, back):
         git("reset", "-q")
         print(f"{bot}-bot: no new data")
         output(False)
@@ -74,18 +87,16 @@ def main(bot: str) -> int:
     series = [x for p in changed if p.startswith("data/series/") and (x := latest(p))]
     panels = [Path(p).stem for p in changed if p.startswith("data/panels/")]
     items = [f"{t} {fmt(v)}" for t, _, v in series] + panels
-    subject = f"{bot}: " + (", ".join(items[:4]) + (f" (+{len(items) - 4} more)" if len(items) > 4 else "")
-                            if items else f"{len(failures)} source failure(s) recorded" if failures
-                            else f"{len(back)} series working again")
+    title = subject(bot, items, failures, back)
     body = "\n".join([f"- {t}: {fmt(v)} ({p})" for t, p, v in series] + [f"- panel {n}" for n in panels]
                      + [f"- FAILED {f['series_id']}: {f['error'][:120]}" for f in failures]
                      + [f"- recovered {s}" for s in back])
     name = f"{bot}-bot"
     git("-c", f"user.name={name}", "-c", f"user.email={name}@users.noreply.github.com",
-        "commit", "-q", "-m", subject, "-m", body)
+        "commit", "-q", "-m", title, "-m", body)
     for attempt in range(5):
         if subprocess.run(["git", "push", "-q", "origin", "HEAD:main"], cwd=ROOT).returncode == 0:
-            print(f"{name}: pushed: {subject}")
+            print(f"{name}: pushed: {title}")
             output(True)
             return 0
         # Another bot pushed first: replay ours on top. On a clash (data/status.json, or a

@@ -20,3 +20,17 @@ def test_recovered_without_history(tmp_path, monkeypatch):
     monkeypatch.setattr(bot_commit, "ROOT", tmp_path)
     monkeypatch.setattr(bot_commit, "git", lambda *a, **k: "")
     assert bot_commit.recovered() == []
+
+
+def test_worth_committing():
+    assert not bot_commit.worth_committing(["data/meta/x.json", "data/status.json"], [], [])
+    assert bot_commit.worth_committing(["data/series/x.csv"], [], [])
+    assert bot_commit.worth_committing(["data/status.json"], [{"series_id": "x"}], [])
+    assert bot_commit.worth_committing(["data/status.json"], [], ["x"])   # a recovery alone
+
+
+def test_subject():
+    assert bot_commit.subject("mospi", ["IIP 124.3"], [], ["x"]) == "mospi: IIP 124.3"
+    assert bot_commit.subject("mospi", [], [], ["a", "b"]) == "mospi: 2 series working again"
+    assert (bot_commit.subject("mospi", [], [{"series_id": "c"}], ["a"])
+            == "mospi: 1 source failure(s) recorded; 1 series working again")
