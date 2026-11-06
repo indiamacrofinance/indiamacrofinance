@@ -2492,22 +2492,22 @@
     "last_period": "2026-11-05"
   },
   "usdcny_close": {
-    "last_attempt": "2026-11-06T06:00:58+00:00",
-    "last_success": "2026-11-06T06:00:58+00:00",
+    "last_attempt": "2026-11-06T06:44:52+00:00",
+    "last_success": "2026-11-06T06:44:52+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-06"
   },
   "usdidr_close": {
-    "last_attempt": "2026-11-06T06:00:58+00:00",
-    "last_success": "2026-11-06T06:00:58+00:00",
+    "last_attempt": "2026-11-06T06:44:52+00:00",
+    "last_success": "2026-11-06T06:44:52+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-06"
   },
   "usdinr_close": {
-    "last_attempt": "2026-11-06T06:00:58+00:00",
-    "last_success": "2026-11-06T06:00:58+00:00",
+    "last_attempt": "2026-11-06T06:44:52+00:00",
+    "last_success": "2026-11-06T06:44:52+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-06"
@@ -2527,8 +2527,8 @@
     "last_period": "2026-11-05"
   },
   "usdkrw_close": {
-    "last_attempt": "2026-11-06T06:00:58+00:00",
-    "last_success": "2026-11-06T06:00:58+00:00",
+    "last_attempt": "2026-11-06T06:44:52+00:00",
+    "last_success": "2026-11-06T06:44:52+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-06"
