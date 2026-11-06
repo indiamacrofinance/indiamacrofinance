@@ -287,8 +287,8 @@
     "last_period": "2026-04-01"
   },
   "brent_inr": {
-    "last_attempt": "2026-11-06T06:01:09+00:00",
-    "last_success": "2026-11-06T06:01:09+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-11-05"
@@ -385,266 +385,266 @@
     "last_period": "2026-04-01"
   },
   "cga_capex_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_capex_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_capex_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_corporate_tax_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_success": "2026-11-05T14:01:54+00:00",
     "last_period": "2026-09-01"
   },
   "cga_customs_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:55+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_direct_tax_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:55+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_excise_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:55+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_fiscal_deficit_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_gross_tax_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:54+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_income_tax_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:54+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_interest_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_net_tax_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_nondebt_capital_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_nontax_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_nontax_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_nontax_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_other_receipts_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_primary_deficit_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_deficit_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_revenue_expenditure_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_revenue_receipts_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_stt_fytd": {
-    "last_attempt": "2026-11-05T21:03:45+00:00",
+    "last_attempt": "2026-11-06T06:11:42+00:00",
     "last_success": "2026-11-05T14:01:54+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/112026/DTL32627.HTM failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_total_expenditure_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_fytd": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_success": "2026-11-05T14:01:43+00:00",
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_pct_be": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
     "last_period": "2026-09-01"
   },
   "cga_total_receipts_pct_be_prev": {
-    "last_attempt": "2026-11-05T21:00:39+00:00",
+    "last_attempt": "2026-11-06T06:08:35+00:00",
     "last_success": "2026-11-05T14:01:43+00:00",
     "stale": true,
     "last_error": "RuntimeError: GET https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm failed: timed out",
@@ -749,64 +749,64 @@
     "last_period": "2026-09-01"
   },
   "cpi_core_index": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_core_2to4": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_core_4to6": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_core_above6": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_core_below2": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_headline_2to4": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_headline_4to6": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_headline_above6": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_diffusion_headline_below2": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -826,8 +826,8 @@
     "last_period": "2026-09-01"
   },
   "cpi_ex_food_fuel_pm_inflation": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -847,15 +847,15 @@
     "last_period": "2026-09-01"
   },
   "cpi_fuel_index": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_goods_inflation": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -945,8 +945,8 @@
     "last_period": "2026-09-01"
   },
   "cpi_precious_metals_contribution": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -973,8 +973,8 @@
     "last_period": "2026-09-01"
   },
   "cpi_services_inflation": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -987,22 +987,22 @@
     "last_period": "2026-09-01"
   },
   "cpi_trimmed_mean_10": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_trimmed_mean_25": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "cpi_trimmed_mean_5": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1022,8 +1022,8 @@
     "last_period": "2026-09-01"
   },
   "cpi_weighted_median": {
-    "last_attempt": "2026-11-05T05:47:53+00:00",
-    "last_success": "2026-11-05T05:47:53+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1043,43 +1043,43 @@
     "last_period": "2026-09-01"
   },
   "credit_contrib_industry": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_personal": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_sectors": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_contrib_services": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
   },
   "credit_deposit_gap": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
   },
   "credit_deposit_ratio": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
@@ -1281,8 +1281,8 @@
     "last_period": "2026-08-01"
   },
   "epfo_net_payroll": {
-    "last_attempt": "2026-11-04T04:26:11+00:00",
-    "last_success": "2026-11-04T04:26:11+00:00",
+    "last_attempt": "2026-11-06T06:12:55+00:00",
+    "last_success": "2026-11-06T06:12:55+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2025-07-01"
@@ -1505,8 +1505,8 @@
     "last_period": "2026-11-05"
   },
   "gsec_par_10y": {
-    "last_attempt": "2026-11-06T06:01:09+00:00",
-    "last_success": "2026-11-06T06:01:09+00:00",
+    "last_attempt": "2026-11-06T06:13:11+00:00",
+    "last_success": "2026-11-06T06:13:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-30"
@@ -1729,8 +1729,8 @@
     "last_period": "2026-09-01"
   },
   "import_cover_months": {
-    "last_attempt": "2026-11-05T21:05:44+00:00",
-    "last_success": "2026-11-05T21:05:44+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -1743,8 +1743,8 @@
     "last_period": "2026-04-01"
   },
   "incremental_credit_deposit_ratio": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-15"
@@ -2037,32 +2037,32 @@
     "last_period": "2026-09-01"
   },
   "power_energy_met": {
-    "last_attempt": "2026-11-04T04:26:26+00:00",
-    "last_success": "2026-11-04T04:26:26+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-05"
   },
   "power_peak_demand": {
-    "last_attempt": "2026-11-04T04:26:26+00:00",
-    "last_success": "2026-11-04T04:26:26+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-05"
   },
   "power_solar_gen": {
-    "last_attempt": "2026-11-04T04:26:26+00:00",
-    "last_success": "2026-11-04T04:26:26+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-05"
   },
   "power_wind_gen": {
-    "last_attempt": "2026-11-04T04:26:26+00:00",
-    "last_success": "2026-11-04T04:26:26+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
-    "last_period": "2026-11-02"
+    "last_period": "2026-11-05"
   },
   "rbi_fx_forward_book": {
     "last_attempt": "2026-11-05T20:37:16+00:00",
@@ -2107,8 +2107,8 @@
     "last_period": "2026-09-01"
   },
   "real_repo_rate": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-09-01"
@@ -2331,10 +2331,10 @@
     "last_period": "2026-09-01"
   },
   "state_debt_pct_gsdp": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "last_period": "2024-04-01"
   },
   "state_gfd": {
@@ -2345,8 +2345,8 @@
     "last_period": "2024-04-01"
   },
   "state_gfd_pct_gsdp": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:10+00:00",
+    "last_success": "2026-11-06T06:13:10+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
@@ -2373,8 +2373,8 @@
     "last_period": "2024-04-01"
   },
   "state_interest_pct_gsdp": {
-    "last_attempt": "2026-11-05T20:39:29+00:00",
-    "last_success": "2026-11-05T20:39:29+00:00",
+    "last_attempt": "2026-11-06T06:13:11+00:00",
+    "last_success": "2026-11-06T06:13:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2024-04-01"
@@ -2443,8 +2443,8 @@
     "last_period": "2026-10-16"
   },
   "term_spread_10y_repo": {
-    "last_attempt": "2026-11-06T06:01:09+00:00",
-    "last_success": "2026-11-06T06:01:09+00:00",
+    "last_attempt": "2026-11-06T06:13:11+00:00",
+    "last_success": "2026-11-06T06:13:11+00:00",
     "stale": false,
     "last_error": null,
     "last_period": "2026-10-30"
