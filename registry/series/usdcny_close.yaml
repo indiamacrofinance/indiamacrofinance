@@ -33,4 +33,6 @@ discontinued: null
 owner: ''
 verified_against: []
 notes: Yahoo's FX day runs 05:30-05:30 IST; today's value is a live quote, rewritten
-  on each run until the day closes.
+  on each run until the day closes. Each completed day is Yahoo's daily close or the day's last
+  hourly price, whichever is nearer the ECB reference rate, because Yahoo's FX data carries
+  occasional bad ticks.

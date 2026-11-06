@@ -34,4 +34,6 @@ owner: ''
 verified_against: []
 notes: Market quote, onshore and offshore, unlike FBIL's 1 pm reference rate (usdinr_ref).
   Yahoo's FX day runs 05:30-05:30 IST; today's value is a live quote, rewritten on
-  each run until the day closes.
+  each run until the day closes. Each completed day is Yahoo's daily close or the day's last
+  hourly price, whichever is nearer the ECB reference rate, because Yahoo's FX data carries
+  occasional bad ticks.
