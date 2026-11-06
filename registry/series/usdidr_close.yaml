@@ -34,3 +34,19 @@ owner: ''
 verified_against: []
 notes: Yahoo's FX day runs 05:30-05:30 IST; today's value is a live quote, rewritten
   on each run until the day closes.
+exclude:
+- period: '2026-11-03'
+  added: '2026-11-06'
+  reason: Yahoo's IDR=X daily close of 17,472.20 lies below the bar's own low (17,786.60) and is
+    3.7% under the ECB reference rate for the day (18,137 per US$, via frankfurter.dev). Live
+    quotes stored through the day were 18,050-18,140. A bad tick in Yahoo's daily bar (issue #32).
+- period: '2026-11-04'
+  added: '2026-11-06'
+  reason: Yahoo's IDR=X daily close of 17,536.10 lies below the bar's own low (17,957.60) and is
+    3.3% under the ECB reference rate for the day (18,129 per US$). Live quotes stored through
+    the day were about 18,140. A bad tick in Yahoo's daily bar (issue #32).
+- period: '2026-11-05'
+  added: '2026-11-06'
+  reason: Yahoo's IDR=X daily close of 17,509.20 equals the bar's open and low while its high is
+    18,127, and is 3.1% under the ECB reference rate for the day (18,069 per US$). Live quotes
+    stored through the day were 18,049-18,140. A bad tick in Yahoo's daily bar (issue #32).
