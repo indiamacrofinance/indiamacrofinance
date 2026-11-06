@@ -15,9 +15,9 @@
   "downloadable": false,
   "first_period": "2016-11-02",
   "last_period": "2026-11-06",
-  "last_value": 94.135,
+  "last_value": 93.98,
   "observations": 2605,
-  "updated_at": "2026-11-06T06:44:52+00:00",
+  "updated_at": "2026-11-06T07:14:24+00:00",
   "fetched_from": [
     "yfinance:CNY=X?period=2y",
     "yfinance:IDR=X?period=2y",
@@ -25,9 +25,9 @@
     "yfinance:KRW=X?period=2y"
   ],
   "raw_files": [
-    "data/raw/yahoo_markets/20261106T064442-c94ff5c2ee.json",
-    "data/raw/yahoo_markets/20261106T064446-bbf10bca6d.json",
-    "data/raw/yahoo_markets/20261106T064449-5d2a649fd0.json",
-    "data/raw/yahoo_markets/20261106T064452-0c87984f53.json"
+    "data/raw/yahoo_markets/20261106T071416-5676c901b6.json",
+    "data/raw/yahoo_markets/20261106T071419-141bafa4b9.json",
+    "data/raw/yahoo_markets/20261106T071421-395d9d1798.json",
+    "data/raw/yahoo_markets/20261106T071424-4e1d8a0428.json"
   ]
 }
