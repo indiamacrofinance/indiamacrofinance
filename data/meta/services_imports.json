@@ -17,7 +17,7 @@
   "last_period": "2026-09-01",
   "last_value": 20.097,
   "observations": 15,
-  "updated_at": "2026-11-06T13:07:39+00:00",
+  "updated_at": "2026-11-06T19:59:27+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=62138",
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=62307",
@@ -31,15 +31,15 @@
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63893"
   ],
   "raw_files": [
-    "data/raw/rbi_services_trade/20261106T130720-3d3e84d1c1.html",
-    "data/raw/rbi_services_trade/20261106T130722-b91f76c573.html",
-    "data/raw/rbi_services_trade/20261106T130724-369c99255a.html",
-    "data/raw/rbi_services_trade/20261106T130726-036adc5fa4.html",
-    "data/raw/rbi_services_trade/20261106T130729-906aea3e26.html",
-    "data/raw/rbi_services_trade/20261106T130731-a336871581.html",
-    "data/raw/rbi_services_trade/20261106T130733-609ab28783.html",
-    "data/raw/rbi_services_trade/20261106T130735-84c60a5b04.html",
-    "data/raw/rbi_services_trade/20261106T130737-630011ed27.html",
-    "data/raw/rbi_services_trade/20261106T130739-2c87e28f7a.html"
+    "data/raw/rbi_services_trade/20261106T195908-7b671d9cc8.html",
+    "data/raw/rbi_services_trade/20261106T195910-83c8fd0419.html",
+    "data/raw/rbi_services_trade/20261106T195912-c853e09fcb.html",
+    "data/raw/rbi_services_trade/20261106T195914-2d73b8dc6f.html",
+    "data/raw/rbi_services_trade/20261106T195916-5e9a8cd431.html",
+    "data/raw/rbi_services_trade/20261106T195918-2c208f069c.html",
+    "data/raw/rbi_services_trade/20261106T195921-85303e7952.html",
+    "data/raw/rbi_services_trade/20261106T195923-cf412765d0.html",
+    "data/raw/rbi_services_trade/20261106T195925-623d27fab4.html",
+    "data/raw/rbi_services_trade/20261106T195927-19c699b009.html"
   ]
 }

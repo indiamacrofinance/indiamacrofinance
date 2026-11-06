@@ -1,4 +1,7 @@
 period,value,vintage,note
+2020-11-01,-2.93,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
+2020-12-01,-0.59,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
+2021-01-01,-0.06,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
 2021-02-01,-1.03,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
 2021-03-01,-1.52,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
 2021-04-01,-0.23,2026-11-06,site calculation: repo rate at month end minus CPI inflation (y/y)
