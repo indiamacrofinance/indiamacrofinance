@@ -54,5 +54,11 @@
     "subject": "Rupee strengthened 0.25% to \u20b994.52 per US dollar; FPI buying for November 2026 so far",
     "drafted_by": "AI (claude-opus-5-5), checked",
     "rupee_as_of": "2026-11-05"
+  },
+  "2026-11-07": {
+    "id": "em_106kayfx939szvfkqhby7ct86k",
+    "subject": "Rupee strengthened 0.61% to \u20b993.89 per US dollar, mostly on factors outside the model",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-11-06"
   }
 }
