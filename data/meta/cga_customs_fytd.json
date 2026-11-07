@@ -17,11 +17,11 @@
   "last_period": "2026-09-01",
   "last_value": 1.2477,
   "observations": 138,
-  "updated_at": "2026-11-07T14:01:46+00:00",
+  "updated_at": "2026-11-07T14:17:50+00:00",
   "fetched_from": [
     "https://cga.nic.in/writereaddata/MonthAccount/92026/DTL32627.HTM"
   ],
   "raw_files": [
-    "data/raw/cga_tax_heads/20261107T140145-e1d2911dad.htm"
+    "data/raw/cga_tax_heads/20261107T141750-e1d2911dad.htm"
   ]
 }
