@@ -17,11 +17,11 @@
   "last_period": "2026-09-01",
   "last_value": 10.0,
   "observations": 13,
-  "updated_at": "2026-11-07T13:08:16+00:00",
+  "updated_at": "2026-11-07T18:04:58+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/IESH07102026E75386C45E0DD4F84B3343908B8590B11.PDF"
   ],
   "raw_files": [
-    "data/raw/rbi_iesh/20261107T130814-cec035bf57.pdf"
+    "data/raw/rbi_iesh/20261107T180457-cec035bf57.pdf"
   ]
 }
