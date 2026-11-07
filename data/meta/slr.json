@@ -17,11 +17,11 @@
   "last_period": "2026-11-07",
   "last_value": 18.0,
   "observations": 259,
-  "updated_at": "2026-11-07T01:30:56+00:00",
+  "updated_at": "2026-11-07T07:38:03+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/"
   ],
   "raw_files": [
-    "data/raw/rbi_home_rates/20261107T013056-9c4fdc0dcb.html"
+    "data/raw/rbi_home_rates/20261107T073803-d50f24619e.html"
   ]
 }
