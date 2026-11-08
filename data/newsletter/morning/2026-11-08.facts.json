@@ -1,0 +1,2721 @@
+{
+ "facts": {
+  "calendar.today": "no scheduled releases",
+  "calendar.next": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026",
+  "calendar.past_week": "no scheduled releases",
+  "calendar.next_week": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026",
+  "calendar.past_month": "Index of Industrial Production (Sep 2026) on 28 Oct 2026; Union government monthly accounts (Sep 2026) on 30 Oct 2026",
+  "calendar.next_month": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026; Wholesale Price Index (Oct 2026) on 16 Nov 2026; Index of Core Industries (Oct 2026) on 20 Nov 2026; Union government monthly accounts (Oct 2026) on 30 Nov 2026; Index of Industrial Production (Oct 2026) on 30 Nov 2026; GDP, quarterly estimates (Q2 FY27) on 30 Nov 2026; MPC policy decision (meeting 2–4 Dec) (Dec 2026 meeting) on 4 Dec 2026",
+  "calendar.next_highlight": "MPC policy decision (meeting 2–4 Dec) on 4 Dec 2026",
+  "usdinr_ref.latest": "94.14",
+  "usdinr_ref.latest_abs": "94.14",
+  "usdinr_ref.latest_period": "6 Nov 2026",
+  "usdinr_ref.prev": "94.40",
+  "usdinr_ref.prev_abs": "94.40",
+  "usdinr_ref.prev_period": "5 Nov 2026",
+  "usdinr_ref.change": "0.26",
+  "usdinr_ref.direction": "fell",
+  "usdinr_ref.direction_noun": "a decrease",
+  "usdinr_ref.change_phrase": "down 0.26",
+  "usdinr_ref.pct_phrase": "down 0.27%",
+  "usdinr_ref.week_phrase": "down 1.16%",
+  "usdinr_ref.month_phrase": "down 2.56%",
+  "usdinr_ref.year_ago": "88.60",
+  "usdinr_ref.year_ago_abs": "88.60",
+  "usdinr_ref.year_ago_period": "6 Nov 2025",
+  "usdinr_ref.change_yoy": "5.54",
+  "usdinr_ref.direction_yoy": "rose",
+  "usdinr_ref.change_phrase_yoy": "up 5.54",
+  "fx_reserves_total.latest": "$717.1 billion",
+  "fx_reserves_total.latest_abs": "$717.1 billion",
+  "fx_reserves_total.latest_period": "30 Oct 2026",
+  "fx_reserves_total.prev": "$719.7 billion",
+  "fx_reserves_total.prev_abs": "$719.7 billion",
+  "fx_reserves_total.prev_period": "23 Oct 2026",
+  "fx_reserves_total.change": "$2.7 billion",
+  "fx_reserves_total.direction": "fell",
+  "fx_reserves_total.direction_noun": "a decrease",
+  "fx_reserves_total.change_phrase": "down $2.7 billion",
+  "fx_reserves_total.pct_phrase": "down 0.37%",
+  "fx_reserves_total.week_phrase": "down 0.37%",
+  "fx_reserves_total.month_phrase": "down 2.39%",
+  "merch_trade_balance.latest": "−$30.2 billion",
+  "merch_trade_balance.latest_abs": "$30.2 billion",
+  "merch_trade_balance.latest_period": "September 2026",
+  "merch_trade_balance.prev": "−$26.9 billion",
+  "merch_trade_balance.prev_abs": "$26.9 billion",
+  "merch_trade_balance.prev_period": "August 2026",
+  "merch_trade_balance.change": "$3.4 billion",
+  "merch_trade_balance.direction": "fell",
+  "merch_trade_balance.direction_noun": "a decrease",
+  "merch_trade_balance.change_phrase": "down $3.4 billion",
+  "merch_trade_balance.year_ago": "−$33.0 billion",
+  "merch_trade_balance.year_ago_abs": "$33.0 billion",
+  "merch_trade_balance.year_ago_period": "September 2025",
+  "merch_trade_balance.change_yoy": "$2.8 billion",
+  "merch_trade_balance.direction_yoy": "rose",
+  "merch_trade_balance.change_phrase_yoy": "up $2.8 billion",
+  "bop_current_account.latest": "−$4.2 billion",
+  "bop_current_account.latest_abs": "$4.2 billion",
+  "bop_current_account.latest_period": "Q1 FY27",
+  "bop_current_account.prev": "$7.1 billion",
+  "bop_current_account.prev_abs": "$7.1 billion",
+  "bop_current_account.prev_period": "Q4 FY26",
+  "bop_current_account.change": "$11.3 billion",
+  "bop_current_account.direction": "fell",
+  "bop_current_account.direction_noun": "a decrease",
+  "bop_current_account.change_phrase": "down $11.3 billion",
+  "bop_current_account.year_ago": "−$3.4 billion",
+  "bop_current_account.year_ago_abs": "$3.4 billion",
+  "bop_current_account.year_ago_period": "Q1 FY26",
+  "bop_current_account.change_yoy": "$0.8 billion",
+  "bop_current_account.direction_yoy": "fell",
+  "bop_current_account.change_phrase_yoy": "down $0.8 billion",
+  "repo_rate.latest": "5.5%",
+  "repo_rate.latest_abs": "5.5%",
+  "repo_rate.latest_period": "7 Nov 2026",
+  "repo_rate.prev": "5.5%",
+  "repo_rate.prev_abs": "5.5%",
+  "repo_rate.prev_period": "6 Nov 2026",
+  "repo_rate.change": "0.0 percentage points",
+  "repo_rate.direction": "was unchanged",
+  "repo_rate.direction_noun": "no change",
+  "repo_rate.change_phrase": "unchanged",
+  "repo_rate.bp_phrase": "unchanged",
+  "repo_rate.week_phrase": "unchanged",
+  "repo_rate.month_phrase": "unchanged",
+  "repo_rate.year_ago": "5.5%",
+  "repo_rate.year_ago_abs": "5.5%",
+  "repo_rate.year_ago_period": "7 Nov 2025",
+  "repo_rate.change_yoy": "0.0 percentage points",
+  "repo_rate.direction_yoy": "was unchanged",
+  "repo_rate.change_phrase_yoy": "unchanged",
+  "cpi_headline_inflation.latest": "5.54%",
+  "cpi_headline_inflation.latest_abs": "5.54%",
+  "cpi_headline_inflation.latest_period": "September 2026",
+  "cpi_headline_inflation.prev": "4.83%",
+  "cpi_headline_inflation.prev_abs": "4.83%",
+  "cpi_headline_inflation.prev_period": "August 2026",
+  "cpi_headline_inflation.change": "0.71 percentage points",
+  "cpi_headline_inflation.direction": "rose",
+  "cpi_headline_inflation.direction_noun": "an increase",
+  "cpi_headline_inflation.change_phrase": "up 0.71 percentage points",
+  "cpi_headline_inflation.bp_phrase": "up 71 basis points",
+  "cpi_headline_inflation.year_ago": "1.44%",
+  "cpi_headline_inflation.year_ago_abs": "1.44%",
+  "cpi_headline_inflation.year_ago_period": "September 2025",
+  "cpi_headline_inflation.change_yoy": "4.10 percentage points",
+  "cpi_headline_inflation.direction_yoy": "rose",
+  "cpi_headline_inflation.change_phrase_yoy": "up 4.10 percentage points",
+  "gsec_10y_yield.latest": "7.16%",
+  "gsec_10y_yield.latest_abs": "7.16%",
+  "gsec_10y_yield.latest_period": "5 Nov 2026",
+  "gsec_10y_yield.prev": "7.21%",
+  "gsec_10y_yield.prev_abs": "7.21%",
+  "gsec_10y_yield.prev_period": "4 Nov 2026",
+  "gsec_10y_yield.change": "0.05 percentage points",
+  "gsec_10y_yield.direction": "fell",
+  "gsec_10y_yield.direction_noun": "a decrease",
+  "gsec_10y_yield.change_phrase": "down 0.05 percentage points",
+  "gsec_10y_yield.bp_phrase": "down 5 basis points",
+  "gsec_10y_yield.week_phrase": "down 23 basis points",
+  "fpi_total_net.latest": "₹43,221 crore",
+  "fpi_total_net.latest_abs": "₹43,221 crore",
+  "fpi_total_net.latest_period": "November 2026",
+  "fpi_total_net.prev": "−₹24,475 crore",
+  "fpi_total_net.prev_abs": "₹24,475 crore",
+  "fpi_total_net.prev_period": "October 2026",
+  "fpi_total_net.change": "₹67,696 crore",
+  "fpi_total_net.direction": "rose",
+  "fpi_total_net.direction_noun": "an increase",
+  "fpi_total_net.change_phrase": "up ₹67,696 crore",
+  "fpi_total_net.year_ago": "₹2,836 crore",
+  "fpi_total_net.year_ago_abs": "₹2,836 crore",
+  "fpi_total_net.year_ago_period": "November 2025",
+  "fpi_total_net.change_yoy": "₹40,385 crore",
+  "fpi_total_net.direction_yoy": "rose",
+  "fpi_total_net.change_phrase_yoy": "up ₹40,385 crore",
+  "const.rbi_inflation_target": "4%",
+  "const.rbi_tolerance_band": "2–6%",
+  "new.recent": "no new monthly or quarterly data",
+  "today.date": "8 Nov 2026",
+  "rupee.latest": "₹93.91 per US dollar",
+  "rupee.latest_date": "7 Nov 2026",
+  "rupee.live": "no live quote yet today",
+  "rupee.weakest": "₹96.78 per US dollar",
+  "rupee.weakest_date": "8 Oct 2026",
+  "rupee.weakest_since": "2 Nov 2016",
+  "rupee.from_weakest": "3.06%",
+  "rupee.at_weakest": "no",
+  "rupee.year_weakest": "₹96.78 on 8 Oct 2026",
+  "rupee.year_strongest": "₹88.41 on 11 Nov 2025",
+  "rupee.day.from": "₹93.89",
+  "rupee.day.to": "₹93.91",
+  "rupee.day.start_date": "6 Nov 2026",
+  "rupee.day.end_date": "7 Nov 2026",
+  "rupee.day.change": "0.02%",
+  "rupee.day.direction": "weakened",
+  "rupee.day.asia.effect": "0.02%",
+  "rupee.day.asia.effect_word": "weighed on the rupee",
+  "rupee.day.oil.effect": "0.00%",
+  "rupee.day.oil.effect_word": "made almost no difference to the rupee",
+  "rupee.day.equities.effect": "0.00%",
+  "rupee.day.equities.effect_word": "made almost no difference to the rupee",
+  "rupee.day.us_yields.effect": "0.01%",
+  "rupee.day.us_yields.effect_word": "weighed on the rupee",
+  "rupee.day.risk.effect": "0.03%",
+  "rupee.day.risk.effect_word": "supported the rupee",
+  "rupee.day.drift.effect": "0.02%",
+  "rupee.day.drift.effect_word": "weighed on the rupee",
+  "rupee.day.other.effect": "0.01%",
+  "rupee.day.other.effect_word": "weighed on the rupee",
+  "rupee.day.dollar.move": "unchanged",
+  "rupee.day.dollar.move_abs": "nothing",
+  "rupee.day.dollar.move_direction": "was unchanged",
+  "rupee.day.asia.move": "down 0.18%",
+  "rupee.day.asia.move_abs": "0.18%",
+  "rupee.day.asia.move_direction": "fell",
+  "rupee.day.oil.move": "unchanged",
+  "rupee.day.oil.move_abs": "nothing",
+  "rupee.day.oil.move_direction": "was unchanged",
+  "rupee.day.equities.move": "unchanged",
+  "rupee.day.equities.move_abs": "nothing",
+  "rupee.day.equities.move_direction": "was unchanged",
+  "rupee.day.us_yields.move": "unchanged",
+  "rupee.day.us_yields.move_abs": "nothing",
+  "rupee.day.us_yields.move_direction": "was unchanged",
+  "rupee.day.risk.move": "unchanged",
+  "rupee.day.risk.move_abs": "nothing",
+  "rupee.day.risk.move_direction": "was unchanged",
+  "rupee.week.from": "₹94.91",
+  "rupee.week.to": "₹93.91",
+  "rupee.week.start_date": "2 Nov 2026",
+  "rupee.week.end_date": "7 Nov 2026",
+  "rupee.week.change": "1.06%",
+  "rupee.week.direction": "strengthened",
+  "rupee.week.asia.effect": "0.04%",
+  "rupee.week.asia.effect_word": "weighed on the rupee",
+  "rupee.week.oil.effect": "0.30%",
+  "rupee.week.oil.effect_word": "supported the rupee",
+  "rupee.week.equities.effect": "0.46%",
+  "rupee.week.equities.effect_word": "supported the rupee",
+  "rupee.week.us_yields.effect": "0.03%",
+  "rupee.week.us_yields.effect_word": "supported the rupee",
+  "rupee.week.risk.effect": "0.09%",
+  "rupee.week.risk.effect_word": "weighed on the rupee",
+  "rupee.week.drift.effect": "0.09%",
+  "rupee.week.drift.effect_word": "weighed on the rupee",
+  "rupee.week.other.effect": "0.49%",
+  "rupee.week.other.effect_word": "supported the rupee",
+  "rupee.week.dollar.move": "up 0.54%",
+  "rupee.week.dollar.move_abs": "0.54%",
+  "rupee.week.dollar.move_direction": "rose",
+  "rupee.week.asia.move": "down 0.34%",
+  "rupee.week.asia.move_abs": "0.34%",
+  "rupee.week.asia.move_direction": "fell",
+  "rupee.week.oil.move": "down 6.35%",
+  "rupee.week.oil.move_abs": "6.35%",
+  "rupee.week.oil.move_direction": "fell",
+  "rupee.week.equities.move": "up 6.56%",
+  "rupee.week.equities.move_abs": "6.56%",
+  "rupee.week.equities.move_direction": "rose",
+  "rupee.week.us_yields.move": "down 4 basis points",
+  "rupee.week.us_yields.move_abs": "4 basis points",
+  "rupee.week.us_yields.move_direction": "fell",
+  "rupee.week.risk.move": "up 4.49 points",
+  "rupee.week.risk.move_abs": "4.49 points",
+  "rupee.week.risk.move_direction": "rose",
+  "rupee.month.from": "₹96.78",
+  "rupee.month.to": "₹93.91",
+  "rupee.month.start_date": "9 Oct 2026",
+  "rupee.month.end_date": "7 Nov 2026",
+  "rupee.month.change": "3.06%",
+  "rupee.month.direction": "strengthened",
+  "rupee.month.asia.effect": "0.09%",
+  "rupee.month.asia.effect_word": "weighed on the rupee",
+  "rupee.month.oil.effect": "0.15%",
+  "rupee.month.oil.effect_word": "supported the rupee",
+  "rupee.month.equities.effect": "0.74%",
+  "rupee.month.equities.effect_word": "supported the rupee",
+  "rupee.month.us_yields.effect": "0.26%",
+  "rupee.month.us_yields.effect_word": "supported the rupee",
+  "rupee.month.risk.effect": "0.16%",
+  "rupee.month.risk.effect_word": "weighed on the rupee",
+  "rupee.month.drift.effect": "0.38%",
+  "rupee.month.drift.effect_word": "weighed on the rupee",
+  "rupee.month.other.effect": "2.55%",
+  "rupee.month.other.effect_word": "supported the rupee",
+  "rupee.month.dollar.move": "up 0.09%",
+  "rupee.month.dollar.move_abs": "0.09%",
+  "rupee.month.dollar.move_direction": "rose",
+  "rupee.month.asia.move": "down 0.74%",
+  "rupee.month.asia.move_abs": "0.74%",
+  "rupee.month.asia.move_direction": "fell",
+  "rupee.month.oil.move": "down 6.31%",
+  "rupee.month.oil.move_abs": "6.31%",
+  "rupee.month.oil.move_direction": "fell",
+  "rupee.month.equities.move": "up 10.57%",
+  "rupee.month.equities.move_abs": "10.57%",
+  "rupee.month.equities.move_direction": "rose",
+  "rupee.month.us_yields.move": "down 38 basis points",
+  "rupee.month.us_yields.move_abs": "38 basis points",
+  "rupee.month.us_yields.move_direction": "fell",
+  "rupee.month.risk.move": "up 10.80 points",
+  "rupee.month.risk.move_abs": "10.80 points",
+  "rupee.month.risk.move_direction": "rose",
+  "rupee.quarter.from": "₹95.32",
+  "rupee.quarter.to": "₹93.91",
+  "rupee.quarter.start_date": "12 Aug 2026",
+  "rupee.quarter.end_date": "7 Nov 2026",
+  "rupee.quarter.change": "1.50%",
+  "rupee.quarter.direction": "strengthened",
+  "rupee.quarter.asia.effect": "0.14%",
+  "rupee.quarter.asia.effect_word": "supported the rupee",
+  "rupee.quarter.oil.effect": "0.24%",
+  "rupee.quarter.oil.effect_word": "weighed on the rupee",
+  "rupee.quarter.equities.effect": "0.17%",
+  "rupee.quarter.equities.effect_word": "supported the rupee",
+  "rupee.quarter.us_yields.effect": "0.12%",
+  "rupee.quarter.us_yields.effect_word": "weighed on the rupee",
+  "rupee.quarter.risk.effect": "0.16%",
+  "rupee.quarter.risk.effect_word": "weighed on the rupee",
+  "rupee.quarter.drift.effect": "1.14%",
+  "rupee.quarter.drift.effect_word": "weighed on the rupee",
+  "rupee.quarter.other.effect": "2.86%",
+  "rupee.quarter.other.effect_word": "supported the rupee",
+  "rupee.quarter.dollar.move": "up 2.26%",
+  "rupee.quarter.dollar.move_abs": "2.26%",
+  "rupee.quarter.dollar.move_direction": "rose",
+  "rupee.quarter.asia.move": "up 1.33%",
+  "rupee.quarter.asia.move_abs": "1.33%",
+  "rupee.quarter.asia.move_direction": "rose",
+  "rupee.quarter.oil.move": "up 9.98%",
+  "rupee.quarter.oil.move_abs": "9.98%",
+  "rupee.quarter.oil.move_direction": "rose",
+  "rupee.quarter.equities.move": "up 2.40%",
+  "rupee.quarter.equities.move_abs": "2.40%",
+  "rupee.quarter.equities.move_direction": "rose",
+  "rupee.quarter.us_yields.move": "up 18 basis points",
+  "rupee.quarter.us_yields.move_abs": "18 basis points",
+  "rupee.quarter.us_yields.move_direction": "rose",
+  "rupee.quarter.risk.move": "up 11.09 points",
+  "rupee.quarter.risk.move_abs": "11.09 points",
+  "rupee.quarter.risk.move_direction": "rose",
+  "rupee.model.share_daily": "15%",
+  "rupee.model.share_weekly": "34%",
+  "rupee.model.share_monthly": "42%",
+  "rupee.model.window": "3 Dec 2024 to 7 Nov 2026",
+  "rupee.model.drivers_used": "other Asian currencies, oil prices (Brent), Indian shares (Nifty 50), US bond yields (ten-year), global risk aversion (US VIX)",
+  "rupee.model.drivers_dropped": "the US dollar (against major currencies)",
+  "rupee.model.drift_month": "0.38%",
+  "rupee.model.drift_direction": "weakened",
+  "rupee.model.asia.effect_per_move": "0.11% for each 1% move",
+  "rupee.model.oil.effect_per_move": "0.02% for each 1% move",
+  "rupee.model.equities.effect_per_move": "0.07% for each 1% move",
+  "rupee.model.us_yields.effect_per_move": "0.01% per basis point",
+  "rupee.model.risk.effect_per_move": "0.02% per point",
+  "rupee.fbil": "₹94.1402 per US dollar",
+  "rupee.fbil_date": "6 Nov 2026",
+  "rupee.fpi.day_total": "$2,058.1 million",
+  "rupee.fpi.day_total_word": "net buying",
+  "rupee.fpi.day_date": "6 Nov 2026",
+  "rupee.fpi.day_equity": "$1,724.4 million",
+  "rupee.fpi.day_equity_word": "net buying",
+  "rupee.fpi.day_debt": "$338.1 million",
+  "rupee.fpi.day_debt_word": "net buying",
+  "rupee.fpi.month_total": "₹43,221 crore",
+  "rupee.fpi.month_word": "net buying",
+  "rupee.fpi.month": "November 2026",
+  "rupee.reserves.level": "$717.1 billion",
+  "rupee.reserves.date": "30 Oct 2026",
+  "rupee.reserves.week_change": "$2.7 billion",
+  "rupee.reserves.week_direction": "fell",
+  "rupee.reserves.four_week_change": "$17.5 billion",
+  "rupee.reserves.four_week_direction": "fell",
+  "rupee.reserves.reading": "consistent with RBI selling dollars, which cushions the rupee when it is under pressure",
+  "rupee.spread_ten_year": "2.33 percentage points",
+  "rupee.reer.month": "September 2026",
+  "rupee.reer.yoy": "down 5.97%",
+  "rupee.reer.vs_average": "below",
+  "rupee.trade.balance": "$30.2 billion",
+  "rupee.trade.word": "deficit",
+  "rupee.trade.month": "September 2026",
+  "rupee.level.dollar": "102.30",
+  "rupee.level.oil": "$98.32 a barrel",
+  "rupee.level.us_yields": "4.86%",
+  "rupee.level.equities": "25,030.35",
+  "rupee.level.risk": "25.64",
+  "rupee.fresh": "yes",
+  "rupee.as_of": "2026-11-07"
+ },
+ "receipts": {
+  "calendar.today": {
+   "source": "registry/calendar",
+   "text": "no scheduled releases"
+  },
+  "calendar.next": {
+   "source": "registry/calendar",
+   "text": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026; PLFS monthly bulletin (Oct 2026) on 16 Nov 2026"
+  },
+  "calendar.next_highlight": {
+   "source": "registry/calendar",
+   "text": "MPC policy decision (meeting 2–4 Dec) on 4 Dec 2026"
+  },
+  "calendar.past_week": {
+   "source": "registry/calendar",
+   "text": "no scheduled releases"
+  },
+  "calendar.next_week": {
+   "source": "registry/calendar",
+   "text": "PLFS quarterly bulletin (Jul–Sep 2026) on 10 Nov 2026; Consumer Price Index (Oct 2026) on 12 Nov 2026; Merchandise and services trade (Oct 2026) on 13 Nov 2026"
+  },
+  "usdinr_ref.latest": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "94.14"
+  },
+  "usdinr_ref.latest_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "94.14"
+  },
+  "usdinr_ref.latest_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "6 Nov 2026"
+  },
+  "usdinr_ref.prev": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "94.40"
+  },
+  "usdinr_ref.prev_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "94.40"
+  },
+  "usdinr_ref.prev_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "5 Nov 2026"
+  },
+  "usdinr_ref.change": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "0.26"
+  },
+  "usdinr_ref.direction": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "fell"
+  },
+  "usdinr_ref.direction_noun": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "a decrease"
+  },
+  "usdinr_ref.change_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 0.26"
+  },
+  "usdinr_ref.pct_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 0.27%"
+  },
+  "usdinr_ref.week_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 1.16%"
+  },
+  "usdinr_ref.month_phrase": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "down 2.56%"
+  },
+  "usdinr_ref.year_ago": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "88.60"
+  },
+  "usdinr_ref.year_ago_abs": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "88.60"
+  },
+  "usdinr_ref.year_ago_period": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "6 Nov 2025"
+  },
+  "usdinr_ref.change_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "5.54"
+  },
+  "usdinr_ref.direction_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "rose"
+  },
+  "usdinr_ref.change_phrase_yoy": {
+   "series": "usdinr_ref",
+   "transform": "level",
+   "period": "2026-11-06",
+   "source": "https://www.fbil.org.in/",
+   "text": "up 5.54"
+  },
+  "fx_reserves_total.latest": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$717.1 billion"
+  },
+  "fx_reserves_total.latest_abs": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$717.1 billion"
+  },
+  "fx_reserves_total.latest_period": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "30 Oct 2026"
+  },
+  "fx_reserves_total.prev": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$719.7 billion"
+  },
+  "fx_reserves_total.prev_abs": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$719.7 billion"
+  },
+  "fx_reserves_total.prev_period": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "23 Oct 2026"
+  },
+  "fx_reserves_total.change": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "$2.7 billion"
+  },
+  "fx_reserves_total.direction": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "fell"
+  },
+  "fx_reserves_total.direction_noun": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "a decrease"
+  },
+  "fx_reserves_total.change_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down $2.7 billion"
+  },
+  "fx_reserves_total.pct_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 0.37%"
+  },
+  "fx_reserves_total.week_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 0.37%"
+  },
+  "fx_reserves_total.month_phrase": {
+   "series": "fx_reserves_total",
+   "transform": "level",
+   "period": "2026-10-30",
+   "source": "https://www.rbi.org.in/Scripts/BS_viewWss.aspx",
+   "text": "down 2.39%"
+  },
+  "merch_trade_balance.latest": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$30.2 billion"
+  },
+  "merch_trade_balance.latest_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$30.2 billion"
+  },
+  "merch_trade_balance.latest_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "September 2026"
+  },
+  "merch_trade_balance.prev": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$26.9 billion"
+  },
+  "merch_trade_balance.prev_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$26.9 billion"
+  },
+  "merch_trade_balance.prev_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "August 2026"
+  },
+  "merch_trade_balance.change": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$3.4 billion"
+  },
+  "merch_trade_balance.direction": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "fell"
+  },
+  "merch_trade_balance.direction_noun": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "a decrease"
+  },
+  "merch_trade_balance.change_phrase": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "down $3.4 billion"
+  },
+  "merch_trade_balance.year_ago": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "−$33.0 billion"
+  },
+  "merch_trade_balance.year_ago_abs": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$33.0 billion"
+  },
+  "merch_trade_balance.year_ago_period": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "September 2025"
+  },
+  "merch_trade_balance.change_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "$2.8 billion"
+  },
+  "merch_trade_balance.direction_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "rose"
+  },
+  "merch_trade_balance.change_phrase_yoy": {
+   "series": "merch_trade_balance",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://www.commerce.gov.in/",
+   "text": "up $2.8 billion"
+  },
+  "bop_current_account.latest": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "−$4.2 billion"
+  },
+  "bop_current_account.latest_abs": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$4.2 billion"
+  },
+  "bop_current_account.latest_period": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q1 FY27"
+  },
+  "bop_current_account.prev": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$7.1 billion"
+  },
+  "bop_current_account.prev_abs": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$7.1 billion"
+  },
+  "bop_current_account.prev_period": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q4 FY26"
+  },
+  "bop_current_account.change": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$11.3 billion"
+  },
+  "bop_current_account.direction": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "fell"
+  },
+  "bop_current_account.direction_noun": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "a decrease"
+  },
+  "bop_current_account.change_phrase": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "down $11.3 billion"
+  },
+  "bop_current_account.year_ago": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "−$3.4 billion"
+  },
+  "bop_current_account.year_ago_abs": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$3.4 billion"
+  },
+  "bop_current_account.year_ago_period": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "Q1 FY26"
+  },
+  "bop_current_account.change_yoy": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "$0.8 billion"
+  },
+  "bop_current_account.direction_yoy": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "fell"
+  },
+  "bop_current_account.change_phrase_yoy": {
+   "series": "bop_current_account",
+   "transform": "level",
+   "period": "2026-04-01",
+   "source": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+   "text": "down $0.8 billion"
+  },
+  "repo_rate.latest": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.latest_abs": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.latest_period": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "7 Nov 2026"
+  },
+  "repo_rate.prev": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.prev_abs": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.prev_period": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "6 Nov 2026"
+  },
+  "repo_rate.change": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "0.0 percentage points"
+  },
+  "repo_rate.direction": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "was unchanged"
+  },
+  "repo_rate.direction_noun": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "no change"
+  },
+  "repo_rate.change_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.bp_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.week_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.month_phrase": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "repo_rate.year_ago": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.year_ago_abs": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "5.5%"
+  },
+  "repo_rate.year_ago_period": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "7 Nov 2025"
+  },
+  "repo_rate.change_yoy": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "0.0 percentage points"
+  },
+  "repo_rate.direction_yoy": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "was unchanged"
+  },
+  "repo_rate.change_phrase_yoy": {
+   "series": "repo_rate",
+   "transform": "level",
+   "period": "2026-11-07",
+   "source": "https://www.rbi.org.in/",
+   "text": "unchanged"
+  },
+  "cpi_headline_inflation.latest": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.54%"
+  },
+  "cpi_headline_inflation.latest_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "5.54%"
+  },
+  "cpi_headline_inflation.latest_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "September 2026"
+  },
+  "cpi_headline_inflation.prev": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.83%"
+  },
+  "cpi_headline_inflation.prev_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.83%"
+  },
+  "cpi_headline_inflation.prev_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "August 2026"
+  },
+  "cpi_headline_inflation.change": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "0.71 percentage points"
+  },
+  "cpi_headline_inflation.direction": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "rose"
+  },
+  "cpi_headline_inflation.direction_noun": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "an increase"
+  },
+  "cpi_headline_inflation.change_phrase": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 0.71 percentage points"
+  },
+  "cpi_headline_inflation.bp_phrase": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 71 basis points"
+  },
+  "cpi_headline_inflation.year_ago": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "1.44%"
+  },
+  "cpi_headline_inflation.year_ago_abs": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "1.44%"
+  },
+  "cpi_headline_inflation.year_ago_period": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "September 2025"
+  },
+  "cpi_headline_inflation.change_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "4.10 percentage points"
+  },
+  "cpi_headline_inflation.direction_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "rose"
+  },
+  "cpi_headline_inflation.change_phrase_yoy": {
+   "series": "cpi_headline_inflation",
+   "transform": "level",
+   "period": "2026-09-01",
+   "source": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi",
+   "text": "up 4.10 percentage points"
+  },
+  "gsec_10y_yield.latest": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.16%"
+  },
+  "gsec_10y_yield.latest_abs": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.16%"
+  },
+  "gsec_10y_yield.latest_period": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "5 Nov 2026"
+  },
+  "gsec_10y_yield.prev": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.21%"
+  },
+  "gsec_10y_yield.prev_abs": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "7.21%"
+  },
+  "gsec_10y_yield.prev_period": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "4 Nov 2026"
+  },
+  "gsec_10y_yield.change": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "0.05 percentage points"
+  },
+  "gsec_10y_yield.direction": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "fell"
+  },
+  "gsec_10y_yield.direction_noun": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "a decrease"
+  },
+  "gsec_10y_yield.change_phrase": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 0.05 percentage points"
+  },
+  "gsec_10y_yield.bp_phrase": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 5 basis points"
+  },
+  "gsec_10y_yield.week_phrase": {
+   "series": "gsec_10y_yield",
+   "transform": "level",
+   "period": "2026-11-05",
+   "source": "https://www.rbi.org.in/",
+   "text": "down 23 basis points"
+  },
+  "fpi_total_net.latest": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹43,221 crore"
+  },
+  "fpi_total_net.latest_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹43,221 crore"
+  },
+  "fpi_total_net.latest_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "November 2026"
+  },
+  "fpi_total_net.prev": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "−₹24,475 crore"
+  },
+  "fpi_total_net.prev_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹24,475 crore"
+  },
+  "fpi_total_net.prev_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "October 2026"
+  },
+  "fpi_total_net.change": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹67,696 crore"
+  },
+  "fpi_total_net.direction": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "rose"
+  },
+  "fpi_total_net.direction_noun": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "an increase"
+  },
+  "fpi_total_net.change_phrase": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "up ₹67,696 crore"
+  },
+  "fpi_total_net.year_ago": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹2,836 crore"
+  },
+  "fpi_total_net.year_ago_abs": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹2,836 crore"
+  },
+  "fpi_total_net.year_ago_period": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "November 2025"
+  },
+  "fpi_total_net.change_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "₹40,385 crore"
+  },
+  "fpi_total_net.direction_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "rose"
+  },
+  "fpi_total_net.change_phrase_yoy": {
+   "series": "fpi_total_net",
+   "transform": "level",
+   "period": "2026-11-01",
+   "source": "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6",
+   "text": "up ₹40,385 crore"
+  },
+  "const.rbi_inflation_target": {
+   "constant": "rbi_inflation_target",
+   "source": "RBI Act s.45ZA; flexible inflation target notified by the Government of India (CPI, 4% +/- 2%)",
+   "text": "4%"
+  },
+  "const.rbi_tolerance_band": {
+   "constant": "rbi_tolerance_band",
+   "source": "RBI Act s.45ZA; flexible inflation target notified by the Government of India (CPI, 4% +/- 2%)",
+   "text": "2–6%"
+  },
+  "rupee.latest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.91 per US dollar"
+  },
+  "rupee.latest_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "7 Nov 2026"
+  },
+  "rupee.live": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "no live quote yet today"
+  },
+  "rupee.weakest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹96.78 per US dollar"
+  },
+  "rupee.weakest_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "8 Oct 2026"
+  },
+  "rupee.weakest_since": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2 Nov 2016"
+  },
+  "rupee.from_weakest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "3.06%"
+  },
+  "rupee.at_weakest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "no"
+  },
+  "rupee.year_weakest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹96.78 on 8 Oct 2026"
+  },
+  "rupee.year_strongest": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹88.41 on 11 Nov 2025"
+  },
+  "rupee.day.from": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.89"
+  },
+  "rupee.day.to": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.91"
+  },
+  "rupee.day.start_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6 Nov 2026"
+  },
+  "rupee.day.end_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "7 Nov 2026"
+  },
+  "rupee.day.change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.02%"
+  },
+  "rupee.day.direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weakened"
+  },
+  "rupee.day.asia.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.02%"
+  },
+  "rupee.day.asia.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.day.oil.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.00%"
+  },
+  "rupee.day.oil.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "made almost no difference to the rupee"
+  },
+  "rupee.day.equities.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.00%"
+  },
+  "rupee.day.equities.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "made almost no difference to the rupee"
+  },
+  "rupee.day.us_yields.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.01%"
+  },
+  "rupee.day.us_yields.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.day.risk.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.03%"
+  },
+  "rupee.day.risk.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.day.drift.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.02%"
+  },
+  "rupee.day.drift.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.day.other.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.01%"
+  },
+  "rupee.day.other.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.day.dollar.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "unchanged"
+  },
+  "rupee.day.dollar.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "nothing"
+  },
+  "rupee.day.dollar.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "was unchanged"
+  },
+  "rupee.day.asia.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.18%"
+  },
+  "rupee.day.asia.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.18%"
+  },
+  "rupee.day.asia.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.day.oil.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "unchanged"
+  },
+  "rupee.day.oil.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "nothing"
+  },
+  "rupee.day.oil.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "was unchanged"
+  },
+  "rupee.day.equities.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "unchanged"
+  },
+  "rupee.day.equities.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "nothing"
+  },
+  "rupee.day.equities.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "was unchanged"
+  },
+  "rupee.day.us_yields.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "unchanged"
+  },
+  "rupee.day.us_yields.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "nothing"
+  },
+  "rupee.day.us_yields.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "was unchanged"
+  },
+  "rupee.day.risk.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "unchanged"
+  },
+  "rupee.day.risk.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "nothing"
+  },
+  "rupee.day.risk.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "was unchanged"
+  },
+  "rupee.week.from": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹94.91"
+  },
+  "rupee.week.to": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.91"
+  },
+  "rupee.week.start_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2 Nov 2026"
+  },
+  "rupee.week.end_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "7 Nov 2026"
+  },
+  "rupee.week.change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "1.06%"
+  },
+  "rupee.week.direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "strengthened"
+  },
+  "rupee.week.asia.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.04%"
+  },
+  "rupee.week.asia.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.week.oil.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.30%"
+  },
+  "rupee.week.oil.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.week.equities.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.46%"
+  },
+  "rupee.week.equities.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.week.us_yields.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.03%"
+  },
+  "rupee.week.us_yields.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.week.risk.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.09%"
+  },
+  "rupee.week.risk.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.week.drift.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.09%"
+  },
+  "rupee.week.drift.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.week.other.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.49%"
+  },
+  "rupee.week.other.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.week.dollar.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 0.54%"
+  },
+  "rupee.week.dollar.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.54%"
+  },
+  "rupee.week.dollar.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.week.asia.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.34%"
+  },
+  "rupee.week.asia.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.34%"
+  },
+  "rupee.week.asia.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.week.oil.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 6.35%"
+  },
+  "rupee.week.oil.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6.35%"
+  },
+  "rupee.week.oil.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.week.equities.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 6.56%"
+  },
+  "rupee.week.equities.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6.56%"
+  },
+  "rupee.week.equities.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.week.us_yields.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 4 basis points"
+  },
+  "rupee.week.us_yields.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "4 basis points"
+  },
+  "rupee.week.us_yields.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.week.risk.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 4.49 points"
+  },
+  "rupee.week.risk.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "4.49 points"
+  },
+  "rupee.week.risk.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.month.from": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹96.78"
+  },
+  "rupee.month.to": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.91"
+  },
+  "rupee.month.start_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "9 Oct 2026"
+  },
+  "rupee.month.end_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "7 Nov 2026"
+  },
+  "rupee.month.change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "3.06%"
+  },
+  "rupee.month.direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "strengthened"
+  },
+  "rupee.month.asia.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.09%"
+  },
+  "rupee.month.asia.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.month.oil.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.15%"
+  },
+  "rupee.month.oil.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.month.equities.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.74%"
+  },
+  "rupee.month.equities.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.month.us_yields.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.26%"
+  },
+  "rupee.month.us_yields.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.month.risk.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.16%"
+  },
+  "rupee.month.risk.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.month.drift.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.38%"
+  },
+  "rupee.month.drift.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.month.other.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2.55%"
+  },
+  "rupee.month.other.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.month.dollar.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 0.09%"
+  },
+  "rupee.month.dollar.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.09%"
+  },
+  "rupee.month.dollar.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.month.asia.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 0.74%"
+  },
+  "rupee.month.asia.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.74%"
+  },
+  "rupee.month.asia.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.month.oil.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 6.31%"
+  },
+  "rupee.month.oil.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6.31%"
+  },
+  "rupee.month.oil.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.month.equities.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 10.57%"
+  },
+  "rupee.month.equities.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "10.57%"
+  },
+  "rupee.month.equities.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.month.us_yields.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 38 basis points"
+  },
+  "rupee.month.us_yields.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "38 basis points"
+  },
+  "rupee.month.us_yields.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.month.risk.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 10.80 points"
+  },
+  "rupee.month.risk.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "10.80 points"
+  },
+  "rupee.month.risk.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.from": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹95.32"
+  },
+  "rupee.quarter.to": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹93.91"
+  },
+  "rupee.quarter.start_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "12 Aug 2026"
+  },
+  "rupee.quarter.end_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "7 Nov 2026"
+  },
+  "rupee.quarter.change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "1.50%"
+  },
+  "rupee.quarter.direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "strengthened"
+  },
+  "rupee.quarter.asia.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.14%"
+  },
+  "rupee.quarter.asia.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.quarter.oil.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.24%"
+  },
+  "rupee.quarter.oil.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.quarter.equities.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.17%"
+  },
+  "rupee.quarter.equities.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.quarter.us_yields.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.12%"
+  },
+  "rupee.quarter.us_yields.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.quarter.risk.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.16%"
+  },
+  "rupee.quarter.risk.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.quarter.drift.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "1.14%"
+  },
+  "rupee.quarter.drift.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weighed on the rupee"
+  },
+  "rupee.quarter.other.effect": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2.86%"
+  },
+  "rupee.quarter.other.effect_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "supported the rupee"
+  },
+  "rupee.quarter.dollar.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 2.26%"
+  },
+  "rupee.quarter.dollar.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2.26%"
+  },
+  "rupee.quarter.dollar.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.asia.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 1.33%"
+  },
+  "rupee.quarter.asia.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "1.33%"
+  },
+  "rupee.quarter.asia.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.oil.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 9.98%"
+  },
+  "rupee.quarter.oil.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "9.98%"
+  },
+  "rupee.quarter.oil.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.equities.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 2.40%"
+  },
+  "rupee.quarter.equities.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2.40%"
+  },
+  "rupee.quarter.equities.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.us_yields.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 18 basis points"
+  },
+  "rupee.quarter.us_yields.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "18 basis points"
+  },
+  "rupee.quarter.us_yields.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.quarter.risk.move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "up 11.09 points"
+  },
+  "rupee.quarter.risk.move_abs": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "11.09 points"
+  },
+  "rupee.quarter.risk.move_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "rose"
+  },
+  "rupee.model.share_daily": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "15%"
+  },
+  "rupee.model.share_weekly": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "34%"
+  },
+  "rupee.model.share_monthly": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "42%"
+  },
+  "rupee.model.window": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "3 Dec 2024 to 7 Nov 2026"
+  },
+  "rupee.model.drivers_used": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "other Asian currencies, oil prices (Brent), Indian shares (Nifty 50), US bond yields (ten-year), global risk aversion (US VIX)"
+  },
+  "rupee.model.drivers_dropped": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "the US dollar (against major currencies)"
+  },
+  "rupee.model.drift_month": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.38%"
+  },
+  "rupee.model.drift_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "weakened"
+  },
+  "rupee.model.asia.effect_per_move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.11% for each 1% move"
+  },
+  "rupee.model.oil.effect_per_move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.02% for each 1% move"
+  },
+  "rupee.model.equities.effect_per_move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.07% for each 1% move"
+  },
+  "rupee.model.us_yields.effect_per_move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.01% per basis point"
+  },
+  "rupee.model.risk.effect_per_move": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "0.02% per point"
+  },
+  "rupee.fbil": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹94.1402 per US dollar"
+  },
+  "rupee.fbil_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6 Nov 2026"
+  },
+  "rupee.fpi.day_total": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$2,058.1 million"
+  },
+  "rupee.fpi.day_total_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "net buying"
+  },
+  "rupee.fpi.day_date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "6 Nov 2026"
+  },
+  "rupee.fpi.day_equity": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$1,724.4 million"
+  },
+  "rupee.fpi.day_equity_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "net buying"
+  },
+  "rupee.fpi.day_debt": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$338.1 million"
+  },
+  "rupee.fpi.day_debt_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "net buying"
+  },
+  "rupee.fpi.month_total": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "₹43,221 crore"
+  },
+  "rupee.fpi.month_word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "net buying"
+  },
+  "rupee.fpi.month": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "November 2026"
+  },
+  "rupee.reserves.level": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$717.1 billion"
+  },
+  "rupee.reserves.date": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "30 Oct 2026"
+  },
+  "rupee.reserves.week_change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$2.7 billion"
+  },
+  "rupee.reserves.week_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.reserves.four_week_change": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$17.5 billion"
+  },
+  "rupee.reserves.four_week_direction": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "fell"
+  },
+  "rupee.reserves.reading": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "consistent with RBI selling dollars, which cushions the rupee when it is under pressure"
+  },
+  "rupee.spread_ten_year": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "2.33 percentage points"
+  },
+  "rupee.reer.month": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "September 2026"
+  },
+  "rupee.reer.yoy": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "down 5.97%"
+  },
+  "rupee.reer.vs_average": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "below"
+  },
+  "rupee.trade.balance": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$30.2 billion"
+  },
+  "rupee.trade.word": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "deficit"
+  },
+  "rupee.trade.month": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "September 2026"
+  },
+  "rupee.level.dollar": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "102.30"
+  },
+  "rupee.level.oil": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "$98.32 a barrel"
+  },
+  "rupee.level.us_yields": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "4.86%"
+  },
+  "rupee.level.equities": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "25,030.35"
+  },
+  "rupee.level.risk": {
+   "series": "usdinr_close (rupee drivers model, pipelines/build/rupee.py)",
+   "transform": "rupee_drivers",
+   "period": "2026-11-07",
+   "source": "https://finance.yahoo.com/",
+   "text": "25.64"
+  }
+ }
+}
