@@ -17,13 +17,13 @@
   "last_period": "2026-06-01",
   "last_value": 4.05,
   "observations": 63,
-  "updated_at": "2026-11-09T13:09:21+00:00",
+  "updated_at": "2026-11-09T23:02:03+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/244T_HBIE3107202658B67411EB204A769C7CE34E3C3AEFEB.XLSX",
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/245T_HBIE310720268DFB949FC1C84EC2BDA4554125F78012.XLSX"
   ],
   "raw_files": [
-    "data/raw/rbi_handbook_valuation/20261109T130918-2d5e284aa8.t244.xlsx",
-    "data/raw/rbi_handbook_valuation/20261109T130921-959347993a.t245.xlsx"
+    "data/raw/rbi_handbook_valuation/20261109T230201-2d5e284aa8.t244.xlsx",
+    "data/raw/rbi_handbook_valuation/20261109T230203-959347993a.t245.xlsx"
   ]
 }
