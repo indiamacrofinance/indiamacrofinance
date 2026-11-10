@@ -17,11 +17,11 @@
   "last_period": "2026-11-09",
   "last_value": 93.8579,
   "observations": 254,
-  "updated_at": "2026-11-10T13:09:52+00:00",
+  "updated_at": "2026-11-10T20:26:58+00:00",
   "fetched_from": [
     "https://www.fbil.org.in/wasdm/refrates/fetchcommongraph/12M"
   ],
   "raw_files": [
-    "data/raw/fbil_refrates/20261110T130952-ed5081f8b7.json"
+    "data/raw/fbil_refrates/20261110T202658-a378aa5fc0.json"
   ]
 }
