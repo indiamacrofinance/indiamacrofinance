@@ -14,10 +14,10 @@
   "licence": "show-only",
   "downloadable": false,
   "first_period": "2025-10-23",
-  "last_period": "2026-11-08",
-  "last_value": 9238.92,
-  "observations": 263,
-  "updated_at": "2026-11-09T12:29:19+00:00",
+  "last_period": "2026-11-09",
+  "last_value": 8640.56,
+  "observations": 264,
+  "updated_at": "2026-11-10T01:31:51+00:00",
   "fetched_from": [
     "derived: derived_brent_inr"
   ],
