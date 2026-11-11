@@ -17,7 +17,7 @@
   "last_period": "2025-04-01",
   "last_value": 81.85,
   "observations": 41,
-  "updated_at": "2026-11-10T20:27:07+00:00",
+  "updated_at": "2026-11-11T13:14:45+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/237T_HBIE31072026D32D5B5584FF41D5BCC44474ECC67A0B.XLSX",
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/239T_HBIE310720261CF5E46AB00E42B1900CB03790C5220D.XLSX",
@@ -25,9 +25,9 @@
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/241T_HBIE310720268F967162C5814D439DE62A653576FBA5.XLSX"
   ],
   "raw_files": [
-    "data/raw/rbi_general_government/20261110T202701-dda1b2bb3c.t237.xlsx",
-    "data/raw/rbi_general_government/20261110T202703-f3962567a6.t239.xlsx",
-    "data/raw/rbi_general_government/20261110T202705-b9c617e9ba.t240.xlsx",
-    "data/raw/rbi_general_government/20261110T202707-3f52805fc0.t241.xlsx"
+    "data/raw/rbi_general_government/20261111T131437-dda1b2bb3c.t237.xlsx",
+    "data/raw/rbi_general_government/20261111T131441-f3962567a6.t239.xlsx",
+    "data/raw/rbi_general_government/20261111T131443-b9c617e9ba.t240.xlsx",
+    "data/raw/rbi_general_government/20261111T131445-3f52805fc0.t241.xlsx"
   ]
 }
