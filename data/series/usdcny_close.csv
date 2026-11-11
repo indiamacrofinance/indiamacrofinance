@@ -2588,22 +2588,22 @@ period,value,vintage,note
 2026-10-14,6.692,2026-11-02,Yahoo Finance close
 2026-10-15,6.6926,2026-11-02,Yahoo Finance close
 2026-10-16,6.6909,2026-11-02,Yahoo Finance close
-2026-10-19,6.6909,2026-11-11,Yahoo Finance close
-2026-10-20,6.6909,2026-11-11,Yahoo Finance close
+2026-10-19,6.6707,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
+2026-10-20,6.6673,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
 2026-10-21,6.6779,2026-11-02,Yahoo Finance close
 2026-10-22,6.6779,2026-11-02,Yahoo Finance close
 2026-10-23,6.6779,2026-11-02,Yahoo Finance close
-2026-10-26,6.6779,2026-11-11,Yahoo Finance close
-2026-10-27,6.67,2026-11-11,Yahoo Finance close
+2026-10-26,6.6593,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
+2026-10-27,6.6655,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
 2026-10-28,6.668,2026-11-02,Yahoo Finance close
 2026-10-29,6.666,2026-11-02,Yahoo Finance close
-2026-10-30,6.661,2026-11-11,Yahoo Finance close
-2026-11-02,6.661,2026-11-11,Yahoo Finance close
-2026-11-03,6.648,2026-11-11,Yahoo Finance close
+2026-10-30,6.6533,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
+2026-11-02,6.6475,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
+2026-11-03,6.6603,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
 2026-11-04,6.6701,2026-11-05,Yahoo Finance close
 2026-11-05,6.6731,2026-11-06,Yahoo Finance close
-2026-11-06,6.688,2026-11-11,Yahoo Finance close
+2026-11-06,6.6648,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
 2026-11-07,6.671,2026-11-07,"Yahoo Finance, live quote at 13:08 IST"
 2026-11-09,6.676,2026-11-10,Yahoo Finance close
-2026-11-10,6.6727,2026-11-11,Yahoo Finance close
-2026-11-11,6.6591,2026-11-11,"Yahoo Finance, live quote at 17:31 IST"
+2026-11-10,6.6683,2026-11-11,"Yahoo Finance, last hourly price (nearer the ECB rate)"
+2026-11-11,6.6631,2026-11-11,Yahoo Finance close
