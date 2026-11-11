@@ -17,7 +17,7 @@
   "last_period": "2026-09-01",
   "last_value": 37.62,
   "observations": 18,
-  "updated_at": "2026-11-11T07:32:25+00:00",
+  "updated_at": "2026-11-11T14:02:28+00:00",
   "fetched_from": [
     "https://fada.in/images/press-release/169f9644078df6FADA%20Releases%20April%202026%20Vehicle%20Retail%20Data.pdf",
     "https://fada.in/images/press-release/16a26372eac5e2FADA%20Releases%20May%202026%20Vehicle%20Retail%20Data.pdf",
@@ -27,11 +27,11 @@
     "https://fada.in/images/press-release/16ac46ad2e0388FADA%20Releases%20September%202026%20Vehicle%20Retail%20Data.pdf"
   ],
   "raw_files": [
-    "data/raw/fada_retail/20261111T073209-4ec6c5ea5c.pdf",
-    "data/raw/fada_retail/20261111T073210-fa6d705302.pdf",
-    "data/raw/fada_retail/20261111T073211-c4c68eb5a2.pdf",
-    "data/raw/fada_retail/20261111T073212-6f50adbb1c.pdf",
-    "data/raw/fada_retail/20261111T073213-d30c756851.pdf",
-    "data/raw/fada_retail/20261111T073214-edc04a382d.pdf"
+    "data/raw/fada_retail/20261111T140212-4ec6c5ea5c.pdf",
+    "data/raw/fada_retail/20261111T140214-fa6d705302.pdf",
+    "data/raw/fada_retail/20261111T140215-c4c68eb5a2.pdf",
+    "data/raw/fada_retail/20261111T140217-6f50adbb1c.pdf",
+    "data/raw/fada_retail/20261111T140218-d30c756851.pdf",
+    "data/raw/fada_retail/20261111T140219-edc04a382d.pdf"
   ]
 }
