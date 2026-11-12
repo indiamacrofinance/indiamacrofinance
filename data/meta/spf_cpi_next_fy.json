@@ -17,15 +17,15 @@
   "last_period": "2026-10-01",
   "last_value": 4.5,
   "observations": 6,
-  "updated_at": "2026-11-11T20:10:12+00:00",
+  "updated_at": "2026-11-12T13:09:31+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/RCCS071020264B428D82C1C242AC8CBD903EA4EC0838.PDF#RCCS#2026-10-01",
     "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/SPF10207126LSSS0000OPPPP.PDF#SPF#2026-10-01",
     "https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/UCCS07102026_EE923A054EEC146889D904D07F2DB5B43.PDF#UCCS#2026-10-01"
   ],
   "raw_files": [
-    "data/raw/rbi_surveys/20261111T201003-b7efa92049.pdf",
-    "data/raw/rbi_surveys/20261111T201006-c155fe8723.pdf",
-    "data/raw/rbi_surveys/20261111T201009-b35e9177fc.pdf"
+    "data/raw/rbi_surveys/20261112T130920-b7efa92049.pdf",
+    "data/raw/rbi_surveys/20261112T130923-c155fe8723.pdf",
+    "data/raw/rbi_surveys/20261112T130928-b35e9177fc.pdf"
   ]
 }
