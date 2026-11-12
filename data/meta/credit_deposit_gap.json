@@ -13,11 +13,11 @@
   },
   "licence": "unverified",
   "downloadable": false,
-  "first_period": "2021-07-30",
+  "first_period": "2021-05-21",
   "last_period": "2026-10-15",
   "last_value": -4.857,
-  "observations": 132,
-  "updated_at": "2026-11-12T13:10:33+00:00",
+  "observations": 137,
+  "updated_at": "2026-11-12T20:49:54+00:00",
   "fetched_from": [
     "derived: derived_credit_deposit"
   ],
