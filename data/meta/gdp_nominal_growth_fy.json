@@ -17,13 +17,13 @@
   "last_period": "2025-04-01",
   "last_value": 8.6,
   "observations": 3,
-  "updated_at": "2026-11-10T14:36:01+00:00",
+  "updated_at": "2026-11-12T11:36:43+00:00",
   "fetched_from": [
     "https://api.mospi.gov.in/api/nas/getNASData?frequency_code=Annually&base_year=2022-23&indicator_code=21&limit=100&page=1&Format=JSON",
     "https://api.mospi.gov.in/api/nas/getNASData?frequency_code=Annually&base_year=2022-23&indicator_code=22&limit=100&page=1&Format=JSON"
   ],
   "raw_files": [
-    "data/raw/mospi_nas_annual/20261110T143559-e0ffb360be.json",
-    "data/raw/mospi_nas_annual/20261110T143601-1051f10ba8.json"
+    "data/raw/mospi_nas_annual/20261112T113640-e0ffb360be.json",
+    "data/raw/mospi_nas_annual/20261112T113643-1051f10ba8.json"
   ]
 }
