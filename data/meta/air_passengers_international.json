@@ -17,7 +17,7 @@
   "last_period": "2026-09-01",
   "last_value": 6.1,
   "observations": 18,
-  "updated_at": "2026-11-12T14:03:08+00:00",
+  "updated_at": "2026-11-13T14:03:49+00:00",
   "fetched_from": [
     "https://www.aai.aero/sites/default/files/traffic-news/TRApr2k26.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRAug2k26.pdf",
@@ -30,14 +30,14 @@
     "https://www.aai.aero/sites/default/files/traffic-news/TRjul2k26.pdf"
   ],
   "raw_files": [
-    "data/raw/aai_traffic/20261112T140234-2467bef0ee.pdf",
-    "data/raw/aai_traffic/20261112T140239-d0d8b07d19.pdf",
-    "data/raw/aai_traffic/20261112T140243-84ff72bd2d.pdf",
-    "data/raw/aai_traffic/20261112T140247-ad09b7711b.pdf",
-    "data/raw/aai_traffic/20261112T140251-bd60aa9d1e.pdf",
-    "data/raw/aai_traffic/20261112T140255-c073c40b27.pdf",
-    "data/raw/aai_traffic/20261112T140258-959dc4b4e9.pdf",
-    "data/raw/aai_traffic/20261112T140301-0d1fc670a4.pdf",
-    "data/raw/aai_traffic/20261112T140306-4f01cc9dee.pdf"
+    "data/raw/aai_traffic/20261113T140306-2467bef0ee.pdf",
+    "data/raw/aai_traffic/20261113T140315-d0d8b07d19.pdf",
+    "data/raw/aai_traffic/20261113T140319-84ff72bd2d.pdf",
+    "data/raw/aai_traffic/20261113T140322-ad09b7711b.pdf",
+    "data/raw/aai_traffic/20261113T140332-bd60aa9d1e.pdf",
+    "data/raw/aai_traffic/20261113T140336-c073c40b27.pdf",
+    "data/raw/aai_traffic/20261113T140339-959dc4b4e9.pdf",
+    "data/raw/aai_traffic/20261113T140342-0d1fc670a4.pdf",
+    "data/raw/aai_traffic/20261113T140347-4f01cc9dee.pdf"
   ]
 }

@@ -14,16 +14,18 @@
   "licence": "show-only",
   "downloadable": false,
   "first_period": "2021-04-01",
-  "last_period": "2026-09-01",
-  "last_value": 98162.0,
-  "observations": 66,
-  "updated_at": "2026-11-12T14:02:05+00:00",
+  "last_period": "2026-10-01",
+  "last_value": 103349.0,
+  "observations": 67,
+  "updated_at": "2026-11-13T14:02:32+00:00",
   "fetched_from": [
     "https://www.siam.in/news-&-updates/press-releases/x/620",
-    "https://www.siam.in/news-&-updates/press-releases/x/622"
+    "https://www.siam.in/news-&-updates/press-releases/x/622",
+    "https://www.siam.in/news-&-updates/press-releases/x/624"
   ],
   "raw_files": [
-    "data/raw/siam_sales/20261112T140203-686d452948.html",
-    "data/raw/siam_sales/20261112T140205-57cb2350c9.html"
+    "data/raw/siam_sales/20261113T140217-7a379d4a2f.html",
+    "data/raw/siam_sales/20261113T140225-3f9b367e85.html",
+    "data/raw/siam_sales/20261113T140232-d03fb7a942.html"
   ]
 }

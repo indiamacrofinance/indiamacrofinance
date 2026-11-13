@@ -17,13 +17,13 @@
   "last_period": "2026-09-01",
   "last_value": 47.7,
   "observations": 30,
-  "updated_at": "2026-11-12T14:01:34+00:00",
+  "updated_at": "2026-11-13T14:01:38+00:00",
   "fetched_from": [
     "https://cga.nic.in/writereaddata/MonthAccount/82026/DATA2627.htm",
     "https://cga.nic.in/writereaddata/MonthAccount/92026/DATA2627.htm"
   ],
   "raw_files": [
-    "data/raw/cga_monthly_accounts/20261112T140123-0db8588796.htm",
-    "data/raw/cga_monthly_accounts/20261112T140126-107637441b.htm"
+    "data/raw/cga_monthly_accounts/20261113T140127-0db8588796.htm",
+    "data/raw/cga_monthly_accounts/20261113T140129-107637441b.htm"
   ]
 }
