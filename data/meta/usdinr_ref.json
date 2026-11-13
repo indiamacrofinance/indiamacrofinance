@@ -14,14 +14,14 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2025-10-23",
-  "last_period": "2026-11-12",
-  "last_value": 93.765,
-  "observations": 256,
-  "updated_at": "2026-11-13T07:00:58+00:00",
+  "last_period": "2026-11-13",
+  "last_value": 94.1997,
+  "observations": 257,
+  "updated_at": "2026-11-13T08:00:57+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/"
   ],
   "raw_files": [
-    "data/raw/rbi_home_rates/20261113T070058-287c9a3c79.html"
+    "data/raw/rbi_home_rates/20261113T080057-b03c173958.html"
   ]
 }
