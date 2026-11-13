@@ -17,11 +17,11 @@
   "last_period": "2026-09-01",
   "last_value": 92.0,
   "observations": 42,
-  "updated_at": "2026-11-13T14:02:00+00:00",
+  "updated_at": "2026-11-13T15:37:41+00:00",
   "fetched_from": [
     "https://eaindustry.nic.in/eight_core_infra/Core_Industries_2022_23_20261021.xlsx"
   ],
   "raw_files": [
-    "data/raw/oea_core_industries/20261113T140200-9c13a2d8cb.xlsx"
+    "data/raw/oea_core_industries/20261113T153741-9c13a2d8cb.xlsx"
   ]
 }
