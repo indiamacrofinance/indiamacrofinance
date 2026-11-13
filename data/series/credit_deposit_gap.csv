@@ -1,4 +1,9 @@
 period,value,vintage,note
+2021-03-12,-9.586,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
+2021-03-26,-9.65,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
+2021-04-09,-9.49,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
+2021-04-23,-8.241,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
+2021-05-07,-7.488,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
 2021-05-21,-7.261,2026-11-12,site calculation: y/y change in credit minus y/y change in deposits
 2021-06-04,-7.687,2026-11-12,site calculation: y/y change in credit minus y/y change in deposits
 2021-06-18,-8.352,2026-11-12,site calculation: y/y change in credit minus y/y change in deposits
@@ -136,3 +141,4 @@ period,value,vintage,note
 2026-09-15,-6.502,2026-11-01,site calculation: y/y change in credit minus y/y change in deposits
 2026-09-30,-5.638,2026-11-01,site calculation: y/y change in credit minus y/y change in deposits
 2026-10-15,-4.857,2026-11-01,site calculation: y/y change in credit minus y/y change in deposits
+2026-10-31,-2.865,2026-11-13,site calculation: y/y change in credit minus y/y change in deposits
