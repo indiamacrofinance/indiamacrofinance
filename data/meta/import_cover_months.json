@@ -17,7 +17,7 @@
   "last_period": "2026-10-01",
   "last_value": 10.1,
   "observations": 21,
-  "updated_at": "2026-11-13T15:41:40+00:00",
+  "updated_at": "2026-11-13T20:49:30+00:00",
   "fetched_from": [
     "derived: derived_import_cover"
   ],
