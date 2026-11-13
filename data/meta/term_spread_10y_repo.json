@@ -17,7 +17,7 @@
   "last_period": "2026-11-06",
   "last_value": 1.71,
   "observations": 448,
-  "updated_at": "2026-11-13T08:34:24+00:00",
+  "updated_at": "2026-11-13T09:01:46+00:00",
   "fetched_from": [
     "derived: derived_term_spread"
   ],
