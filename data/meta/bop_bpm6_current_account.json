@@ -17,7 +17,7 @@
   "last_period": "2026-04-01",
   "last_value": -4.219,
   "observations": 53,
-  "updated_at": "2026-11-13T13:06:13+00:00",
+  "updated_at": "2026-11-13T20:28:00+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/195T_HBIE310720267C502CDA0EB74E848B3723F55968004A.XLSX",
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/197T_HBIE3107202602251BCC4CCF42298769F21195413D8C.XLSX",
@@ -25,9 +25,9 @@
     "https://rbidocs.rbi.org.in/rdocs/content/docs/BOPS01092026_2.xlsx"
   ],
   "raw_files": [
-    "data/raw/rbi_bop_quarterly/20261113T130557-b418229dde.xlsx",
-    "data/raw/rbi_bop_quarterly/20261113T130559-f000fb77d9.xlsx",
-    "data/raw/rbi_bop_quarterly/20261113T130610-5dd8760922.xlsx",
-    "data/raw/rbi_bop_quarterly/20261113T130613-277c0d7c24.xlsx"
+    "data/raw/rbi_bop_quarterly/20261113T202747-b418229dde.xlsx",
+    "data/raw/rbi_bop_quarterly/20261113T202750-f000fb77d9.xlsx",
+    "data/raw/rbi_bop_quarterly/20261113T202758-5dd8760922.xlsx",
+    "data/raw/rbi_bop_quarterly/20261113T202800-277c0d7c24.xlsx"
   ]
 }
