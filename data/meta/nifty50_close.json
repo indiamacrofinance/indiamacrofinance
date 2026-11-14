@@ -17,7 +17,7 @@
   "last_period": "2026-11-13",
   "last_value": 25144.3,
   "observations": 2478,
-  "updated_at": "2026-11-13T19:05:14+00:00",
+  "updated_at": "2026-11-14T01:31:54+00:00",
   "fetched_from": [
     "yfinance:BZ=F?period=1mo",
     "yfinance:CNY=X?period=1mo",
@@ -33,17 +33,17 @@
     "yfinance:^VIX?period=1mo"
   ],
   "raw_files": [
-    "data/raw/yahoo_markets/20261113T190440-3c82b4a9c0.json",
-    "data/raw/yahoo_markets/20261113T190440-02e6c9a95d.json",
-    "data/raw/yahoo_markets/20261113T190440-888414aabc.json",
-    "data/raw/yahoo_markets/20261113T190441-50d53925e9.json",
-    "data/raw/yahoo_markets/20261113T190441-eb02a8bc41.json",
-    "data/raw/yahoo_markets/20261113T190454-72b3dd24ca.json",
-    "data/raw/yahoo_markets/20261113T190500-eed0f2af99.json",
-    "data/raw/yahoo_markets/20261113T190510-9e827ea9b0.json",
-    "data/raw/yahoo_markets/20261113T190513-41f21199ea.json",
-    "data/raw/yahoo_markets/20261113T190513-85078f6258.json",
-    "data/raw/yahoo_markets/20261113T190514-6d87edaa0d.json",
-    "data/raw/yahoo_markets/20261113T190514-7636854627.json"
+    "data/raw/yahoo_markets/20261114T013056-3c82b4a9c0.json",
+    "data/raw/yahoo_markets/20261114T013056-02e6c9a95d.json",
+    "data/raw/yahoo_markets/20261114T013056-888414aabc.json",
+    "data/raw/yahoo_markets/20261114T013057-e15ca7b876.json",
+    "data/raw/yahoo_markets/20261114T013057-54fb3b18ae.json",
+    "data/raw/yahoo_markets/20261114T013120-d226f4e431.json",
+    "data/raw/yahoo_markets/20261114T013124-ea076108eb.json",
+    "data/raw/yahoo_markets/20261114T013137-18a3b9888a.json",
+    "data/raw/yahoo_markets/20261114T013154-aefc24ad4b.json",
+    "data/raw/yahoo_markets/20261114T013154-3c701801b2.json",
+    "data/raw/yahoo_markets/20261114T013154-7fefee3333.json",
+    "data/raw/yahoo_markets/20261114T013154-e843f622d3.json"
   ]
 }
