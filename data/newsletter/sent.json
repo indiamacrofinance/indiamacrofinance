@@ -96,5 +96,11 @@
     "subject": "Rupee weakened 0.38% to \u20b994.03, still 0.98% stronger over the month",
     "drafted_by": "AI (claude-opus-5-5), checked",
     "rupee_as_of": "2026-11-12"
+  },
+  "2026-11-14": {
+    "id": "em_5ez46apwe19maa9rj4xvf5adz9",
+    "subject": "Rupee weakened 0.20% to \u20b994.23 per US dollar, but keeps most of the past month's gain",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-11-13"
   }
 }
