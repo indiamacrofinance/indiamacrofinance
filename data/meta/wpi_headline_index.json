@@ -14,14 +14,14 @@
   "licence": "GODL",
   "downloadable": true,
   "first_period": "2023-04-01",
-  "last_period": "2026-09-01",
-  "last_value": 112.5,
-  "observations": 42,
-  "updated_at": "2026-11-13T20:47:37+00:00",
+  "last_period": "2026-10-01",
+  "last_value": 113.3,
+  "observations": 43,
+  "updated_at": "2026-11-16T07:31:58+00:00",
   "fetched_from": [
-    "https://eaindustry.nic.in/indx_download_2223/wpi_monthly_index_202610.xlsx"
+    "https://eaindustry.nic.in/indx_download_2223/wpi_monthly_index_202611.xlsx"
   ],
   "raw_files": [
-    "data/raw/oea_wpi/20261113T204736-6f5dc66277.xlsx"
+    "data/raw/oea_wpi/20261116T073158-f2db7a0684.xlsx"
   ]
 }
