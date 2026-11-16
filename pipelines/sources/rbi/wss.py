@@ -27,7 +27,7 @@ from __future__ import annotations
 import io
 import json
 import re
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 import pandas as pd
 
@@ -44,18 +44,55 @@ LEDGER = ROOT / "data" / "backfill" / "rbi_wss.json"
 LINK = re.compile(r"https://rbidocs\.rbi\.org\.in/rdocs/Wss/DOCs/\d+T_[0-9A-F]+\.XLSX")
 
 
-def link_date(url: str) -> str:
-    """'.../6T_14042017...XLSX' -> '2017-04-14'."""
-    d = re.search(r"T_(\d{2})(\d{2})(\d{4})", url)
-    return f"{d.group(3)}-{d.group(2)}-{d.group(1)}"
+def link_date(url: str) -> str | None:
+    """'.../6T_14042019...XLSX' -> '2019-04-14'. Files up to mid-2018 carry a two-digit year
+    ('.../2T_220618C6E5...' -> '2018-06-22'); the name runs straight into a hex hash, so the
+    eight-digit reading of those gives years like 1860 and is rejected. None if neither works."""
+    name = url.rsplit("/", 1)[-1]
+    for pat, century in ((r"T_(\d{2})(\d{2})(\d{4})", ""), (r"T_(\d{2})(\d{2})(\d{2})", "20")):
+        m = re.match(r"\d+" + pat, name)
+        if not m:
+            continue
+        try:
+            d = date(int(century + m.group(3)), int(m.group(2)), int(m.group(1)))
+        except ValueError:
+            continue
+        if 2017 <= d.year <= date.today().year + 1:
+            return d.isoformat()
+    return None
+
+
+def link_dates(links: list[str]) -> list[str]:
+    """Dates of archive links (newest first), made usable for ordering. RBI mistypes a few names
+    ('10032003' for 10 Mar 2023, '09032021' for 9 Apr 2021, '161022020', '1600420215'). The
+    longest run of dates that never increases down the list is trusted; any other date (or none)
+    is replaced by one day before the previous link's, so the file keeps its archive place."""
+    raw = [link_date(u) for u in links]
+    idx = [i for i, d in enumerate(raw) if d]
+    # Longest non-increasing subsequence of the parsed dates (O(n^2); the archive has ~500 links).
+    best, back = [1] * len(idx), [-1] * len(idx)
+    for j in range(len(idx)):
+        for k in range(j):
+            if raw[idx[k]] >= raw[idx[j]] and best[k] + 1 > best[j]:
+                best[j], back[j] = best[k] + 1, k
+    trusted, j = set(), max(range(len(idx)), key=best.__getitem__, default=-1)
+    while j >= 0:
+        trusted.add(idx[j])
+        j = back[j]
+    out, prev = [], date.today() + timedelta(days=7)
+    for i in range(len(links)):
+        d = date.fromisoformat(raw[i]) if i in trusted else prev - timedelta(days=1)
+        out.append(d.isoformat())
+        prev = d
+    return out
 
 
 def trickle_picks(links: list[str], skip: int, oldest_done: str | None, stride: int, n: int) -> list[str]:
     """The next n backfill files: older than the recent files (links[:skip]) and than the oldest
     already attempted, every stride-th file by position in the archive (newest first)."""
     out = []
-    for i, url in enumerate(links):
-        if i < skip or i % stride or (oldest_done and link_date(url) >= oldest_done):
+    for i, (url, day) in enumerate(zip(links, link_dates(links))):
+        if i < skip or i % stride or (oldest_done and day >= oldest_done):
             continue
         out.append(url)
         if len(out) == n:
@@ -211,13 +248,19 @@ def parse_liquidity(df: pd.DataFrame) -> list[dict]:
     sign flipped, as the system's surplus (+) or deficit (-), in Rs lakh crore."""
     head = df.index[df.apply(lambda r: "Net Injection" in label(r), axis=1)][0]
     net_col = next(c for c in df.columns if "Net Injection" in str(df.loc[head, c]))
+    date_col = next((c for c in df.columns if str(df.loc[head, c]).strip() == "Date"), df.columns[0])
     rows = []
     for _, r in df.loc[head + 1:].iterrows():
-        # The date is an Excel date in recent files and text ("May 25, 2026") in older ones.
-        day = next((pd.Timestamp(v).date().isoformat() if isinstance(v, (datetime, pd.Timestamp))
-                    else parse_date(v) for v in r if isinstance(v, (datetime, pd.Timestamp))
-                    or isinstance(v, str) and parse_date(v)), None)
-        if day is None:
+        # The date is an Excel date in recent files and text ("May 25, 2026", "Jan. 3, 2022") in
+        # older ones. Only a Date cell that is a date and nothing else counts: footnotes below the
+        # table mention dates too ("for the period December 16, 2019 to ...", "dated April 8,
+        # 2022"), and reading them as days gave blank values that failed the run (issue #50).
+        v = r[date_col]
+        if isinstance(v, (datetime, pd.Timestamp)):
+            day = pd.Timestamp(v).date().isoformat()
+        elif isinstance(v, str) and re.fullmatch(r"\s*" + MONTH + r"\s*\d{1,2},\s*\d{4}\s*", v):
+            day = parse_date(v)
+        else:
             continue
         v = r[net_col]
         if isinstance(v, str):          # "-" for nil; 2017 files print "–2,470.91" (en dash as minus)
@@ -308,6 +351,7 @@ class RbiWSS(Source):
                 firsts = [f for f in firsts if isinstance(f, str)]
                 if firsts:
                     ledger[str(n)] = min(firsts)
+            day_of = dict(zip(links, link_dates(links)))
             for url in trickle_picks(links, take, ledger.get(str(n)), stride, per_run):
                 raw = fetch_raw(url, suffix=".xlsx")
                 if not raw.content.startswith(b"PK"):          # captcha or error page: stop for today
@@ -317,7 +361,7 @@ class RbiWSS(Source):
                     return raws
                 raws.append(raw)
                 self.backfill_urls.add(raw.url)
-                ledger[str(n)] = link_date(url)
+                ledger[str(n)] = day_of[url]
         LEDGER.parent.mkdir(parents=True, exist_ok=True)
         LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
         if raws:
