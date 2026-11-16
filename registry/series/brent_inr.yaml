@@ -37,3 +37,18 @@ owner: ''
 verified_against: []
 notes: Each Brent close converted at the FBIL reference rate of that date (or the
   latest earlier one).
+exclude:
+- period: '2026-11-08'
+  added: '2026-11-16'
+  reason: Brent (US$) times the FBIL rate for a Sunday. The Brent (US$) row for this day is
+    excluded, because Yahoo dated the Monday session on the Sunday when the 07:00 IST markets-bot run
+    read it (Monday 9 Nov); Yahoo later re-dated its bar to 2026-11-09, so this row was
+    never revised away. Yahoo's history (checked 16 Nov 2026) has no bar on this day. Weekend
+    Brent bars are now dropped in pipelines/sources/yahoo/markets.py.
+- period: '2026-11-15'
+  added: '2026-11-16'
+  reason: Brent (US$) times the FBIL rate for a Sunday. The Brent (US$) row for this day is
+    excluded, because Yahoo dated the Monday session on the Sunday when the 07:00 IST markets-bot run
+    read it (Monday 16 Nov); Yahoo later re-dated its bar to 2026-11-16, so this row was
+    never revised away. Yahoo's history (checked 16 Nov 2026) has no bar on this day. Weekend
+    Brent bars are now dropped in pipelines/sources/yahoo/markets.py.
