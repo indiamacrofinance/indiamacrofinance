@@ -49,6 +49,19 @@ def test_older_layouts(raw_from):
     assert at(df, "liquidity_surplus", "2026-05-25") == 0.7632
 
 
+def test_liquidity_footnote_dates_are_not_days(raw_from):
+    # Issue #50: footnotes below older liquidity tables carry dates ("dated April 8, 2022";
+    # "for the period December 16, 2019 to February 13, 2020"), which were read as days
+    # with blank values and failed the whole series.
+    for name, first, value in [("liquidity_footnote_dates_2022-05.xlsx", "2022-05-09", 2.0984),
+                               ("liquidity_footnote_dates_2022-01.xlsx", "2022-01-24", -0.1919)]:
+        df = SOURCE.parse([raw_from(f"rbi/wss/{name}")])
+        liq = df[df.series_id == "liquidity_surplus"]
+        assert len(liq) == 7 and liq.value.notna().all(), name
+        assert liq.period.min() == first and at(df, "liquidity_surplus", first) == value
+        assert not {"2022-04-08", "2019-12-16", "2021-05-07"} & set(liq.period)
+
+
 def test_paper_rates():
     # CD / CP tables: fortnight, outstanding (Rs crore), amount issued, rate range on issues.
     import pandas as pd
@@ -70,3 +83,28 @@ def test_trickle_picks():
     assert [link_date(u) for u in trickle_picks(links, 2, None, 2, 2)] == ["2026-10-16", "2026-10-02"]
     # Next run resumes below the oldest attempted.
     assert [link_date(u) for u in trickle_picks(links, 2, "2026-10-02", 2, 2)] == ["2026-09-18"]
+
+
+def test_link_dates_two_digit_years_and_rbi_typos():
+    from pipelines.sources.rbi.wss import link_date, link_dates, trickle_picks
+    base = "https://rbidocs.rbi.org.in/rdocs/Wss/DOCs/{}.XLSX"
+    # Files up to mid-2018 carry a two-digit year, straight into a hex hash: the eight-digit
+    # reading gave '1860-06-15' or failed outright (which crashed the whole source).
+    assert link_date(base.format("8T_150618601C36F3D9E7")) == "2018-06-15"
+    assert link_date(base.format("8T_2206186AD313A3749B")) == "2018-06-22"
+    assert link_date(base.format("6T_14042019AB")) == "2019-04-14"
+    assert link_date(base.format("11T_1600420215AEEB6C")) is None
+    # RBI's real typos, in archive order (newest first): 9 Apr 2021 named '09032021'.
+    names = ["2T_16042021BC", "2T_090320219C", "2T_02042021DD", "2T_26032021D0",
+             "8T_150618601C", "2T_1600420215", "8T_080618C2C2"]
+    links = [base.format(n) for n in names]
+    eff = link_dates(links)
+    assert eff == ["2021-04-16", "2021-04-15", "2021-04-02", "2021-03-26",
+                   "2018-06-15", "2018-06-14", "2018-06-08"]
+    # The backfill walks the whole list without errors or repeats.
+    picks, ledger, seen = None, "2021-04-17", []
+    while picks != []:
+        picks = trickle_picks(links, 0, ledger, 1, 2)
+        seen += picks
+        ledger = eff[links.index(picks[-1])] if picks else ledger
+    assert seen == links
