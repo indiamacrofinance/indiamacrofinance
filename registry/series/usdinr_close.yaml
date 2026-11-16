@@ -37,3 +37,20 @@ notes: Market quote, onshore and offshore, unlike FBIL's 1 pm reference rate (us
   each run until the day closes. Each completed day is Yahoo's daily close or the day's last
   hourly price, whichever is nearer the ECB reference rate, because Yahoo's FX data carries
   occasional bad ticks.
+exclude:
+- period: '2026-11-07'
+  added: '2026-11-16'
+  reason: Stored from a Saturday run as a live quote; FX markets are shut on Saturdays and
+    Yahoo's history (checked 16 Nov 2026) has no bar on this day. Weekend bars are now dropped
+    in pipelines/sources/yahoo/markets.py.
+- period: '2026-11-08'
+  added: '2026-11-16'
+  reason: Yahoo dated the Monday session on the Sunday when the 07:00 IST markets-bot run read
+    it (Monday 9 Nov); Yahoo later re-dated its bar to 2026-11-09, so this row was never
+    revised away. Yahoo's history (checked 16 Nov 2026) has no bar on this day. Weekend bars are
+    now dropped in pipelines/sources/yahoo/markets.py.
+- period: '2026-11-14'
+  added: '2026-11-16'
+  reason: Stored from a Saturday run as a live quote; FX markets are shut on Saturdays and
+    Yahoo's history (checked 16 Nov 2026) has no bar on this day. Weekend bars are now dropped
+    in pipelines/sources/yahoo/markets.py.

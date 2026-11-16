@@ -12,6 +12,10 @@ commodity futures, which trade almost round the clock (yesterday's settle is use
 US markets (their day ends after midnight IST). Currencies ("fx") keep today's bar as a live
 quote: Yahoo's FX day runs 05:30-05:30 IST, so it is rewritten on each run until it closes,
 and pipelines/analysis/rupee.py explains only completed days.
+Weekend-dated bars are dropped for everything but Indian indices (issues #44, #49): on Monday
+mornings IST Yahoo dates the new futures/FX/US session on the Sunday (8 and 15 Nov 2026), and
+FX on Saturday, then re-dates it to the Monday. Indian indices keep weekend sessions
+(Muhurat trading, 8 Nov 2026; Budget day, 1 Feb 2025).
 
 Yahoo's FX prices carry bad ticks, in the daily close and in hourly bars alike: USD/IDR
 closed ~3.5% below every hourly price on 3-5 Nov 2026 (below the bar's own low on 3-4 Nov);
@@ -52,6 +56,13 @@ HOURLY_MAX = "730d"     # the longest history Yahoo serves for hourly bars
 ECB_TOLERANCE = 3.0     # %; the nearer candidate was within 1% of the ECB rate every day, Aug-Nov 2026
 ECB_URL = "https://data-api.ecb.europa.eu/service/data/EXR/D.{ccy}.EUR.SP00.A"
 IST = ZoneInfo("Asia/Kolkata")
+
+
+def is_weekend(day: str) -> bool:
+    """'2026-11-08' (a Sunday) -> True. Yahoo briefly dates the Monday session of futures, US
+    markets and currencies on the Sunday (seen on Monday mornings IST), and FX on Saturday; it
+    re-dates the bar later, so the weekend row would never be revised away."""
+    return datetime.strptime(day, "%Y-%m-%d").weekday() >= 5
 
 
 def hourly_period(period: str) -> str:
@@ -120,6 +131,8 @@ class YahooMarkets(Source):
             body = json.loads(raw.content)
             sid, kind = TICKERS[body["ticker"]]
             dec = DECIMALS.get(kind, 2)
+            if kind != "index":     # only Indian exchanges hold weekend sessions (Muhurat, Budget day)
+                body["rows"] = [r for r in body["rows"] if not is_weekend(r[0])]
             if kind == "fx":
                 out += self._fx_rows(sid, body, today, now_ist, dec)
                 continue

@@ -35,3 +35,53 @@ owner: ''
 verified_against: []
 notes: FBIL's 10-year par yield, a curve-based measure; differs from the benchmark-security
   yield in gsec_10y_yield.
+exclude:
+- period: '2019-02-15'
+  added: '2026-11-16'
+  reason: The WSS print stored here (7.58%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2019-02-15, sheet Par-Yield, tenor 10) gives
+    7.37%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2019-08-23'
+  added: '2026-11-16'
+  reason: The WSS print stored here (6.57%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2019-08-23, sheet Par-Yield, tenor 10) gives
+    6.74%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2020-03-06'
+  added: '2026-11-16'
+  reason: The WSS print stored here (6.18%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2020-03-06, sheet Par-Yield, tenor 10) gives
+    6.55%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2020-03-13'
+  added: '2026-11-16'
+  reason: The WSS print stored here (6.32%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2020-03-13, sheet Par-Yield, tenor 10) gives
+    6.76%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2020-03-20'
+  added: '2026-11-16'
+  reason: The WSS print stored here (6.26%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2020-03-20, sheet Par-Yield, tenor 10) gives
+    6.77%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2020-04-17'
+  added: '2026-11-16'
+  reason: The WSS print stored here (6.35%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2020-04-17, sheet Par-Yield, tenor 10) gives
+    6.70%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.
+- period: '2023-01-13'
+  added: '2026-11-16'
+  reason: The WSS print stored here (7.44%, from an older-layout file read by the history
+    backfill) is not FBIL's 10-year par yield for this date. FBIL's own file
+    (fbil.org.in/wasdm/gsec/downloadPublished?date=2023-01-13, sheet Par-Yield, tenor 10) gives
+    7.30%, checked 16 Nov 2026. FBIL matched the stored value within 5 bp in 303 of the 310
+    weeks checked (2018-2024); this is one of the seven that did not.

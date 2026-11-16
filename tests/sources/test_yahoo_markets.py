@@ -59,3 +59,15 @@ def test_fx_ecb_guard_leaves_out_far_values():
     df = SOURCE.parse([fx_raw(rows, hourly, ecb, t)])
     assert list(df.period) == ["2026-11-04"]    # 5 Nov is 3.1% from the ECB rate: left out
     assert df.value.iloc[0] == 18140.0
+
+
+def test_weekend_bars_dropped_except_indian_indices():
+    # Mon 16 Nov 2026 07:00 IST: Yahoo dated the Monday session of futures and FX on Sun 15 Nov.
+    t = datetime(2026, 11, 16, 1, 30, tzinfo=timezone.utc)
+    rows = [["2026-11-13", 95.84], ["2026-11-14", 95.9], ["2026-11-15", 94.85]]
+    df = SOURCE.parse([raw("BZ=F", rows, t), raw("DX-Y.NYB", rows, t), raw("^NSEI", rows, t),
+                       fx_raw(rows, [], {}, t)])
+    for sid in ("brent_usd", "dxy_close", "usdidr_close"):
+        assert list(df[df.series_id == sid].period) == ["2026-11-13"], sid
+    # Indian exchanges do trade on some weekends (Muhurat trading, Sun 8 Nov 2026).
+    assert list(df[df.series_id == "nifty50_close"].period) == ["2026-11-13", "2026-11-14", "2026-11-15"]
