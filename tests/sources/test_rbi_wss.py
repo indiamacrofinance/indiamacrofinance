@@ -1,4 +1,6 @@
 """RBI WSS parsers, pinned to the WSS published 23 Oct 2026."""
+import pytest
+
 from pipelines.sources.rbi.wss import SOURCE, parse_date
 
 
@@ -108,3 +110,34 @@ def test_link_dates_two_digit_years_and_rbi_typos():
         seen += picks
         ledger = eff[links.index(picks[-1])] if picks else ledger
     assert seen == links
+
+
+def test_backfill_stops_on_bot_challenge_and_ledger_waits_for_parse(monkeypatch, tmp_path, raw_from):
+    # 17 Nov 2026 (issue #55): the bookmark was written during fetch, then the parse failed and
+    # the next run would have started below 39 files it never stored.
+    import json
+
+    from pipelines.core.http import BotChallenge
+    from pipelines.sources.rbi import wss
+    ledger = tmp_path / "rbi_wss.json"
+    before = {str(n): "2026-01-01" for n in wss.TRICKLE}
+    ledger.write_text(json.dumps(before))
+    monkeypatch.setattr(wss, "LEDGER", ledger)
+    links = [f"https://rbidocs.rbi.org.in/rdocs/Wss/DOCs/2T_{d}2025AB.XLSX" for d in ("1912", "1212", "0512")]
+    calls = []
+
+    def challenged(url, suffix, challenge_waits):
+        calls.append(challenge_waits)
+        raise BotChallenge("rbidocs.rbi.org.in answered with its bot-challenge page")
+    monkeypatch.setattr(wss, "fetch_raw", challenged)
+    src = wss.RbiWSS()
+    src.backfill_urls = set()
+    assert src.trickle({n: (links, 0) for n in wss.SECTION}) == []   # stops quietly
+    assert calls == [()]                                             # without waiting
+    # A good parse moves the bookmark; a failed one leaves it where it was.
+    src.pending_ledger = {**before, "2": "2025-12-19"}
+    with pytest.raises(ValueError):
+        src.parse([raw_from("rbi/bot_challenge.html")])
+    assert json.loads(ledger.read_text()) == before
+    src.parse([raw_from("rbi/wss/2026-10-23.s2.xlsx")])
+    assert json.loads(ledger.read_text())["2"] == "2025-12-19"
