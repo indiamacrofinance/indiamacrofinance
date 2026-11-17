@@ -105,6 +105,7 @@ When an `auto` source starts failing with 403s or timeouts from Actions but work
 run (`TRICKLE` in `pipelines/sources/rbi/wss.py`), recording progress in
 `data/backfill/rbi_wss.json`. It stops for the day at the first non-workbook response (RBI's
 server shows a captcha under heavy downloading) and skips files with layouts it cannot parse.
+The bookmark is written only after the run's files have parsed, so a failed run fetches them again.
 At the daily rbi-bot run it reaches 2017 in roughly 6-8 weeks (liquidity, which needs every
 file, takes longest). The long M3, CD/CP and liquidity histories it builds are inputs for the
 planned CPI shock decomposition and CD/CP spread models (08-original-measures.md, Planned).

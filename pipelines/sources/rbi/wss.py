@@ -19,7 +19,9 @@ Overlapping weeks are harmless: publishing upserts by period.
 Slow history backfill: each run also takes a few older files per section (TRICKLE: every
 stride-th file, n per run), working back through the archive to April 2017, and records how
 far it got in data/backfill/rbi_wss.json. RBI's file server answered heavy downloading with a
-captcha in October 2026, so this stays small and stops at the first non-workbook response.
+captcha in October 2026, so this stays small and stops at the first non-workbook response
+(without waiting out a bot challenge, unlike this week's files; see pipelines/core/http.py).
+The ledger is written only after parse() succeeds, so files from a failed run are fetched again.
 A backfill file that cannot be parsed (older layouts) is skipped and never fails the run.
 """
 from __future__ import annotations
@@ -32,7 +34,7 @@ from datetime import date, datetime, timedelta
 import pandas as pd
 
 from pipelines.core import Raw, Source
-from pipelines.core.http import fetch_raw, get
+from pipelines.core.http import BotChallenge, fetch_raw, get
 from pipelines.core.store import ROOT, load_series
 
 ARCHIVE = "https://www.rbi.org.in/Scripts/WSSViewDetail.aspx?TYPE=Section&PARAM1={n}"
@@ -327,6 +329,7 @@ class RbiWSS(Source):
 
     def fetch(self) -> list[Raw]:
         raws, links_by = [], {}
+        self.pending_ledger = None
         for n in SECTION:
             page = get(ARCHIVE.format(n=n)).text
             links = list(dict.fromkeys(LINK.findall(page)))
@@ -336,7 +339,10 @@ class RbiWSS(Source):
             take = BACKFILL_WEEKS if short else RECENT_WEEKS
             links_by[n] = (links, take)
             for url in links[:take]:
-                raws.append(fetch_raw(url, suffix=".xlsx"))
+                raw = fetch_raw(url, suffix=".xlsx")   # waits out a bot challenge, then raises
+                if not raw.content.startswith(b"PK"):
+                    raise RuntimeError(f"{url} answered with something other than a workbook")
+                raws.append(raw)
         self.backfill_urls = set()
         raws += self.trickle(links_by)
         return raws
@@ -353,17 +359,18 @@ class RbiWSS(Source):
                     ledger[str(n)] = min(firsts)
             day_of = dict(zip(links, link_dates(links)))
             for url in trickle_picks(links, take, ledger.get(str(n)), stride, per_run):
-                raw = fetch_raw(url, suffix=".xlsx")
-                if not raw.content.startswith(b"PK"):          # captcha or error page: stop for today
+                try:   # the backfill never waits out a bot challenge: it stops for today
+                    raw = fetch_raw(url, suffix=".xlsx", challenge_waits=())
+                except BotChallenge:
+                    raw = None
+                if raw is None or not raw.content.startswith(b"PK"):
                     print(f"  WSS backfill: section {n} answered with a non-workbook; stopping until the next run")
-                    LEDGER.parent.mkdir(parents=True, exist_ok=True)
-                    LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
+                    self.pending_ledger = ledger
                     return raws
                 raws.append(raw)
                 self.backfill_urls.add(raw.url)
                 ledger[str(n)] = day_of[url]
-        LEDGER.parent.mkdir(parents=True, exist_ok=True)
-        LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
+        self.pending_ledger = ledger
         if raws:
             print(f"  WSS backfill: {len(raws)} older files; reached " +
                   ", ".join(f"s{k} {v}" for k, v in sorted(ledger.items(), key=lambda x: int(x[0]))))
@@ -395,6 +402,14 @@ class RbiWSS(Source):
                   f"{[f'{s} {p}' for s, p in conflicts.index[:5]]}")
         out = out.drop_duplicates(subset=["series_id", "period"], keep="first")
         out["note"] = "RBI WSS"
+        # The backfill bookmark moves only once its files have parsed: on 17 Nov 2026 it was
+        # written in fetch(), a failed parse threw the 39 files away, and the next run would
+        # have started below them (issue #55).
+        ledger = getattr(self, "pending_ledger", None)
+        if ledger is not None:
+            LEDGER.parent.mkdir(parents=True, exist_ok=True)
+            LEDGER.write_text(json.dumps(ledger, indent=2, sort_keys=True) + "\n")
+            self.pending_ledger = None
         return out[out["period"] <= date.today().isoformat()]
 
 

@@ -2,17 +2,18 @@
 
 The Federation of Automobile Dealers Associations compiles retail registrations from the
 Vahan portal each month. https://fada.in/press-release-list.php (and ?page=2, ...) links
-PDFs named like "FADA Releases September 2026 Vehicle Retail Data.pdf". A page near the end
-has the table
+PDFs named like "FADA Releases September 2026 Vehicle Retail Data.pdf" (from Oct 2026,
+"FADA_Press_Release_Oct_26.pdf"). A page near the end has the table
     All India Vehicle Retail Data for Sep'26
     CATEGORY Sep'26 Aug'26 Sep'25 MoM% YoY%
     2W 17,90,188 17,14,610 13,45,153 4.41% 33.08%
     ...
     Total 25,36,920 24,23,201 19,24,546 4.69% 31.82%
-Columns are read from the month labels in the header, so a table without the previous
-month still parses; labels are "Sep'26" or "July'25". Sub-rows (E-RICKSHAW, LCV, ...) are
-skipped. Counts use Indian digit grouping. FADA restates earlier months (more registration
-offices are covered over time; year-ago columns differ from the month's own release by up
+From Oct 2026 a festive table ("... for Navratri'26") can come before it; only a table
+headed by a month is read. Columns are read from the month labels in the header, so a table
+without the previous month still parses; labels are "Sep'26" or "July'25". Sub-rows
+(E-RICKSHAW, LCV, ...) are skipped. Counts use Indian digit grouping. FADA restates earlier
+months (more registration offices are covered over time; year-ago columns differ from the month's own release by up
 to about 5%), so the newest release wins, which keeps the levels consistent with FADA's
 printed y/y growth (its own figure for the release month).
 
@@ -46,16 +47,33 @@ def month(mon: str, yy: str) -> str:
     return datetime.strptime(f"{mon[:3].title()} 20{yy}", "%b %Y").strftime("%Y-%m-01")
 
 
+MONTHS = {datetime(2026, m, 1).strftime(f).lower() for m in range(1, 13) for f in ("%b", "%B")} | {"sept"}
+
+
+def is_month(name: str) -> bool:
+    """'Oct', 'Sept', 'October' -> True; 'Navratri' -> False."""
+    return name.lower() in MONTHS
+
+
 def release_links(page: str) -> list[str]:
+    """Monthly retail releases: 'FADA Releases September 2026 Vehicle Retail Data.pdf', and from
+    Oct 2026 'FADA_Press_Release_Oct_26.pdf'. Festive-period releases ('..._Navratri'26_...')
+    and other press releases are left out."""
+    def monthly(name: str) -> bool:
+        if re.search(r"vehicle retail data", name, re.I):
+            return True
+        m = re.search(r"Press[_ ]Release[_ ]([A-Za-z]{3,9})[_ ]'?(\d{2})\.pdf$", name, re.I)
+        return bool(m) and is_month(m.group(1))
     links = re.findall(r'href="(images/press-release/[^"]+\.pdf)"', page, re.I)
-    return ["https://fada.in/" + urllib.parse.quote(l) for l in links if re.search(r"vehicle retail data", l, re.I)]
+    return ["https://fada.in/" + urllib.parse.quote(l) for l in links if monthly(l)]
 
 
 def parse_release(content: bytes) -> list[dict]:
     with pdfplumber.open(io.BytesIO(content)) as pdf:
         text = "\n".join(p.extract_text() or "" for p in pdf.pages)
     lines = text.splitlines()
-    start = next((i for i, l in enumerate(lines) if HEAD.search(l)), None)
+    # The month's table; from Oct 2026 a festive table ("... for Navratri'26") can come first.
+    start = next((i for i, l in enumerate(lines) if (h := HEAD.search(l)) and is_month(h.group(1))), None)
     if start is None:
         raise ValueError("no 'All India Vehicle Retail Data for <Mon'yy>' table")
     header = next(l for l in lines[start + 1:start + 4] if l.startswith("CATEGORY"))

@@ -40,6 +40,10 @@ When an agency rebases (as in 2026 for GDP, CPI and IIP):
 - The shared HTTP helper waits at least one second between calls to the same host
   (`POLITE_DELAY` in `pipelines/core/http.py`). Transient failures retry with
   exponential backoff; there is no backoff sleep after the final failed attempt.
+  A bot-challenge page (RBI's file server, see `03-data-sources.md`) is waited out for up to
+  3 minutes per host per run, then the source fails with `BotChallenge`. If a
+  `scraper-broken` issue shows that error, nothing in the parser is wrong: the next run usually
+  gets through. Re-run the bot later instead of changing code.
 
 ## Monthly
 
