@@ -17,15 +17,15 @@
   "last_period": "2026-10-01",
   "last_value": 113437.89,
   "observations": 91,
-  "updated_at": "2026-11-16T07:33:54+00:00",
+  "updated_at": "2026-11-17T05:28:33+00:00",
   "fetched_from": [
     "https://portal.amfiindia.com/spages/amaug2026repo.xls",
     "https://portal.amfiindia.com/spages/amoct2026repo.xls",
     "https://portal.amfiindia.com/spages/amsep2026repo.xls"
   ],
   "raw_files": [
-    "data/raw/amfi_monthly/20261116T073348-6d7a06e35b.xls",
-    "data/raw/amfi_monthly/20261116T073351-b1daaaf1a8.xls",
-    "data/raw/amfi_monthly/20261116T073354-70f3aa61da.xls"
+    "data/raw/amfi_monthly/20261117T052827-6d7a06e35b.xls",
+    "data/raw/amfi_monthly/20261117T052830-b1daaaf1a8.xls",
+    "data/raw/amfi_monthly/20261117T052833-70f3aa61da.xls"
   ]
 }

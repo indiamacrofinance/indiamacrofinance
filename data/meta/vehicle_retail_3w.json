@@ -14,24 +14,26 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2024-01-01",
-  "last_period": "2026-09-01",
-  "last_value": 132.57,
-  "observations": 31,
-  "updated_at": "2026-11-16T07:32:53+00:00",
+  "last_period": "2026-10-01",
+  "last_value": 141.42,
+  "observations": 32,
+  "updated_at": "2026-11-17T05:27:32+00:00",
   "fetched_from": [
     "https://fada.in/images/press-release/169f9644078df6FADA%20Releases%20April%202026%20Vehicle%20Retail%20Data.pdf",
     "https://fada.in/images/press-release/16a26372eac5e2FADA%20Releases%20May%202026%20Vehicle%20Retail%20Data.pdf",
     "https://fada.in/images/press-release/16a74145d12b0dFADA%20Releases%20June%202026%20Vehicle%20Retail%20Data.pdf",
     "https://fada.in/images/press-release/16a7445b80cd73FADA%20Releases%20July%202026%20Vehicle%20Retail%20Data.pdf",
     "https://fada.in/images/press-release/16a9e2ff1d6502FADA%20Releases%20August%202026%20Vehicle%20Retail%20Data.pdf",
-    "https://fada.in/images/press-release/16ac46ad2e0388FADA%20Releases%20September%202026%20Vehicle%20Retail%20Data.pdf"
+    "https://fada.in/images/press-release/16ac46ad2e0388FADA%20Releases%20September%202026%20Vehicle%20Retail%20Data.pdf",
+    "https://fada.in/images/press-release/16aed49cca8e14FADA_Press_Release_Oct_26.pdf"
   ],
   "raw_files": [
-    "data/raw/fada_retail/20261116T073240-4ec6c5ea5c.pdf",
-    "data/raw/fada_retail/20261116T073241-fa6d705302.pdf",
-    "data/raw/fada_retail/20261116T073242-c4c68eb5a2.pdf",
-    "data/raw/fada_retail/20261116T073243-6f50adbb1c.pdf",
-    "data/raw/fada_retail/20261116T073245-d30c756851.pdf",
-    "data/raw/fada_retail/20261116T073246-edc04a382d.pdf"
+    "data/raw/fada_retail/20261117T052717-bea04404ba.pdf",
+    "data/raw/fada_retail/20261117T052718-4ec6c5ea5c.pdf",
+    "data/raw/fada_retail/20261117T052719-fa6d705302.pdf",
+    "data/raw/fada_retail/20261117T052720-c4c68eb5a2.pdf",
+    "data/raw/fada_retail/20261117T052721-6f50adbb1c.pdf",
+    "data/raw/fada_retail/20261117T052722-d30c756851.pdf",
+    "data/raw/fada_retail/20261117T052723-edc04a382d.pdf"
   ]
 }
