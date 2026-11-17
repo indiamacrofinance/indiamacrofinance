@@ -1,4 +1,9 @@
 period,value,vintage,note
+2017-06-01,4.79,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
+2017-07-01,3.89,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
+2017-08-01,2.72,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
+2017-09-01,2.72,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
+2017-10-01,2.42,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
 2017-11-01,1.12,2026-11-14,site calculation: repo rate at month end minus CPI inflation (y/y)
 2017-12-01,0.79,2026-11-14,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-01-01,0.93,2026-11-14,site calculation: repo rate at month end minus CPI inflation (y/y)
@@ -6,7 +11,7 @@ period,value,vintage,note
 2018-03-01,1.72,2026-11-13,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-04-01,1.42,2026-11-13,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-05-01,1.13,2026-11-13,site calculation: repo rate at month end minus CPI inflation (y/y)
-2018-06-01,1.08,2026-11-13,site calculation: repo rate at month end minus CPI inflation (y/y)
+2018-06-01,1.33,2026-11-17,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-07-01,2.08,2026-11-13,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-08-01,2.81,2026-11-12,site calculation: repo rate at month end minus CPI inflation (y/y)
 2018-09-01,2.8,2026-11-12,site calculation: repo rate at month end minus CPI inflation (y/y)
