@@ -114,5 +114,11 @@
     "subject": "Rupee weakened 0.34% on the week but strengthened 0.80% over the month",
     "drafted_by": "AI (claude-opus-5-5), checked",
     "rupee_as_of": "2026-11-14"
+  },
+  "2026-11-17": {
+    "id": "em_2h5dftdn388y0vgevbn1e8f2er",
+    "subject": "Rupee strengthened 0.34% to \u20b993.91 per US dollar, mostly on factors outside the model",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-11-16"
   }
 }
