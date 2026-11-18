@@ -17,13 +17,13 @@
   "last_period": "2026-10-01",
   "last_value": 5.5,
   "observations": 62,
-  "updated_at": "2026-11-18T13:12:57+00:00",
+  "updated_at": "2026-11-18T21:15:56+00:00",
   "fetched_from": [
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63403",
     "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63839"
   ],
   "raw_files": [
-    "data/raw/rbi_mpc_decisions/20261118T131254-63516433c0.html",
-    "data/raw/rbi_mpc_decisions/20261118T131257-80d59c9785.html"
+    "data/raw/rbi_mpc_decisions/20261118T211553-20c58dbe91.html",
+    "data/raw/rbi_mpc_decisions/20261118T211556-38e50954f6.html"
   ]
 }
