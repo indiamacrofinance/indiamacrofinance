@@ -14,14 +14,14 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2026-10-30",
-  "last_period": "2026-11-18",
-  "last_value": 137.14,
-  "observations": 13,
-  "updated_at": "2026-11-19T10:01:26+00:00",
+  "last_period": "2026-11-19",
+  "last_value": -103.68,
+  "observations": 14,
+  "updated_at": "2026-11-19T11:01:30+00:00",
   "fetched_from": [
     "https://www.fpi.nsdl.co.in/web/Reports/Latest.aspx"
   ],
   "raw_files": [
-    "data/raw/nsdl_fpi_daily/20261119T100126-5c1da971b6.html"
+    "data/raw/nsdl_fpi_daily/20261119T110130-3bee147dc2.html"
   ]
 }
