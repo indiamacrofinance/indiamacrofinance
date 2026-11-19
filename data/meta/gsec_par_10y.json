@@ -14,10 +14,10 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2025-01-01",
-  "last_period": "2026-11-11",
-  "last_value": 7.24,
-  "observations": 450,
-  "updated_at": "2026-11-18T12:34:54+00:00",
+  "last_period": "2026-11-12",
+  "last_value": 7.26,
+  "observations": 451,
+  "updated_at": "2026-11-19T01:31:35+00:00",
   "fetched_from": [
     "derived: derived_term_spread"
   ],
