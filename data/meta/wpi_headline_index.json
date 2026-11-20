@@ -17,11 +17,11 @@
   "last_period": "2026-10-01",
   "last_value": 113.3,
   "observations": 43,
-  "updated_at": "2026-11-19T14:02:04+00:00",
+  "updated_at": "2026-11-20T14:02:01+00:00",
   "fetched_from": [
     "https://eaindustry.nic.in/indx_download_2223/wpi_monthly_index_202611.xlsx"
   ],
   "raw_files": [
-    "data/raw/oea_wpi/20261119T140203-f2db7a0684.xlsx"
+    "data/raw/oea_wpi/20261120T140201-f2db7a0684.xlsx"
   ]
 }
