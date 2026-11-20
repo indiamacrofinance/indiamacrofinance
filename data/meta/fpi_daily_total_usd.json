@@ -17,11 +17,11 @@
   "last_period": "2026-11-19",
   "last_value": 831.87,
   "observations": 14,
-  "updated_at": "2026-11-20T07:01:26+00:00",
+  "updated_at": "2026-11-20T08:01:26+00:00",
   "fetched_from": [
     "https://www.fpi.nsdl.co.in/web/Reports/Latest.aspx"
   ],
   "raw_files": [
-    "data/raw/nsdl_fpi_daily/20261120T070126-f5aec73b74.html"
+    "data/raw/nsdl_fpi_daily/20261120T080126-19a8ca1a9d.html"
   ]
 }
