@@ -17,7 +17,7 @@
   "last_period": "2026-10-01",
   "last_value": -0.59,
   "observations": 127,
-  "updated_at": "2026-11-21T13:09:18+00:00",
+  "updated_at": "2026-11-21T20:06:47+00:00",
   "fetched_from": [
     "derived: derived_real_rate"
   ],
