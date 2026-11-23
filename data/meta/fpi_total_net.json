@@ -17,13 +17,13 @@
   "last_period": "2026-11-01",
   "last_value": 128608.0,
   "observations": 143,
-  "updated_at": "2026-11-23T01:31:38+00:00",
+  "updated_at": "2026-11-23T04:01:20+00:00",
   "fetched_from": [
     "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6&year=2025",
     "https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6&year=2026"
   ],
   "raw_files": [
-    "data/raw/nsdl_fpi/20261123T013137-88befa45d7.html",
-    "data/raw/nsdl_fpi/20261123T013137-f5f8551e91.html"
+    "data/raw/nsdl_fpi/20261123T040120-c8ed4f7c76.html",
+    "data/raw/nsdl_fpi/20261123T040120-d96178bb21.html"
   ]
 }
