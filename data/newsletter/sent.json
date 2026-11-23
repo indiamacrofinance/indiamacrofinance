@@ -150,5 +150,11 @@
     "subject": "Rupee strengthened 1.69% in the week to 20 Nov 2026, now \u20b992.66 per US dollar",
     "drafted_by": "AI (claude-opus-5-5), checked",
     "rupee_as_of": "2026-11-20"
+  },
+  "2026-11-23": {
+    "id": "em_48tqz07ay48p8ayygv0px9fj87",
+    "subject": "Rupee strengthened 1.69% on the week to \u20b992.66 per US dollar",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-11-20"
   }
 }
