@@ -17,11 +17,11 @@
   "last_period": "2026-10-01",
   "last_value": 91.28,
   "observations": 262,
-  "updated_at": "2026-11-24T07:34:20+00:00",
+  "updated_at": "2026-11-24T14:04:35+00:00",
   "fetched_from": [
     "https://stats.bis.org/api/v1/data/WS_EER/M.R+N.B.IN/all?format=csv&startPeriod=2005-01"
   ],
   "raw_files": [
-    "data/raw/bis_eer/20261124T073420-c6efcfa3f1.csv"
+    "data/raw/bis_eer/20261124T140435-c6efcfa3f1.csv"
   ]
 }
