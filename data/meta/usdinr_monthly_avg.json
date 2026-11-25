@@ -17,7 +17,7 @@
   "last_period": "2026-06-01",
   "last_value": 94.9695,
   "observations": 412,
-  "updated_at": "2026-11-25T13:07:00+00:00",
+  "updated_at": "2026-11-25T22:16:19+00:00",
   "fetched_from": [
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/205T_HBIE31072026B40F14BA1C1C40C9B8FDC62949CCB66B.XLSX",
     "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/211T_HBIE31072026CBBC73E404194616A0796989B0C2CD45.XLSX",
@@ -26,10 +26,10 @@
     "https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx?Id=24523"
   ],
   "raw_files": [
-    "data/raw/rbi_fx_operations/20261125T130647-46e6ea1410.xlsx",
-    "data/raw/rbi_fx_operations/20261125T130649-7b5bce2c17.xlsx",
-    "data/raw/rbi_fx_operations/20261125T130655-106f149704.html",
-    "data/raw/rbi_fx_operations/20261125T130657-1e96276ed0.html",
-    "data/raw/rbi_fx_operations/20261125T130700-39db13f2ed.html"
+    "data/raw/rbi_fx_operations/20261125T221607-46e6ea1410.xlsx",
+    "data/raw/rbi_fx_operations/20261125T221609-7b5bce2c17.xlsx",
+    "data/raw/rbi_fx_operations/20261125T221614-cb50436215.html",
+    "data/raw/rbi_fx_operations/20261125T221616-916cf6700c.html",
+    "data/raw/rbi_fx_operations/20261125T221618-1d3cc862b2.html"
   ]
 }
