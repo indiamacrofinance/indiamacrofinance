@@ -168,5 +168,11 @@
     "subject": "Rupee weakened 0.02% to \u20b992.92, but has strengthened 2.43% over the month",
     "drafted_by": "AI (claude-opus-5-5), checked",
     "rupee_as_of": "2026-11-24"
+  },
+  "2026-11-26": {
+    "id": "em_1kz637apxa9hb9pqxmyfy1znsy",
+    "subject": "Rupee strengthened 0.75% to \u20b992.22 per US dollar as Indian shares rallied and foreign investors bought",
+    "drafted_by": "AI (claude-opus-5-5), checked",
+    "rupee_as_of": "2026-11-25"
   }
 }
