@@ -17,13 +17,13 @@
   "last_period": "2026-09-01",
   "last_value": 13.9685,
   "observations": 99,
-  "updated_at": "2026-11-26T14:03:41+00:00",
+  "updated_at": "2026-11-26T22:55:08+00:00",
   "fetched_from": [
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/ewb-data-2025-26.xlsx",
     "https://tutorial.gst.gov.in/offlineutilities/gst_statistics/ewb-data-2026-27.xlsx"
   ],
   "raw_files": [
-    "data/raw/gst_ewaybills/20261126T140340-0071a702c0.xlsx",
-    "data/raw/gst_ewaybills/20261126T140341-722fcc876b.xlsx"
+    "data/raw/gst_ewaybills/20261126T225507-0071a702c0.xlsx",
+    "data/raw/gst_ewaybills/20261126T225508-722fcc876b.xlsx"
   ]
 }

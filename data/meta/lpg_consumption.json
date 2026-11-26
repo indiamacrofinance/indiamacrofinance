@@ -17,13 +17,13 @@
   "last_period": "2026-10-01",
   "last_value": 2518.0,
   "observations": 43,
-  "updated_at": "2026-11-26T14:02:06+00:00",
+  "updated_at": "2026-11-26T22:51:36+00:00",
   "fetched_from": [
     "https://ppac.gov.in/AjaxController/getConsumptionPetroleumProductsData?financialYear=2025-2026",
     "https://ppac.gov.in/AjaxController/getConsumptionPetroleumProductsData?financialYear=2026-2027"
   ],
   "raw_files": [
-    "data/raw/ppac_consumption/20261126T140205-433fd55c6b.json",
-    "data/raw/ppac_consumption/20261126T140206-5a1354de1f.json"
+    "data/raw/ppac_consumption/20261126T225135-433fd55c6b.json",
+    "data/raw/ppac_consumption/20261126T225136-5a1354de1f.json"
   ]
 }
