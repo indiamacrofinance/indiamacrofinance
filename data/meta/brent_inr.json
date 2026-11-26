@@ -17,7 +17,7 @@
   "last_period": "2026-11-25",
   "last_value": 8750.43,
   "observations": 275,
-  "updated_at": "2026-11-26T12:01:25+00:00",
+  "updated_at": "2026-11-26T13:28:56+00:00",
   "fetched_from": [
     "derived: derived_brent_inr"
   ],
