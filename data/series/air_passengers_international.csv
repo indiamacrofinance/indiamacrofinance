@@ -8,6 +8,7 @@ period,value,vintage,note
 2025-07-01,6.63,2026-10-29,"AAI, year-earlier column"
 2025-08-01,6.67,2026-10-29,"AAI, year-earlier column"
 2025-09-01,6.37,2026-10-29,"AAI, year-earlier column"
+2025-10-01,6.8,2026-11-27,"AAI, year-earlier column"
 2026-01-01,7.76,2026-10-29,AAI monthly report
 2026-02-01,6.59,2026-10-29,AAI monthly report
 2026-03-01,5.34,2026-10-29,AAI monthly report
@@ -17,3 +18,4 @@ period,value,vintage,note
 2026-07-01,6.33,2026-10-29,AAI monthly report
 2026-08-01,6.4,2026-10-29,AAI monthly report
 2026-09-01,6.1,2026-10-29,AAI monthly report
+2026-10-01,6.48,2026-11-27,AAI monthly report

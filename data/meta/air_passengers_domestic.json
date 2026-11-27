@@ -14,10 +14,10 @@
   "licence": "unverified",
   "downloadable": false,
   "first_period": "2025-01-01",
-  "last_period": "2026-09-01",
-  "last_value": 24.0,
-  "observations": 18,
-  "updated_at": "2026-11-26T22:55:41+00:00",
+  "last_period": "2026-10-01",
+  "last_value": 26.95,
+  "observations": 20,
+  "updated_at": "2026-11-27T07:34:30+00:00",
   "fetched_from": [
     "https://www.aai.aero/sites/default/files/traffic-news/TRApr2k26.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRAug2k26.pdf",
@@ -26,18 +26,20 @@
     "https://www.aai.aero/sites/default/files/traffic-news/TRJun2k26.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRMar2k26_2.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRMay2k26.pdf",
+    "https://www.aai.aero/sites/default/files/traffic-news/TROct2k26.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRSep2k_26.pdf",
     "https://www.aai.aero/sites/default/files/traffic-news/TRjul2k26.pdf"
   ],
   "raw_files": [
-    "data/raw/aai_traffic/20261126T225516-2467bef0ee.pdf",
-    "data/raw/aai_traffic/20261126T225520-d0d8b07d19.pdf",
-    "data/raw/aai_traffic/20261126T225522-84ff72bd2d.pdf",
-    "data/raw/aai_traffic/20261126T225525-ad09b7711b.pdf",
-    "data/raw/aai_traffic/20261126T225528-bd60aa9d1e.pdf",
-    "data/raw/aai_traffic/20261126T225531-c073c40b27.pdf",
-    "data/raw/aai_traffic/20261126T225533-959dc4b4e9.pdf",
-    "data/raw/aai_traffic/20261126T225535-0d1fc670a4.pdf",
-    "data/raw/aai_traffic/20261126T225539-4f01cc9dee.pdf"
+    "data/raw/aai_traffic/20261127T073351-6bf84cab69.pdf",
+    "data/raw/aai_traffic/20261127T073356-2467bef0ee.pdf",
+    "data/raw/aai_traffic/20261127T073401-d0d8b07d19.pdf",
+    "data/raw/aai_traffic/20261127T073404-84ff72bd2d.pdf",
+    "data/raw/aai_traffic/20261127T073408-ad09b7711b.pdf",
+    "data/raw/aai_traffic/20261127T073413-bd60aa9d1e.pdf",
+    "data/raw/aai_traffic/20261127T073416-c073c40b27.pdf",
+    "data/raw/aai_traffic/20261127T073420-959dc4b4e9.pdf",
+    "data/raw/aai_traffic/20261127T073423-0d1fc670a4.pdf",
+    "data/raw/aai_traffic/20261127T073428-4f01cc9dee.pdf"
   ]
 }
