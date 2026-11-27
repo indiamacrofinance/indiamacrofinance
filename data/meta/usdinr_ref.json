@@ -17,11 +17,11 @@
   "last_period": "2026-11-27",
   "last_value": 92.9139,
   "observations": 266,
-  "updated_at": "2026-11-27T13:08:24+00:00",
+  "updated_at": "2026-11-27T13:25:02+00:00",
   "fetched_from": [
-    "https://www.fbil.org.in/wasdm/refrates/fetchcommongraph/12M"
+    "https://www.rbi.org.in/"
   ],
   "raw_files": [
-    "data/raw/fbil_refrates/20261127T130824-560b0b904b.json"
+    "data/raw/rbi_home_rates/20261127T132501-fb3e71814e.html"
   ]
 }
